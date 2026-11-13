@@ -3,9 +3,19 @@ import ToggleTheme from '../components/ToggleTheme.astro';
 import ToggleCleanMode from '../components/ToggleCleanMode.astro';
 import ToggleReduceMotion from '../components/ToggleReduceMotion.astro';
 ---
-<nav class="fixed top-0 left-0 w-full p-4 flex gap-4 justify-end no-print">
-  <ToggleTheme />
-  <ToggleCleanMode />
-  <ToggleReduceMotion />
-</nav>
-<slot />
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IChO Rev</title>
+  </head>
+  <body>
+    <nav class="fixed top-0 left-0 w-full p-4 flex gap-4 justify-end no-print">
+      <ToggleTheme />
+      <ToggleCleanMode />
+      <ToggleReduceMotion />
+    </nav>
+    <slot />
+  </body>
+</html>
