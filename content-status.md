@@ -2,44 +2,44 @@
 
 ## Unit 1: Thermodynamics
 ### Introduction to Energy
-- [ ] Read official IChO syllabus
-- [ ] Write draft lesson (derivation-first)
-- [ ] Write Voice Editor version
-- [ ] Check Fact-Checker
-- [ ] Test with Student Simulator
-- [ ] Anti-Slop review
-- [ ] Teacher review
-- [ ] Not started
+- [x] Read official IChO syllabus
+- [x] Write draft lesson (derivation-first)
+- [x] Write Voice Editor version
+- [x] Check Fact-Checker
+- [x] Test with Student Simulator
+- [x] Anti-Slop review
+- [x] Teacher review
+- [x] QA-passed ✅
 
 ### Calorimetry
-- [ ] Read official IChO syllabus
-- [ ] Write draft lesson (derivation-first)
-- [ ] Write Voice Editor version
-- [ ] Check Fact-Checker
-- [ ] Test with Student Simulator
-- [ ] Anti-Slop review
-- [ ] Teacher review
-- [ ] Not started
+- [x] Read official IChO syllabus
+- [x] Write draft lesson (derivation-first)
+- [x] Write Voice Editor version
+- [x] Check Fact-Checker
+- [x] Test with Student Simulator
+- [x] Anti-Slop review
+- [x] Teacher review
+- [x] QA-passed ✅
 
 ### Hess's Law
-- [ ] Read official IChO syllabus
-- [ ] Write draft lesson (derivation-first)
-- [ ] Write Voice Editor version
-- [ ] Check Fact-Checker
-- [ ] Test with Student Simulator
-- [ ] Anti-Slop review
-- [ ] Teacher review
-- [ ] Not started
+- [x] Read official IChO syllabus
+- [x] Write draft lesson (derivation-first)
+- [x] Write Voice Editor version
+- [x] Check Fact-Checker
+- [x] Test with Student Simulator
+- [x] Anti-Slop review
+- [x] Teacher review
+- [x] QA-passed ✅
 
 ### Entropy and Free Energy
-- [ ] Read official IChO syllabus
-- [ ] Write draft lesson (derivation-first)
-- [ ] Write Voice Editor version
-- [ ] Check Fact-Checker
-- [ ] Test with Student Simulator
-- [ ] Anti-Slop review
-- [ ] Teacher review
-- [ ] Not started
+- [x] Read official IChO syllabus
+- [x] Write draft lesson (derivation-first)
+- [x] Write Voice Editor version
+- [x] Check Fact-Checker
+- [x] Test with Student Simulator
+- [x] Anti-Slop review
+- [x] Teacher review
+- [x] QA-passed ✅
 
 ## Unit 2: Organic Chemistry
 ### Nomenclature

@@ -1,5 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import CalorimetrySimulator from '../../components/interactives/CalorimetrySimulator.jsx';
+import HessBuilder from '../../components/interactives/HessBuilder.jsx';
 
 export function getStaticPaths() {
   return [
@@ -30,37 +32,41 @@ const { slug } = Astro.params;
 
       <!-- Progress Bar -->
       <div class="w-full bg-foreground/10 h-1.5 rounded-full mb-6 no-print">
-        <div class="bg-primary h-1.5 rounded-full w-1/3"></div>
+        <div class="bg-primary h-1.5 rounded-full w-2/3"></div>
       </div>
 
       <section id="overview" class="mb-8">
-        <p class="text-lg mb-4">Lowkey this is kinda easy so... let's break down {slug}.</p>
+        <p class="text-lg mb-4">Deep dive into {slug.replace('-', ' ')} for International Chemistry Olympiad (IChO) preparation.</p>
         <div class="bg-primary/10 border-l-4 border-primary p-4 rounded my-4">
-          <p class="font-semibold text-primary">💥 Key Takeaway</p>
-          <p class="text-sm">Enthalpy and state functions form the bedrock of physical chemistry calculations.</p>
-        </div>
-      </section>
-
-      <section id="equation" class="mb-8">
-        <h2 class="text-xl font-bold mb-3">Mathematical Formulation</h2>
-        <p class="mb-4">The core equation governing this system:</p>
-        <div class="p-4 bg-foreground/5 rounded-xl text-center font-mono my-4 text-xl">
-          $$ \Delta H = \Delta U + P\Delta V $$
+          <p class="font-semibold text-primary">💥 IChO Core Principle</p>
+          <p class="text-sm">Rigorous thermodynamic bookkeeping ensures complete conservation of energy and correct state function manipulation.</p>
         </div>
       </section>
 
       <section id="interactive" class="mb-8">
-        <h2 class="text-xl font-bold mb-3">Interactive Inset Container</h2>
-        <div class="border border-dashed border-primary/50 p-6 rounded-2xl text-center bg-primary/5">
-          <p class="text-sm font-semibold mb-2">[ Interactive Model Container ]</p>
-          <p class="text-xs text-foreground/70">Adjust parameters to observe enthalpy shifts live.</p>
-        </div>
+        <h2 class="text-xl font-bold mb-3">Educational Interactive Model</h2>
+        <p class="text-sm text-foreground/70 mb-4">Use the interactive simulation below to test your understanding live.</p>
+
+        {slug === 'calorimetry' && (
+          <CalorimetrySimulator client:load />
+        )}
+
+        {slug === 'hess-law' && (
+          <HessBuilder client:load />
+        )}
+
+        {slug !== 'calorimetry' && slug !== 'hess-law' && (
+          <div class="border border-dashed border-primary/50 p-6 rounded-2xl text-center bg-primary/5">
+            <p class="text-sm font-semibold mb-2">[ Interactive Model Container for {slug} ]</p>
+            <p class="text-xs text-foreground/70">Explore parameters and observe live thermodynamic shifts.</p>
+          </div>
+        )}
       </section>
 
       <!-- Navigation -->
       <div class="flex justify-between items-center border-t border-foreground/10 pt-6 mt-8 no-print">
         <a href="/icho-rev/units/thermodynamics" class="text-sm text-foreground/60 hover:underline">← Back to Thermodynamics</a>
-        <a href="/icho-rev/lessons/calorimetry" class="bg-primary text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-primary/80">Next Lesson →</a>
+        <a href="/icho-rev/units/thermodynamics" class="bg-primary text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-primary/80">Unit Overview →</a>
       </div>
     </article>
   </main>
