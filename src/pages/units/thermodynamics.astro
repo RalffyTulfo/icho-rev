@@ -1,27 +1,55 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+
+const lessons = [
+  { title: "Energy and the First Law", slug: "thermodynamics-intro", formula: "ΔU = q + w" },
+  { title: "Calorimetry", slug: "calorimetry", formula: "q = mcΔT" },
+  { title: "Hess's Law", slug: "hess-law", formula: "ΔH = ΣΔH_products - ΣΔH_reactants" },
+  { title: "Entropy and Free Energy", slug: "entropy-and-free-energy", formula: "ΔG = ΔH - TΔS" },
+];
 ---
 <Layout>
-  <main class="pt-20">
-    <div class="frosted-glass p-8 mx-auto max-w-4xl">
-      <h1 class="text-3xl font-bold mb-6">Thermodynamics</h1>
+  <main class="pt-24 px-4">
+    <div class="frosted-glass p-8 mx-auto max-w-4xl border-t-8 border-primary">
+      <div class="flex items-center gap-4 mb-8">
+        <div class="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center text-white text-2xl font-bold shadow-lg shadow-primary/20">
+          🔥
+        </div>
+        <div>
+          <h1 class="text-4xl font-bold text-foreground">Thermodynamics</h1>
+          <p class="text-foreground/60">Unit 1: Energy, Entropy, and Spontaneity</p>
+        </div>
+      </div>
+
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="frosted-glass p-4">
-          <h2 class="text-xl font-bold mb-2">First Law of Thermodynamics</h2>
-          <p>ΔU = q + w</p>
-        </div>
-        <div class="frosted-glass p-4">
-          <h2 class="text-xl font-bold mb-2">Second Law of Thermodynamics</h2>
-          <p>Entropy of the universe always increases.</p>
-        </div>
-        <div class="frosted-glass p-4">
-          <h2 class="text-xl font-bold mb-2">Gibbs Free Energy</h2>
-          <p>ΔG = ΔH - TΔS</p>
-        </div>
-        <div class="frosted-glass p-4">
-          <h2 class="text-xl font-bold mb-2">Enthalpy</h2>
-          <p>H = U + PV</p>
-        </div>
+        {lessons.map((lesson) => (
+          <a href={`/icho-rev/lessons/${lesson.slug}`} class="group">
+            <div class="frosted-glass p-6 transition-all duration-300 group-hover:scale-[1.02] cursor-pointer h-full border border-white/10 group-hover:border-primary/50 group-hover:bg-primary/5">
+              <h2 class="text-xl font-bold mb-3 text-foreground group-hover:text-primary transition-colors">{lesson.title}</h2>
+              <div class="bg-foreground/5 p-3 rounded-xl font-mono text-sm mb-4 text-primary/80 group-hover:bg-primary/10 transition-colors">
+                {lesson.formula}
+              </div>
+              <div class="flex items-center text-xs font-bold uppercase tracking-widest text-foreground/40 group-hover:text-primary">
+                Explore Lesson
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <div class="mt-12 flex justify-between items-center no-print">
+        <a href="/icho-rev/roadmap" class="text-foreground/60 hover:text-primary transition-colors flex items-center gap-2 font-semibold">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+          </svg>
+          Back to Roadmap
+        </a>
+        <a href="/icho-rev/practice" class="bg-primary text-white px-8 py-3 rounded-2xl font-bold hover:shadow-xl hover:shadow-primary/20 transition-all hover:-translate-y-1">
+          Unit Practice →
+        </a>
       </div>
     </div>
   </main>

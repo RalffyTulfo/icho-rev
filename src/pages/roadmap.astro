@@ -1,39 +1,51 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const units = [
+  { name: 'Thermodynamics', slug: 'thermodynamics', color: 'bg-primary' },
+  { name: 'Organic Chemistry', slug: 'organic', color: 'bg-organic' },
+  { name: 'Inorganic Chemistry', slug: 'inorganic', color: 'bg-inorganic' },
+  { name: 'Analytical Chemistry', slug: 'analytical', color: 'bg-analytical' },
+  { name: 'Biochemistry', slug: 'biochemistry', color: 'bg-biochemistry' },
+  { name: 'Practical', slug: 'practical', color: 'bg-practical' },
+];
 ---
 <Layout>
-  <main class="pt-20">
-    <div class="frosted-glass p-8 mx-auto max-w-4xl">
-      <h1 class="text-3xl font-bold mb-6">IChO Roadmap</h1>
-      <div class="relative h-64">
-        <div class="absolute inset-0 flex items-center justify-center">
-          <div class="relative w-full h-16 bg-gradient-to-r from-primary to-secondary rounded-full overflow-hidden">
-            <div class="absolute inset-0 flex items-center justify-center">
-              <div class="w-1/3 h-12 bg-white/20 rounded-full mx-1"></div>
-              <div class="w-1/3 h-12 bg-white/40 rounded-full mx-1"></div>
-              <div class="w-1/3 h-12 bg-white/60 rounded-full mx-1"></div>
+  <main class="pt-24 px-4 min-h-screen">
+    <div class="frosted-glass p-8 mx-auto max-w-5xl">
+      <h1 class="text-3xl font-bold mb-8 text-foreground">IChO Learning Roadmap</h1>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {units.map((unit) => (
+          <a href={`/icho-rev/units/${unit.slug}`} class="group">
+            <div class="frosted-glass p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer h-full border-t-4" style={`border-top-color: var(--color-${unit.slug})`}>
+              <div class={`w-12 h-12 ${unit.color} rounded-full mb-4 flex items-center justify-center text-white font-bold`}>
+                {unit.name.charAt(0)}
+              </div>
+              <h2 class="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">{unit.name}</h2>
+              <p class="text-sm text-foreground/70">Master the fundamental principles and advanced applications of {unit.name.toLowerCase()} for IChO.</p>
+              <div class="mt-4 flex items-center text-xs font-semibold text-primary uppercase tracking-wider">
+                Start Learning
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="absolute bottom-0 left-0 right-0 flex justify-around pb-4">
-          <div class="text-center">
-            <div class="w-12 h-12 bg-primary rounded-full mb-2 mx-auto"></div>
-            <span class="text-sm">Thermodynamics</span>
-          </div>
-          <div class="text-center">
-            <div class="w-12 h-12 bg-secondary rounded-full mb-2 mx-auto"></div>
-            <span class="text-sm">Quantum Chemistry</span>
-          </div>
-          <div class="text-center">
-            <div class="w-12 h-12 bg-success rounded-full mb-2 mx-auto"></div>
-            <span class="text-sm">Spectroscopy</span>
-          </div>
-          <div class="text-center">
-            <div class="w-12 h-12 bg-warning rounded-full mb-2 mx-auto"></div>
-            <span class="text-sm">Practical</span>
-          </div>
-        </div>
+          </a>
+        ))}
       </div>
     </div>
   </main>
 </Layout>
+
+<style>
+  /* Local color overrides since Tailwind vars are dynamic */
+  :root {
+    --color-thermodynamics: var(--color-physical);
+    --color-organic: var(--color-organic);
+    --color-inorganic: var(--color-inorganic);
+    --color-analytical: var(--color-analytical);
+    --color-biochemistry: var(--color-biochemistry);
+    --color-practical: var(--color-practical);
+  }
+</style>
