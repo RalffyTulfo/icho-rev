@@ -1,0 +1,72 @@
+---
+title: "Biochemistry: Amino Acids, Peptides, and Protein Structure"
+author: "Ralf Christian Mendoza"
+proofreader: ""
+readingTime: 6
+unit: "Biochemistry"
+color: "rose/pink"
+---
+
+# Biochemistry: Amino Acids, Peptides, and Protein Structure
+
+## Terms & Definitions
+
+- **Zwitterion**: Dipolar ion form of an amino acid possessing both a positive (NH3+) and negative (COO-) charge, resulting in a net charge of zero.
+- **Isoelectric Point (pI)**: The specific pH at which an amino acid or protein carries zero net electrical charge.
+- **Peptide Bond**: Amide linkage formed via condensation between the alpha-carboxyl group of one amino acid and the alpha-amino group of another.
+- **Primary Structure**: The linear sequence of amino acids linked by peptide bonds.
+- **Secondary Structure**: Local spatial conformations (e.g., alpha-helices and beta-sheets) stabilized by hydrogen bonding along the peptide backbone.
+- **Tertiary / Quaternary Structure**: 3D folding of a single polypeptide chain vs assembly of multiple subunit polypeptide chains.
+
+## Why Does This Exist?
+
+Proteins are the molecular workhorses of living organisms. Understanding amino acid acid-base properties, zwitterionic equilibria, peptide synthesis, and hierarchical folding is foundational for biochemical problem-solving in IChO.
+
+## Derivation from First Principles
+
+### Calculating the Isoelectric Point (pI)
+For a neutral amino acid (e.g., alanine with pKa1 = 2.34 for -COOH and pKa2 = 9.69 for -NH3+):
+- At pH = pI, the zwitterionic species predominates.
+- pI is mathematically the arithmetic mean of the two pKa values flanking the neutral zwitterion:
+  pI = (pKa1 + pKa2) / 2 = (2.34 + 9.69) / 2 = 6.01
+- For acidic or basic amino acids (e.g., aspartic acid or lysine), pI is the average of the two pKa values enclosing the neutral zwitterionic form.
+
+## Worked Example
+
+## Step 0: Identify Ionizable Groups and pKa Values
+**Problem**: Calculate the isoelectric point (pI) of lysine, given its three pKa values: pK1 (alpha-COOH) = 2.18, pK2 (alpha-NH3+) = 8.95, and pK3 (side-chain epsilon-NH3+) = 10.53.
+
+**Solution**:
+1. **Identify ionizable species and charges across pH**:
+   - Low pH (cationic, +2 charge): H3N+-R-NH3+.
+   - Loss of first proton (pK1 = 2.18): Neutralizes -COOH -> net charge +1 (H3N+-R-NH2).
+   - Loss of second proton (pK2 = 8.95): Neutralizes alpha-NH3+ -> net charge 0 (Zwitterion: H2N-R-NH3+). **This is the neutral zwitterion form.**
+   - Loss of third proton (pK3 = 10.53): Neutralizes side-chain epsilon-NH3+ -> net charge -1 (H2N-R-NH2).
+2. **Determine flanking pKa values for the neutral species**:
+   - The neutral zwitterion exists between pK2 (8.95) and pK3 (10.53).
+3. **Calculate pI**:
+   pI = (pK2 + pK3) / 2 = (8.95 + 10.53) / 2 = 9.74.
+
+**Sanity Check**: Lysine is a basic amino acid, so its pI must be well above 7 (pI = 9.74), which is correct.
+
+## Common IChO Traps
+
+1. **Choosing the Wrong pKa pair**: For basic amino acids, average the two highest pKa values. For acidic amino acids (like glutamate), average the two lowest pKa values.
+2. **Peptide Directionality**: Polypeptide sequences are always written conventionally from N-terminus (left) to C-terminus (right).
+
+## What Graders Want to See
+- Correct identification of zwitterionic neutral species.
+- Proper pairing of pKa values enclosing the neutral state.
+- Clear step-by-step charge balance accounting.
+
+## Placeholder for Interactives
+- Interactive: Amino Acid Titration Curve and Zwitterion Charge State Visualizer.
+
+## Go Deeper
+- [Enzyme Kinetics and Bioenergetics](./biochem-2-enzymes-kinetics)
+
+## Recall Cards
+- **Recall Card 1**: What is a zwitterion?
+  Answer: A dipolar ion with both positive and negative charges summing to a net charge of zero.
+- **Recall Card 2**: How do you calculate the isoelectric point (pI) of a basic amino acid like lysine?
+  Answer: By taking the average of the two highest pKa values that flank the neutral zwitterion form.

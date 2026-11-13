@@ -1,0 +1,73 @@
+---
+title: "Biochemistry: Metabolism, Bioenergetics, and ATP Synthesis"
+author: "Ralf Christian Mendoza"
+proofreader: ""
+readingTime: 7
+unit: "Biochemistry"
+color: "rose/pink"
+---
+
+# Biochemistry: Metabolism, Bioenergetics, and ATP Synthesis
+
+## Terms & Definitions
+
+- **Catabolism vs Anabolism**: Degradative metabolic pathways producing ATP vs biosynthetic pathways consuming energy.
+- **Glycolysis**: Cytoplasmic pathway converting glucose into two pyruvate molecules, yielding net 2 ATP and 2 NADH.
+- **Citric Acid Cycle (Krebs Cycle)**: Mitochondrial matrix cycle oxidizing acetyl-CoA to CO2, generating NADH, FADH2, and GTP/ATP.
+- **Oxidative Phosphorylation**: ATP synthesis driven by proton motive force across the inner mitochondrial membrane via ATP synthase.
+- **Standard Free Energy (Delta G standard prime)**: Biochemical standard state free energy change at pH 7.0.
+
+## Why Does This Exist?
+
+Metabolism dictates how living cells extract, store, and utilize chemical energy. Quantitative bioenergetics and ATP yield calculations are frequent components of advanced IChO biochemistry problems.
+
+## Derivation from First Principles
+
+### Coupling of Free Energy and ATP Hydrolysis
+Biological reactions are driven by coupling unfavorable endergonic reactions (Delta G > 0) with the highly exergonic hydrolysis of ATP:
+ATP + H2O <-> ADP + Pi, Delta G = -30.5 kJ/mol
+The overall free energy change for a coupled pathway is additive:
+Delta G_total = Delta G_1 + Delta G_2
+If Delta G_total < 0, the overall process proceeds spontaneously.
+
+## Worked Example
+
+## Step 0: Identify Pathway Stoichiometry and ATP Yield
+**Problem**: Calculate the net yield of ATP molecules produced per glucose molecule oxidized completely to CO2 and H2O via aerobic respiration, assuming standard mitochondrial P/O ratios (2.5 ATP per NADH, 1.5 ATP per FADH2).
+
+**Solution**:
+1. **Glycolysis (Cytoplasm)**:
+   - Direct yield: 2 ATP (net) + 2 NADH.
+   - Transport of cytosolic NADH into mitochondria (via malate-aspartate shuttle): yields 2 * 2.5 = 5 ATP.
+2. **Pyruvate Decarboxylation (Matrix)**:
+   - 2 Acetyl-CoA produced -> 2 NADH -> 2 * 2.5 = 5 ATP.
+3. **Citric Acid Cycle (Matrix per 2 Acetyl-CoA)**:
+   - 2 GTP (equivalent to 2 ATP).
+   - 6 NADH -> 6 * 2.5 = 15 ATP.
+   - 2 FADH2 -> 2 * 1.5 = 3 ATP.
+4. **Total ATP Sum**:
+   - 2 (glycolysis net) + 5 (shuttle) + 5 (pyruvate oxidation) + 2 (GTP) + 15 (NADH) + 3 (FADH2) = 32 ATP (or 30 depending on shuttle).
+
+**Sanity Check**: Complete aerobic respiration of one glucose molecule yields approximately 30-32 ATP molecules under aerobic conditions.
+
+## Common IChO Traps
+
+1. **Shuttle Systems**: Note whether cytosolic NADH enters via the malate-aspartate shuttle (yielding 2.5 ATP per NADH) or the glycerol-3-phosphate shuttle (yielding 1.5 ATP per NADH).
+2. **Anaerobic vs Aerobic**: Under anaerobic conditions, pyruvate is reduced to lactate or ethanol, halting oxidative phosphorylation and yielding only 2 ATP per glucose.
+
+## What Graders Want to See
+- Step-by-step stoichiometric breakdown of metabolic stages (Glycolysis, Krebs, Oxidative Phosphorylation).
+- Correct application of P/O ratios.
+- Clear accounting of ATP equivalents.
+
+## Placeholder for Interactives
+- Interactive: Aerobic Respiration Pathway and ATP Yield Calculator.
+
+## Go Deeper
+- [Practical Lab Skills: Safety, Titrations, and Spectroscopy](../practical/lab-1-safety-titration-spectro)
+
+## Recall Cards
+- **Recall Card 1**: What is the net ATP yield from glycolysis per glucose molecule?
+  Answer: 2 ATP net (2 consumed, 4 produced) along with 2 NADH.
+- **Recall Card 2**: How do uncouplers (like 2,4-dinitrophenol) affect oxidative phosphorylation?
+  Answer: They dissipate the proton gradient across the inner mitochondrial membrane, halting ATP synthesis while allowing electron transport to continue unabated.

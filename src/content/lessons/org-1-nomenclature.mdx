@@ -1,0 +1,83 @@
+---
+title: "Organic Chemistry: IUPAC Nomenclature and Isomerism"
+author: "Ralf Christian Mendoza"
+proofreader: ""
+readingTime: 5
+unit: "Organic Chemistry"
+color: "emerald/teal"
+---
+
+# Organic Chemistry: IUPAC Nomenclature and Isomerism
+
+## Terms & Definitions
+
+- **Principal Functional Group**: The highest-priority functional group that determines the suffix of the IUPAC name.
+- **Stereogenic Center (Chirality Center)**: A tetrahedral carbon bonded to four different groups, creating non-superimposable mirror images.
+- **Constitutional Isomers**: Molecules with the same molecular formula but different connectivity of atoms.
+- **Stereoisomers**: Isomers with the same connectivity but different spatial orientation of atoms.
+- **Conformers**: Interconvertible stereoisomers formed by rotation around single bonds (e.g., Newman projections of ethane/butane).
+- **Enantiomers**: Non-superimposable mirror-image stereoisomers.
+- **Diastereomers**: Stereoisomers that are not mirror images of each other (includes cis-trans / E/Z isomers).
+
+## Why Does This Exist?
+
+Precise nomenclature is vital in international competitions like the IChO to communicate complex molecular structures unambiguously. Understanding constitutional and stereochemical relationships underpins all reaction mechanisms, conformational stability, and enantioselective synthesis.
+
+## Derivation from First Principles & Systematic Rules
+
+### IUPAC Priority Hierarchy
+When naming multifunctional organic molecules, functional groups follow a strict priority order:
+1. Carboxylic acids (-COOH) -> suffix -oic acid
+2. Esters (-COOR) -> suffix -oate
+3. Amides (-CONH2) -> suffix -amide
+4. Nitriles (-CN) -> suffix -nitrile
+5. Aldehydes (-CHO) -> suffix -al
+6. Ketones (>C=O) -> suffix -one
+7. Alcohols (-OH) -> suffix -ol
+8. Amines (-NH2) -> suffix -amine
+9. Alkenes / Alkynes -> suffix -ene / -yne
+10. Alkanes / Halides / Ethers -> prefixes only
+
+### Stereochemical Descriptors (R/S and E/Z)
+- **Cahn-Ingold-Prelog (CIP) Priority Rules**: Assign priorities based on atomic number (Z) directly attached to the stereocenter. If atoms are identical, move outward along the highest-priority path until a difference is found.
+- **R/S Configuration**: Orient priority group 4 away from the viewer. Trace 1 -> 2 -> 3. Clockwise = R (rectus); counterclockwise = S (sinister).
+- **E/Z Notation**: For alkenes, compare priorities on each carbon of the C=C double bond. Z (zusammen, same side) vs E (entgegen, opposite sides).
+
+## Worked Example
+
+**Problem**: Determine the IUPAC name and absolute configuration (R/S) of lactic acid (2-hydroxypropanoic acid) where the -OH group is wedged pointing toward the viewer, -COOH is top, -CH3 is right, and -H is dashed away.
+
+**Solution**:
+1. Identify principal group: Carboxylic acid (-> root name: propanoic acid).
+2. Number the chain: C1 is carbonyl carbon of -COOH, C2 bears -OH and -CH3. Name: 2-hydroxypropanoic acid.
+3. Assign CIP priorities at C2:
+   - Priority 1: -OH (O, Z=8)
+   - Priority 2: -COOH (C bonded to (O, O, O))
+   - Priority 3: -CH3 (C bonded to (H, H, H))
+   - Priority 4: -H (H, Z=1)
+4. Trace 1 -> 2 -> 3: -OH (1) -> -COOH (2) -> -CH3 (3). Since -H (4) is pointing away (dashed), trace direction is counterclockwise -> **S**.
+5. Full IUPAC Name: **(2S)-2-hydroxypropanoic acid**.
+
+**Sanity Check**: Oxygen has highest atomic number (1), carbon of carboxylic acid is bonded to three oxygens giving it priority over methyl carbon (2 vs 3), hydrogen is lowest (4). Counterclockwise gives S.
+
+## Common IChO Traps
+
+1. **Numbering Direction**: Always number the principal chain to give the principal functional group the lowest possible locant, ignoring alkyl substituents if necessary.
+2. **Double Bond Stereochemistry**: Remember that ring systems smaller than 8 carbons cannot accommodate E double bonds stably due to ring strain (except trans-cyclooctene).
+
+## What Graders Want to See
+- Explicit CIP priority assignment list.
+- Clear indication of stereocenter orientation (R/S with group 4 in back).
+- Exact punctuation in IUPAC names (hyphens between numbers and letters, commas between numbers).
+
+## Placeholder for Interactives
+- Interactive: 3D Molecule Builder and CIP Priority Ranker.
+
+## Go Deeper
+- [Stereochemistry and Conformational Analysis](./org-2-stereochemistry)
+
+## Recall Cards
+- **Recall Card 1**: What is the CIP priority order for -OH, -CH3, -CHO, and -H?
+  Answer: -OH (1) > -CHO (2) > -CH3 (3) > -H (4).
+- **Recall Card 2**: When does a molecule possess optical activity?
+  Answer: When it lacks a plane of symmetry (Sn axis), typically possessing chiral centers resulting in non-superimposable mirror images.

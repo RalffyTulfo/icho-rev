@@ -1,0 +1,68 @@
+---
+title: "Biochemistry: Enzyme Kinetics and Catalysis"
+author: "Ralf Christian Mendoza"
+proofreader: ""
+readingTime: 7
+unit: "Biochemistry"
+color: "rose/pink"
+---
+
+# Biochemistry: Enzyme Kinetics and Catalysis
+
+## Terms & Definitions
+
+- **Enzyme**: Biological catalyst (typically protein or ribozyme) that accelerates reaction rates by lowering activation energy.
+- **Michaelis Constant (Km)**: Substrate concentration at which the reaction velocity is half of the maximum velocity (Vmax); a measure of enzyme-substrate affinity.
+- **Turnover Number (kcat)**: Number of substrate molecules converted to product per enzyme active site per unit time.
+- **Competitive Inhibition**: Inhibitor binds reversibly to the active site, increasing apparent Km without altering Vmax.
+- **Noncompetitive / Uncompetitive Inhibition**: Inhibitors binding outside the active site, altering Vmax and/or Km.
+
+## Why Does This Exist?
+
+Enzyme kinetics quantifies biochemical reaction rates and inhibition mechanisms. The Michaelis-Menten equation and Lineweaver-Burk plots are essential tools for analyzing metabolic control and drug action in biochemical IChO problems.
+
+## Derivation from First Principles
+
+### The Michaelis-Menten Equation
+Consider the enzyme-catalyzed reaction mechanism:
+E + S <-> ES -> E + P
+Applying the steady-state approximation (rate of formation of ES equals rate of breakdown):
+k1[E][S] = k-1[ES] + kcat[ES]
+Solving for [ES] and defining Km = (k-1 + kcat) / k1, the initial velocity is:
+v0 = (Vmax * [S]) / (Km + [S])
+
+## Worked Example
+
+## Step 0: Identify Given Parameters and Apply Michaelis-Menten Equation
+**Problem**: An enzyme follows Michaelis-Menten kinetics with Vmax = 50 umol/min and Km = 2.0 mM. Calculate the initial reaction velocity v0 when substrate concentration [S] = 8.0 mM.
+
+**Solution**:
+1. **Michaelis-Menten Equation**:
+   v0 = (Vmax * [S]) / (Km + [S])
+2. **Substitute values**:
+   v0 = (50 umol/min * 8.0 mM) / (2.0 mM + 8.0 mM)
+   v0 = 400 / 10.0 = 40 umol/min.
+
+**Sanity Check**: Since [S] = 8.0 mM is four times greater than Km (2.0 mM), the velocity should approach Vmax, and 40 umol/min is 80% of 50 umol/min, which is correct.
+
+## Common IChO Traps
+
+1. **Lineweaver-Burk Intercepts**: In double-reciprocal (1/v vs 1/[S]) plots, the y-intercept is 1/Vmax, the x-intercept is -1/Km, and the slope is Km/Vmax.
+2. **Competitive Inhibition**: Competitive inhibitors increase Km (apparent Km = alpha * Km) while leaving Vmax unchanged because high substrate concentration overcomes inhibition.
+
+## What Graders Want to See
+- Explicit statement of the Michaelis-Menten equation.
+- Correct substitution of units and parameters.
+- Graphical or algebraic interpretation of enzyme inhibition types.
+
+## Placeholder for Interactives
+- Interactive: Michaelis-Menten Curve and Lineweaver-Burk Inhibition Plotter.
+
+## Go Deeper
+- [Metabolism and Bioenergetics](./biochem-3-metabolism)
+
+## Recall Cards
+- **Recall Card 1**: What does Km represent physically in enzyme kinetics?
+  Answer: The substrate concentration at which the reaction velocity is exactly half of Vmax, reflecting the inverse of enzyme-substrate binding affinity.
+- **Recall Card 2**: How does competitive inhibition affect Vmax and Km on a Lineweaver-Burk plot?
+  Answer: It increases Km (moves x-intercept closer to origin) while leaving Vmax unchanged (same y-intercept).

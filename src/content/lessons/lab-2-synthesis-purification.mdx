@@ -1,0 +1,70 @@
+---
+title: "Practical Lab Skills: Synthesis, Extraction, and Purification"
+author: "Ralf Christian Mendoza"
+proofreader: ""
+readingTime: 6
+unit: "Practical Lab Skills"
+color: "cyan/blue"
+---
+
+# Practical Lab Skills: Synthesis, Extraction, and Purification
+
+## Terms & Definitions
+
+- **Recrystallization**: Purification technique where a solid is dissolved in a minimum amount of hot solvent and allowed to slowly crystallize upon cooling.
+- **Liquid-Liquid Extraction**: Transfer of a solute between two immiscible phases based on partition coefficients (KD = [Solute]org / [Solute]aq).
+- **Vacuum Filtration**: Rapid filtration technique using a Büchner funnel and suction flask powered by a vacuum aspirator.
+- **Melting Point Range**: The temperature interval from when the first crystal begins to melt until the entire sample is liquid; sharp melting points indicate high purity.
+- **Chromatography (TLC / Column)**: Separation technique based on differential partitioning between a stationary phase and a mobile phase.
+
+## Why Does This Exist?
+
+Synthetic organic and inorganic chemistry requires isolating pure products from complex reaction mixtures. Mastering extraction efficiency, recrystallization solvent selection, and melting point analysis is essential for IChO practical lab success.
+
+## Derivation from First Principles
+
+### Liquid-Liquid Extraction Efficiency
+The fraction of solute remaining in the aqueous phase (q) after n successive extractions with volume V_org of organic solvent, starting from aqueous volume V_aq, is given by:
+q^n = (V_aq / (V_aq + KD * V_org))^n
+Extraction efficiency is significantly higher when performing multiple successive extractions with smaller volumes rather than a single extraction with the total volume.
+
+## Worked Example
+
+## Step 0: Apply Extraction Efficiency Formula
+**Problem**: An organic compound has a partition coefficient KD = [org] / [aq] = 4.0 between diethyl ether and water. You have 1.0 g of the compound dissolved in 100 mL of water. Compare the mass extracted into the organic phase using (a) a single extraction with 100 mL of ether, versus (b) two successive extractions with 50 mL of ether each.
+
+**Solution**:
+1. **Case (a): Single extraction with 100 mL**:
+   - V_aq = 100 mL, V_org = 100 mL, KD = 4.0.
+   - Fraction remaining in water (q) = 100 / (100 + (4.0 * 100)) = 100 / 500 = 0.20.
+   - Mass remaining in water = 1.0 g * 0.20 = 0.20 g.
+   - Mass extracted = 1.0 - 0.20 = 0.80 g.
+2. **Case (b): Two successive extractions with 50 mL each (n=2)**:
+   - V_aq = 100 mL, V_org = 50 mL, KD = 4.0.
+   - Fraction remaining in water (q^2) = (100 / (100 + (4.0 * 50)))^2 = (100 / 300)^2 = (1/3)^2 = 1/9 approx 0.111.
+   - Mass remaining in water = 1.0 g * 0.111 = 0.111 g.
+   - Mass extracted = 1.0 - 0.111 = 0.889 g.
+
+**Sanity Check**: Two extractions with 50 mL each extract 0.889 g, which is greater than 0.80 g extracted by a single 100 mL portion, proving the superiority of multiple extractions.
+
+## Common IChO Traps
+
+1. **Venting Separatory Funnels**: Always invert and vent separatory funnels frequently during extractions to release volatile solvent vapor pressure.
+2. **Drying Agents**: Ensure wet organic extracts are dried over anhydrous drying agents (MgSO4, Na2SO4) before solvent evaporation.
+
+## What Graders Want to See
+- Clear mathematical steps for extraction efficiency and percent recovery.
+- Proper justification for solvent selection in recrystallization.
+- Discussion of purity assessment via melting point range or TLC.
+
+## Placeholder for Interactives
+- Interactive: Liquid-Liquid Extraction Efficiency and Recrystallization Solubility Simulator.
+
+## Go Deeper
+- [Practice Hub and Mock Exams](../practice/mock-exam-builder)
+
+## Recall Cards
+- **Recall Card 1**: Why are multiple small-volume extractions more efficient than a single large-volume extraction?
+  Answer: Because extraction efficiency depends exponentially (q^n) on the number of successive extractions (n), leaving progressively less solute behind.
+- **Recall Card 2**: What does a broad or depressed melting point range indicate about a synthesized solid?
+  Answer: It indicates the presence of impurities, which disrupt crystal lattice formation and lower the melting point range.

@@ -1,0 +1,77 @@
+---
+title: "Analytical Chemistry: Acid-Base Equilibria and Buffer Systems"
+author: "Ralf Christian Mendoza"
+proofreader: ""
+readingTime: 6
+unit: "Analytical Chemistry"
+color: "amber/orange"
+---
+
+# Analytical Chemistry: Acid-Base Equilibria and Buffer Systems
+
+## Terms & Definitions
+
+- **Brønsted-Lowry Acid / Base**: Proton (H+) donor / proton acceptor.
+- **Autoionization Constant (Kw)**: Equilibrium constant for water dissociation: Kw = [H+][OH-] = 1.0e-14 at 25 degrees Celsius.
+- **Henderson-Hasselbalch Equation**: Mathematical expression relating pH to buffer component concentrations: pH = pKa + log([A-]/[HA]).
+- **Buffer Capacity (beta)**: The ability of a buffer solution to resist pH changes, defined as the moles of strong acid or base required to change the pH of 1 liter of buffer by 1 unit: beta = dn/d(pH).
+- **Polyprotic Acid**: An acid capable of donating multiple protons per molecule (e.g., H3PO4).
+
+## Why Does This Exist?
+
+Precise control of pH is mandatory in titrations, biological assays, and chemical synthesis. Buffer calculations and fractional composition (alpha) curves are staple analytical problems in IChO theoretical and laboratory exams.
+
+## Derivation from First Principles
+
+### The Henderson-Hasselbalch Equation
+Consider a weak acid HA dissociating in water:
+HA <-> H+ + A-, Ka = [H+][A-] / [HA]
+Taking the negative logarithm (log) of both sides:
+log Ka = log[H+] + log([A-]/[HA])
+-pKa = -pH + log([A-]/[HA])
+pH = pKa + log([A-]/[HA])
+
+## Worked Example
+
+## Step 0: Write Equilibrium Expressions and Mass Balance
+**Problem**: Calculate the pH of a buffer solution prepared by mixing 50.0 mL of 0.100 M acetic acid (CH3COOH, Ka = 1.8e-5) with 30.0 mL of 0.100 M sodium hydroxide (NaOH).
+
+**Solution**:
+1. **Moles of components**:
+   - Moles CH3COOH = 0.050 L * 0.100 M = 5.00e-3 mol.
+   - Moles OH- (NaOH) = 0.030 L * 0.100 M = 3.00e-3 mol.
+2. **Neutralization reaction**:
+   CH3COOH + OH- -> CH3COO- + H2O
+   - Remaining CH3COOH = 5.00e-3 - 3.00e-3 = 2.00e-3 mol.
+   - Formed CH3COO- = 3.00e-3 mol.
+   - Total volume = 50.0 + 30.0 = 80.0 mL = 0.0800 L.
+3. **Concentrations in buffer**:
+   - [CH3COOH] = 2.00e-3 / 0.0800 = 0.0250 M.
+   - [CH3COO-] = 3.00e-3 / 0.0800 = 0.0375 M.
+4. **Henderson-Hasselbalch calculation**:
+   - pKa = -log(1.8e-5) = 4.745.
+   - pH = 4.745 + log(0.0375 / 0.0250) = 4.745 + log(1.50) = 4.745 + 0.176 = 4.92.
+
+**Sanity Check**: Since moles of conjugate base exceed weak acid, the pH is higher than pKa (4.75), which is correct.
+
+## Common IChO Traps
+
+1. **Volume Additivity**: Always recalculate concentrations using the total combined volume after mixing solutions.
+2. **Buffer Range**: Buffers function effectively within pH = pKa +/- 1. Outside this range, buffer capacity drops precipitously.
+
+## What Graders Want to See
+- Clear mole balance before and after neutralization.
+- Correct use of Henderson-Hasselbalch equation with proper concentration ratios.
+- Final pH reported to correct significant figures (decimal places match sig figs of concentration).
+
+## Placeholder for Interactives
+- Interactive: Titration Curve and Buffer Region pH Simulator.
+
+## Go Deeper
+- [Titrations and Gravimetry](./analyt-2-titrations-gravimetry)
+
+## Recall Cards
+- **Recall Card 1**: What is the Henderson-Hasselbalch equation?
+  Answer: pH = pKa + log([A-]/[HA]).
+- **Recall Card 2**: What is the optimal buffer pH range for a weak acid-conjugate base pair?
+  Answer: pH = pKa +/- 1.

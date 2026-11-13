@@ -1,0 +1,74 @@
+---
+title: "Inorganic Chemistry: Coordination Complexes and Crystal Field Theory"
+author: "Ralf Christian Mendoza"
+proofreader: ""
+readingTime: 7
+unit: "Inorganic Chemistry"
+color: "indigo/purple"
+---
+
+# Inorganic Chemistry: Coordination Complexes and Crystal Field Theory
+
+## Terms & Definitions
+
+- **Coordination Number**: The number of donor atoms directly bonded to the central metal ion.
+- **Ligand**: A Lewis base (ion or molecule) donating an electron pair to the central metal ion.
+- **Chelate Effect**: The enhanced thermodynamic stability of a coordination complex containing chelate rings compared to monodentate analogs.
+- **Crystal Field Splitting Energy (Delta_o or Delta_t)**: The energy gap between split d-orbitals in an octahedral or tetrahedral ligand field.
+- **Spectrochemical Series**: Ranking of ligands based on the magnitude of crystal field splitting they cause (I- < Br- < Cl- < F- < OH- < H2O < NH3 < en < NO2- < CN-).
+- **High-Spin vs Low-Spin**: High-spin complexes maximize number of unpaired electrons (weak field, Delta_o < P); low-spin complexes minimize unpaired electrons (strong field, Delta_o > P, where P is pairing energy).
+
+## Why Does This Exist?
+
+Transition metal complexes exhibit stunning colors, variable magnetism, and catalytic activity governed by Crystal Field Theory (CFT). CFT explains d-orbital splitting, color absorption spectra, and magnetic moments tested rigorously in IChO theoretical problems.
+
+## Derivation from First Principles
+
+### Octahedral d-Orbital Splitting
+In an octahedral field (Oh), six negative point-charge ligands approach along the Cartesian axes (x, y, z). 
+- The d_x^2-y^2 and d_z^2 orbitals point directly along the axes toward the incoming ligands, experiencing severe electrostatic repulsion and rising in energy (eg set, +0.6 * Delta_o).
+- The d_xy, d_yz, d_xz orbitals point between the axes, experiencing lower repulsion and dropping in energy (t2g set, -0.4 * Delta_o).
+- **Crystal Field Stabilization Energy (CFSE)**:
+  CFSE = [-0.4 * n(t2g) + 0.6 * n(eg)] * Delta_o + pairing energy corrections
+
+## Worked Example
+
+## Step 0: Identify Oxidation State, d-Electron Count, and Ligand Field Strength
+**Problem**: Calculate the Crystal Field Stabilization Energy (CFSE) in terms of Delta_o and determine the number of unpaired electrons for the high-spin and low-spin octahedral complexes of Fe3+ (d5).
+
+**Solution**:
+1. **Metal ion**: Iron(III), atomic number 26 -> Fe3+ is d5.
+2. **Octahedral d5 High-Spin (Weak-field ligands like H2O)**:
+   - Delta_o < P. Electrons fill singly before pairing.
+   - Configuration: t2g^3 eg^2.
+   - CFSE = [3(-0.4) + 2(0.6)] * Delta_o = [-1.2 + 1.2] * Delta_o = 0.
+   - Unpaired electrons = 5.
+3. **Octahedral d5 Low-Spin (Strong-field ligands like CN-)**:
+   - Delta_o > P. Electrons pair in t2g before occupying eg.
+   - Configuration: t2g^5 eg^0.
+   - CFSE = [5(-0.4) + 0(0.6)] * Delta_o = -2.0 * Delta_o.
+   - Unpaired electrons = 1.
+
+**Sanity Check**: High-spin d5 has equal electrons in t2g and eg, canceling out stabilization to 0 * Delta_o, whereas low-spin packs all 5 electrons into lower-energy t2g, yielding -2.0 * Delta_o.
+
+## Common IChO Traps
+
+1. **Tetrahedral Splitting**: Tetrahedral complexes are always high-spin because Delta_t = 4/9 * Delta_o, which is never large enough to overcome the pairing energy P.
+2. **Jahn-Teller Distortion**: Octahedral d9 and high-spin d4 complexes undergo geometric distortion (elongation/compression along z-axis) to remove orbital degeneracy and lower overall energy.
+
+## What Graders Want to See
+- Explicit d-electron count and metal oxidation state.
+- t2g and eg orbital occupation breakdown.
+- Correct CFSE arithmetic with proper units (Delta_o).
+
+## Placeholder for Interactives
+- Interactive: Octahedral and Tetrahedral d-Orbital Splitting and Spectrochemical Series Color Simulator.
+
+## Go Deeper
+- [Descriptive Inorganic Chemistry and Main Group Elements](./inorg-3-descriptive)
+
+## Recall Cards
+- **Recall Card 1**: Why are tetrahedral complexes always high-spin?
+  Answer: Because tetrahedral crystal field splitting (Delta_t) is only 4/9 of octahedral splitting (Delta_o), which is smaller than the electron pairing energy P.
+- **Recall Card 2**: What causes Jahn-Teller distortion in transition metal complexes?
+  Answer: An asymmetric filling of degenerate eg or t2g orbitals (e.g., d9 or high-spin d4), relieving electronic degeneracy by distorting bond lengths.

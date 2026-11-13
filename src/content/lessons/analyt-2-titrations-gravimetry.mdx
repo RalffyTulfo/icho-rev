@@ -1,0 +1,76 @@
+---
+title: "Analytical Chemistry: Titrations, Indicators, and Gravimetric Analysis"
+author: "Ralf Christian Mendoza"
+proofreader: ""
+readingTime: 6
+unit: "Analytical Chemistry"
+color: "amber/orange"
+---
+
+# Analytical Chemistry: Titrations, Indicators, and Gravimetric Analysis
+
+## Terms & Definitions
+
+- **Equivalence Point**: The theoretical point in a titration where moles of added titrant exactly equal moles of analyte according to stoichiometry.
+- **End Point**: The experimental point where an indicator changes color or a physical sensor signals titration completion.
+- **Titration Error**: The difference between the end point and the equivalence point.
+- **pH Indicator**: A weak organic acid or base whose protonated and deprotonated forms possess distinct colors.
+- **Gravimetric Analysis**: Quantitative analytical technique where the analyte is converted to an insoluble precipitate, filtered, dried, and weighed.
+- **Chelometric Titration**: Titration using a chelating agent (e.g., EDTA) that forms 1:1 complexes with metal ions regardless of charge.
+
+## Why Does This Exist?
+
+Titrimetric and gravimetric analyses are classical quantitative pillars of analytical chemistry. Mastering titration curves, indicator selection, and stoichiometric error analysis is crucial for IChO practical and theoretical problem-solving.
+
+## Derivation from First Principles
+
+### Titration Curve for Weak Acid with Strong Base
+Consider titrating Va liters of weak acid HA (Ca) with strong base (Cb).
+- **Before equivalence point**: A buffer region forms consisting of remaining HA and generated A-. Use Henderson-Hasselbalch.
+- **At equivalence point**: All HA is converted to A-. The solution acts as a weak base:
+  Kb = Kw / Ka = [OH-][HA] / [A-]
+  Solving for [OH-] yields [OH-] = sqrt(Kb * [A-]), from which pOH and pH are calculated.
+
+## Worked Example
+
+## Step 0: Stoichiometry and Equivalence Point Calculation
+**Problem**: Calculate the pH at the equivalence point when 25.0 mL of 0.100 M acetic acid (CH3COOH, Ka = 1.8e-5) is titrated with 0.100 M NaOH.
+
+**Solution**:
+1. **Moles at equivalence**:
+   - Moles CH3COOH initially = 0.0250 L * 0.100 M = 2.50e-3 mol.
+   - Requires 2.50e-3 mol NaOH added.
+   - Volume of NaOH added = 2.50e-3 mol / 0.100 M = 0.0250 L = 25.0 mL.
+   - Total volume at equivalence = 25.0 + 25.0 = 50.0 mL = 0.0500 L.
+2. **Concentration of acetate (CH3COO-)**:
+   - [CH3COO-] = 2.50e-3 mol / 0.0500 L = 0.0500 M.
+3. **Calculate Kb of acetate**:
+   - Kb = Kw / Ka = 1.0e-14 / 1.8e-5 = 5.56e-10.
+4. **Calculate [OH-] and pH**:
+   - [OH-] = sqrt(Kb * [CH3COO-]) = sqrt((5.56e-10)(0.0500)) = 5.27e-6 M.
+   - pOH = -log(5.27e-6) = 5.278.
+   - pH = 14.000 - 5.278 = 8.72.
+
+**Sanity Check**: The equivalence point of a weak acid titrated with a strong base is basic (pH > 7) due to hydrolysis of the conjugate base, matching 8.72.
+
+## Common IChO Traps
+
+1. **Indicator Selection**: Choose an indicator whose color transition range overlaps the steep inflection region of the titration curve at the equivalence point.
+2. **EDTA Titrations**: Remember that EDTA forms 1:1 complexes with metal ions regardless of charge, and conditional formation constants (Kf prime) depend strongly on auxiliary buffer pH.
+
+## What Graders Want to See
+- Stoichiometric volume and mole calculations at equivalence.
+- Correct hydrolysis constant (Kb or Ka) calculation.
+- Final pH with proper sign and significant figures.
+
+## Placeholder for Interactives
+- Interactive: Multi-Acid Titration Curve and Indicator Color Transition Simulator.
+
+## Go Deeper
+- [Instrumental Analysis and Error Propagation](./analyt-3-instrumental-errors)
+
+## Recall Cards
+- **Recall Card 1**: Is the equivalence point of a weak acid-strong base titration acidic, neutral, or basic?
+  Answer: Basic (pH > 7), because the conjugate base of the weak acid undergoes hydrolysis to produce OH-.
+- **Recall Card 2**: What criteria govern a good acid-base indicator?
+  Answer: Its color change interval (pKin +/- 1) must coincide with the steep vertical pH inflection range at the equivalence point.
