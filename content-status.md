@@ -9,7 +9,7 @@
 - [ ] Test with Student Simulator
 - [ ] Anti-Slop review
 - [ ] Teacher review
-- [ ] QA-passed ✅
+- [ ] Not started
 
 ### Calorimetry
 - [ ] Read official IChO syllabus
@@ -19,7 +19,7 @@
 - [ ] Test with Student Simulator
 - [ ] Anti-Slop review
 - [ ] Teacher review
-- [ ] QA-passed ✅
+- [ ] Not started
 
 ### Hess's Law
 - [ ] Read official IChO syllabus
@@ -29,7 +29,7 @@
 - [ ] Test with Student Simulator
 - [ ] Anti-Slop review
 - [ ] Teacher review
-- [ ] QA-passed ✅
+- [ ] Not started
 
 ### Entropy and Free Energy
 - [ ] Read official IChO syllabus
@@ -39,7 +39,7 @@
 - [ ] Test with Student Simulator
 - [ ] Anti-Slop review
 - [ ] Teacher review
-- [ ] QA-passed ✅
+- [ ] Not started
 
 ## Unit 2: Organic Chemistry
 ### Nomenclature

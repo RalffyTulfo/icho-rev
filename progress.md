@@ -3,46 +3,24 @@
 ## Phase 0: Research and Plan
 - [x] Inspect repository structure
 - [x] Verify git setup and credentials
-- [x] Create .claudeignore to exclude reference materials
+- [x] Create .gitignore to exclude reference materials and build artifacts
 - [x] Create .claude/settings.local.json to enable shadcn MCP server
 - [x] Set up git user identity
-- [ ] Inventory installed skills (check ~/.claude/skills)
-- [ ] Extract design system from reference/hero.png
-- [ ] Create SYLLABUS_MAP.md from current IChO regulations
-- [ ] Create CURRICULUM.md with learning path
-- [ ] Determine tech stack (Astro/Vite+MDX)
-- [ ] Design agent roster
+- [x] Inventory installed skills
+- [x] Document skill selection
+- [x] Reset content-status.md
+- [x] Switch to branch build/phase-1-2
+- [x] Create project subagent definitions in .claude/agents/
 
-## Phase 1: Voice Guide, Design System, Motion
-- [ ] Create VOICE_GUIDE.md from reference PDFs
-- [ ] Extract design system (create UI tokens, components)
-- [ ] Create MOTION.md with motion language
-- [ ] Build site skeleton with GitHub Pages
+## Phase 1: Voice Guide, Design System, Motion (COMPLETED)
+- [x] Create SYLLABUS_MAP.md from current IChO regulations (Subagent 1)
+- [x] Create CURRICULUM.md with learning path (Subagent 1)
+- [x] Create VOICE_GUIDE.md from reference PDFs (Subagent 2)
+- [x] Create DESIGN_SYSTEM.md (Subagent 3)
+- [x] Create MOTION.md with motion language (Subagent 3)
 
-## Phase 2: Vertical Slice (Thermodynamics)
-- [ ] Create Thermodynamics unit
-- [ ] Write Thermodynamics lessons with IChO-level problems
-- [ ] Build interactives (Le Chatelier, Hess's-law, dimensional analysis)
-- [ ] Verify with Fact-Checker, Voice Editor, Student Simulator, Anti-Slop
-
-## Phase 3: Other Units
-- [ ] Create Organic Chemistry unit
-- [ ] Create Inorganic Chemistry unit
-- [ ] Create Analytical Chemistry unit
-- [ ] Create Biochemistry unit
-- [ ] Create Practical unit
-
-## Phase 4: Practice Hub
-- [ ] Build mock-exam builder with timer
-- [ ] Create spaced-review queue
-- [ ] Build mistakes notebook
-- [ ] Build toolbox (periodic table, constants, calculators)
-- [ ] Build progress dashboard
-
-## Phase 5: Polish, Accessibility, Motion Review, Final Deployment
-- [ ] Run accessibility audit
-- [ ] Perform motion review (run review-animations)
-- [ ] Final GitHub Pages deplay with /icho-rev subpath
-- [ ] Write "How to update the site" guide
-- [ ] Ensure CONTENT_STATUS.md shows nothing left in draft
-- [ ] Confirm reference/ is absent from repo and history
+## Phase 2: Vertical Slice (Thermodynamics) (WAVE 2 IN PROGRESS)
+- [ ] Build Astro/Vite + MDX skeleton (Subagent 4 - running)
+- [ ] Write Thermodynamics lessons (Subagent 5 - running)
+- [ ] Write Thermodynamics problem sets (Subagent 6 - running)
+- [ ] Build interactives & Voice/Student/Anti-Slop review (WAVE 3 planned)

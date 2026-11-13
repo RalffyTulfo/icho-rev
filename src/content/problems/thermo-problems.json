@@ -1,0 +1,52 @@
+{
+  "thermodynamics": {
+    "tier1": {
+      "problems": [
+        {
+          "id": "thermo-t1-1",
+          "question": "Calculate the change in internal energy (ΔU) for a system that absorbs 500 J of heat and does 200 J of work.",
+          "solution": "ΔU = Q - W = 500 J - 200 J = 300 J",
+          "answer": "300 J"
+        },
+        {
+          "id": "thermo-t1-2",
+          "question": "A gas expands at constant temperature, doing 300 J of work. How much heat is absorbed by the system?",
+          "solution": "For a constant temperature process, ΔU = 0. Therefore, Q = W = 300 J.",
+          "answer": "300 J"
+        }
+      ]
+    },
+    "tier2": {
+      "problems": [
+        {
+          "id": "thermo-t2-1",
+          "question": "Calculate the change in enthalpy (ΔH) for a reaction where 450 J of heat is absorbed and the system does 150 J of work.",
+          "solution": "ΔH = Q_p = 450 J - 150 J = 300 J",
+          "answer": "300 J"
+        },
+        {
+          "id": "thermo-t2-2",
+          "question": "A system undergoes a process where ΔU = 200 J and W = -150 J. Calculate the heat absorbed by the system.",
+          "solution": "Q = ΔU + W = 200 J + (-150 J) = 50 J",
+          "answer": "50 J"
+        }
+      ]
+    },
+    "tier3": {
+      "problems": [
+        {
+          "id": "thermo-t3-1",
+          "question": "A reaction has ΔH = 250 kJ/mol and ΔS = 0.85 kJ/(mol·K). Calculate the temperature at which the reaction becomes spontaneous (ΔG = 0).",
+          "solution": "ΔG = ΔH - TΔS = 0 → 250 kJ/mol - T(0.85 kJ/(mol·K)) = 0 → T = 250 kJ/mol / 0.85 kJ/(mol·K) ≈ 294 K",
+          "answer": "294 K"
+        },
+        {
+          "id": "thermo-t3-2",
+          "question": "For a reversible isothermal expansion, 100 J of work is done by the system. Calculate the heat absorbed by the system.",
+          "solution": "For a reversible isothermal process, ΔU = 0. Therefore, Q = W = 100 J. This is consistent with the first law of thermodynamics for an ideal gas undergoing isothermal expansion.",
+          "answer": "100 J"
+        }
+      ]
+    }
+  }
+}
