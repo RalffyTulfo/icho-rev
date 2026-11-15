@@ -1,0 +1,8 @@
+.obsidian/workspace*.json
+.obsidian/cache
+Projects/*/code/
+.env
+*.key
+secrets
+node_modules
+OS junk
