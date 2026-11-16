@@ -18,9 +18,9 @@
   --color-biochemistry: #e6e6fa;
   --color-practical: #ffa07a;
 
-  --font-display: "Plus Jakarta Sans", sans-serif;
+  --font-display: "Inter", sans-serif;
   --font-body: "Inter", sans-serif;
-  --font-mono: "JetBrains Mono", monospace;
+  --font-mono: "Fira Code", monospace;
 
   --duration-micro: 120ms;
   --duration-ui: 250ms;
@@ -54,6 +54,26 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
   margin: 0;
   padding: 0;
+}
+
+.clean-mode {
+  --font-body: 'Inter', sans-serif;
+  --font-display: 'Inter', sans-serif;
+  --font-mono: 'Fira Code', monospace;
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.reduce-motion {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
 }
 
 .frosted-glass {

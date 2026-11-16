@@ -18,7 +18,7 @@ const units = [
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {units.map((unit) => (
           <a href={`/icho-rev/units/${unit.slug}`} class="group">
-            <div class="frosted-glass p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer h-full border-t-4" style={`border-top-color: var(--color-${unit.slug})`}>
+            <div class="frosted-glass p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer h-full border-t-4 border-${unit.color.replace('bg-', '')} hover:border-${unit.color.replace('bg-', '')}/50" style={`border-top-color: var(--color-${unit.slug})`}>
               <div class={`w-12 h-12 ${unit.color} rounded-full mb-4 flex items-center justify-center text-white font-bold`}>
                 {unit.name.charAt(0)}
               </div>

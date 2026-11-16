@@ -20,9 +20,11 @@
 
     return (
       <button
+        id="clean-mode-toggle"
         onClick={toggleCleanMode}
-        class="frosted-glass p-3 rounded-full flex items-center justify-center"
+        class="frosted-glass p-3 rounded-full flex items-center justify-center text-foreground hover:text-primary transition-all duration-200 hover:scale-105 active:scale-95"
         aria-label="Toggle clean mode"
+        title="Toggle clean mode"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

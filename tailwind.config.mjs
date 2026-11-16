@@ -13,9 +13,9 @@ export default {
         error: 'var(--color-error)',
       },
       fontFamily: {
-        display: ['var(--font-display)', 'sans-serif'],
-        body: ['var(--font-body)', 'sans-serif'],
-        mono: ['var(--font-mono)', 'monospace'],
+        sans: ['Inter', 'sans-serif'],
+        display: ['Inter', 'sans-serif'],
+        mono: ['Fira Code', 'monospace'],
       },
     },
   },

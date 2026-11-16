@@ -24,7 +24,7 @@ const lessons = [
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         {lessons.map((lesson) => (
           <a href={`/icho-rev/lessons/${lesson.slug}`} class="group">
-            <div class="frosted-glass p-6 transition-all duration-300 group-hover:scale-[1.02] cursor-pointer h-full border border-white/10 group-hover:border-primary/50 group-hover:bg-primary/5">
+            <div class="frosted-glass p-6 transition-all duration-300 group-hover:scale-[1.02] cursor-pointer h-full border border-white/10 group-hover:border-primary/50 transition-colors group-hover:bg-primary/5 border-primary/10 hover:border-primary/20">
               <h2 class="text-xl font-bold mb-3 text-foreground group-hover:text-primary transition-colors">{lesson.title}</h2>
               <div class="bg-foreground/5 p-3 rounded-xl font-mono text-sm mb-4 text-primary/80 group-hover:bg-primary/10 transition-colors">
                 {lesson.formula}
