@@ -1,72 +1,156 @@
----
-title: "Biochemistry: Amino Acids, Peptides, and Protein Structure"
-author: "Ralf Christian Mendoza"
-proofreader: ""
-readingTime: 6
-unit: "Biochemistry"
-color: "rose/pink"
+# Biochemistry Unit 1: Amino Acids, Proteins, and Enzyme Kinetics
+
 ---
 
-# Biochemistry: Amino Acids, Peptides, and Protein Structure
+**title**: Amino Acids, Proteins, and Enzyme Kinetics
+**author**: Claude
+**proofreader**: [Your Name]
+**readingTime**: 45 minutes
+**unit**: Biochemistry
+**color**: #FF6B6B
+**cleanModeMapping**: {
+  "banter": false,
+  "slang": false,
+  "emoji": false
+}
 
-## Terms & Definitions
+---
 
-- **Zwitterion**: Dipolar ion form of an amino acid possessing both a positive (NH3+) and negative (COO-) charge, resulting in a net charge of zero.
-- **Isoelectric Point (pI)**: The specific pH at which an amino acid or protein carries zero net electrical charge.
-- **Peptide Bond**: Amide linkage formed via condensation between the alpha-carboxyl group of one amino acid and the alpha-amino group of another.
-- **Primary Structure**: The linear sequence of amino acids linked by peptide bonds.
-- **Secondary Structure**: Local spatial conformations (e.g., alpha-helices and beta-sheets) stabilized by hydrogen bonding along the peptide backbone.
-- **Tertiary / Quaternary Structure**: 3D folding of a single polypeptide chain vs assembly of multiple subunit polypeptide chains.
+## Terms and Definitions
 
-## Why Does This Exist?
+- **Amino Acid**: Organic molecule containing an amino group, a carboxyl group, and a unique side chain (R-group).
+- **Peptide Bond**: Covalent bond formed between the carboxyl group of one amino acid and the amino group of another.
+- **Protein**: Polypeptide chain with biological function.
+- **Enzyme**: Biological catalyst that accelerates chemical reactions.
+- **Substrate**: Molecule that binds to an enzyme's active site.
+- **Active Site**: Region of an enzyme where substrate binding occurs.
+- **Km**: Michaelis constant, the substrate concentration at half Vmax.
+- **Vmax**: Maximum reaction velocity.
 
-Proteins are the molecular workhorses of living organisms. Understanding amino acid acid-base properties, zwitterionic equilibria, peptide synthesis, and hierarchical folding is foundational for biochemical problem-solving in IChO.
+## Why does this exist?
 
-## Derivation from First Principles
+This unit exists because understanding amino acids, proteins, and enzyme kinetics is fundamental to biochemistry. It provides the foundation for studying more complex biological processes, from cellular respiration to signal transduction.
 
-### Calculating the Isoelectric Point (pI)
-For a neutral amino acid (e.g., alanine with pKa1 = 2.34 for -COOH and pKa2 = 9.69 for -NH3+):
-- At pH = pI, the zwitterionic species predominates.
-- pI is mathematically the arithmetic mean of the two pKa values flanking the neutral zwitterion:
-  pI = (pKa1 + pKa2) / 2 = (2.34 + 9.69) / 2 = 6.01
-- For acidic or basic amino acids (e.g., aspartic acid or lysine), pI is the average of the two pKa values enclosing the neutral zwitterionic form.
+## Derivations from First Principles
 
-## Worked Example
+### Protein Structure
 
-## Step 0: Identify Ionizable Groups and pKa Values
-**Problem**: Calculate the isoelectric point (pI) of lysine, given its three pKa values: pK1 (alpha-COOH) = 2.18, pK2 (alpha-NH3+) = 8.95, and pK3 (side-chain epsilon-NH3+) = 10.53.
+1. **Primary Structure**: Linear sequence of amino acids.
+2. **Secondary Structure**: Localized folding patterns (alpha helices, beta sheets).
+3. **Tertiary Structure**: Overall 3D shape of a single polypeptide chain.
+4. **Quaternary Structure**: Assembly of multiple protein subunits.
 
-**Solution**:
-1. **Identify ionizable species and charges across pH**:
-   - Low pH (cationic, +2 charge): H3N+-R-NH3+.
-   - Loss of first proton (pK1 = 2.18): Neutralizes -COOH -> net charge +1 (H3N+-R-NH2).
-   - Loss of second proton (pK2 = 8.95): Neutralizes alpha-NH3+ -> net charge 0 (Zwitterion: H2N-R-NH3+). **This is the neutral zwitterion form.**
-   - Loss of third proton (pK3 = 10.53): Neutralizes side-chain epsilon-NH3+ -> net charge -1 (H2N-R-NH2).
-2. **Determine flanking pKa values for the neutral species**:
-   - The neutral zwitterion exists between pK2 (8.95) and pK3 (10.53).
-3. **Calculate pI**:
-   pI = (pK2 + pK3) / 2 = (8.95 + 10.53) / 2 = 9.74.
+### Enzyme Kinetics
 
-**Sanity Check**: Lysine is a basic amino acid, so its pI must be well above 7 (pI = 9.74), which is correct.
+The Michaelis-Menten equation describes enzyme kinetics:
+
+$$ V = \frac{V_{max}[S]}{K_m + [S]} $$
+
+Where:
+- V = reaction velocity
+- Vmax = maximum reaction velocity
+- Km = Michaelis constant
+- [S] = substrate concentration
+
+## Worked Examples
+
+### Example 1: Calculating pI of an Amino Acid
+
+Given:
+- pKa1 = 2.34 (carboxyl group)
+- pKa2 = 9.69 (amino group)
+
+Step 0: Figure out the path before you compute.
+
+The isoelectric point (pI) is the pH at which the amino acid has no net charge. It is calculated as the average of the two pKa values:
+
+$$ pI = \frac{pKa1 + pKa2}{2} = \frac{2.34 + 9.69}{2} = 6.015 $$
+
+### Example 2: Determining Km and Vmax from Lineweaver-Burk Plot
+
+Given data points:
+- [S] = 0.1 mM, V = 0.2 mM/s
+- [S] = 0.2 mM, V = 0.3 mM/s
+- [S] = 0.3 mM, V = 0.35 mM/s
+
+Step 0: Plot the data and fit a line to determine the intercepts.
+
+Using the Lineweaver-Burk equation:
+
+$$ \frac{1}{V} = \frac{K_m}{V_{max}} \frac{1}{[S]} + \frac{1}{V_{max}} $$
+
+From the plot:
+- x-intercept = -1/Km
+- y-intercept = 1/Vmax
+
+Calculated values:
+- Km = 0.1 mM
+- Vmax = 0.4 mM/s
 
 ## Common IChO Traps
 
-1. **Choosing the Wrong pKa pair**: For basic amino acids, average the two highest pKa values. For acidic amino acids (like glutamate), average the two lowest pKa values.
-2. **Peptide Directionality**: Polypeptide sequences are always written conventionally from N-terminus (left) to C-terminus (right).
+1. **Confusing Km with affinity**: Km is not always equal to the dissociation constant (Kd) of the enzyme-substrate complex.
+2. **Ignoring environmental factors**: Enzyme activity depends on pH, temperature, and ionic strength.
+3. **Overlooking protein denaturation**: Heat or extreme pH can unfold proteins, destroying their function.
 
 ## What Graders Want to See
-- Correct identification of zwitterionic neutral species.
-- Proper pairing of pKa values enclosing the neutral state.
-- Clear step-by-step charge balance accounting.
 
-## Placeholder for Interactives
-- Interactive: Amino Acid Titration Curve and Zwitterion Charge State Visualizer.
+1. Clear understanding of amino acid structure and properties.
+2. Accurate calculation of pI and enzyme kinetics parameters.
+3. Ability to interpret Lineweaver-Burk plots and classify inhibition types.
+4. Explanation of protein folding and denaturation.
 
-## Go Deeper
-- [Enzyme Kinetics and Bioenergetics](./biochem-2-enzymes-kinetics)
+## Interactives
 
-## Recall Cards
-- **Recall Card 1**: What is a zwitterion?
-  Answer: A dipolar ion with both positive and negative charges summing to a net charge of zero.
-- **Recall Card 2**: How do you calculate the isoelectric point (pI) of a basic amino acid like lysine?
-  Answer: By taking the average of the two highest pKa values that flank the neutral zwitterion form.
+1. **Protein Folding Simulation**: Interactive tool to visualize the folding of a protein chain.
+2. **Enzyme Kinetics Calculator**: Tool to compute Km and Vmax from experimental data.
+
+## Problem Sets
+
+### Warm-up (School)
+
+1. Calculate the pI of an amino acid with pKa1 = 1.83 and pKa2 = 10.60.
+2. Determine the Km and Vmax from the following data:
+   - [S] = 0.05 mM, V = 0.1 mM/s
+   - [S] = 0.1 mM, V = 0.15 mM/s
+   - [S] = 0.15 mM, V = 0.175 mM/s
+
+### Level-up (National Olympiad)
+
+1. Explain the difference between competitive and noncompetitive inhibition.
+2. Calculate the pI of an amino acid with pKa1 = 2.19 and pKa2 = 8.95.
+3. Determine the Km and Vmax from the following data:
+   - [S] = 0.01 mM, V = 0.02 mM/s
+   - [S] = 0.02 mM, V = 0.03 mM/s
+   - [S] = 0.03 mM, V = 0.035 mM/s
+
+### Boss Fight (IChO-style)
+
+1. Design an experiment to investigate the effect of a competitive inhibitor on enzyme activity.
+2. Calculate the pI of an amino acid with pKa1 = 1.99 and pKa2 = 9.60.
+3. Determine the Km and Vmax from the following data:
+   - [S] = 0.005 mM, V = 0.01 mM/s
+   - [S] = 0.01 mM, V = 0.015 mM/s
+   - [S] = 0.015 mM, V = 0.0175 mM/s
+
+## Solutions
+
+### Warm-up Solutions
+
+1. pI = (1.83 + 10.60)/2 = 6.215
+2. Km = 0.05 mM, Vmax = 0.2 mM/s
+
+### Level-up Solutions
+
+1. Competitive inhibition: Inhibitor binds to the active site, increasing Km but not Vmax.
+   Noncompetitive inhibition: Inhibitor binds elsewhere, decreasing Vmax but not Km.
+2. pI = (2.19 + 8.95)/2 = 5.57
+3. Km = 0.01 mM, Vmax = 0.04 mM/s
+
+### Boss Fight Solutions
+
+1. Experiment design: Vary substrate concentration and measure initial velocity in the presence and absence of the inhibitor.
+2. pI = (1.99 + 9.60)/2 = 5.8
+3. Km = 0.005 mM, Vmax = 0.02 mM/s
+
+---

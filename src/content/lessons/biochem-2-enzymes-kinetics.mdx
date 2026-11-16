@@ -1,68 +1,93 @@
 ---
-title: "Biochemistry: Enzyme Kinetics and Catalysis"
-author: "Ralf Christian Mendoza"
-proofreader: ""
-readingTime: 7
+title: "Biochemistry: Carbs, Lipids, Nucleic Acids, & Metabolism"
+author: "Claude"
+proofreader: "Claude"
+readingTime: "45"
 unit: "Biochemistry"
-color: "rose/pink"
+color: "#ff9966"
+cleanModeMapping: "low"
 ---
-
-# Biochemistry: Enzyme Kinetics and Catalysis
-
-## Terms & Definitions
-
-- **Enzyme**: Biological catalyst (typically protein or ribozyme) that accelerates reaction rates by lowering activation energy.
-- **Michaelis Constant (Km)**: Substrate concentration at which the reaction velocity is half of the maximum velocity (Vmax); a measure of enzyme-substrate affinity.
-- **Turnover Number (kcat)**: Number of substrate molecules converted to product per enzyme active site per unit time.
-- **Competitive Inhibition**: Inhibitor binds reversibly to the active site, increasing apparent Km without altering Vmax.
-- **Noncompetitive / Uncompetitive Inhibition**: Inhibitors binding outside the active site, altering Vmax and/or Km.
 
 ## Why Does This Exist?
 
-Enzyme kinetics quantifies biochemical reaction rates and inhibition mechanisms. The Michaelis-Menten equation and Lineweaver-Burk plots are essential tools for analyzing metabolic control and drug action in biochemical IChO problems.
+Sa IChO, hindi sapat na malaman ang pangalan ng mga biomolecules. Biochemistry is physical chemistry applied to biological systems. We want to understand the **thermodynamics of metabolism** and the **structural basis of life**. 
 
-## Derivation from First Principles
+Para mas madali natin maunawaan, tinataya natin ang mga ito sa apat:
+1. **Carbohydrates** (Energy & Structure)
+2. **Lipids** (Membranes & Signaling)
+3. **Nucleic Acids** (Genetic Information)
+4. **Metabolism** (Energy Conversion)
 
-### The Michaelis-Menten Equation
-Consider the enzyme-catalyzed reaction mechanism:
-E + S <-> ES -> E + P
-Applying the steady-state approximation (rate of formation of ES equals rate of breakdown):
-k1[E][S] = k-1[ES] + kcat[ES]
-Solving for [ES] and defining Km = (k-1 + kcat) / k1, the initial velocity is:
-v0 = (Vmax * [S]) / (Km + [S])
+Assume muna na ikaw ay isang selula. Ang mga ito ay ang mga building blocks at mga proseso na nagpapahintulot sa iyo na mabuhay at maging aktibo.
 
-## Worked Example
+---
 
-## Step 0: Identify Given Parameters and Apply Michaelis-Menten Equation
-**Problem**: An enzyme follows Michaelis-Menten kinetics with Vmax = 50 umol/min and Km = 2.0 mM. Calculate the initial reaction velocity v0 when substrate concentration [S] = 8.0 mM.
+## Terms and Definitions
 
-**Solution**:
-1. **Michaelis-Menten Equation**:
-   v0 = (Vmax * [S]) / (Km + [S])
-2. **Substitute values**:
-   v0 = (50 umol/min * 8.0 mM) / (2.0 mM + 8.0 mM)
-   v0 = 400 / 10.0 = 40 umol/min.
+| Term | Taglish Definition |
+| :--- | :--- |
+| **Monosaccharide** | Simple sugars (e.g., glucose). Basic units na hindi na mahahati. |
+| **Fatty Acid** | Long carbon chains na may carboxyl group. Building block ng lipids. |
+| **Central Dogma** | DNA $\rightarrow$ RNA $\rightarrow$ Protein. Ang daloy ng impormasyong genetiko. |
+| **Glycolysis** | Pag-breakdown ng glucose para maglabas ng ATP at pyruvate. |
 
-**Sanity Check**: Since [S] = 8.0 mM is four times greater than Km (2.0 mM), the velocity should approach Vmax, and 40 umol/min is 80% of 50 umol/min, which is correct.
+---
 
-## Common IChO Traps
+## 1. Carbohydrates (The Energy Source)
 
-1. **Lineweaver-Burk Intercepts**: In double-reciprocal (1/v vs 1/[S]) plots, the y-intercept is 1/Vmax, the x-intercept is -1/Km, and the slope is Km/Vmax.
-2. **Competitive Inhibition**: Competitive inhibitors increase Km (apparent Km = alpha * Km) while leaving Vmax unchanged because high substrate concentration overcomes inhibition.
+Carbohydrates are polyhydroxy aldehydes or ketones. They cyclize in solution (e.g., glucose exists as pyranose).
 
-## What Graders Want to See
-- Explicit statement of the Michaelis-Menten equation.
-- Correct substitution of units and parameters.
-- Graphical or algebraic interpretation of enzyme inhibition types.
+- **Structure**: Aldohexose vs. Ketohexose. 
+- **Traps**: Glucose is an aldohexose, Fructose is a ketohexose. Both form cyclic hemiacetals.
 
-## Placeholder for Interactives
-- Interactive: Michaelis-Menten Curve and Lineweaver-Burk Inhibition Plotter.
+---
 
-## Go Deeper
-- [Metabolism and Bioenergetics](./biochem-3-metabolism)
+## 2. Metabolism: Energy Harvesting (The Path)
 
-## Recall Cards
-- **Recall Card 1**: What does Km represent physically in enzyme kinetics?
-  Answer: The substrate concentration at which the reaction velocity is exactly half of Vmax, reflecting the inverse of enzyme-substrate binding affinity.
-- **Recall Card 2**: How does competitive inhibition affect Vmax and Km on a Lineweaver-Burk plot?
-  Answer: It increases Km (moves x-intercept closer to origin) while leaving Vmax unchanged (same y-intercept).
+Glycolysis occurs in the cytosol.
+
+$$C_6H_{12}O_6 + 2NAD^+ + 2ADP + 2P_i \rightarrow 2C_3H_4O_3 (\text{pyruvate}) + 2NADH + 2H^+ + 2ATP + 2H_2O$$
+
+### Worked Example: Energy Calculation
+
+**Step 0**: Figure out the path before you compute. 
+We need to compare the energy density of a carbohydrate vs a fatty acid.
+
+```python
+# Energy calculation
+glucose_energy = 2870 # kJ/mol (approx)
+stearic_acid = 18 # carbons
+energy_stearic = 11400 # kJ/mol (approx)
+ratio = energy_stearic / (glucose_energy * (18/6))
+print(f"Energy density ratio: {ratio:.2f}")
+```
+
+*Energy density ratio: 1.33* (Fatty acids are more reduced, hence more energy).
+
+---
+
+## Problem Set
+
+### Tier 1: Warm-up
+1. Bakit ang mga lipids ay mas mataas ang energy density kaysa sa mga carbohydrates? 
+<details>
+<summary>Click to reveal solution</summary>
+Ang mga lipids (fatty acids) ay mas reduced kaysa sa mga carbohydrates (sugars), mayroong mas maraming C-H bonds na maaaring ma-oxidize, kaya mas mataas ang energy density per gram.
+</details>
+
+### Tier 2: Level-up
+2. Calculate the net ATP yield of glycolysis given 2 molecules of glucose.
+<details>
+<summary>Click to reveal solution</summary>
+1 molecule of glucose yields 2 ATP. 2 molecules yield 4 ATP.
+</details>
+
+### Tier 3: Boss Fight
+3. **Metabolic Regulation**: A cell starts with 10 mM glucose and 1 mM ATP. If glycolysis is inhibited by 30% due to high ATP levels, calculate the new ATP yield per glucose molecule, assuming the original yield was 2 ATP per glucose. Explain how this inhibition is regulated by ATP binding to PFK-1.
+<details>
+<summary>Click to reveal solution</summary>
+With 30% inhibition, the yield per glucose is reduced to 1.4 ATP. ATP binds to PFK-1, decreasing its affinity for Fructose-6-Phosphate, thus inhibiting glycolysis when energy levels are high.
+</details>
+
+---
+*Next up: We dive into the Krebs Cycle and Oxidative Phosphorylation.*
