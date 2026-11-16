@@ -74,6 +74,11 @@ body {
   box-shadow: 0 0 20px rgba(59, 130, 246, 0.1);
 }
 
+.lab-grid {
+  background-image: radial-gradient(var(--color-foreground) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
 /* Typography Scale */
 h1, h2, h3 {
   font-family: var(--font-display);

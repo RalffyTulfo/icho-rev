@@ -37,8 +37,9 @@ const units = [
               </div>
 
               <div class="space-y-6 relative">
-                <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl shadow-inner border border-border" style={`background-color: var(--color-${unit.color})10; color: var(--color-${unit.color}); border-color: var(--color-${unit.color})30`}>
-                  {unit.name.charAt(0)}
+                <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl shadow-inner border border-border relative overflow-hidden">
+                  <div class="absolute inset-0 opacity-20" style={`background-color: var(--color-${unit.color});`}></div>
+                  <span class="relative z-10 font-black" style={`color: var(--color-${unit.color});`}>{unit.name.charAt(0)}</span>
                 </div>
 
                 <div class="space-y-2">
