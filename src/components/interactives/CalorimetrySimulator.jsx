@@ -194,7 +194,7 @@ export default function CalorimetrySimulator() {
             </div>
           </div>
 
-          <div className="p-4 rounded-xl bg-foreground/5 border border-foreground/10 text-xs text-foreground/80 leading-relaxed">
+          <div className="p-4 rounded-xl bg-foreground/5 border border-foreground/10 text-xs text-foreground leading-relaxed opacity-80">
             <span className="font-bold text-primary">💡 IChO Insight:</span> In constant-pressure calorimetry ($q_p$), heat equals enthalpy change ($\Delta H$). In bomb calorimetry ($q_v$), volume is fixed so no expansion work occurs, meaning heat equals internal energy change ($\Delta U$).
           </div>
         </div>
