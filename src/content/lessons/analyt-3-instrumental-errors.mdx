@@ -1,0 +1,71 @@
+---
+title: "Analytical Chemistry: Instrumental Methods and Error Propagation"
+author: "Ralf Christian Mendoza"
+proofreader: ""
+readingTime: 6
+unit: "Analytical Chemistry"
+color: "amber/orange"
+---
+
+# Analytical Chemistry: Instrumental Methods and Error Propagation
+
+## Terms & Definitions
+
+- **Systematic Error (Determinate)**: Reproducible errors caused by faulty calibration, instrument bias, or procedural flaws; affects accuracy.
+- **Random Error (Indeterminate)**: Unpredictable fluctuations in measurement; follows a Gaussian (normal) distribution; affects precision.
+- **Propagation of Uncertainty**: Mathematical rules for combining standard deviations (s) of individual measurements into a final calculated result.
+- **Beer-Lambert Law**: Relates absorbance (A) to concentration (c), path length (b), and molar absorptivity (epsilon): A = epsilon * b * c.
+- **Chromatographic Resolution (Rs)**: Measure of separation between two adjacent chromatographic peaks: Rs = 2(tr2 - tr1) / (w1 + w2).
+
+## Why Does This Exist?
+
+Every measurement in chemistry has associated uncertainty. Quantifying random and systematic errors, applying the Beer-Lambert law in spectroscopy, and optimizing chromatographic separation are core analytical skills required in IChO analytical modules.
+
+## Derivation from First Principles
+
+### Propagation of Uncertainty Rules
+For a calculated result Q derived from independent variables x, y, z with standard uncertainties sx, sy, sz:
+1. **Addition / Subtraction** (Q = x + y - z):
+   sQ = sqrt(sx^2 + sy^2 + sz^2)
+2. **Multiplication / Division** (Q = (x * y) / z):
+   (sQ / Q)^2 = (sx / x)^2 + (sy / y)^2 + (sz / z)^2
+3. **Power Function** (Q = x^n):
+   sQ / Q = |n| * (sx / x)
+
+## Worked Example
+
+## Step 0: Identify Mathematical Form and Apply Uncertainty Formula
+**Problem**: The absorbance of a solution is measured as A = 0.450 +/- 0.005. Given a molar absorptivity epsilon = 1.50e3 L/mol*cm (exact) and path length b = 1.00 cm (exact), calculate the concentration c and its absolute uncertainty sc using the Beer-Lambert law (A = epsilon*b*c).
+
+**Solution**:
+1. **Calculate concentration c**:
+   c = A / (epsilon * b) = 0.450 / (1.50e3 * 1.00) = 3.00e-4 M.
+2. **Apply relative uncertainty propagation** (since epsilon and b are exact constants with zero uncertainty):
+   sc / c = sA / A = 0.005 / 0.450 = 0.0111.
+3. **Calculate absolute uncertainty sc**:
+   sc = (3.00e-4 M) * 0.0111 = 3.33e-6 M.
+4. **Final Result**: c = (3.00 +/- 0.03)e-4 M.
+
+**Sanity Check**: Relative uncertainty in A is 0.005 / 0.450 approx 1.11%, so relative uncertainty in c is also 1.11%, yielding 3.00e-4 * 0.0111 = 3.33e-6.
+
+## Common IChO Traps
+
+1. **Standard Deviation vs Standard Error**: Remember that standard error of the mean is sm = s / sqrt(n), dividing by the square root of the number of replicate measurements n.
+2. **Beer-Lambert Deviations**: Beer's law fails at high analyte concentrations (>0.01 M) due to electrostatic interactions altering absorptivity.
+
+## What Graders Want to See
+- Clear identification of addition vs multiplication uncertainty formulas.
+- Correct propagation of relative vs absolute uncertainties.
+- Proper rounding of final uncertainties to 1-2 significant figures.
+
+## Placeholder for Interactives
+- Interactive: Beer-Lambert Law Spectrophotometer and Chromatographic Resolution Simulator.
+
+## Go Deeper
+- [Biochemistry: Amino Acids and Proteins](../biochemistry/biochem-1-amino-acids-proteins)
+
+## Recall Cards
+- **Recall Card 1**: How do relative uncertainties combine in multiplication and division?
+  Answer: As the square root of the sum of squared relative uncertainties: (sQ / Q) = sqrt((sx / x)^2 + (sy / y)^2).
+- **Recall Card 2**: What factors limit the linear range of the Beer-Lambert law?
+  Answer: High concentrations (>0.01 M) causing molecular interactions, stray light in the spectrometer, and polychromatic radiation.

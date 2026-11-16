@@ -1,0 +1,343 @@
+---
+title: "Periodic Trends, Symmetry, and VSEPR Theory"
+author: "Ralf Christian Mendoza"
+proofreader: "Aldrich David Antenor"
+readingTime: 25 min
+unit: "Inorganic Chemistry"
+color: "indigo"
+cleanModeMapping:
+  "lowkey": "honestly"
+  "icl": "I must admit"
+  "hell": "heck"
+  "damn": "very"
+  "basic ass": "simple"
+  "tf": "what on earth"
+  "idfk": "I have no idea"
+  "gng": "everyone"
+  "yk": "you know"
+  "ts": "this material"
+---
+
+# Periodic Trends, Symmetry, and VSEPR Theory
+
+Lowkey this topic looks like simple 3D geometry at first glance, pero if you treat VSEPR like a rigid set of rules without considering steric numbers, lone-pair repulsion, and point group symmetry, IChO graders will roast your answers without mercy. Let's master inorganic geometry and symmetry step-by-step para mas madali na buhay natin.
+
+---
+
+## 🕯🔥 Terms & Definitions 🔥🕯
+
+> **ICHO Grading Tip:** Always define symmetry operations precisely. Never confuse symmetry elements (geometric objects like axes, planes, or points) with symmetry operations (the actual physical rotations, reflections, or inversions). Magagalit ang graders kapag tinawag mong "operation" ang mirror plane $\sigma$!
+
+### 1.1 Valence Shell Electron Pair Repulsion (VSEPR)
+
+**Definition (IUPAC-compliant):** VSEPR theory is a model used to predict the 3D arrangements of atoms in molecules based on minimizing electrostatic repulsion among electron pairs surrounding a central atom.
+
+**Mathematical / Quantitative Model:**
+The total steric number $SN$ of a central atom $A$ bound to $X$ ligands with $E$ lone pairs is given by:
+
+$$
+SN = X + E
+$$
+
+The spatial arrangement minimizes the electrostatic potential energy $V_{\text{rep}}$:
+
+$$
+V_{\text{rep}} \propto \sum_{i < j} \frac{q_i q_j}{r_{ij}^n}
+$$
+
+**Physical meaning:** Electron pairs (both bonding and non-bonding) occupy localized orbitals around a central core. Because like charges repel, these orbital electron clouds spread out as far apart as possible on a sphere centered at the nucleus. Lone pairs $E$ occupy greater spatial volume than bonding pairs $X$ because they are attracted to only *one* atomic nucleus, squeezing adjacent bonding angles smaller than ideal polyhedral values.
+
+### 1.2 Symmetry Elements vs. Operations
+
+**Definitions (IUPAC-compliant):**
+- **Symmetry Operation:** An action (rotation, reflection, inversion) performed on a spatial entity that leaves it in a configuration indistinguishable from the original position.
+- **Symmetry Element:** A geometrical entity (point, line, or plane) with respect to which one or more symmetry operations are carried out.
+
+| Symmetry Element | Symbol | Associated Operation |
+| :--- | :--- | :--- |
+| **Identity** | $E$ | Doing nothing ($E \cdot A = A$). |
+| **Proper Axis** | $C_n$ | Rotation by $2\pi/n$ rad ($360^\circ / n$). |
+| **Mirror Plane** | $\sigma$ | Reflection through a plane ($\sigma_h, \sigma_v, \sigma_d$). |
+| **Inversion Center** | $i$ | Inversion through a central point ($x,y,z \to -x,-y,-z$). |
+| **Improper Axis** | $S_n$ | Rotation by $2\pi/n$ followed by reflection $\sigma_\perp$. |
+
+### 1.3 Point Groups
+
+**Definition (IUPAC-compliant):** A point group is a mathematical group of symmetry operations where all symmetry elements intersect at at least one common fixed point in space.
+
+**Physical meaning:** Every molecule belongs to a specific point group ($C_{2v}, D_{3h}, T_d, O_h, D_{4h}$, etc.) that completely dictates its physical properties—including dipole moment existence, chirality, and IR/Raman vibrational activity.
+
+---
+
+## 💡 Why Does This Exist?
+
+In organic chemistry, structure determines function. In *inorganic* chemistry, structure determines *everything*: magnetism, color, reactivity, catalysis, and spectroscopy!
+
+Sa IChO, hindi ka lang tatanungin kung ano ang shape ng $\text{SF}_4$. Tatanungin ka:
+1. *Bakit* axial positions ang pinupuntahan ng fluorine atoms sa $\text{ClF}_3$ versus equatorial positions for lone pairs?
+2. *Ano* ang complete set of symmetry operations for $\text{XeF}_4$?
+3. *Is* this molecule polar or chiral based purely on point group symmetry?
+
+---
+
+## 📐 VSEPR Rules & Equatorial vs. Axial Preference
+
+When steric number $SN = 5$ (trigonal bipyramidal base), the equatorial positions ($120^\circ$ angles) and axial positions ($90^\circ$ angles) are non-equivalent!
+
+```
+      Axial
+        |
+Equatorial--Central Atom--Equatorial
+       / \
+ Equatorial Axial
+```
+
+### Repulsion Energy Hierarchy:
+$$\text{Lone Pair - Lone Pair (LP-LP)} > \text{Lone Pair - Bonding Pair (LP-BP)} > \text{Bonding Pair - Bonding Pair (BP-BP)}$$
+
+- **Rule 1:** Lone pairs always prefer equatorial positions in $SN=5$ trigonal bipyramidal geometries because equatorial sites experience only two $90^\circ$ repulsions, whereas axial sites experience three $90^\circ$ repulsions.
+- **Rule 2:** More electronegative substituents prefer axial sites (Berry pseudorotation & Bent's Rule: s-character concentrates in orbitals directed toward electropositive ligands, leaving p-rich orbitals for electronegative ligands).
+
+---
+
+## 🔍 Point Group Assignment Algorithm
+
+Follow this step-by-step flowchart logic to determine the point group of any molecule:
+
+```
+[Start] -> Is it linear? 
+   |---> Yes: Does it have an inversion center (i)?
+   |        |---> Yes: D_∞h (e.g. CO2, N2)
+   |        |---> No:  C_∞v (e.g. CO, HCN)
+   |
+   |---> No: High symmetry (Td, Oh, Ih)? 
+   |        |---> Yes: Td (CH4), Oh (SF6), Ih (C60)
+   |
+   |---> No: Find the principal axis C_n (highest n).
+            |---> No C_n axis present?
+            |        |---> σ plane present? C_s
+            |        |---> i center present? C_i
+            |        |---> Neither? C_1
+            |
+            |---> C_n axis present: Are there n perpendicular C_2 axes (n C_2 ⊥ C_n)?
+                     |---> Yes: (D-family)
+                     |        |---> σ_h (horizontal plane ⊥ C_n) present? D_nh
+                     |        |---> n σ_d (dihedral planes) present? D_nd
+                     |        |---> No planes? D_n
+                     |
+                     |---> No: (C or S family)
+                              |---> σ_h present? C_nh
+                              |---> n σ_v planes present? C_nv
+                              |---> S_2n axis present? S_2n
+                              |---> No planes or S_2n? C_n
+```
+
+---
+
+## 🧪 Interactive Modules
+
+import Vsepr3DViewer from '../../../components/interactives/Vsepr3DViewer.jsx';
+import SymmetryOperationSim from '../../../components/interactives/SymmetryOperationSim.jsx';
+
+### Interactive 1: VSEPR 3D Structure Builder & Angle Predictor
+<Vsepr3DViewer defaultMolecule="SF4" />
+
+### Interactive 2: Symmetry Operations & Point Group Explorer
+<SymmetryOperationSim defaultPointGroup="D4h" />
+
+---
+
+## ✏️ Worked Examples
+
+### Worked Example 1: Structure and Point Group of $\text{XeF}_4$
+
+**Problem Statement:**
+Predict the 3D molecular geometry, bond angles, hybridization of Xenon, and complete point group assignment for Xenon Tetrafluoride ($\text{XeF}_4$).
+
+#### Step 0: Figure out the path before you compute
+1. Calculate valence electrons and Steric Number ($SN$).
+2. Assign VSEPR electron-pair spatial geometry and lone pair locations.
+3. Determine molecular geometry (positions of atoms only).
+4. Run through the symmetry point group algorithm.
+
+#### Step 1: Valence Electron Count & Steric Number
+- $\text{Xe}$: Group 18 $\to 8$ valence $e^-$
+- $4 \times \text{F}$: $4 \times 1 = 4$ valence $e^-$
+- Total bonding pairs $X = 4$.
+- Remaining electrons on Xe: $8 - 4 = 4\ e^- \implies 2$ lone pairs ($E = 2$).
+- Steric Number: $SN = X + E = 4 + 2 = 6$.
+
+#### Step 2: Spatial Arrangement & Geometry
+- $SN = 6$ corresponds to an **octahedral** electron-pair parent geometry.
+- For $SN = 6$ with 2 lone pairs ($AX_4E_2$), LP-LP repulsion is minimized when the two lone pairs are at $180^\circ$ relative to each other (axial positions).
+- The 4 Fluorine atoms lie in a single plane $\implies$ **Square Planar** molecular geometry.
+- Xe hybridization: $sp^3d^2$.
+- Bond angles: $\angle \text{F-Xe-F} = 90.0^\circ$ (cis) and $180.0^\circ$ (trans).
+
+#### Step 3: Symmetry Operations & Point Group
+1. Molecule is non-linear, not $T_d/O_h/I_h$.
+2. Principal axis: $C_4$ perpendicular to the $\text{XeF}_4$ plane.
+3. Are there $4 \times C_2$ axes perpendicular to $C_4$? Yes! (2 passing through Xe-F bonds, 2 bisecting F-Xe-F angles). $\implies D$ family.
+4. Is there a horizontal mirror plane $\sigma_h$ ($\perp C_4$)? Yes, the molecular plane containing Xe and the 4 F atoms!
+5. Point Group: **$D_{4h}$**.
+
+**Sanity Check:** Square planar $AX_4E_2$ molecules like $\text{XeF}_4$ and $\text{ICl}_4^-$ are centrosymmetric ($i$ present) with non-polar geometry (dipole moment $\mu = 0$). Correct!
+
+---
+
+## 🚨 Common IChO Traps
+
+- **Trap 1: Counting lone pairs as part of the molecular shape name.**
+  *Wrong:* Calling $\text{H}_2\text{O}$ tetrahedral.
+  *Right:* Parent electron arrangement is tetrahedral, but the *molecular geometry* is **bent** ($C_{2v}$).
+
+- **Trap 2: Ignoring d-orbital participation / Hypervalency debate.**
+  In modern IChO problems, hypervalent molecules (like $\text{SF}_6$, $\text{PCl}_5$) are often described via 3-center 4-electron (3c-4e) bonding or resonance models rather than d-orbital participation. Keep your explanations focused on steric repulsion and electronegativity differences!
+
+- **Trap 3: Misidentifying $\sigma_v$ vs. $\sigma_d$ planes in $D_{nh}$ groups.**
+  $\sigma_v$ planes contain the principal axis and pass *through* atoms; $\sigma_d$ planes contain the principal axis and *bisect* bond angles between atoms.
+
+---
+
+## 🎯 Three-Tier Problem Set
+
+### Tier 1: Warm-up (School Level)
+
+**Problem 1:**
+Predict the molecular geometry, ideal bond angles, and point groups of:
+(a) $\text{BF}_3$
+(b) $\text{NH}_3$
+(c) $\text{SO}_2$
+
+```markdown
+<details>
+<summary>Click to reveal Solution & Mark Scheme</summary>
+
+**Solution:**
+
+**(a) $\text{BF}_3$:**
+- Valence $e^-$ count: $B (3) + 3 \times F (3) = 6\ e^- \implies 3$ bonding pairs, 0 lone pairs ($SN = 3$).
+- Shape: **Trigonal Planar**. Bond angle: **$120^\circ$**.
+- Point group: Principal axis $C_3$, 3 $C_2 \perp C_3$, horizontal plane $\sigma_h \implies \mathbf{D_{3h}}$.
+
+**(b) $\text{NH}_3$:**
+- Valence $e^-$ count: $N (5) + 3 \times H (3) = 8\ e^- \implies 3$ BP, 1 LP ($SN = 4$).
+- Shape: **Trigonal Pyramidal**. Bond angle: $< 109.5^\circ$ ($\approx 107^\circ$).
+- Point group: Principal axis $C_3$, 3 $\sigma_v$ planes containing N-H bonds, no $C_2 \perp C_3 \implies \mathbf{C_{3v}}$.
+
+**(c) $\text{SO}_2$:**
+- Valence $e^-$ count: $S (6) + 2 \times O (12) = 18\ e^- \implies 2$ double bonds (treated as 2 electron domains), 1 LP ($SN = 3$).
+- Shape: **Bent**. Bond angle: $< 120^\circ$ ($\approx 119^\circ$).
+- Point group: Principal axis $C_2$, 2 $\sigma_v$ planes $\implies \mathbf{C_{2v}}$.
+
+**Mark Scheme:**
+- [1 pt] Correct shape names for all 3.
+- [1 pt] Correct bond angles ($120^\circ$, $<109.5^\circ$, $<120^\circ$).
+- [1 pt] Correct point groups ($D_{3h}, C_{3v}, C_{2v}$).
+</details>
+```
+
+---
+
+### Tier 2: Level-up (National Olympiad Level)
+
+**Problem 2:**
+Consider the interhalogen ion $\text{ICl}_2^-$ and interhalogen compound $\text{ClF}_3$.
+1. Draw the Lewis structures including all lone pairs on the central atom.
+2. Determine the molecular geometry for both species.
+3. Explain why $\text{ClF}_3$ adopts a T-shaped geometry instead of a trigonal planar geometry.
+4. Assign the point group of $\text{ClF}_3$.
+
+```markdown
+<details>
+<summary>Click to reveal Solution & Mark Scheme</summary>
+
+**Solution:**
+
+**1. Lewis Structures & Steric Numbers:**
+- $\text{ICl}_2^-$: I has 7 valence $e^- + 1$ charge $+ 2 \times \text{Cl} = 10\ e^-$. $X = 2$ BP, $E = 3$ LP ($SN = 5$).
+- $\text{ClF}_3$: Cl has 7 valence $e^- + 3 \times \text{F} = 10\ e^-$. $X = 3$ BP, $E = 2$ LP ($SN = 5$).
+
+**2. Geometries:**
+- $\text{ICl}_2^-$: $SN = 5$ with 3 equatorial lone pairs $\to$ **Linear** geometry ($\angle \text{Cl-I-Cl} = 180^\circ$).
+- $\text{ClF}_3$: $SN = 5$ with 2 equatorial lone pairs $\to$ **T-shaped** geometry.
+
+**3. Structural Explanation:**
+- In trigonal bipyramidal arrangement ($SN=5$), lone pair electrostatic repulsions follow $\text{LP-LP} > \text{LP-BP} > \text{BP-BP}$.
+- Placing 2 lone pairs in equatorial positions ($120^\circ$ apart) results in ZERO $90^\circ$ LP-LP repulsions and four $90^\circ$ LP-BP repulsions.
+- If lone pairs were axial ($180^\circ$ apart), there would be six $90^\circ$ LP-BP repulsions.
+- Placing 1 axial and 1 equatorial lone pair results in one severe $90^\circ$ LP-LP repulsion.
+- Therefore, the 2 lone pairs occupy equatorial sites, forcing the Fluorine atoms into 2 axial and 1 equatorial site, producing the **T-shape**.
+
+**4. Point Group of $\text{ClF}_3$:**
+- Non-linear, planar molecular geometry.
+- Principal axis: $C_2$ lying along the Cl-F(equatorial) bond.
+- No $C_2 \perp C_2$.
+- Two vertical mirror planes $\sigma_v$ (one in the molecular plane, one perpendicular to it containing the $C_2$ axis).
+- Point group: $\mathbf{C_{2v}}$.
+
+**Mark Scheme:**
+- [1 pt] Correct electron counting & $SN=5$ determination for both.
+- [1 pt] Linear geometry for $\text{ICl}_2^-$ and T-shaped for $\text{ClF}_3$.
+- [2 pts] Rigorous explanation of equatorial lone pair preference minimizing $90^\circ$ LP-LP and LP-BP repulsions.
+- [1 pt] Correct point group assignment $C_{2v}$ for $\text{ClF}_3$.
+</details>
+```
+
+---
+
+### Tier 3: Boss Fight (IChO Level)
+
+**Problem 3:**
+The complex fluorides of sulfur, selenium, and tellurium exhibit fascinating stereochemical fluxionality and geometry variations.
+
+Consider the hypervalent anion $\text{SeF}_5^-$ and neutral molecule $\text{TeF}_6$.
+
+1. Using VSEPR theory, determine the molecular geometry of $\text{SeF}_5^-$. Predict whether the axial-equatorial bond angle $\angle \text{F}_{\text{ax}}\text{-Se-F}_{\text{eq}}$ is equal to, greater than, or less than $90^\circ$.
+2. State the point group of $\text{SeF}_5^-$.
+3. Distinguish between the point groups of staggered ferrocene ($\text{Fe}(\eta^5\text{-C}_5\text{H}_5)_2$) and eclipsed ferrocene. List all symmetry elements present in both conformers.
+
+```markdown
+<details>
+<summary>Click to reveal Solution & Mark Scheme</summary>
+
+**Solution:**
+
+**1. Structure of $\text{SeF}_5^-$:**
+- Se: Group 16 ($6\ e^-$) $+ 1$ negative charge $+ 5 \times \text{F} (5\ e^-) = 12\ e^- \implies 6$ pairs.
+- $X = 5$ bonding pairs, $E = 1$ lone pair ($SN = 6$).
+- Parent geometry: Octahedral ($AX_5E$).
+- Molecular geometry: **Square Pyramidal**.
+- **Bond Angle:** The single lone pair sits at the axial position opposite the pyramid apex. Because LP-BP repulsion is stronger than BP-BP repulsion, the lone pair pushes the 4 basal (equatorial) Fluorine atoms away from itself (towards the apical fluorine).
+- Therefore, $\angle \text{F}_{\text{ax}}\text{-Se-F}_{\text{eq}} < 90^\circ$ (typically $\approx 86^\circ-88^\circ$).
+
+**2. Point Group of $\text{SeF}_5^-$:**
+- Principal axis: $C_4$ running along the Se-F(apical) bond.
+- No $C_2 \perp C_4$.
+- 4 vertical mirror planes $\sigma_v$ containing the $C_4$ axis.
+- Point group: $\mathbf{C_{4v}}$.
+
+**3. Ferrocene Conformers Symmetry:**
+- **Eclipsed Ferrocene:**
+  - $C_5$ principal rotational axis through Fe perpendicular to Cp rings.
+  - $5 \times C_2$ axes perpendicular to $C_5$ in the horizontal plane halfway between Cp rings.
+  - Horizontal mirror plane $\sigma_h$ halfway between rings.
+  - 5 vertical mirror planes $\sigma_v$.
+  - Point Group: $\mathbf{D_{5h}}$.
+
+- **Staggered Ferrocene:**
+  - $C_5$ principal rotational axis through Fe.
+  - $5 \times C_2$ axes perpendicular to $C_5$.
+  - No horizontal mirror plane $\sigma_h$.
+  - $5 \times \sigma_d$ (dihedral) mirror planes bisecting the $C_2$ axes.
+  - Center of inversion $i$ at the Fe atom!
+  - Improper rotational axis $S_{10}$.
+  - Point Group: $\mathbf{D_{5d}}$.
+
+**Mark Scheme:**
+- [2 pts] Square Pyramidal shape for $\text{SeF}_5^-$ with rigorous deduction that $\angle \text{F}_{\text{ax}}\text{-Se-F}_{\text{eq}} < 90^\circ$ due to lone-pair expansion.
+- [1 pt] Point group $C_{4v}$ for $\text{SeF}_5^-$.
+- [2 pts] Eclipsed ferrocene $\to D_{5h}$ (noting $C_5, 5 C_2, \sigma_h, 5 \sigma_v$).
+- [2 pts] Staggered ferrocene $\to D_{5d}$ (noting $C_5, 5 C_2, 5 \sigma_d, i, S_{10}$).
+</details>
+```

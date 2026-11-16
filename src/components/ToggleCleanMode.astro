@@ -1,0 +1,53 @@
+<!-- src/components/ToggleCleanMode.astro -->
+<slot name="toggleCleanMode" />
+
+<script is:inline>
+  import { useState, useEffect } from 'astro:components'
+
+  const ToggleCleanMode = () => {
+    const [cleanMode, setCleanMode] = useState(false)
+    const toggleCleanMode = () => {
+      setCleanMode(!cleanMode)
+      localStorage.setItem('cleanMode', !cleanMode)
+    }
+
+    useEffect(() => {
+      const savedCleanMode = localStorage.getItem('cleanMode')
+      if (savedCleanMode !== null) {
+        setCleanMode(savedCleanMode === 'true')
+      }
+    }, [])
+
+    return (
+      <button
+        onClick={toggleCleanMode}
+        class="frosted-glass p-3 rounded-full flex items-center justify-center"
+        aria-label="Toggle clean mode"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          class="lucide lucide-filter"
+        >
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+        </svg>
+      </button>
+    )
+  }
+</script>
+
+<style>
+  .lucide {
+    display: inline-block;
+    transition: transform 0.2s ease;
+  }
+</style>

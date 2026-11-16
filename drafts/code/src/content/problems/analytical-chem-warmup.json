@@ -1,0 +1,30 @@
+{
+  "unit": "Analytical Chemistry",
+  "tier": "Warm-up",
+  "problems": [
+    {
+      "id": "ac-warmup-1",
+      "lesson": "Introduction to Analytical Chemistry",
+      "question": "What are the four key principles of analytical chemistry?",
+      "answer": "Accuracy, Precision, Sensitivity, Selectivity"
+    },
+    {
+      "id": "ac-warmup-2",
+      "lesson": "Qualitative Analysis",
+      "question": "What is the purpose of a flame test in qualitative analysis?",
+      "answer": "To identify metal ions based on characteristic flame colors"
+    },
+    {
+      "id": "ac-warmup-3",
+      "lesson": "Quantitative Analysis",
+      "question": "What is the difference between gravimetric and volumetric analysis?",
+      "answer": "Gravimetric analysis measures the mass of a precipitate, while volumetric analysis measures the volume of a solution used in a titration"
+    },
+    {
+      "id": "ac-warmup-4",
+      "lesson": "Quantitative Analysis",
+      "question": "What is the purpose of standardization in quantitative analysis?",
+      "answer": "To ensure accurate measurements by using standard solutions of known concentration"
+    }
+  ]
+}

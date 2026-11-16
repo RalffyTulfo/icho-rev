@@ -1,0 +1,24 @@
+{
+  "unit": "Analytical Chemistry",
+  "tier": "Level-up",
+  "problems": [
+    {
+      "id": "ac-levelup-1",
+      "lesson": "Qualitative Analysis",
+      "question": "Design a procedure to identify the unknown metal ion in a solution using flame tests and precipitation reactions.",
+      "answer": "1. Perform flame test to identify the metal ion based on flame color. 2. Conduct precipitation reactions with appropriate reagents to confirm the presence of specific ions. 3. Compare results with known standards to identify the metal ion."
+    },
+    {
+      "id": "ac-levelup-2",
+      "lesson": "Quantitative Analysis",
+      "question": "A 0.500 g sample of an unknown compound produces 0.750 g of AgCl precipitate. Calculate the percentage of chloride ions in the sample.",
+      "answer": "1. Write the balanced chemical equation: AgNO₃ + NaCl → AgCl + NaNO₃. 2. Calculate the molar mass of AgCl: 143.32 g/mol. 3. Calculate moles of AgCl: 0.750 g / 143.32 g/mol = 0.00523 mol. 4. Since the stoichiometry is 1:1, moles of NaCl = 0.00523 mol. 5. Calculate mass of NaCl: 0.00523 mol * 58.44 g/mol = 0.304 g. 6. Calculate percentage of NaCl in the sample: (0.304 g / 0.500 g) * 100% = 60.8%."
+    },
+    {
+      "id": "ac-levelup-3",
+      "lesson": "Quantitative Analysis",
+      "question": "A 25.00 mL sample of vinegar requires 18.75 mL of 0.100 M NaOH to reach the endpoint. Calculate the concentration of acetic acid in the vinegar.",
+      "answer": "1. Write the balanced chemical equation: CH₃COOH + NaOH → CH₃COONa + H₂O. 2. Calculate moles of NaOH used: 18.75 mL * 0.100 M = 0.001875 mol. 3. Since the stoichiometry is 1:1, moles of CH₃COOH = 0.001875 mol. 4. Calculate concentration of CH₃COOH: 0.001875 mol / 0.02500 L = 0.0750 M."
+    }
+  ]
+}

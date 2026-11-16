@@ -1,139 +1,118 @@
 ---
 title: "Thermodynamics: Hess's Law and Enthalpy of Formation"
 author: "Ralf Christian Mendoza"
-proofreader: "Aldrich David Antenor"
-readingTime: 20 min
+proofreader: ""
+readingTime: 5
 unit: "Thermodynamics"
 color: "sky/teal"
-cleanModeMapping:
-  "lowkey": "honestly"
-  "icl": "I must admit"
-  "hell": "heck"
-  "damn": "oh no"
-  "basic ass": "simple"
-  "tf": "what on earth"
-  "idfk": "I have no idea"
-  "gng": "everyone"
-  "yk": "you know"
-  "ts": "this material"
 ---
 
 # Thermodynamics: Hess's Law and Enthalpy of Formation
 
-Lowkey this lesson is the thermodynamic equivalent of having a master key. 🔥 Hess's Law is the reason we don't have to explode every chemical to know how much heat it releases. Para mas madali na buhay natin, let's learn how to sum up enthalpy steps like you're balancing a bank ledger.
+## Terms & Definitions
 
----
+- **Hess's Law**: The enthalpy change for a reaction is the same regardless of the pathway taken. It can be expressed as the sum of enthalpy changes for individual steps in a reaction pathway.
+- **Standard Enthalpy of Formation ($\Delta H_f^$)**: The enthalpy change when one mole of a substance is formed from its constituent elements in their standard states.
+- **Bond Dissociation Enthalpy**: The energy required to break one mole of bonds in a gaseous molecule.
+- **Born-Haber Cycle**: A thermodynamic cycle used to determine lattice enthalpies of ionic compounds.
 
-## 🕯🔥 1. Terms & Definitions 🔥🕯
 
-> **ICHO Grading Tip:** IUPAC precision is non-negotiable. Don't just say "heat"—specify enthalpy, internal energy, or something else. Magagalit graders sayo pag linaktawan mo 'to.
+## Why Does This Exist?
 
-- **Hess's Law**: The total enthalpy change ($\Delta H$) of a chemical reaction is independent of the pathway taken. Whether you do it in one shot or five steps, the start and end states dictate the enthalpy difference. $\Delta H_{\text{total}} = \sum \Delta H_{\text{steps}}$.
-- **Standard Enthalpy of Formation ($\Delta H_f^\circ$)**: The enthalpy change for forming 1 mole of a substance from its elements in their standard states (298.15 K, 1 bar). **Crucial**: $\Delta H_f^\circ = 0$ for pure elements in their most stable form (e.g., $O_2(g)$, $C(\text{graphite})$).
-- **Bond Dissociation Enthalpy ($D$)**: The average energy required to break 1 mole of bonds in a gaseous molecule into gaseous atoms.
-- **Lattice Enthalpy**: The energy released (or required, depending on sign convention) to form 1 mole of a solid ionic compound from its constituent gaseous ions. 
-- **Born-Haber Cycle**: A thermochemical cycle applying Hess's Law to relate the lattice enthalpy to the standard enthalpy of formation, ionization energy, electron affinity, and sublimation energy.
+Hess's Law is a powerful tool for calculating enthalpy changes for complex reactions by breaking them down into simpler, known steps. Understanding standard enthalpies of formation and bond dissociation enthalpies allows us to predict the enthalpy changes for various chemical processes. This lesson introduces Hess's Law, standard enthalpies of formation, bond dissociation enthalpies, and the Born-Haber cycle.
 
----
 
-## 💥 2. Why Does This Exist? (Physical Meaning) 💥
+## Derivation from First Principles
 
-Enthalpy ($H$) is a **state function**. Think of it like altitude on a map—it doesn't matter if you took a helicopter or climbed a mountain, your potential energy change only depends on the start and finish. Hess's Law is simply applying energy conservation to state functions. We use it because we can't always measure a reaction directly (like the formation of an unstable intermediate)—but we can sum up other measurable paths that lead to the same destination. 🥀
+### Hess's Law
 
----
+Hess's Law is derived from the First Law of Thermodynamics and the fact that enthalpy is a state function. It states that the enthalpy change for a reaction is independent of the pathway taken. Mathematically, if a reaction can be represented as a series of steps, the overall enthalpy change is the sum of the enthalpy changes for each step:
 
-## 3. Derivation from First Principles (FULL Rigor)
+$$\Delta H_{rxn} = \sum \Delta H_{steps}$$
 
-### 3.1 Path Independence ($\oint dH = 0$)
+### Standard Enthalpy of Formation
 
-The derivation relies on $H$ being a state function. For any cyclic path in state space (a system returns to its original condition):
+The standard enthalpy of formation ($\Delta H_f^$) is defined as the enthalpy change when one mole of a compound is formed from its elements in their standard states. By definition, the standard enthalpy of formation of an element in its standard state is zero.
 
-$$
-\oint dH = 0
-$$
+### Bond Dissociation Enthalpy
 
-By definition, if you go $A \rightarrow B$ ($ \Delta H_1 $) and then $B \rightarrow A$ ($ \Delta H_2 $), then $\Delta H_1 + \Delta H_2 = 0$. Therefore, $\Delta H_1 = - \Delta H_2$. Hess's Law is the generalization of this principle to any number of paths leading to the same final state.
+Bond dissociation enthalpy is the energy required to break a bond in a gaseous molecule. It is related to the enthalpy change of a reaction through the bonds broken and formed:
 
-### 3.2 Reaction Enthalpy from Formation
+$$\Delta H_{rxn} = \sum \Delta H_{bonds broken} - \sum \Delta H_{bonds formed}$$
 
-To find $\Delta H_{\text{rxn}}^\circ$ for $aA + bB \rightarrow cC + dD$:
-We treat formation as:
-1. Reactants $\rightarrow$ Elements: $\sum \nu_{\text{reactants}} (-\Delta H_f^\circ)$
-2. Elements $\rightarrow$ Products: $\sum \nu_{\text{products}} (\Delta H_f^\circ)$
+### Born-Haber Cycle
 
-$$
-\Delta H_{\text{rxn}}^\circ = \sum \nu_p \Delta H_f^\circ(\text{products}) - \sum \nu_r \Delta H_f^\circ(\text{reactants})
-$$
+The Born-Haber cycle is a thermodynamic cycle used to determine the lattice enthalpy of an ionic compound. It involves the following steps:
 
-**Assumptions:** All species are in standard states (1 bar).
-**Limitations:** $\Delta H_f^\circ$ data are often temperature-dependent; using 298 K values for 500 K reactions requires Kirchhoff's Law corrections.
+1. Sublimation of the metal.
+2. Ionization of the metal.
+3. Dissociation of the non-metal.
+4. Formation of ions.
+5. Formation of the ionic solid.
 
----
+The overall enthalpy change for the formation of the ionic compound can be calculated using the enthalpy changes for each step in the cycle.
 
-## 4. Worked Example: Born-Haber Cycle for NaCl
 
-### Step 0: The Path
-1. $Na(s) + 1/2 Cl_2(g) \rightarrow NaCl(s)$ (This is $\Delta H_f^\circ$)
-2. Hess's Law path:
-   - Sublimation: $Na(s) \rightarrow Na(g)$
-   - Ionization: $Na(g) \rightarrow Na^+(g) + e^-$
-   - Dissociation: $1/2 Cl_2(g) \rightarrow Cl(g)$
-   - Electron Affinity: $Cl(g) + e^- \rightarrow Cl^-(g)$
-   - Lattice Formation: $Na^+(g) + Cl^-(g) \rightarrow NaCl(s)$
+## Worked Example
 
-### Calculation
-Using literature data:
-- $\Delta H_{sub}(Na) = 107.3\text{ kJ/mol}$
-- $IE(Na) = 495.8\text{ kJ/mol}$
-- $1/2 \Delta H_{diss}(Cl_2) = 1/2 \times 243.0 = 121.5\text{ kJ/mol}$
-- $EA(Cl) = -348.6\text{ kJ/mol}$
-- $\Delta H_{lattice}(NaCl) = -787.0\text{ kJ/mol}$
+**Problem**: Calculate the standard enthalpy of formation of water ($\Delta H_f^$) using the following data:
+- $\Delta H_f^$ of H₂ (g) = 0 J/mol
+- $\Delta H_f^$ of O₂ (g) = 0 J/mol
+- Bond dissociation enthalpy of H-H = 436 kJ/mol
+- Bond dissociation enthalpy of O=O = 498 kJ/mol
+- Bond formation enthalpy of O-H = -463 kJ/mol
 
-$$
-\Delta H_f^\circ = 107.3 + 495.8 + 121.5 - 348.6 - 787.0 = -411.0\text{ kJ/mol}
-$$
+**Solution**:
 
-**Sanity Check:** The value is negative, which is expected for a stable ionic solid formed exothermically from its elements.
+The reaction for the formation of water is:
 
----
+$$\frac{1}{2} H_2 (g) + rac{1}{2} O_2 (g) \rightarrow H_2O (l)$$
 
-## 💔 5. Common IChO Traps 💔
+Using bond dissociation and formation enthalpies:
 
-1. **Standard States**: If the element is a liquid ($Br_2$) or solid ($Na$), $\Delta H_f^\circ = 0$. Don't use the wrong form.
-2. **Stoichiometric Multipliers**: Hess's Law cycles often involve half-molar amounts ($1/2 Cl_2$). Forgetting to multiply/divide enthalpies by coefficients is the fastest way to get 0 points.
-3. **Bond Energy Signs**: Bond breaking is **endothermic** (+). Bond formation is **exothermic** (-). Mixing these up is basic ass (simple) mistake.
-4. **Lattice Energy Sign**: Is it defined as forming the solid (exothermic, negative) or breaking the solid into ions (endothermic, positive)? Know the definition in the problem context.
+$$\Delta H_{rxn} = \left(\frac{1}{2} \times 436 \, \text{kJ/mol} + \frac{1}{2} \times 498 \, \text{kJ/mol}\right) - \left(2 \times 463 \, \text{kJ/mol}\right)$$
 
----
+$$\Delta H_{rxn} = (218 + 249) - 926 = -459 \, \text{kJ/mol}$$
 
-## 🎇 6. What Graders Want to See 🎇
+**Sanity Check**: The calculated enthalpy change is negative, indicating that the formation of water from its elements is exothermic, which is consistent with known thermodynamic data.
 
-1. **Draw the Cycle**: Actually draw the Born-Haber cycle. Arrows pointing up/down make it impossible to mess up signs.
-2. **Explicit Equations**: Write the Hess cycle equation before plugging in numbers.
-3. **Dimension Consistency**: Every term must carry the unit $\text{kJ/mol}$.
-4. **Physical Meaning**: Briefly state: "Lattice energy is the primary driving force for the formation of ionic solids, offsetting the energetic cost of ionization."
 
----
+## Common IChO Traps
 
-## 🥀 7. Recall Cards 🥀
+1. **Pathways**: Ensure that you correctly identify and sum the enthalpy changes for all steps in the reaction pathway.
 
-1. **What is Hess's Law?**
-   Ans: $\Delta H$ is path-independent; $\Delta H_{\text{total}} = \sum \Delta H_{\text{steps}}$.
-2. **Is $\Delta H_f^\circ$ of $N_2(g)$ zero?**
-   Ans: Yes, it is a pure element in its standard state.
-3. **Is bond formation exothermic or endothermic?**
-   Ans: Exothermic (negative $\Delta H$).
-4. **Born-Haber Cycle Purpose?**
-   Ans: To determine Lattice Enthalpy from experimental $\Delta H_f^\circ$ and atomic/ionic data.
-5. **If I double the reaction, what happens to $\Delta H$?**
-   Ans: It also doubles. (It's extensive).
-6. **Are Bond Enthalpies exact?**
-   Ans: No, they are *average* values. Experimental results might vary slightly.
-7. **Sign of Lattice Enthalpy?**
-   Ans: Depends on definition; strictly $\Delta H_{\text{lattice}}$ (formation) is negative.
-8. **What if the reaction path has temperature changes?**
-   Ans: Use Kirchhoff's Law ($\int \Delta C_p dT$).
-9. **Is $\Delta H$ a state function?**
-   Ans: Yes.
-10. **tf is a state function?**
-    Ans: A property determined only by current state (T, P, V, n), path-independent. (Use "what on earth" in Clean Mode).
+2. **Sign Conventions**: Be careful with the signs of bond dissociation and formation enthalpies. Bond breaking is endothermic (positive), while bond formation is exothermic (negative).
+
+3. **Stoichiometry**: Ensure that the stoichiometric coefficients are correctly applied when summing enthalpy changes.
+
+
+## What Graders Want to See
+
+- **Clear Definitions**: Define all key terms clearly and concisely.
+- **Step-by-Step Reasoning**: Show your reasoning process for each step in your calculations.
+- **Sanity Checks**: Always include a sanity check to verify that your answer makes sense.
+- **Units**: Include units in all calculations and final answers.
+
+
+## Placeholder for Interactives
+
+- Interactive: Simulate the Born-Haber cycle for a given ionic compound and calculate the lattice enthalpy.
+- Interactive: Use Hess's Law to calculate the enthalpy change for a multi-step reaction.
+
+
+## Go Deeper
+
+- [Entropy and the Second Law of Thermodynamics](link-to-next-lesson)
+- [Gibbs Free Energy and Spontaneity](link-to-next-lesson)
+
+
+## Recall Cards
+
+- **Recall Card 1**: What is Hess's Law?
+  Answer: The enthalpy change for a reaction is the same regardless of the pathway taken.
+
+- **Recall Card 2**: How do you calculate the standard enthalpy of formation of a compound?
+  Answer: Using bond dissociation and formation enthalpies, and summing the enthalpy changes for the formation reaction.
+
+- **Recall Card 3**: What is the Born-Haber cycle used for?
+  Answer: To determine the lattice enthalpy of an ionic compound by analyzing the enthalpy changes for each step in the formation process.

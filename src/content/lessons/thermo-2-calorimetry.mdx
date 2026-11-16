@@ -1,123 +1,121 @@
 ---
 title: "Thermodynamics: Calorimetry and Heat Capacity"
 author: "Ralf Christian Mendoza"
-proofreader: "Aldrich David Antenor"
-readingTime: 20 min
+proofreader: ""
+readingTime: 5
 unit: "Thermodynamics"
 color: "sky/teal"
-cleanModeMapping:
-  "lowkey": "honestly"
-  "icl": "I must admit"
-  "hell": "heck"
-  "damn": "oh no"
-  "basic ass": "simple"
-  "tf": "what on earth"
-  "idfk": "I have no idea"
-  "gng": "everyone"
-  "yk": "you know"
-  "ts": "this material"
 ---
 
 # Thermodynamics: Calorimetry and Heat Capacity
 
-Calorimetry is how we actually measure the heat energy changes ($\Delta H$ or $\Delta U$) in a reaction. When a lab experiment produces heat, you don't just "feel" it—you trap it and measure the temperature rise. Para hindi tayo mag-guess, let’s learn the math behind the bucket. 🔥
+## Terms & Definitions
 
----
+- **Calorimetry**: The science of measuring heat transfer.
+- **Constant-Volume Calorimetry**: A method of measuring heat transfer in a system where the volume is kept constant.
+- **Constant-Pressure Calorimetry**: A method of measuring heat transfer in a system where the pressure is kept constant.
+- **Heat Capacity ($C$)**: The amount of heat required to raise the temperature of a substance by one degree. $C_p$ and $C_v$ are heat capacities at constant pressure and constant volume, respectively.
+- **Kirchhoff's Law of Thermochemistry**: The enthalpy change for a reaction is independent of the path taken, and the enthalpy change for a reaction at a given temperature is equal to the sum of the enthalpy changes for the individual steps in the path.
 
-## 🕯🔥 1. Terms & Definitions 🔥🕯
 
-> **ICHO Grading Tip:** Calorimeter constants change with the setup. Always state the "calorimeter constant" ($C_{cal}$) explicitly if the lab setup involves a non-ideal system.
+## Why Does This Exist?
 
-- **Calorimeter**: A device used to measure the heat of chemical reactions or physical changes as well as heat capacity.
-- **Specific Heat Capacity ($c$)**: The amount of heat required to raise the temperature of 1 gram of a substance by 1 Kelvin. Units: $J \cdot g^{-1} \cdot K^{-1}$.
-- **Molar Heat Capacity ($C_m$)**: The amount of heat required to raise the temperature of 1 mole of a substance by 1 Kelvin. Units: $J \cdot mol^{-1} \cdot K^{-1}$.
-- **Calorimeter Constant ($C_{cal}$)**: The heat capacity of the calorimeter itself. It accounts for the heat absorbed by the thermometer, stirrer, and the container walls.
-- **Bomb Calorimeter**: A constant-volume calorimeter used to measure heat of combustion at constant volume (so $\Delta U$, not $\Delta H$).
+Calorimetry is essential for measuring heat transfer in chemical and physical processes. Understanding heat capacity and Kirchhoff's Law allows us to analyze and predict the behavior of systems under different conditions. This lesson introduces the fundamental concepts of calorimetry, heat capacity, and Kirchhoff's Law, and explains how these concepts are applied in practical scenarios.
 
----
 
-## 💥 2. Why Does This Exist? 💥
+## Derivation from First Principles
 
-We can't measure enthalpy ($H$) directly, but we *can* measure temperature change ($\Delta T$). Calorimetry is the bridge between internal molecular energy and macro-scale lab observations. Without calorimetry, we would have no experimental foundation for the values of $\Delta H_f^\circ$ that Hess's Law depends on. 🥀
+### Constant-Volume and Constant-Pressure Calorimetry
 
----
+- **Constant-Volume Calorimetry**: In a constant-volume calorimeter, the volume of the system is kept constant. The heat added to the system is used to increase the internal energy of the system. The change in internal energy is given by:
 
-## 3. Derivation from First Principles
+$$\Delta U = q_v$$
 
-### 3.1 Energy Balance ($\Delta U_{system} = 0$)
+where $q_v$ is the heat added at constant volume.
 
-In an adiabatic calorimeter, heat exchange only happens within the system:
+- **Constant-Pressure Calorimetry**: In a constant-pressure calorimeter, the pressure of the system is kept constant. The heat added to the system is used to increase the enthalpy of the system. The change in enthalpy is given by:
 
-$$
-q_{reaction} + q_{solution} + q_{calorimeter} = 0
-$$
+$$\Delta H = q_p$$
 
-Since $q = m c \Delta T$ (for liquids/solids) and $q = C_{cal} \Delta T$ (for the calorimeter apparatus):
+where $q_p$ is the heat added at constant pressure.
 
-$$
-q_{rxn} = -(m_{sol} c_{sol} \Delta T + C_{cal} \Delta T)
-$$
+### Heat Capacity
 
-### 3.2 Constant Pressure vs. Constant Volume
+- **$C_p$**: Heat capacity at constant pressure. It represents the amount of heat required to raise the temperature of a substance by one degree at constant pressure.
+- **$C_v$**: Heat capacity at constant volume. It represents the amount of heat required to raise the temperature of a substance by one degree at constant volume.
 
-- **Constant Pressure (Coffee-cup)**: $q_p = \Delta H$.
-- **Constant Volume (Bomb)**: $q_v = \Delta U$.
-- Conversion: $\Delta H = \Delta U + \Delta(PV) = \Delta U + \Delta n_{gas} RT$.
+For an ideal gas, the relationship between $C_p$ and $C_v$ is given by Mayer's relation:
 
----
+$$C_p - C_v = R$$
 
-## 4. Worked Example: Reaction Calorimetry
+where $R$ is the universal gas constant ($8.314 \, \text{J} \cdot \text{mol}^{-1} \cdot \text{K}^{-1}$).
 
-**Problem**: 50.0 mL of 1.0 M HCl is mixed with 50.0 mL of 1.0 M NaOH in a coffee-cup calorimeter. Initial temperature: 22.0 °C. Final temperature: 28.5 °C. Calculate $\Delta H_{rxn}$ per mole of water formed. (Assume solution density = 1.0 g/mL, $c_{sol} = 4.18 J \cdot g^{-1} \cdot K^{-1}$, $C_{cal} = 0.05 kJ \cdot K^{-1}$).
+### Kirchhoff's Law of Thermochemistry
 
-1. **Moles**: $0.050 L \times 1.0 M = 0.050 mol$.
-2. **Temperature change**: $\Delta T = 28.5 - 22.0 = 6.5 K$.
-3. **Heat absorbed**:
-   - $q_{sol} = (100.0 g)(4.18 J/g\cdot K)(6.5 K) = 2717 J$.
-   - $q_{cal} = (50 J/K)(6.5 K) = 325 J$.
-   - $q_{total} = 2717 + 325 = 3042 J = 3.042 kJ$.
-4. **Enthalpy**: $q_{rxn} = -3.042 kJ$.
-   - $\Delta H = -3.042 kJ / 0.050 mol = -60.8 kJ \cdot mol^{-1}$.
+Kirchhoff's Law states that the enthalpy change for a reaction is independent of the path taken, and the enthalpy change for a reaction at a given temperature is equal to the sum of the enthalpy changes for the individual steps in the path. This law is expressed as:
 
----
+$$\Delta H(T_2) = \Delta H(T_1) + \int_{T_1}^{T_2} \Delta C_p \, dT$$
 
-## 💔 5. Common IChO Traps 💔
+where $\Delta H(T_1)$ and $\Delta H(T_2)$ are the enthalpy changes at temperatures $T_1$ and $T_2$, respectively, and $\Delta C_p$ is the change in heat capacity at constant pressure.
 
-1. **Volume of solution**: Remember to add the volumes of the reactants if they are mixed (e.g., 50mL + 50mL = 100mL).
-2. **Density**: Assuming water density (1.0 g/mL) for aqueous solutions when the problem gives something else (like 1.05 g/mL) is a trap.
-3. **Units**: kJ vs J. The heat of reaction is usually kJ/mol, but $mc\Delta T$ is in Joules. Don't divide by 1000 and lose points.
-4. **Bomb Calorimeter Work**: If $\Delta n_{gas} \neq 0$, you *must* correct $\Delta U$ to $\Delta H$.
 
----
+## Worked Example
 
-## 🎇 6. What Graders Want to See 🎇
+**Problem**: Calculate the change in enthalpy ($\Delta H$) for a reaction where 50 J of heat is added to a system at constant pressure, and the system does 20 J of work on its surroundings.
 
-1. **System Definition**: Define exactly what is in your calorimeter system ($m_{sol} + C_{cal}$).
-2. **Explicit Balance**: Write $q_{rxn} = -q_{surroundings}$ clearly.
-3. **Units**: Every line should have proper units ($J$ or $kJ$).
-4. **Assumptions**: Explicitly mention "Assuming specific heat of solution is that of water" if stated.
+**Solution**:
 
----
+Using the First Law of Thermodynamics:
 
-## 🥀 7. Recall Cards 🥀
+$$\Delta U = q + w$$
 
-1. **What is $C_{cal}$?**
-   Ans: Heat capacity of the calorimeter apparatus (thermometer, stirrer, etc.).
-2. **Difference between coffee-cup and bomb?**
-   Ans: Constant pressure ($P$) vs. constant volume ($V$).
-3. **Relationship between $\Delta H$ and $\Delta U$?**
-   Ans: $\Delta H = \Delta U + \Delta(PV) = \Delta U + \Delta n_{gas} RT$.
-4. **Is $c$ extensive or intensive?**
-   Ans: Intensive.
-5. **How to calculate molar enthalpy if $\Delta T$ is known?**
-   Ans: $q = mc\Delta T + C_{cal}\Delta T$; $\Delta H = -q/n$.
-6. **If reaction is exothermic, what happens to $T_{sol}$?**
-   Ans: It increases.
-7. **What if the solution isn't water?**
-   Ans: Use the density and specific heat provided in the problem.
-8. **Does $C_{cal}$ have units?**
-   Ans: Yes, $J \cdot K^{-1}$ or $kJ \cdot K^{-1}$.
-9. **Is $\Delta H$ for neutralization usually exothermic?**
-   Ans: Yes, very.
-10. **tf is a bomb calorimeter used for?**
-    Ans: Measuring combustion enthalpy at constant volume (internal energy change).
+Substitute the given values:
+
+$$\Delta U = 50 \, \text{J} + (-20 \, \text{J}) = 30 \, \text{J}$$
+
+For a constant-pressure process, the change in enthalpy is equal to the heat added:
+
+$$\Delta H = q_p = 50 \, \text{J}$$
+
+**Sanity Check**: The enthalpy change is 50 J, which makes sense because the heat added to the system is 50 J, and the work done by the system is 20 J, resulting in a net increase in enthalpy.
+
+
+## Common IChO Traps
+
+1. **Sign Conventions**: Ensure you are consistent with the sign conventions for heat and work. In many contexts, work done by the system is negative, while work done on the system is positive.
+
+2. **Path vs. State Functions**: Do not confuse state functions with path functions. For example, internal energy is a state function, while heat and work are path functions.
+
+3. **Units**: Always ensure that units are consistent and correctly applied. For example, $R$ is in J/mol·K, so ensure that your calculations align with these units.
+
+
+## What Graders Want to See
+
+- **Clear Definitions**: Define all key terms clearly and concisely.
+- **Step-by-Step Reasoning**: Show your reasoning process for each step in your calculations.
+- **Sanity Checks**: Always include a sanity check to verify that your answer makes sense.
+- **Units**: Include units in all calculations and final answers.
+
+
+## Placeholder for Interactives
+
+- Interactive: Simulate a constant-volume calorimetry experiment and observe the change in internal energy.
+- Interactive: Simulate a constant-pressure calorimetry experiment and observe the change in enthalpy.
+
+
+## Go Deeper
+
+- [Hess's Law and Standard Enthalpies](link-to-next-lesson)
+- [Entropy and the Second Law](link-to-next-lesson)
+
+
+## Recall Cards
+
+- **Recall Card 1**: What is the difference between constant-volume and constant-pressure calorimetry?
+  Answer: In constant-volume calorimetry, the volume is kept constant, and the heat added is used to increase the internal energy. In constant-pressure calorimetry, the pressure is kept constant, and the heat added is used to increase the enthalpy.
+
+- **Recall Card 2**: What is Kirchhoff's Law of Thermochemistry?
+  Answer: The enthalpy change for a reaction is independent of the path taken, and the enthalpy change for a reaction at a given temperature is equal to the sum of the enthalpy changes for the individual steps in the path.
+
+- **Recall Card 3**: How do you calculate the change in enthalpy for a constant-pressure process?
+  Answer: For a constant-pressure process, the change in enthalpy is equal to the heat added to the system.

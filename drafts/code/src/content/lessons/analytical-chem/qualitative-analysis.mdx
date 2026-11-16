@@ -1,0 +1,66 @@
+--- 
+title: "Qualitative Analysis: The Chemical Detective"
+date: "2026-11-14"
+lessonNumber: 2
+unit: "Analytical Chemistry"
+---
+
+import QualitativeAnalysisInteractive from '../../../components/interactives/QualitativeAnalysisInteractive.jsx';
+
+## Identifying the Mystery
+
+May nakita kang clear solution sa lab. Paano mo malalaman kung ano yung laman nun? Dito papasok ang **Qualitative Analysis**. We don't care how much is there (yet), we just want to know *what* is there.
+
+Sa IChO, qualitative analysis usually comes as a "Spot Test" or a "Systematic Scheme." Kelangan master mo 'to lalo na sa Practical Exam!
+
+## 1. The Systematic Cation Scheme (Fresenius)
+
+Hindi pwedeng random test lang. We use a sequence of reagents para ma-separate yung mga ions by groups.
+
+### Group I: The Chloride Group ($\text{Ag}^+, \text{Pb}^{2+}, \text{Hg}_2^{2+}$)
+- **Reagent**: Dilute $\text{HCl}$.
+- **Reaction**: Formation of white chloride precipitates (e.g., $\text{AgCl} \downarrow$).
+- *Pro-tip*: $\text{PbCl}_2$ is soluble in hot water, so you can separate it from $\text{AgCl}$ and $\text{Hg}_2\text{Cl}_2$ easily!
+
+### Group II: The Acid-Sulfide Group ($\text{Cu}^{2+}, \text{Cd}^{2+}, \text{Bi}^{3+}, \text{As}^{3+}$, etc.)
+- **Reagent**: $\text{H}_2\text{S}$ gas in 0.3 M $\text{HCl}$.
+- **Logic**: Low solubility product ($K_{sp}$) precipitates form even in acidic conditions.
+
+### Group III: The Basic-Sulfide/Hydroxide Group ($\text{Fe}^{3+}, \text{Al}^{3+}, \text{Cr}^{3+}, \text{Ni}^{2+}, \text{Zn}^{2+}$, etc.)
+- **Reagent**: $\text{NH}_3/\text{NH}_4\text{Cl}$ buffer + $(\text{NH}_4)_2\text{S}$.
+- **Result**: Mixed hydroxides and sulfides (e.g., $\text{Fe(OH)}_3$ is reddish-brown).
+
+## 2. Flame Tests: The Glow-up
+
+Eto yung pinaka-favorite ng lahat kasi makulay. Pero be careful, accurate description is key.
+
+- **Sodium ($\text{Na}^+$)**: Strong **Persistent Yellow**. (Eto yung epal na ion, kahit konting trace lang, yellow na lahat).
+- **Potassium ($\text{K}^+$)**: **Lilac**. 
+  - *IChO Requirement*: You **MUST** view this through a **cobalt blue glass** para ma-filter out yung yellow emission ng sodium interferents.
+- **Calcium ($\text{Ca}^{2+}$)**: **Brick red** (orange-red).
+- **Barium ($\text{Ba}^{2+}$)**: **Apple green**.
+- **Copper ($\text{Cu}^{2+}$)**: **Blue-green**.
+
+## 3. Confirmatory Tests: Complexation
+
+Para sigurado tayo, we use complex-forming agents.
+
+- **Silver ($\text{Ag}^+$)**: $\text{AgCl}$ dissolves in dilute $\text{NH}_3$ to form the linear complex $[\text{Ag(NH}_3)_2]^+$. If you add $\text{HNO}_3$, mag-re-reprecipitate yung $\text{AgCl}$. Logic check!
+- **Copper ($\text{Cu}^{2+}$)**: Forms a deep royal blue complex $[\text{Cu(NH}_3)_4]^{2+}$ with excess ammonia.
+
+## Interactive Practice: Be the Detective
+
+Try to identify these ions. Observe carefully!
+
+<QualitativeAnalysisInteractive />
+
+## Level-up Quiz
+
+1. **The Lead Mystery**: Why does $\text{Pb}^{2+}$ appear in both Group I and Group II?
+   *Answer: $\text{PbCl}_2$ has a relatively high $K_{sp}$, so it doesn't precipitate completely in Group I.*
+
+2. **The Blue Glass**: Why do we use cobalt blue glass for $\text{K}^+$?
+   *Answer: To absorb the $589 \text{ nm}$ emission of Sodium, allowing the faint lilac emission of Potassium to be seen.*
+
+---
+*Ready na? Next up: Quantitative Analysis. Kakalkulahin na natin kung GAANO karami yung na-identify nating ions.*
