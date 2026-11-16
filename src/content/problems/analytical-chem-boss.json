@@ -1,0 +1,12 @@
+{
+  "unit": "Analytical Chemistry",
+  "tier": "Boss Fight",
+  "problems": [
+    {
+      "id": "ac-boss-1",
+      "lesson": "Quantitative Analysis",
+      "question": "An unknown sample containing a mixture of Na₂CO₃ and NaHCO₃ is titrated with 0.100 M HCl. A 0.500 g sample requires 25.00 mL of HCl to reach the phenolphthalein endpoint and an additional 15.00 mL to reach the methyl orange endpoint. Calculate the mass percentage of both Na₂CO₃ and NaHCO₃ in the sample.",
+      "answer": "1. Understand the titration reactions:\n   - To phenolphthalein endpoint: Na₂CO₃ + HCl → NaHCO₃ + NaCl (neutralizes half of Na₂CO₃)\n   - From phenolphthalein to methyl orange endpoint: NaHCO₃ + HCl → NaCl + H₂O + CO₂ (neutralizes the remaining NaHCO₃ plus the NaHCO₃ formed in the first step)\n2. Calculate moles of HCl used in the second step (methyl orange minus phenolphthalein or equivalent analysis):\n   - Let V₁ be the volume for the first step (25 mL), V₂ for the second step (15 mL).\n   - Moles of Na₂CO₃ = M_HCl * V_V₂ = 0.100 M * 0.01500 L = 0.00150 mol.\n   - Mass of Na₂CO₃ = 0.00150 mol * 105.99 g/mol = 0.159 g.\n3. Calculate moles of NaHCO₃:\n   - Total HCl for Na₂CO₃ is 2 * V₂ (since it takes V₂ to get from phenolphthalein to methyl orange, which equals the volume needed for the first half).\n   - Volume of HCl for the first step due to Na₂CO₃ alone = V₂ = 15.00 mL.\n   - Therefore, the remaining volume for the first step is V₁ - V₂ = 25.00 mL - 15.00 mL = 10.00 mL, which corresponds to the initial NaHCO₃.\n   - Moles of NaHCO₃ = 0.100 M * 0.01000 L = 0.00100 mol.\n   - Mass of NaHCO₃ = 0.00100 mol * 84.01 g/mol = 0.084 g.\n4. Calculate mass percentages:\n   - % Na₂CO₃ = (0.159 g / 0.500 g) * 100% = 31.8%\n   - % NaHCO₃ = (0.084 g / 0.500 g) * 100% = 16.8%"
+    }
+  ]
+}
