@@ -1,15 +1,69 @@
 ---
 import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 <Layout>
-  <main class="pt-20">
-    <div class="frosted-glass hero-ribbon p-8 mx-auto max-w-4xl text-center">
-      <h1 class="text-4xl font-bold mb-4">Interactive Chemistry Review</h1>
-      <p class="text-xl mb-6">Master the IChO with interactive lessons, practice problems, and a vibrant community.</p>
-      <div class="mt-8 flex gap-4 justify-center">
-        <a href="/icho-rev/roadmap" class="bg-primary text-white px-6 py-2 rounded-full hover:bg-primary/90 transition-colors">Explore Roadmap</a>
-        <a href="/icho-rev/about" class="bg-secondary text-white px-6 py-2 rounded-full hover:bg-secondary/90 transition-colors">About IChO</a>
+  <main class="relative min-h-screen flex flex-col items-center justify-center pt-24 pb-16 px-4 overflow-hidden">
+    <!-- Background Grid Logic -->
+    <div class="absolute inset-0 z-[-1] lab-grid opacity-20"></div>
+
+    <div class="max-w-4xl w-full space-y-12 text-center relative">
+      <!-- Ornamental Element: Atom Orbit -->
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-primary/10 rounded-full animate-spin-slow opacity-30 z-[-1]"></div>
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] border border-secondary/10 rounded-full animate-reverse-spin opacity-30 z-[-1]"></div>
+
+      <div class="space-y-6">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-widest">
+          <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+          Revision Engine v2.0
+        </div>
+
+        <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-foreground leading-[1.1]">
+          Master the <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">IChO</span> Curriculum.
+        </h1>
+
+        <p class="text-xl text-foreground/70 max-w-2xl mx-auto leading-relaxed">
+          The ultimate digital laboratory for the International Chemistry Olympiad.
+          Interactive derivations, rigorous problem sets, and modern pedagogy in one place.
+        </p>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <a href={`${base}/roadmap`} class="w-full sm:w-auto px-8 py-4 bg-primary text-white font-bold rounded-xl shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] transition-all">
+          Enter Laboratory
+        </a>
+        <a href={`${base}/about`} class="w-full sm:w-auto px-8 py-4 bg-surface border border-border text-foreground font-bold rounded-xl hover:bg-foreground/5 transition-all">
+          The Syllabus
+        </a>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 text-left">
+        {[
+          { label: 'Units', value: '06', icon: '🧪' },
+          { label: 'Interactive', value: '12+', icon: '⚡' },
+          { label: 'Problems', value: '300+', icon: '🧩' },
+          { label: 'Success', value: '100%', icon: '🥇' },
+        ].map(stat => (
+          <div class="lab-card p-4 space-y-1">
+            <span class="text-xl">{stat.icon}</span>
+            <div class="text-2xl font-bold font-display">{stat.value}</div>
+            <div class="text-xs uppercase tracking-wider text-foreground/50 font-bold">{stat.label}</div>
+          </div>
+        ))}
       </div>
     </div>
   </main>
 </Layout>
+
+<style>
+  @keyframes spin-slow {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+  }
+  @keyframes reverse-spin {
+    from { transform: translate(-50%, -50%) rotate(360deg); }
+    to { transform: translate(-50%, -50%) rotate(0deg); }
+  }
+  .animate-spin-slow { animation: spin-slow 40s linear infinite; }
+  .animate-reverse-spin { animation: reverse-spin 60s linear infinite; }
+</style>

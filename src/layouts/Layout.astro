@@ -17,52 +17,33 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
     <title>IChO Revision Platform</title>
   </head>
-  <body class="min-h-screen flex flex-col antialiased">
-    <header class="fixed top-0 left-0 w-full z-50 frosted-glass border-b border-foreground/10 px-4 py-3 no-print">
+  <body class="min-h-screen flex flex-col antialiased selection:bg-primary/30 text-foreground">
+    <header class="fixed top-0 left-0 w-full z-50 lab-card !rounded-none border-t-0 border-x-0 px-4 py-3 no-print">
       <div class="max-w-7xl mx-auto flex items-center justify-between">
-        <a href={`${base}/`} class="flex items-center gap-2.5 group">
-          <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-600 to-purple-500 flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform duration-200">
-            <span class="text-lg font-extrabold tracking-tight">⚗️</span>
+        <a href={`${base}/`} class="flex items-center gap-2 group">
+          <div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-white shadow-lg shadow-primary/20 group-hover:rotate-6 transition-transform">
+            <span class="text-sm font-bold">⚗️</span>
           </div>
-          <div>
-            <span class="font-bold text-lg tracking-tight text-foreground group-hover:text-primary transition-colors">IChO Rev</span>
-            <span class="hidden sm:inline-block ml-2 text-xs px-2 py-0.5 rounded-full bg-primary/10 text-primary font-semibold">Olympiad Prep</span>
-          </div>
+          <span class="font-black text-lg tracking-tighter uppercase group-hover:text-primary transition-colors">IChO<span class="text-primary">.</span>REV</span>
         </a>
 
-        <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
-          <a href={`${base}/roadmap`} class="text-foreground/80 hover:text-primary transition-colors">Roadmap</a>
-          <a href={`${base}/practice`} class="text-foreground/80 hover:text-primary transition-colors">Practice</a>
-          <a href={`${base}/progress`} class="text-foreground/80 hover:text-primary transition-colors">Progress</a>
-          <a href={`${base}/toolbox`} class="text-foreground/80 hover:text-primary transition-colors">Toolbox</a>
-          <a href={`${base}/about`} class="text-foreground/80 hover:text-primary transition-colors">About</a>
+        <nav class="hidden md:flex items-center gap-1 text-xs font-black uppercase tracking-widest">
+          {[
+            { name: 'Roadmap', href: '/roadmap' },
+            { name: 'Practice', href: '/practice' },
+            { name: 'Progress', href: '/progress' },
+            { name: 'Toolbox', href: '/toolbox' },
+          ].map(item => (
+            <a href={`${base}${item.href}`} class="px-4 py-2 rounded-lg hover:bg-foreground/5 hover:text-primary transition-all">
+              {item.name}
+            </a>
+          ))}
         </nav>
 
-        <div class="flex items-center gap-2">
-          <button id="theme-toggle" class="p-2 rounded-full flex items-center justify-center text-foreground hover:text-primary transition-all duration-200 hover:scale-105 active:scale-95" aria-label="Toggle dark mode" title="Toggle theme (Light / Dark)">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
-            </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 hidden dark:block text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="4"/>
-              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
-            </svg>
-          </button>
-          <button id="clean-mode-toggle" class="p-2 rounded-full flex items-center justify-center text-foreground hover:text-primary transition-all duration-200 hover:scale-105 active:scale-95" aria-label="Toggle clean mode" title="Toggle clean mode">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-filter">
-              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-            </svg>
-          </button>
-          <button id="reduce-motion-toggle" class="p-2 rounded-full flex items-center justify-center text-foreground hover:text-primary transition-all duration-200 hover:scale-105 active:scale-95" aria-label="Toggle reduce motion" title="Toggle reduce motion">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wave-sine">
-              <path d="M12 21v-9l-3 3-3-3v9h6z" />
-              <path d="M12 21v-9l3-3 3 3v9h-6z" />
-              <path d="M12 21v-9l-3-3 3-3v9h6z" />
-              <path d="M12 21v-9l3 3-3 3v9h-6z" />
-            </svg>
-          </button>
+        <div class="flex items-center gap-1">
+          <ToggleTheme />
+          <ToggleCleanMode />
+          <ToggleReduceMotion />
         </div>
       </div>
     </header>
@@ -71,63 +52,20 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       <slot />
     </div>
 
-    <footer class="frosted-glass border-t border-foreground/10 py-8 px-4 mt-16 no-print">
-      <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-foreground/60">
-        <p>© 2026 IChO Revision Hub — Engineered for International Chemistry Olympiad Excellence.</p>
-        <div class="flex gap-6">
-          <a href={`${base}/roadmap`} class="hover:underline">Syllabus</a>
-          <a href={`${base}/practice`} class="hover:underline">Problem Sets</a>
-          <a href={`${base}/about`} class="hover:underline">Guide</a>
+    <footer class="mt-20 border-t border-border py-12 px-4 no-print bg-surface/50">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center text-sm">
+        <div class="space-y-2">
+          <div class="font-black text-xs uppercase tracking-widest text-primary">Status: Operational</div>
+          <p class="text-foreground/40 max-w-sm font-medium">
+            A high-fidelity revision engine designed for the International Chemistry Olympiad community.
+          </p>
+        </div>
+        <div class="flex md:justify-end gap-6 font-bold text-xs uppercase tracking-widest text-foreground/60">
+          <a href={`${base}/about`} class="hover:text-primary">About</a>
+          <a href={`${base}/roadmap`} class="hover:text-primary">Syllabus</a>
+          <a href="https://github.com/RalffyTulfo/icho-rev" class="hover:text-primary">Source</a>
         </div>
       </div>
     </footer>
-
-  <script>
-    // Theme toggle functionality
-    document.addEventListener('DOMContentLoaded', () => {
-      const themeToggle = document.getElementById('theme-toggle');
-      const cleanModeToggle = document.getElementById('clean-mode-toggle');
-      const reduceMotionToggle = document.getElementById('reduce-motion-toggle');
-
-      // Theme toggle
-      themeToggle.addEventListener('click', () => {
-        const currentTheme = document.documentElement.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-      });
-
-      // Clean mode toggle
-      cleanModeToggle.addEventListener('click', () => {
-        document.body.classList.toggle('clean-mode');
-        const isCleanMode = document.body.classList.contains('clean-mode');
-        localStorage.setItem('cleanMode', isCleanMode);
-      });
-
-      // Reduce motion toggle
-      reduceMotionToggle.addEventListener('click', () => {
-        document.body.classList.toggle('reduce-motion');
-        const isReduceMotion = document.body.classList.contains('reduce-motion');
-        localStorage.setItem('reduceMotion', isReduceMotion);
-      });
-
-      // Apply saved preferences
-      const savedTheme = localStorage.getItem('theme');
-      if (savedTheme) {
-        document.documentElement.setAttribute('data-theme', savedTheme);
-      }
-
-      const savedCleanMode = localStorage.getItem('cleanMode');
-      if (savedCleanMode === 'true') {
-        document.body.classList.add('clean-mode');
-      }
-
-      const savedReduceMotion = localStorage.getItem('reduceMotion');
-      if (savedReduceMotion === 'true') {
-        document.body.classList.add('reduce-motion');
-      }
-    });
-  </script>
-
   </body>
 </html>

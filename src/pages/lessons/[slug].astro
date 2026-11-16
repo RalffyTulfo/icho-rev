@@ -13,61 +13,125 @@ export function getStaticPaths() {
 }
 
 const { slug } = Astro.params;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 <Layout>
-  <main class="pt-20 px-4 max-w-6xl mx-auto flex gap-8">
-    <!-- Sticky TOC Margin -->
-    <aside class="w-64 hidden md:block sticky top-24 h-fit frosted-glass p-4 no-print">
-      <h3 class="font-bold text-sm uppercase text-primary mb-3">On this page</h3>
-      <ul class="space-y-2 text-sm">
-        <li><a href="#overview" class="hover:underline">Overview</a></li>
-        <li><a href="#equation" class="hover:underline">Key Equation</a></li>
-        <li><a href="#interactive" class="hover:underline">Interactive Concept</a></li>
-      </ul>
-    </aside>
+  <main class="pt-24 pb-20 min-h-screen relative text-foreground">
+    <!-- Lab Background -->
+    <div class="absolute inset-0 lab-grid opacity-[0.03] z-[-1] pointer-events-none"></div>
 
-    <!-- Lesson Content -->
-    <article class="flex-1 frosted-glass p-8">
-      <h1 class="text-3xl font-bold mb-4 capitalize">{slug.replace('-', ' ')}</h1>
-
-      <!-- Progress Bar -->
-      <div class="w-full bg-foreground/10 h-1.5 rounded-full mb-6 no-print">
-        <div class="bg-primary h-1.5 rounded-full w-2/3"></div>
-      </div>
-
-      <section id="overview" class="mb-8">
-        <p class="text-lg mb-4">Deep dive into {slug.replace('-', ' ')} for International Chemistry Olympiad (IChO) preparation.</p>
-        <div class="bg-primary/10 border-l-4 border-primary p-4 rounded my-4">
-          <p class="font-semibold text-primary">💥 IChO Core Principle</p>
-          <p class="text-sm">Rigorous thermodynamic bookkeeping ensures complete conservation of energy and correct state function manipulation.</p>
-        </div>
-      </section>
-
-      <section id="interactive" class="mb-8">
-        <h2 class="text-xl font-bold mb-3">Educational Interactive Model</h2>
-        <p class="text-sm text-foreground/70 mb-4">Use the interactive simulation below to test your understanding live.</p>
-
-        {slug === 'calorimetry' && (
-          <CalorimetrySimulator client:load />
-        )}
-
-        {slug === 'hess-law' && (
-          <HessBuilder client:load />
-        )}
-
-        {slug !== 'calorimetry' && slug !== 'hess-law' && (
-          <div class="border border-dashed border-primary/50 p-6 rounded-2xl text-center bg-primary/5">
-            <p class="text-sm font-semibold mb-2">[ Interactive Model Container for {slug} ]</p>
-            <p class="text-xs text-foreground/70">Explore parameters and observe live thermodynamic shifts.</p>
+    <div class="max-w-7xl mx-auto px-4 flex flex-col lg:flex-row gap-12 text-foreground">
+      <!-- Technical Sidebar (Marginalia) -->
+      <aside class="w-full lg:w-64 space-y-8 no-print order-2 lg:order-1">
+        <div class="sticky top-32 space-y-8">
+          <div class="lab-card p-6 space-y-4">
+            <h3 class="text-xs font-black uppercase tracking-widest text-primary text-foreground">Metadata</h3>
+            <div class="space-y-3 text-sm">
+              <div class="flex justify-between border-b border-border pb-2">
+                <span class="text-foreground/40 font-bold">Unit</span>
+                <span class="font-black">Thermo</span>
+              </div>
+              <div class="flex justify-between border-b border-border pb-2">
+                <span class="text-foreground/40 font-bold">Difficulty</span>
+                <span class="text-accent font-black">Level 3</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-foreground/40 font-bold">Time</span>
+                <span class="font-black">20 min</span>
+              </div>
+            </div>
           </div>
-        )}
-      </section>
 
-      <!-- Navigation -->
-      <div class="flex justify-between items-center border-t border-foreground/10 pt-6 mt-8 no-print">
-        <a href="/icho-rev/units/thermodynamics" class="text-sm text-foreground/60 hover:underline">← Back to Thermodynamics</a>
-        <a href="/icho-rev/units/thermodynamics" class="bg-primary text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-primary/80">Unit Overview →</a>
-      </div>
-    </article>
+          <div class="space-y-4">
+            <h3 class="text-xs font-black uppercase tracking-widest text-foreground/40 px-6">Contents</h3>
+            <nav class="flex flex-col text-sm font-bold">
+              <a href="#overview" class="px-6 py-2 border-l-2 border-primary text-primary bg-primary/5 transition-all">01. Overview</a>
+              <a href="#interactive" class="px-6 py-2 border-l-2 border-transparent text-foreground/40 hover:text-foreground hover:border-border transition-all">02. Simulation</a>
+              <a href="#derivation" class="px-6 py-2 border-l-2 border-transparent text-foreground/40 hover:text-foreground hover:border-border transition-all">03. Derivation</a>
+            </nav>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Notebook Central Column -->
+      <article class="flex-1 max-w-3xl order-1 lg:order-2">
+        <div class="space-y-12">
+          <header class="space-y-4">
+            <div class="inline-flex items-center gap-2 text-xs font-black uppercase tracking-tighter text-primary">
+              <span class="w-4 h-[1px] bg-primary"></span>
+              Core Curriculum Lesson
+            </div>
+            <h1 class="text-4xl md:text-6xl font-black tracking-tight capitalize leading-none">
+              {slug.replace('-', ' ')}
+            </h1>
+          </header>
+
+          <!-- Status Bar -->
+          <div class="lab-card !rounded-sm px-6 py-3 flex items-center justify-between no-print">
+            <div class="flex items-center gap-3">
+              <div class="w-2 h-2 rounded-full bg-secondary animate-pulse"></div>
+              <span class="text-[10px] font-black uppercase tracking-widest text-foreground/60">System: Synchronized</span>
+            </div>
+            <div class="h-1 w-32 bg-foreground/10 rounded-full overflow-hidden">
+              <div class="h-full bg-primary w-2/3"></div>
+            </div>
+          </div>
+
+          <section id="overview" class="prose prose-invert prose-lab max-w-none">
+            <p class="text-xl text-foreground/70 leading-relaxed font-medium">
+              Rigorous exploration of {slug.replace('-', ' ')} optimized for the IChO technical syllabus.
+            </p>
+
+            <div class="my-8 p-8 border border-primary/20 bg-primary/[0.02] rounded-xl relative overflow-hidden group">
+              <div class="absolute top-0 left-0 w-1 h-full bg-primary"></div>
+              <h4 class="text-primary font-black uppercase tracking-widest text-xs mb-3">⚗️ Graders Insight</h4>
+              <p class="text-sm font-bold text-foreground/80 leading-relaxed italic">
+                "In IChO, sign conventions in thermodynamics are the most common source of error.
+                Always define your system before assigning values to Q and W."
+              </p>
+            </div>
+          </section>
+
+          <section id="interactive" class="space-y-6">
+            <div class="flex items-center gap-4">
+              <h2 class="text-2xl font-black tracking-tight">Active Simulation</h2>
+              <div class="flex-1 h-[1px] bg-border"></div>
+            </div>
+
+            <div class="lab-card p-2 shadow-2xl shadow-primary/5 border-primary/10">
+              <div class="bg-background rounded-lg overflow-hidden border border-border min-h-[400px] flex items-center justify-center relative">
+                {slug === 'calorimetry' && <CalorimetrySimulator client:load />}
+                {slug === 'hess-law' && <HessBuilder client:load />}
+                {slug !== 'calorimetry' && slug !== 'hess-law' && (
+                  <div class="text-center space-y-4">
+                    <div class="text-4xl">🔬</div>
+                    <p class="text-xs font-black uppercase tracking-widest text-foreground/40">Visualizing {slug} parameters...</p>
+                  </div>
+                )}
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <nav class="mt-20 pt-12 border-t border-border flex justify-between items-center no-print text-foreground">
+          <a href={`${base}/roadmap`} class="group flex flex-col">
+            <span class="text-[10px] font-black uppercase tracking-widest text-foreground/40">Return to</span>
+            <span class="font-bold text-sm group-hover:text-primary transition-colors text-foreground">← Syllabus Roadmap</span>
+          </a>
+          <button class="px-6 py-3 bg-foreground/5 hover:bg-foreground/10 text-xs font-black uppercase tracking-widest rounded-lg transition-all text-foreground" onclick="window.print()">
+            Export to PDF
+          </button>
+        </nav>
+      </article>
+    </div>
   </main>
 </Layout>
+
+<style is:global>
+  .prose-lab p {
+    @apply mb-6 text-foreground/80 leading-relaxed;
+  }
+  .prose-lab strong {
+    @apply text-primary font-black;
+  }
+</style>

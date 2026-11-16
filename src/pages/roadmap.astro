@@ -1,34 +1,57 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
 const units = [
-  { name: 'Thermodynamics', slug: 'thermodynamics', color: 'bg-primary' },
-  { name: 'Organic Chemistry', slug: 'organic', color: 'bg-organic' },
-  { name: 'Inorganic Chemistry', slug: 'inorganic', color: 'bg-inorganic' },
-  { name: 'Analytical Chemistry', slug: 'analytical', color: 'bg-analytical' },
-  { name: 'Biochemistry', slug: 'biochemistry', color: 'bg-biochemistry' },
-  { name: 'Practical', slug: 'practical', color: 'bg-practical' },
+  { name: 'Thermodynamics', slug: 'thermodynamics', color: 'physical', desc: 'Energy, entropy, and the fundamental laws governing chemical spontaneity.' },
+  { name: 'Organic Chemistry', slug: 'organic', color: 'organic', desc: 'Reaction mechanisms, stereochemistry, and the logic of carbon-based synthesis.' },
+  { name: 'Inorganic Chemistry', slug: 'inorganic', color: 'inorganic', desc: 'Coordination complexes, crystal field theory, and periodic trends.' },
+  { name: 'Analytical Chemistry', slug: 'analytical', color: 'analytical', desc: 'Quantitative precision, spectroscopy, and qualitative chemical identification.' },
+  { name: 'Biochemistry', slug: 'biochemistry', color: 'biochemistry', desc: 'The molecular machinery of life: proteins, lipids, and metabolic flux.' },
+  { name: 'Practical Skills', slug: 'practical', color: 'practical', desc: 'Laboratory safety, synthesis design, and advanced purification techniques.' },
 ];
 ---
 <Layout>
-  <main class="pt-24 px-4 min-h-screen">
-    <div class="frosted-glass p-8 mx-auto max-w-5xl">
-      <h1 class="text-3xl font-bold mb-8 text-foreground">IChO Learning Roadmap</h1>
+  <main class="pt-32 pb-20 px-4 min-h-screen relative overflow-hidden text-foreground">
+    <div class="absolute inset-0 lab-grid opacity-10 z-[-1]"></div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {units.map((unit) => (
-          <a href={`/icho-rev/units/${unit.slug}`} class="group">
-            <div class="frosted-glass p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer h-full border-t-4 border-${unit.color.replace('bg-', '')} hover:border-${unit.color.replace('bg-', '')}/50" style={`border-top-color: var(--color-${unit.slug})`}>
-              <div class={`w-12 h-12 ${unit.color} rounded-full mb-4 flex items-center justify-center text-white font-bold`}>
-                {unit.name.charAt(0)}
+    <div class="max-w-6xl mx-auto space-y-12">
+      <div class="space-y-4">
+        <h1 class="text-4xl md:text-5xl font-black tracking-tight">
+          Syllabus <span class="text-primary">Roadmap</span>
+        </h1>
+        <p class="text-foreground/60 max-w-xl text-lg">
+          Navigate through the core disciplines of the IChO curriculum.
+          Each node represents a critical pillar of competitive chemistry.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative">
+        {units.map((unit, index) => (
+          <a href={`${base}/units/${unit.slug}`} class="group">
+            <div class="lab-card p-8 h-full flex flex-col justify-between group-hover:border-primary/50 relative overflow-hidden">
+              <!-- Index Number -->
+              <div class="absolute -top-4 -right-4 text-8xl font-black text-foreground/[0.03] select-none group-hover:text-primary/[0.05] transition-colors">
+                {String(index + 1).padStart(2, '0')}
               </div>
-              <h2 class="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">{unit.name}</h2>
-              <p class="text-sm text-foreground/70">Master the fundamental principles and advanced applications of {unit.name.toLowerCase()} for IChO.</p>
-              <div class="mt-4 flex items-center text-xs font-semibold text-primary uppercase tracking-wider">
-                Start Learning
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                </svg>
+
+              <div class="space-y-6 relative">
+                <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl shadow-inner border border-border" style={`background-color: var(--color-${unit.color})10; color: var(--color-${unit.color}); border-color: var(--color-${unit.color})30`}>
+                  {unit.name.charAt(0)}
+                </div>
+
+                <div class="space-y-2">
+                  <h2 class="text-2xl font-bold group-hover:text-primary transition-colors">{unit.name}</h2>
+                  <p class="text-sm text-foreground/60 leading-relaxed">{unit.desc}</p>
+                </div>
+              </div>
+
+              <div class="mt-8 pt-6 border-t border-border flex items-center justify-between">
+                <span class="text-xs font-black uppercase tracking-widest text-foreground/40 group-hover:text-primary transition-colors">Launch Module</span>
+                <div class="w-8 h-8 rounded-full bg-foreground/5 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all text-foreground">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+                </div>
               </div>
             </div>
           </a>
@@ -39,13 +62,11 @@ const units = [
 </Layout>
 
 <style>
-  /* Local color overrides since Tailwind vars are dynamic */
-  :root {
-    --color-thermodynamics: var(--color-physical);
-    --color-organic: var(--color-organic);
-    --color-inorganic: var(--color-inorganic);
-    --color-analytical: var(--color-analytical);
-    --color-biochemistry: var(--color-biochemistry);
-    --color-practical: var(--color-practical);
+  .lab-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    backdrop-filter: blur(8px);
+    transition: all var(--duration-ui) var(--ease-out);
   }
 </style>
