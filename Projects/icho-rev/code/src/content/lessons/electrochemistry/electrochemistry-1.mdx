@@ -1,0 +1,148 @@
+---
+title: Electrochemical Cells and Potentials (Unit 7 Lesson 1)
+author: Ralf
+proofreader: None
+readingTime: 45
+unit: Unit 7: Electrochemistry
+color: indigo/emerald
+cleanModeMapping:
+  - path: "## 1. Electrochemical Cell Basics"
+    clean: true
+  - path: "## 2. Standard Reduction Potentials"
+    clean: false
+  - path: "## 3. The Nernst Equation"
+    clean: true
+---
+
+# Electrochemical Cells and Potentials
+
+Electrochemistry is just chemistry's way of saying "I can power your phone." We're basically hijacking electron transfers to do work. If you don't get this, you're literally in the dark.
+
+## Terms and Definitions Box
+
+| Term | Definition |
+|------|------------|
+| **Anode** | Electrode kung saan nagaganap ang **oxidation**; electrons are released. |
+| **Cathode** | Electrode kung saan nagaganap ang **reduction**; electrons are accepted. |
+| **Electrolyte** | Medium na nagko-conduct ng ions between electrodes. |
+| **Salt Bridge** | Barrier na nag-aallow ng ion flow para ma-maintain ang electrical neutrality. |
+| **Galvanic (Voltaic)** | Spontaneous cell na nagko-convert ng chemical energy to electrical energy. |
+| **Electromotive Force (EMF)** | The potential difference between electrodes; highkey the "voltage". |
+| **Standard Potential ($E^\circ$)** | Reduction potential measured under standard conditions (1 M, 1 atm, 298 K). |
+| **Faraday Constant ($F$)** | Charge of one mole of electrons $\approx 96,485 \text{ C mol}^{-1}$. |
+
+## Why does this exist?
+Bakit mahalaga ang electrochemical cells? Simple: they're everywhere. From the lithium-ion battery in your pocket to the complex biological redox chains in your mitochondria, electron flow is life. In IChO, they love this because it connects pure thermodynamics ($\Delta G$) to measurable physical properties (Voltage). Kung hindi mo alam kung bakit 1.10V ang Zn-Cu cell, lowkey bagsak ka na sa electrochem. It's the bridge between "this reaction might happen" and "this reaction is powering a city."
+
+## 1. Electrochemical Cell Basics
+
+An electrochemical cell is represented in standard notation. Format: **Anode || Cathode**.
+$$\text{Zn}(s) | \text{Zn}^{2+}(1 \text{ M}) || \text{Cu}^{2+}(1 \text{ M}) | \text{Cu}(s)$$
+
+- **Anode (Left):** $\text{Zn}(s) \rightarrow \text{Zn}^{2+}(aq) + 2e^-$ (Oxidation)
+- **Cathode (Right):** $\text{Cu}^{2+}(aq) + 2e^- \rightarrow \text{Cu}(s)$ (Reduction)
+- **Overall:** $\text{Zn}(s) + \text{Cu}^{2+}(aq) \rightarrow \text{Zn}^{2+}(aq) + \text{Cu}(s)$
+
+### Standard Cell Potential
+The standard cell potential ($E^\circ_\text{cell}$) is the difference between the reduction potentials of the two half-cells:
+$$E^\circ_\text{cell} = E^\circ_\text{cathode} - E^\circ_\text{anode}$$
+
+For our Zn-Cu cell:
+$$E^\circ_\text{cell} = (+0.34 \text{ V}) - (-0.76 \text{ V}) = +1.10 \text{ V}$$
+
+> **Trap:** Standard potentials are **intensive properties**. Kahit i-multiply mo yung half-reaction by 10 para ma-balance, yung $E^\circ$ value stays the same. Huwag maging bida-bida at i-multiply yung voltage.
+
+## 2. Standard Reduction Potentials
+
+Lahat ng potentials are relative to the **Standard Hydrogen Electrode (SHE)**, which we arbitrarily set to $0.00 \text{ V}$.
+
+| Half-reaction | $E^\circ$ (V) |
+|---------------|---------------|
+| $\text{F}_2 + 2e^- \rightarrow 2\text{F}^-$ | +2.87 |
+| $\text{MnO}_4^- + 8\text{H}^+ + 5e^- \rightarrow \text{Mn}^{2+} + 4\text{H}_2\text{O}$ | +1.51 |
+| $\text{Ag}^+ + e^- \rightarrow \text{Ag}$ | +0.80 |
+| $\text{Cu}^{2+} + 2e^- \rightarrow \text{Cu}$ | +0.34 |
+| $2\text{H}^+ + 2e^- \rightarrow \text{H}_2$ | 0.00 |
+| $\text{Zn}^{2+} + 2e^- \rightarrow \text{Zn}$ | -0.76 |
+| $\text{Mg}^{2+} + 2e^- \rightarrow \text{Mg}$ | -2.37 |
+| $\text{Li}^+ + e^- \rightarrow \text{Li}$ | -3.05 |
+
+**Rule of Thumb:** The more positive the $E^\circ$, the more it *wants* to be reduced. The more negative, the more it *wants* to be oxidized.
+
+## 3. The Nernst Equation
+
+Reality is rarely 1 M. For non-standard conditions, we use the Nernst Equation:
+$$E = E^\circ - \frac{RT}{nF} \ln Q$$
+
+At $298.15 \text{ K}$, this simplifies to:
+$$E = E^\circ - \frac{0.0592}{n} \log_{10} Q$$
+
+### Thermodynamics Connection (IChO Level 3)
+Voltage is just Gibbs Free Energy in a suit:
+$$\Delta G = -nFE$$
+$$\Delta G^\circ = -nFE^\circ = -RT \ln K$$
+
+This means a positive $E^\circ$ implies a negative $\Delta G^\circ$ and a large $K$. Spontaneous as hell.
+
+---
+
+## Problem Set
+
+### Warm-up (School Level)
+1. Predict if the following reaction is spontaneous under standard conditions:
+   $$\text{Fe}^{2+}(aq) + \text{Cu}(s) \rightarrow \text{Fe}(s) + \text{Cu}^{2+}(aq)$$
+   Given: $E^\circ_{\text{Fe}^{2+}/\text{Fe}} = -0.44 \text{ V}$, $E^\circ_{\text{Cu}^{2+}/\text{Cu}} = +0.34 \text{ V}$.
+
+### Level-up (National Olympiad)
+2. Calculate the equilibrium constant $K$ for the Zn-Cu cell at 25°C.
+   $$\text{Zn}(s) + \text{Cu}^{2+}(aq) \rightleftharpoons \text{Zn}^{2+}(aq) + \text{Cu}(s)$$
+   Hint: At equilibrium, $E = 0$.
+
+### Boss Fight (IChO Rigour)
+3. A concentration cell is constructed with two silver electrodes. One half-cell contains $0.010 \text{ M AgNO}_3$ and the other contains $1.00 \text{ M AgNO}_3$.
+   a) Identify the anode and cathode.
+   b) Calculate the cell potential at 25°C.
+   c) What happens to the potential if we add $\text{NaCl}$ to the $1.00 \text{ M}$ compartment until $[\text{Cl}^-] = 0.10 \text{ M}$? ($K_{sp}(\text{AgCl}) = 1.8 \times 10^{-10}$).
+
+---
+
+## Solutions & Mark Scheme
+
+<details>
+<summary>Click to reveal solutions</summary>
+
+### Warm-up
+**Solution:**
+- Cathode candidate: $\text{Fe}^{2+}$ ($E^\circ = -0.44 \text{ V}$)
+- Anode candidate: $\text{Cu}$ ($E^\circ = +0.34 \text{ V}$)
+- $E^\circ_{\text{cell}} = E^\circ_{\text{cathode}} - E^\circ_{\text{anode}} = -0.44 - 0.34 = -0.78 \text{ V}$
+- Since $E^\circ_{\text{cell}} < 0$, the reaction is **non-spontaneous**.
+**Marking:** 1pt for correct formula, 1pt for final value, 1pt for spontaneity conclusion.
+
+### Level-up
+**Solution:**
+- $E^\circ_{\text{cell}} = 1.10 \text{ V}$, $n = 2$.
+- $E^\circ = \frac{0.0592}{n} \log_{10} K \Rightarrow 1.10 = \frac{0.0592}{2} \log_{10} K$
+- $\log_{10} K = \frac{1.10 \times 2}{0.0592} = 37.16$
+- $K = 10^{37.16} \approx 1.45 \times 10^{37}$
+**Marking:** 2pts for Nernst-equilibrium relationship, 2pts for calculation.
+
+### Boss Fight
+**a) Identification:**
+- Concentration cells drive towards equal concentration. The $0.010 \text{ M}$ side must increase (oxidation), so it's the **Anode**. The $1.00 \text{ M}$ side must decrease (reduction), so it's the **Cathode**.
+
+**b) Potential:**
+- $E = E^\circ - \frac{0.0592}{n} \log_{10} \frac{[\text{Ag}^+]_\text{anode}}{[\text{Ag}^+]_\text{cathode}}$
+- $E = 0 - \frac{0.0592}{1} \log_{10} \frac{0.010}{1.00} = 0 - (-0.1184) = +0.118 \text{ V}$
+
+**c) Effect of NaCl:**
+- $[\text{Ag}^+]_\text{cathode} = \frac{K_{sp}}{[\text{Cl}^-]} = \frac{1.8 \times 10^{-10}}{0.10} = 1.8 \times 10^{-9} \text{ M}$.
+- New $E = 0 - 0.0592 \log_{10} \frac{0.010}{1.8 \times 10^{-9}} = -0.0592 \times 6.74 = -0.399 \text{ V}$.
+- The potential flips! The anode and cathode swap roles. Spontaneous direction is now reversed.
+**Marking:** 2pts for part (a), 3pts for part (b), 5pts for part (c) including Ksp calculation and logical conclusion.
+</details>
+
+## Quality & QA Standards
+- All reactions charge balanced.
+- Python-verified calculations: $E_{\text{nernst}} = 0.118 \text{ V}$ (Part b), $E_{\text{new}} = -0.399 \text{ V}$ (Part c).
+- Constants: $F = 96485$, $R = 8.314$.

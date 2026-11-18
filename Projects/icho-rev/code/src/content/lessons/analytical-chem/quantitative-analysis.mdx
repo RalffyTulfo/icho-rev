@@ -1,0 +1,53 @@
+--- 
+title: "Quantitative Analysis: The Math of Chemistry"
+date: "2026-11-14"
+lessonNumber: 3
+unit: "Analytical Chemistry"
+---
+
+import QuantitativeAnalysisInteractive from '../../../components/interactives/QuantitativeAnalysisInteractive.jsx';
+
+## GAANO KARAMI?
+
+Qualitative analysis tells us *what*, pero quantitative analysis tells us *how much*. Sa IChO, hindi sapat yung basta compute. Kelangan alam mo yung stoichiometric relationships at yung limitations ng method mo.
+
+## 1. Gravimetric Analysis: Precision Weighing
+
+Gravimetric analysis relies on forming an insoluble precipitate, filtering it, drying it, and weighing it. Seems simple, pero daming pwedeng magkamali: (co-precipitation, incomplete precipitation, etc).
+
+### Worked Example: NaCl Analysis
+*Corrected calculation:*
+- Sample mass: $0.500\text{ g}$. Precipitate ($\text{AgCl}$): $0.869\text{ g}$.
+- $n(\text{AgCl}) = \frac{0.869\text{ g}}{143.32\text{ g/mol}} = 0.006063\text{ mol}$.
+- Since $1\text{ mol } \text{AgCl}$ comes from $1\text{ mol } \text{NaCl}$:
+- $m(\text{NaCl}) = 0.006063\text{ mol} \times 58.44\text{ g/mol} = 0.3543\text{ g}$.
+- $\% = \frac{0.3543\text{ g}}{0.500\text{ g}} \times 100\% = 70.9\%$.
+
+## 2. Volumetric Analysis (Titrations)
+
+Titration is the core of analytical lab work. Master mo dapat yung 3 main types:
+
+1. **Acid-Base Titration**: Use pH indicators. At IChO, kelangan mong malaman yung indicator range (e.g., Phenolphthalein pH 8.2-10).
+2. **Redox Titration**: Use E° (standard potential) to calculate feasibility ($K_{eq}$).
+   - $E_{cell} = E_{cathode} - E_{anode}$
+   - $\Delta G = -nFE_{cell} = -RT \ln K$.
+3. **Complexometric Titration**: EDTA titrations using conditional formation constant $K'_f$.
+
+### How to calculate Titration Curve Inflection
+For a strong acid-strong base titration, equivalence point is at pH 7.00. Pero for weak acid ($K_a$), you need to solve for $K_b$ and buffer regions using Henderson-Hasselbalch:
+$$pH = pK_a + \log \frac{[A^-]}{[HA]}$$
+
+## Interactive Practice: Gravimetric Calculator
+
+<QuantitativeAnalysisInteractive />
+
+## Level-up Quiz
+
+1. **The Stoichiometry Challenge**: Bakit kailangan nating gawing "cold" yung mother liquor bago i-filter yung $\text{AgCl}$ precipitate?
+   *Answer: To minimize solubility and increase recovery yield (le Chatelier’s principle/temperature dependency of $K_{sp}$).*
+
+2. **Titration Curve**: Sa titrating weak acid with strong base, nasaan ang buffer region?
+   *Answer: Near the midpoint of the titration (half-equivalence), where $[HA] = [A^-]$ and $pH = pK_a$.*
+
+---
+*Ready na? Next up: Spectroscopy. Dito natin gagamitin ang physics para sa chemical analysis.*

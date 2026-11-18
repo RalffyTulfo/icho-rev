@@ -1,137 +1,136 @@
 ---
 title: "Thermodynamics: Entropy and Free Energy"
 author: "Ralf Christian Mendoza"
-proofreader: ""
-readingTime: 5
+proofreader: "Aldrich David Antenor"
+readingTime: 25 min
 unit: "Thermodynamics"
 color: "sky/teal"
+cleanModeMapping:
+  "lowkey": "honestly"
+  "icl": "I must admit"
+  "hell": "heck"
+  "damn": "oh no"
+  "basic ass": "simple"
+  "tf": "what on earth"
+  "idfk": "I have no idea"
+  "gng": "everyone"
+  "yk": "you know"
+  "ts": "this material"
 ---
 
 # Thermodynamics: Entropy and Free Energy
 
-## Terms & Definitions
+Why do things happen spontaneously in one direction? Why does an egg break, but never un-break? The answer is entropy ($S$) and Gibbs free energy ($G$). This is the crown jewel of chemical thermodynamics. Let's break down the second and third laws with full rigor. 🔥
 
-- **Second Law of Thermodynamics**: The entropy of an isolated system always increases over time for a spontaneous process.
-- **Spontaneity**: The tendency of a process to occur without outside intervention.
-- **Entropy ($S$)**: A measure of the number of microstates available to a system, defined by Boltzmann's equation: $S = k_B \ln \Omega$.
-- **Third Law of Thermodynamics**: The entropy of a pure crystalline substance approaches zero as the temperature approaches absolute zero ($T \rightarrow 0$).
-- **Gibbs Free Energy ($G$)**: A thermodynamic potential that measures the maximum reversible work obtainable from a system at constant temperature and pressure: $G = H - TS$.
-- **Van 't Hoff Equation**: An equation relating the temperature dependence of the equilibrium constant ($K$) to the standard enthalpy change ($\Delta H^\circ$) of a reaction: $\ln \frac{K_2}{K_1} = -\frac{\Delta H^\circ}{R}\left(\frac{1}{T_2} - \frac{1}{T_1}\right)$.
+---
 
+## 🕯🔥 1. Terms & Definitions 🔥🕯
 
-## Why Does This Exist?
+> **ICHO Grading Tip:** Always specify whether entropy change refers to the system ($\Delta S_{sys}$), surroundings ($\Delta S_{surr}$), or universe ($\Delta S_{univ}$). The Second Law applies strictly to the *universe*.
 
-While the First Law ensures energy conservation, it does not determine the direction of a process. The Second and Third Laws of Thermodynamics introduce entropy, which dictates the direction of spontaneous processes. Gibbs Free Energy combines enthalpy and entropy to predict whether a process will occur spontaneously at constant temperature and pressure. This lesson covers entropy, Gibbs free energy, and temperature dependence.
+- **Entropy ($S$)**: A measure of the number of microscopic configurations ($\Omega$) corresponding to a macroscopic state. Units: $J \cdot K^{-1} \cdot mol^{-1}$.
+- **Second Law of Thermodynamics**: The total entropy of an isolated system must increase or remain constant in any spontaneous process ($\Delta S_{univ} \ge 0$).
+- **Third Law of Thermodynamics**: The entropy of a pure, perfectly crystalline substance at absolute zero ($0 K$) is zero.
+- **Gibbs Free Energy ($G$)**: A thermodynamic potential that measures the maximum reversible work obtainable from a thermodynamic system at constant temperature and pressure. $G = H - TS$.
+- **Spontaneity**: The time-independent tendency of a process to occur without outside intervention, dictated by $\Delta G < 0$ (at constant $T, P$).
 
+---
 
-## Derivation from First Principles
+## 💥 2. Why Does This Exist? 💥
 
-### Second Law and Entropy
+Energy conservation (First Law) isn't enough—it allows processes that never happen in real life (like a cup of tea absorbing heat from a cold table and boiling). The Second Law introduces directionality through probability and dispersion of energy. Gibbs Free Energy packages system enthalpy and universe entropy into one easy criterion for chemists working at constant $T$ and $P$. 🥀
 
-The Second Law states that for any spontaneous process, the total entropy of the system and its surroundings increases:
+---
 
-$$ \Delta S_{total} = \Delta S_{sys} + \Delta S_{surr} > 0 $$
+## 3. Derivation from First Principles
 
-Entropy is defined statistically through Boltzmann's formula:
+### 3.1 Statistical Definition (Boltzmann)
 
-$$ S = k_B \ln \Omega $$
+Ludwig Boltzmann defined entropy through microstates:
+
+$$
+S = k_B \ln \Omega
+$$
 
 where $k_B$ is the Boltzmann constant and $\Omega$ is the number of microstates.
 
-For a reversible process, the change in entropy is:
+### 3.2 Clausius Inequality and Gibbs Energy
 
-$$ dS = \frac{dq_{rev}}{T} $$
+From the Second Law, $\Delta S_{univ} = \Delta S_{sys} + \Delta S_{surr} \ge 0$.
+Since $\Delta S_{surr} = -\frac{\Delta H_{sys}}{T}$ at constant pressure:
 
-### Third Law of Thermodynamics
+$$
+\Delta S_{sys} - \frac{\Delta H_{sys}}{T} \ge 0
+$$
 
-The Third Law states that as temperature approaches absolute zero ($T \rightarrow 0$), the entropy of a pure, perfectly crystalline substance approaches zero:
+Multiplying by $-T$:
 
-$$ \lim_{T \to 0} S = 0 $$
+$$
+\Delta H_{sys} - T \Delta S_{sys} \le 0
+$$
 
-### Gibbs Free Energy
+Defining Gibbs Free Energy $G = H - TS$, at constant $T$ and $P$:
 
-Gibbs Free Energy ($G$) is defined as:
+$$
+\Delta G \le 0 \quad (\text{Spontaneous if } < 0)
+$$
 
-$$ G = H - TS $$
+---
 
-For a process at constant temperature and pressure, the change in Gibbs free energy is:
+## 4. Worked Example: Temperature Dependence of Spontaneity
 
-$$ \Delta G = \Delta H - T\Delta S $$
+**Problem**: For a reaction, $\Delta H^\circ = +125 kJ \cdot mol^{-1}$ and $\Delta S^\circ = +350 J \cdot K^{-1} \cdot mol^{-1}$. At what temperature does the reaction become spontaneous?
 
-1. **Spontaneous Process**: $\Delta G < 0$
-2. **Non-spontaneous Process**: $\Delta G > 0$
-3. **Equilibrium**: $\Delta G = 0$
+1. **Condition for spontaneity**: $\Delta G^\circ < 0 \implies \Delta H^\circ - T \Delta S^\circ < 0$.
+2. **Find equilibrium temperature ($\Delta G^\circ = 0$)**:
+   $$
+   T = \frac{\Delta H^\circ}{\Delta S^\circ}
+   $$
+3. **Plug in values**:
+   $$
+   T = \frac{125,000 J \cdot mol^{-1}}{350 J \cdot K^{-1} \cdot mol^{-1}} = 357.1 K
+   $$
+4. **Conclusion**: Since both $\Delta H$ and $\Delta S$ are positive, the reaction is spontaneous *above* $357.1 K$ ($84.0 °C$).
 
-### Temperature Dependence and Van 't Hoff Equation
+---
 
-The standard Gibbs free energy change is related to the equilibrium constant $K$ by:
+## 💔 5. Common IChO Traps 💔
 
-$$ \Delta G^\circ = -RT \ln K $$
+1. **Units mismatch**: $\Delta H$ is usually in $kJ$, while $\Delta S$ is in $J$. Always convert them to the same units before calculating $\Delta G$.
+2. **Temperature scale**: Always use Kelvin, never Celsius, in thermodynamic equations.
+3. **Standard vs. Non-standard**: $\Delta G^\circ$ is under standard conditions (1 bar, 1 M). Use $\Delta G = \Delta G^\circ + RT \ln Q$ for non-standard states.
+4. **Sign confusion**: A spontaneous process has $\Delta S_{univ} > 0$ and $\Delta G_{sys} < 0$. Do not mix up system and universe signs!
 
-Combining this with $\Delta G^\circ = \Delta H^\circ - T\Delta S^\circ$, we get the Van 't Hoff equation, which relates the change in equilibrium constant with temperature:
+---
 
-$$ \ln \frac{K_2}{K_1} = -\frac{\Delta H^\circ}{R}\left(\frac{1}{T_2} - \frac{1}{T_1}\right) $$
+## 🎇 6. What Graders Want to See 🎇
 
+1. **State the Laws**: Reference the First, Second, or Third Law when explaining thermodynamic directions.
+2. **Check Units**: Explicitly show conversion from Joules to kiloJoules for $\Delta H$ or $\Delta S$.
+3. **Temperature Threshold**: Clearly state whether a reaction is spontaneous at high or low temperatures based on the signs of $\Delta H$ and $\Delta S$.
+4. **Equilibrium Condition**: State that $\Delta G = 0$ at equilibrium.
 
-## Worked Example
+---
 
-**Problem**: Calculate the change in Gibbs free energy ($\Delta G$) for a reaction at 298 K, given $\Delta H = -50 \, \text{kJ/mol}$ and $\Delta S = -100 \, \text{J/mol}\cdot\text{K}$. Determine if the reaction is spontaneous.
+## 🥀 7. Recall Cards 🥀
 
-**Solution**:
-
-Using the Gibbs free energy equation:
-
-$$ \Delta G = \Delta H - T\Delta S $$
-
-Convert $\Delta S$ to kJ/mol·K:
-
-$$ \Delta S = -100 \, \text{J/mol}\cdot\text{K} = -0.1 \, \text{kJ/mol}\cdot\text{K} $$
-
-Substitute the given values:
-
-$$ \Delta G = -50 \, \text{kJ/mol} - (298 \, \text{K} \times -0.1 \, \text{kJ/mol}\cdot\text{K}) $$
-
-$$ \Delta G = -50 + 29.8 = -20.2 \, \text{kJ/mol} $$
-
-**Sanity Check**: Since $\Delta G$ is negative ($\Delta G < 0$), the reaction is spontaneous at 298 K.
-
-
-## Common IChO Traps
-
-1. **Units of Entropy**: Entropy is typically given in J/mol·K, whereas enthalpy is often given in kJ/mol. Ensure units are consistent before calculating $\Delta G$.
-
-2. **Temperature Units**: Always use Kelvin for temperature in thermodynamic calculations.
-
-3. **Sign of $\Delta G$**: Remember that a negative $\Delta G$ indicates a spontaneous process, while a positive $\Delta G$ indicates a non-spontaneous process.
-
-
-## What Graders Want to See
-
-- **Clear Definitions**: Define all key terms clearly and concisely.
-- **Step-by-Step Reasoning**: Show your reasoning process for each step in your calculations.
-- **Sanity Checks**: Always include a sanity check to verify that your answer makes sense.
-- **Units**: Include units in all calculations and final answers.
-
-
-## Placeholder for Interactives
-
-- Interactive: Explore how changes in temperature affect the spontaneity of a reaction based on $\Delta H$ and $\Delta S$.
-- Interactive: Simulate the Van 't Hoff equation to visualize the temperature dependence of the equilibrium constant.
-
-
-## Go Deeper
-
-- [Chemical Equilibrium and Kinetics](link-to-next-lesson)
-- [Electrochemistry](link-to-next-lesson)
-
-
-## Recall Cards
-
-- **Recall Card 1**: What is the Second Law of Thermodynamics?
-  Answer: The entropy of an isolated system always increases over time for a spontaneous process.
-
-- **Recall Card 2**: How do you calculate Gibbs Free Energy?
-  Answer: $\Delta G = \Delta H - T\Delta S$.
-
-- **Recall Card 3**: What does the Van 't Hoff equation describe?
-  Answer: The temperature dependence of the equilibrium constant $K$ based on standard enthalpy change $\Delta H^\circ$.
+1. **What does the Second Law state?**
+   Ans: $\Delta S_{univ} \ge 0$ for any spontaneous process.
+2. **What is Boltzmann's entropy formula?**
+   Ans: $S = k_B \ln \Omega$.
+3. **What is the entropy of a pure crystal at 0 K?**
+   Ans: Zero (Third Law).
+4. **Formula for Gibbs Free Energy?**
+   Ans: $G = H - TS$.
+5. **Condition for spontaneity at constant $T, P$?**
+   Ans: $\Delta G < 0$.
+6. **When is a reaction spontaneous at all temperatures?**
+   Ans: When $\Delta H < 0$ and $\Delta S > 0$.
+7. **When is a reaction non-spontaneous at all temperatures?**
+   Ans: When $\Delta H > 0$ and $\Delta S < 0$.
+8. **Relationship between $\Delta G^\circ$ and equilibrium constant $K$?**
+   Ans: $\Delta G^\circ = -RT \ln K$.
+9. **Units of entropy?**
+   Ans: $J \cdot K^{-1} \cdot mol^{-1}$.
+10. **tf is entropy physically?**
+    Ans: A measure of energy dispersal and microscopic disorder/multiplicity.
