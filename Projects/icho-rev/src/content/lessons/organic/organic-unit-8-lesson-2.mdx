@@ -1,0 +1,169 @@
+```markdown
+---
+title: Lesson 2: Polymerization and Polymer Chemistry
+author: Claude
+proofreader: Baseline
+readingTime: 45
+unit: "Unit 8: Kinetics and Polymers"
+color: "purple"
+cleanModeMapping:
+  - "Warm-up problems"
+  - "Level-up problems"  
+  - "Boss Fight problems"
+---
+
+## Why does this exist?
+
+Polymer chemistry is crucial for IChO preparation because polymers appear in:
+- Biochemical contexts: proteins and nucleic acids as macromolecules
+- Industrial contexts: plastics, synthetic fibers, rubbers
+- Problem-solving contexts: polymerization kinetics, material properties
+- Biomolecules: synthetic biology and drug delivery systems
+
+Without polymer understanding, you cannot tackle problems involving:
+- Polycondensation reactions in synthesis
+- Polymer properties like molecular weight distribution
+- Material behavior relevant to chemistry competition problems
+---
+
+## Terms and Definitions
+
+| Term | Tagalog Definition |
+|------|-------------------|
+| **Polymerization** | Proseso kung paano ang mga monomers ay nag-attach sa isa't isa para lumaki | 
+| **Addition Polymerization** | Mga monomers na nag-attach nang direkta nang kuha ang bawat bagong monomer sa lubot ng chain | 
+| **Condensation Polymerization** | Mga monomers na nag-exchange ng functional groups na lumilikha ng mga links habang nagbubuo ng tubong produkto | 
+| **Molecular Weight (Mw)** | Kabuuan ng mga weight ng lahat ng mga monomer unit sa isang polymer | 
+| **Degree of Polymerization (Xn)** | Bilang ng mga monomer units sa isang chain | 
+| **Gel Permeation Chromatography (GPC)** | Paraan para sa sukat ng polymer size | 
+| **Tg (Glass Transition Temperature)** | Temperatura kung kailan naiba ang tibay | 
+| **Tensile Strength** | Pinakamataas na pressure bago masira | 
+| **Protein** | Amino acids na naka-link nang condensation polymerization | 
+| **Nucleic Acid** | Ribose na may nitrogen base na naka-link nang condensation | 
+
+---
+
+## Derivation from First Principles
+
+### Degree of Polymerization in Step-Growth Polymerization
+For condensation polymerization, the Carothers equation:
+
+$$X_n = \frac{1}{1-p}$$
+
+where:
+- $X_n$ = average degree of polymerization
+- $p$ = extent of reaction (fraction of functional groups that have reacted)
+
+**IChO application:** For polycondensation of $A_2 + B_2$ with 95% reaction extent:
+$X_n = \frac{1}{0.95} = 1.053$, demonstrating rapid molecular weight growth near completion.
+
+### Number-Average Molecular Weight
+$$M_n = X_n \times M_0$$
+
+where:
+- $M_n$ = number-average molecular weight  
+- $M_0$ = molecular weight of repeating unit
+
+**Example:** For nylon-6,6 ($C_{12}H_{22}N_2O_2$), $M_0 = 226.3 \text{ g/mol}$, $X_n = 100$:
+$M_n = 100 \times 226.3 = 22,630 \text{ g/mol}$
+
+### Polymerization Rate Laws
+**Addition polymerization (free radical):**
+$$\frac{d[M]}{dt} = -k_p [M][R\bullet]$$
+
+where:
+- $[M]$ = monomer concentration
+- $[R\bullet]$ = radical concentration
+- $k_p$ = rate constant
+
+**IChO tip:** Chain transfer and termination steps significantly affect molecular weight control.
+
+---
+
+## Worked Examples
+
+### Step 0: Figure out the path before you compute
+
+**Problem 1: Thermoplastic vs Thermosetting Polymers**
+- Identify polymer type based on cross-linking
+- Determine Tg and melting points from given data
+- Explain processing behavior for each type
+
+**Problem 2: Polymer Molecular Weight Calculation**
+Given monomer $C_2H_4$ (ethylene, $M_0 = 28.05 \text{ g/mol}$) and extent of polymerization $X_n = 500$:
+$M_n = 500 \times 28.05 = 14,025 \text{ g/mol}$
+
+**Problem 3: Gel Point in Step-Growth Polymerization**
+Find gel point ($p_c$) for crosslinked polymers where each monomer connects to 4 other monomers.
+
+### Common IChO Traps
+1. **Molecular weight confusion:** Always specify whether it's $M_n$, $M_w$, or $M_p$
+2. **Extent of reaction:** Remember $p$ is the **fraction reacted**, not remaining unreacted
+3. **Molecular weight growth:** $M_n$ grows linearly, but $M_w$ grows exponentially near gel point
+4. **Chain transfer:** Use the Mayo equation for chain transfer constants
+
+### What Graders Want to See
+- Clear show of formula setup
+- Units in every intermediate calculation
+- Significant figures preserved
+- Physical explanation of results
+- Identification of limiting reagents in copolymerization
+
+---
+
+## Interactive Problems
+
+### Interactive 1: Degree of Polymerization Calculator
+Calculate $X_n$ for various reaction extents ($p = 0.75, 0.85, 0.95, 0.99$).
+
+### Interactive 岁的: Molecular Weight of Specific Polymers
+Calculate $M_n$ and $M_w$ for:
+- Styrene ($M_0 = 104.15 \text{ g/mol}$) with $X_n = 200$
+- Polyethylene glycol ($M_0 = 44.05 \text{ g/mol}$) with $X_n = 150$
+
+### Interactive 3: Polymer Gel Point Prediction
+Given $f_1 = 2, f_2 = 3, f_3 = 4$ (functionality of monomers), calculate the gel point.
+
+---
+
+## Problem Sets
+
+### Warm-up Problems
+1. **Basic Polymerization:** Calculate molecular weight for $X_n = 50$ ethylene monomer ($M_0 = 28.05$)
+2. **Glass Transition:** Identify which polymer has higher Tg: polystyrene (approx. 100°C) vs polyethylene (approx. -50°C)
+3. **Molecular Weight:** Differentiate $M_n$ and $M_w$ for the example polymer
+
+### Level-up Problems
+1. **Chain Transfer:** Given $C_t = 0.05$ and $C_p = 2.5$, calculate the degree of polymerization
+2. **Gel Point:** Determine gel point for $A_2 + B_2 + C_3$ system
+3. **Polymer Properties:** Relate structure to properties for HDPE vs LDPE
+
+### Boss Fight Problems
+1. **Polycondensation Analysis:** For a step-growth polymerization with initial 5 monomers, calculate molecular weight after 90% completion and identify when gelation occurs
+2. **Polymer Degradation:** Write kinetic equations for thermal degradation and identify rate-limiting steps
+3. **Synthesis Strategy:** Design polymerization route for target molecular weight with given monomers
+4. **Property Prediction:** Use Flory-Huggins theory to predict phase behavior of polymer blends
+
+---
+
+## Applications and Current Challenges
+
+### Synthetic Polymers
+- **Plastics:** Polyethylene, polypropylene, polyvinyl chloride
+- **Rubbers:** Polybutadiene, natural rubber (isoprene)
+- **Fiber-formers:** Nylon, polyester, acrylics
+
+### Biological Polymers
+- **Proteins:** Amino acid chains, secondary/tertiary structure
+- **Nucleic Acids:** DNA, RNA backbones, base pairing
+- **Carbohydrates:** Starch, cellulose, glycogen
+
+### Current Challenges
+- **Sustainability:** Biodegradable polymers and recycling
+- **Material Design:** Smart polymers with responsive properties
+- **Environmental Impact:** Microplastics and polymer pollution
+- **Biotechnology:** Polymer-based drug delivery systems
+- **Industry 4.0:** Additive manufacturing with specialized polymers
+
+**Key IChO Areas:** Structure-property relationships, polymerization kinetics, material science applications, and current technological challenges.
+```
