@@ -20,13 +20,13 @@ cleanModeMapping:
 
 # Energy and the First Law of Thermodynamics
 
-Lowkey this topic is kinda easy so don't freak out, pero if you mess up sign conventions or write $dq$ instead of $\delta q$, IChO graders will show zero mercy and chop off your points. Let's break down energy conservation step-by-step para mas madali na buhay natin.
+This topic builds the foundation of chemical energetics. If you mess up sign conventions or write $dq$ instead of $\delta q$, you will lose points. Let's break down energy conservation step-by-step.
 
 ---
 
 ## 🕯🔥 Terms & Definitions 🔥🕯
 
-> **ICHO Grading Tip:** Every term must be defined to IUPAC precision, written in full at first mention, and abbreviated only after its complete definition is given. Never treat symbols like $U$, $q$, $w$, $H$, $S$ as self-explanatory—magagalit graders sayo pag linaktawan mo 'to.
+> **Methodology:** Every term must be defined to IUPAC precision, written in full at first mention, and abbreviated only after its complete definition is given. Do not treat symbols like $U$, $q$, $w$, $H$, $S$ as self-explanatory.
 
 ### 1.1 Energy
 
@@ -121,9 +121,8 @@ Imagine you're trying to build an illegally modded, compressed-gas powered Indom
 The first law assumes:
 - Energy conservation holds exactly in macroscopic systems.
 - Thermodynamic equilibrium states are well-defined.
-- No energy transfer via radiation, neutrinos, or exotic nuclear mechanisms not included in $q + w$.
 
-In reality, quantum-field or relativistic corrections exist, but for IChO-level problems at standard conditions, they are damn near zero, so ignore them unless the question explicitly involves nuclear decay.
+In reality, quantum-field or relativistic corrections exist, but for IChO-level problems at standard conditions, they are very near zero, so ignore them unless the question explicitly involves nuclear decay.
 
 ---
 
@@ -268,7 +267,7 @@ In reality, quantum-field or relativistic corrections exist, but for IChO-level 
 
 ## ⚡ Worked Example: Isothermal Expansion ⚡
 
-> **ICHO Grading Tip:** Every IChO thermo problem must include "Step 0" where you explicitly state (a) the path definition, (b) sign conventions, and (c) which functions are state vs path. Graders deduct major points if you jump straight into formulas!
+> **Step 0 is my method for avoiding sign errors:** Every IChO thermo problem must include "Step 0" where you explicitly state (a) the path definition, (b) sign conventions (check which sign convention the exam states), and (c) which functions are state vs path.
 
 ### 4.1 Example: Isothermal Expansion of an Ideal Gas
 
@@ -321,31 +320,31 @@ Since $P_1 V_1 = P_2 V_2 \implies \frac{V_2}{V_1} = \frac{P_1}{P_2} = \frac{2.0}
 Substitute values ($n = 2.0\,\text{mol}$, $R = 8.314\,\text{J}\,\text{mol}^{-1}\,\text{K}^{-1}$, $T = 300\,\text{K}$):
 
 $$
-w = -(2.0)(8.314)(300)\ln(2) = -(2.0)(8.314)(300)(0.69315) = -3452\,\text{J}
+w = -(2.0)(8.314)(300)\ln(2) \approx -3458\,\text{J}
 $$
 
-**Sign check:** $w = -3452\,\text{J} < 0$. Negative sign confirms that energy left the system via expansion work done **by** the gas on surroundings. Correct!
+**Sign check:** $w \approx -3458\,\text{J} < 0$. Negative sign confirms that energy left the system via expansion work done **by** the gas on surroundings. Correct!
 
 **Step 3: Compute $q$ via First Law**
 
 $$
-\Delta U = q + w \quad \implies \quad 0 = q + (-3452\,\text{J}) \quad \implies \quad q = +3452\,\text{J}
+\Delta U = q + w \quad \implies \quad 0 = q + (-3458\,\text{J}) \quad \implies \quad q \approx +3458\,\text{J}
 $$
 
 **Physical meaning:** $3452\,\text{J}$ of thermal heat energy flowed **into** the system from the surroundings to compensate for energy lost to expansion work, maintaining constant $T = 300\,\text{K}$.
 
-**Step 4: Compute total $C_V$ for 2.0 mol gas**
+**Step 4: Compute total $C_{V}$ for 2.0 mol gas**
 
 For diatomic ideal gas at standard temperatures:
 
 $$
-C_V = \frac{5}{2}R = \frac{5}{2} \times 8.314 = 20.785\,\text{J}\,\text{mol}^{-1}\,\text{K}^{-1}
+C_{V,m} = \frac{5}{2}R = \frac{5}{2} \times 8.314 = 20.785\,\text{J}\,\text{mol}^{-1}\,\text{K}^{-1}
 $$
 
 For $n = 2.0\,\text{mol}$:
 
 $$
-C_V^{\text{total}} = n C_V = 2.0 \times 20.785 = 41.57\,\text{J}\,\text{K}^{-1}
+C_{V} = n C_{V,m} = 2.0 \times 20.785 \approx 42\,\text{J}\,\text{K}^{-1}
 $$
 
 **Step 5: Final Sanity Check & Summary**
