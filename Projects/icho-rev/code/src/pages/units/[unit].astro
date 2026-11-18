@@ -1,0 +1,72 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+export function getStaticPaths() {
+  return [
+    { params: { unit: 'thermodynamics' }, props: { name: 'Thermodynamics' } },
+    { params: { unit: 'organic' }, props: { name: 'Organic Chemistry' } },
+    { params: { unit: 'inorganic' }, props: { name: 'Inorganic Chemistry' } },
+    { params: { unit: 'analytical' }, props: { name: 'Analytical Chemistry' } },
+    { params: { unit: 'biochemistry' }, props: { name: 'Biochemistry' } },
+    { params: { unit: 'practical' }, props: { name: 'Practical Chemistry' } },
+  ];
+}
+
+const { unit } = Astro.params;
+const { name } = Astro.props;
+
+// Fetch all lessons from the content directory
+const allLessons = await Astro.glob('../../content/lessons/*.mdx');
+
+// Map URL unit names to frontmatter unit names
+const unitNameMap = {
+  thermodynamics: 'Thermodynamics',
+  organic: 'Organic Chemistry',
+  inorganic: 'Inorganic Chemistry',
+  analytical: 'Analytical Chemistry',
+  biochemistry: 'Biochemistry',
+  practical: 'Practical Lab Skills',
+};
+
+const targetUnitName = unitNameMap[unit] || name;
+
+// Filter lessons that belong to this unit
+const unitLessons = allLessons.filter(lesson => {
+  const lessonUnit = lesson.frontmatter.unit;
+  return lessonUnit && lessonUnit.toLowerCase().includes(unit.toLowerCase());
+});
+---
+<Layout>
+  <main class="pt-24 px-4 min-h-screen">
+    <div class="frosted-glass p-8 mx-auto max-w-5xl">
+      <div class="mb-8">
+        <a href="/icho-rev/roadmap" class="text-sm text-primary hover:underline">← Back to Roadmap</a>
+        <h1 class="text-3xl font-bold mt-2 text-foreground">{targetUnitName} Lessons</h1>
+        <p class="text-sm text-foreground/70">Master key concepts and IChO level problems for this unit.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {unitLessons.length > 0 ? (
+          unitLessons.map((lesson) => {
+            const slug = lesson.file.split('/').pop().replace('.mdx', '');
+            return (
+              <a href={`/icho-rev/lessons/${slug}`} class="group">
+                <div class="frosted-glass p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer h-full border border-primary/10 rounded-2xl">
+                  <h2 class="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+                    {lesson.frontmatter.title}
+                  </h2>
+                  <p class="text-xs text-foreground/60 mb-4">Reading time: {lesson.frontmatter.readingTime || '5-10'} mins</p>
+                  <div class="flex items-center text-xs font-semibold text-primary uppercase tracking-wider">
+                    Read Lesson →
+                  </div>
+                </div>
+              </a>
+            );
+          })
+        ) : (
+          <p class="text-foreground/60">No lessons available for this unit yet.</p>
+        )}
+      </div>
+    </div>
+  </main>
+</Layout>
