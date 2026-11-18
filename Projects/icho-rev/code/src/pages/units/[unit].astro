@@ -8,7 +8,9 @@ export function getStaticPaths() {
     { params: { unit: 'inorganic' }, props: { name: 'Inorganic Chemistry' } },
     { params: { unit: 'analytical' }, props: { name: 'Analytical Chemistry' } },
     { params: { unit: 'biochemistry' }, props: { name: 'Biochemistry' } },
-    { params: { unit: 'practical' }, props: { name: 'Practical Chemistry' } },
+    { params: { unit: 'practical' }, props: { name: 'Practical Lab Skills' } },
+    { params: { unit: 'kinetics' }, props: { name: 'Kinetics and Polymers' } },
+    { params: { unit: 'electrochemistry' }, props: { name: 'Electrochemistry' } },
   ];
 }
 
@@ -26,6 +28,8 @@ const unitNameMap = {
   analytical: 'Analytical Chemistry',
   biochemistry: 'Biochemistry',
   practical: 'Practical Lab Skills',
+  kinetics: 'Kinetics and Polymers',
+  electrochemistry: 'Electrochemistry',
 };
 
 const targetUnitName = unitNameMap[unit] || name;
