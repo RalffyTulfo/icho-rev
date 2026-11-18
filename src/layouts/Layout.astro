@@ -1,0 +1,71 @@
+---
+import '../styles/global.css';
+import ToggleTheme from '../components/ToggleTheme.astro';
+import ToggleCleanMode from '../components/ToggleCleanMode.astro';
+import ToggleReduceMotion from '../components/ToggleReduceMotion.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhSPLW+pJ35wQTeBAklWtjpmYB3QH65G8E6uSgLohWICCGcC6u8O77G5qGj" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <title>IChO Revision Platform</title>
+  </head>
+  <body class="min-h-screen flex flex-col antialiased selection:bg-primary/30 text-foreground">
+    <header class="fixed top-0 left-0 w-full z-50 lab-card !rounded-none border-t-0 border-x-0 px-4 py-3 no-print">
+      <div class="max-w-7xl mx-auto flex items-center justify-between">
+        <a href={`${base}/`} class="flex items-center gap-2 group">
+          <div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-white shadow-lg shadow-primary/20 group-hover:rotate-6 transition-transform">
+            <span class="text-sm font-bold">⚗️</span>
+          </div>
+          <span class="font-black text-lg tracking-tighter uppercase group-hover:text-primary transition-colors">IChO<span class="text-primary">.</span>REV</span>
+        </a>
+
+        <nav class="hidden md:flex items-center gap-1 text-xs font-black uppercase tracking-widest">
+          {[
+            { name: 'Roadmap', href: '/roadmap' },
+            { name: 'Practice', href: '/practice' },
+            { name: 'Progress', href: '/progress' },
+            { name: 'Toolbox', href: '/toolbox' },
+          ].map(item => (
+            <a href={`${base}${item.href}`} class="px-4 py-2 rounded-lg hover:bg-foreground/5 hover:text-primary transition-all">
+              {item.name}
+            </a>
+          ))}
+        </nav>
+
+        <div class="flex items-center gap-1">
+          <ToggleTheme />
+          <ToggleCleanMode />
+          <ToggleReduceMotion />
+        </div>
+      </div>
+    </header>
+
+    <div class="flex-1">
+      <slot />
+    </div>
+
+    <footer class="mt-20 border-t border-border py-12 px-4 no-print bg-surface/50">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center text-sm">
+        <div class="space-y-2">
+          <div class="font-black text-xs uppercase tracking-widest text-primary">Status: Operational</div>
+          <p class="text-foreground/40 max-w-sm font-medium">
+            A high-fidelity revision engine designed for the International Chemistry Olympiad community.
+          </p>
+        </div>
+        <div class="flex md:justify-end gap-6 font-bold text-xs uppercase tracking-widest text-foreground/60">
+          <a href={`${base}/about`} class="hover:text-primary">About</a>
+          <a href={`${base}/roadmap`} class="hover:text-primary">Syllabus</a>
+          <a href="https://github.com/RalffyTulfo/icho-rev" class="hover:text-primary">Source</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

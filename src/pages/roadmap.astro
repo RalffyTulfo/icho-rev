@@ -1,0 +1,73 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const units = [
+  { name: 'Thermodynamics', slug: 'thermodynamics', color: 'physical', desc: 'Energy, entropy, and the fundamental laws governing chemical spontaneity.' },
+  { name: 'Organic Chemistry', slug: 'organic', color: 'organic', desc: 'Reaction mechanisms, stereochemistry, and the logic of carbon-based synthesis.' },
+  { name: 'Inorganic Chemistry', slug: 'inorganic', color: 'inorganic', desc: 'Coordination complexes, crystal field theory, and periodic trends.' },
+  { name: 'Analytical Chemistry', slug: 'analytical', color: 'analytical', desc: 'Quantitative precision, spectroscopy, and qualitative chemical identification.' },
+  { name: 'Biochemistry', slug: 'biochemistry', color: 'biochemistry', desc: 'The molecular machinery of life: proteins, lipids, and metabolic flux.' },
+  { name: 'Practical Skills', slug: 'practical', color: 'practical', desc: 'Laboratory safety, synthesis design, and advanced purification techniques.' },
+];
+---
+<Layout>
+  <main class="pt-32 pb-20 px-4 min-h-screen relative overflow-hidden text-foreground">
+    <div class="absolute inset-0 lab-grid opacity-10 z-[-1]"></div>
+
+    <div class="max-w-6xl mx-auto space-y-12">
+      <div class="space-y-4">
+        <h1 class="text-4xl md:text-5xl font-black tracking-tight">
+          Syllabus <span class="text-primary">Roadmap</span>
+        </h1>
+        <p class="text-foreground/60 max-w-xl text-lg">
+          Navigate through the core disciplines of the IChO curriculum.
+          Each node represents a critical pillar of competitive chemistry.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative">
+        {units.map((unit, index) => (
+          <a href={`${base}/units/${unit.slug}`} class="group">
+            <div class="lab-card p-8 h-full flex flex-col justify-between group-hover:border-primary/50 relative overflow-hidden">
+              <!-- Index Number -->
+              <div class="absolute -top-4 -right-4 text-8xl font-black text-foreground/[0.03] select-none group-hover:text-primary/[0.05] transition-colors">
+                {String(index + 1).padStart(2, '0')}
+              </div>
+
+              <div class="space-y-6 relative">
+                <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl shadow-inner border border-border relative overflow-hidden">
+                  <div class="absolute inset-0 opacity-20" style={`background-color: var(--color-${unit.color});`}></div>
+                  <span class="relative z-10 font-black" style={`color: var(--color-${unit.color});`}>{unit.name.charAt(0)}</span>
+                </div>
+
+                <div class="space-y-2">
+                  <h2 class="text-2xl font-bold group-hover:text-primary transition-colors">{unit.name}</h2>
+                  <p class="text-sm text-foreground/60 leading-relaxed">{unit.desc}</p>
+                </div>
+              </div>
+
+              <div class="mt-8 pt-6 border-t border-border flex items-center justify-between">
+                <span class="text-xs font-black uppercase tracking-widest text-foreground/40 group-hover:text-primary transition-colors">Launch Module</span>
+                <div class="w-8 h-8 rounded-full bg-foreground/5 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all text-foreground">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+                </div>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .lab-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    backdrop-filter: blur(8px);
+    transition: all var(--duration-ui) var(--ease-out);
+  }
+</style>

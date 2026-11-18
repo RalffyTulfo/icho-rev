@@ -1,0 +1,139 @@
+---
+title: "Thermodynamics: Hess's Law and Enthalpy of Formation"
+author: "Ralf Christian Mendoza"
+proofreader: "Aldrich David Antenor"
+readingTime: 20 min
+unit: "Thermodynamics"
+color: "sky/teal"
+cleanModeMapping:
+  "lowkey": "honestly"
+  "icl": "I must admit"
+  "hell": "heck"
+  "damn": "oh no"
+  "basic ass": "simple"
+  "tf": "what on earth"
+  "idfk": "I have no idea"
+  "gng": "everyone"
+  "yk": "you know"
+  "ts": "this material"
+---
+
+# Thermodynamics: Hess's Law and Enthalpy of Formation
+
+Lowkey this lesson is the thermodynamic equivalent of having a master key. 🔥 Hess's Law is the reason we don't have to explode every chemical to know how much heat it releases. Para mas madali na buhay natin, let's learn how to sum up enthalpy steps like you're balancing a bank ledger.
+
+---
+
+## 🕯🔥 1. Terms & Definitions 🔥🕯
+
+> **ICHO Grading Tip:** IUPAC precision is non-negotiable. Don't just say "heat"—specify enthalpy, internal energy, or something else. Magagalit graders sayo pag linaktawan mo 'to.
+
+- **Hess's Law**: The total enthalpy change ($\Delta H$) of a chemical reaction is independent of the pathway taken. Whether you do it in one shot or five steps, the start and end states dictate the enthalpy difference. $\Delta H_{\text{total}} = \sum \Delta H_{\text{steps}}$.
+- **Standard Enthalpy of Formation ($\Delta H_f^\circ$)**: The enthalpy change for forming 1 mole of a substance from its elements in their standard states (298.15 K, 1 bar). **Crucial**: $\Delta H_f^\circ = 0$ for pure elements in their most stable form (e.g., $O_2(g)$, $C(\text{graphite})$).
+- **Bond Dissociation Enthalpy ($D$)**: The average energy required to break 1 mole of bonds in a gaseous molecule into gaseous atoms.
+- **Lattice Enthalpy**: The energy released (or required, depending on sign convention) to form 1 mole of a solid ionic compound from its constituent gaseous ions. 
+- **Born-Haber Cycle**: A thermochemical cycle applying Hess's Law to relate the lattice enthalpy to the standard enthalpy of formation, ionization energy, electron affinity, and sublimation energy.
+
+---
+
+## 💥 2. Why Does This Exist? (Physical Meaning) 💥
+
+Enthalpy ($H$) is a **state function**. Think of it like altitude on a map—it doesn't matter if you took a helicopter or climbed a mountain, your potential energy change only depends on the start and finish. Hess's Law is simply applying energy conservation to state functions. We use it because we can't always measure a reaction directly (like the formation of an unstable intermediate)—but we can sum up other measurable paths that lead to the same destination. 🥀
+
+---
+
+## 3. Derivation from First Principles (FULL Rigor)
+
+### 3.1 Path Independence ($\oint dH = 0$)
+
+The derivation relies on $H$ being a state function. For any cyclic path in state space (a system returns to its original condition):
+
+$$
+\oint dH = 0
+$$
+
+By definition, if you go $A \rightarrow B$ ($ \Delta H_1 $) and then $B \rightarrow A$ ($ \Delta H_2 $), then $\Delta H_1 + \Delta H_2 = 0$. Therefore, $\Delta H_1 = - \Delta H_2$. Hess's Law is the generalization of this principle to any number of paths leading to the same final state.
+
+### 3.2 Reaction Enthalpy from Formation
+
+To find $\Delta H_{\text{rxn}}^\circ$ for $aA + bB \rightarrow cC + dD$:
+We treat formation as:
+1. Reactants $\rightarrow$ Elements: $\sum \nu_{\text{reactants}} (-\Delta H_f^\circ)$
+2. Elements $\rightarrow$ Products: $\sum \nu_{\text{products}} (\Delta H_f^\circ)$
+
+$$
+\Delta H_{\text{rxn}}^\circ = \sum \nu_p \Delta H_f^\circ(\text{products}) - \sum \nu_r \Delta H_f^\circ(\text{reactants})
+$$
+
+**Assumptions:** All species are in standard states (1 bar).
+**Limitations:** $\Delta H_f^\circ$ data are often temperature-dependent; using 298 K values for 500 K reactions requires Kirchhoff's Law corrections.
+
+---
+
+## 4. Worked Example: Born-Haber Cycle for NaCl
+
+### Step 0: The Path
+1. $Na(s) + 1/2 Cl_2(g) \rightarrow NaCl(s)$ (This is $\Delta H_f^\circ$)
+2. Hess's Law path:
+   - Sublimation: $Na(s) \rightarrow Na(g)$
+   - Ionization: $Na(g) \rightarrow Na^+(g) + e^-$
+   - Dissociation: $1/2 Cl_2(g) \rightarrow Cl(g)$
+   - Electron Affinity: $Cl(g) + e^- \rightarrow Cl^-(g)$
+   - Lattice Formation: $Na^+(g) + Cl^-(g) \rightarrow NaCl(s)$
+
+### Calculation
+Using literature data:
+- $\Delta H_{sub}(Na) = 107.3\text{ kJ/mol}$
+- $IE(Na) = 495.8\text{ kJ/mol}$
+- $1/2 \Delta H_{diss}(Cl_2) = 1/2 \times 243.0 = 121.5\text{ kJ/mol}$
+- $EA(Cl) = -348.6\text{ kJ/mol}$
+- $\Delta H_{lattice}(NaCl) = -787.0\text{ kJ/mol}$
+
+$$
+\Delta H_f^\circ = 107.3 + 495.8 + 121.5 - 348.6 - 787.0 = -411.0\text{ kJ/mol}
+$$
+
+**Sanity Check:** The value is negative, which is expected for a stable ionic solid formed exothermically from its elements.
+
+---
+
+## 💔 5. Common IChO Traps 💔
+
+1. **Standard States**: If the element is a liquid ($Br_2$) or solid ($Na$), $\Delta H_f^\circ = 0$. Don't use the wrong form.
+2. **Stoichiometric Multipliers**: Hess's Law cycles often involve half-molar amounts ($1/2 Cl_2$). Forgetting to multiply/divide enthalpies by coefficients is the fastest way to get 0 points.
+3. **Bond Energy Signs**: Bond breaking is **endothermic** (+). Bond formation is **exothermic** (-). Mixing these up is basic ass (simple) mistake.
+4. **Lattice Energy Sign**: Is it defined as forming the solid (exothermic, negative) or breaking the solid into ions (endothermic, positive)? Know the definition in the problem context.
+
+---
+
+## 🎇 6. What Graders Want to See 🎇
+
+1. **Draw the Cycle**: Actually draw the Born-Haber cycle. Arrows pointing up/down make it impossible to mess up signs.
+2. **Explicit Equations**: Write the Hess cycle equation before plugging in numbers.
+3. **Dimension Consistency**: Every term must carry the unit $\text{kJ/mol}$.
+4. **Physical Meaning**: Briefly state: "Lattice energy is the primary driving force for the formation of ionic solids, offsetting the energetic cost of ionization."
+
+---
+
+## 🥀 7. Recall Cards 🥀
+
+1. **What is Hess's Law?**
+   Ans: $\Delta H$ is path-independent; $\Delta H_{\text{total}} = \sum \Delta H_{\text{steps}}$.
+2. **Is $\Delta H_f^\circ$ of $N_2(g)$ zero?**
+   Ans: Yes, it is a pure element in its standard state.
+3. **Is bond formation exothermic or endothermic?**
+   Ans: Exothermic (negative $\Delta H$).
+4. **Born-Haber Cycle Purpose?**
+   Ans: To determine Lattice Enthalpy from experimental $\Delta H_f^\circ$ and atomic/ionic data.
+5. **If I double the reaction, what happens to $\Delta H$?**
+   Ans: It also doubles. (It's extensive).
+6. **Are Bond Enthalpies exact?**
+   Ans: No, they are *average* values. Experimental results might vary slightly.
+7. **Sign of Lattice Enthalpy?**
+   Ans: Depends on definition; strictly $\Delta H_{\text{lattice}}$ (formation) is negative.
+8. **What if the reaction path has temperature changes?**
+   Ans: Use Kirchhoff's Law ($\int \Delta C_p dT$).
+9. **Is $\Delta H$ a state function?**
+   Ans: Yes.
+10. **tf is a state function?**
+    Ans: A property determined only by current state (T, P, V, n), path-independent. (Use "what on earth" in Clean Mode).

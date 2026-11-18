@@ -1,0 +1,30 @@
+
+# Audit Report: Analytical Chemistry Unit
+
+## 1. Constants & Math Verification
+- **Constants Used:** Used $R=8.314$, standard definitions for $K_{sp}$, $E^\circ$.
+- **NaCl Gravimetric Calculation (Quantitative Analysis):**
+  - Sample: $0.500\text{ g}$. Precipitate ($\text{AgCl}$): $0.869\text{ g}$.
+  - $MW(\text{AgCl}) = 143.32\text{ g/mol}$.
+  - $MW(\text{NaCl}) = 58.44\text{ g/mol}$.
+  - Python calculation: $(0.869 / 143.32) \times 58.44 / 0.500 = 0.70899...$
+  - Result: $70.9\%$ is mathematically correct (using 3 sig figs based on sample mass).
+- **Error Propagation (Intro):** $\sqrt{0.02^2 + 0.02^2} \approx 0.02828$. Rounded to $0.028$. Correct.
+
+## 2. Qualitative & Quantitative Logic
+- **Flame Tests:** Cobalt blue glass is correctly specified to filter Na emission ($589\text{ nm}$) to see K.
+- **Pb(II) placement:** Correctly noted that $\text{PbCl}_2$ has high $K_{sp}$ leading to partial precipitation in Group I (HCl) and subsequent appearance in Group II.
+
+## 3. Spectroscopy Audit (Structural Cleanup)
+- **Status:** **DISCREPANCY FOUND**. `spectroscopy.mdx` is generic, AI-slop template text. It lacks specific analytical chemistry technical depth required for IChO preparation (e.g., Beer-Lambert Law, specific chemical examples).
+
+## 4. Recommendations
+- **Action:** Need to rewrite `spectroscopy.mdx` to match the tone and depth of the other files. The current version reads like a generic template and lacks the "Taglish" flavor.
+
+---
+**Status of audit:**
+- Math/Constants: Verified.
+- Content Voice: Consistent except for `spectroscopy.mdx`.
+- Template Text: Removed everywhere except `spectroscopy.mdx`.
+
+Proceeding to fix `spectroscopy.mdx`.

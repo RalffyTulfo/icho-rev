@@ -1,0 +1,520 @@
+---
+title: "Energy and the First Law of Thermodynamics"
+author: "Ralf Christian Mendoza"
+proofreader: "Aldrich David Antenor"
+readingTime: 15 min
+unit: "thermo-1-intro"
+color: "orange"
+cleanModeMapping:
+  "lowkey": "honestly"
+  "icl": "I must admit"
+  "hell": "heck"
+  "damn": "very"
+  "basic ass": "simple"
+  "tf": "what on earth"
+  "idfk": "I have no idea"
+  "gng": "everyone"
+  "yk": "you know"
+  "ts": "this material"
+---
+
+# Energy and the First Law of Thermodynamics
+
+Lowkey this topic is kinda easy so don't freak out, pero if you mess up sign conventions or write $dq$ instead of $\delta q$, IChO graders will show zero mercy and chop off your points. Let's break down energy conservation step-by-step para mas madali na buhay natin.
+
+---
+
+## 🕯🔥 Terms & Definitions 🔥🕯
+
+> **ICHO Grading Tip:** Every term must be defined to IUPAC precision, written in full at first mention, and abbreviated only after its complete definition is given. Never treat symbols like $U$, $q$, $w$, $H$, $S$ as self-explanatory—magagalit graders sayo pag linaktawan mo 'to.
+
+### 1.1 Energy
+
+**Definition (IUPAC-compliant):** Energy is the physical quantity that is conserved in every isolated system, encompassing all forms of microscopic kinetic and potential energies at the atomic and molecular levels. It is an exact differential of a state function.
+
+**Mathematical definition:** Energy $E$ is a state function, meaning its change between two equilibrium states depends only on the initial and final states:
+
+$$
+dE = \frac{\partial E}{\partial T}\,dT + \frac{\partial E}{\partial V}\,dV + \frac{\partial E}{\partial n}\,dn + \cdots
+$$
+
+**Physical meaning:** Energy is the capacity to do work or produce heat. It exists in quantized sub-molecular levels (electronic, vibrational, rotational, translational); macroscopic statements about energy are statistical summaries of these quantum states. Para mas madali i-visualize: imagine a swarm of gas molecules crashing into each other—energy is just the master ledger keeping track of all their chaotic quantum motion.
+
+### 1.2 Internal Energy $U$
+
+**Definition (IUPAC-compliant):** Internal energy $U$ is the total microscopic kinetic and potential energy of a system (not including bulk translational motion). It is a state function:
+
+$$
+dU = \delta q + \delta w
+$$
+
+**Physical meaning:** $U$ contains all reversible energy within the system: electronic interactions, molecular vibrations, rotations, translations, and interactions between molecules. At a given equilibrium state, $U$ is fixed regardless of how the hell the system reached that state. Disregarding the path, $U_2 - U_1$ is always identical.
+
+**Mandatory notes:**
+- $U$ is an extensive property (scales with system size).
+- Standard state: 1 bar pressure, defined substances at 298.15 K/IUPAC recommended isotopic composition, with ideal gas behavior reference for solutions.
+
+### 1.3 Heat $q$ and Work $w$
+
+> **ICHO Trap Warning:** Do not write $dq$ or $dw$! Never use $d$ (exact differential) for heat and work. Use $\delta$ or $\partial$ because they are inexact path functions—without specifying the path, you cannot determine $\delta q$ or $\delta w$ from state variables alone. What the tf is an inexact differential anyway? It just means the value depends on how you moved from A to B.
+
+**Heat ($\delta q$):** Energy transferred across system boundaries due solely to temperature difference ($T_1 \neq T_2$). No macroscopic motion of boundaries or external forces—pure thermal interaction.
+
+**Work ($\delta w$):** Energy transferred across system boundaries due to macroscopic motion of boundaries or external forces. Mechanical work (expansion/compression), electrical work, surface work, etc.
+
+**Sign convention (IChO-standard):**
+- $\delta q > 0$: heat **added** to the system (papasok ang energy via heat)
+- $\delta q < 0$: heat **lost** by the system (palabas ang energy)
+- $\delta w > 0$: work **done ON** the system (energy added via work)
+- $\delta w < 0$: work **done BY** the system (energy leaves via work when gas expands)
+
+### 1.4 State Functions vs Path Functions
+
+**State Functions ($U, H, S, G, A$):** Properties that depend only on current equilibrium state variables ($T, P, V, n$). Their differentials are exact; total change over any closed cyclic process is zero ($\oint dU = 0$).
+
+**Path Functions ($\delta q, \delta w$):** Properties that depend on the specific pathway taken between states. Their differentials are inexact; their path-dependence must be explicitly signaled using $\delta$ (not $d$). If you explode a reaction vs run it reversibly, $w$ is completely different.
+
+### 1.5 Enthalpy $H$
+
+**Definition (IUPAC-compliant):** Enthalpy $H$ is the state function defined as:
+
+$$
+H = U + PV
+$$
+
+For a closed system, the differential is:
+
+$$
+dH = dU + P\,dV + V\,dP
+$$
+
+**Physical meaning:** Bakit pa tayo nag-invent ng $H$ when we already have $U$? Simple lang: because most chemistry experiments happen in open beakers at constant atmospheric pressure ($dP = 0$). At constant pressure, $\delta q_P = dH$. It combines internal energy with $PV$ "flow work" energy required to push back atmospheric pressure, so we don't have to calculate expansion work every single time.
+
+---
+
+## 💥 Why Does This Exist? (Physical Meaning & Context) 💥
+
+### 2.1 Historical Context
+
+Thermodynamics emerged from 19th-century engineers trying to build efficient steam engines without blowing up their factories. The first law crystallized the core insight that energy is conserved—not created or destroyed—only transformed.
+
+The **First Law of Thermodynamics** is simply the principle of energy conservation applied to macroscopic thermodynamic systems:
+
+$$
+\Delta U = q + w
+$$
+
+**Why this matters for IChO:** You are expected to build solutions from first principles, hindi lang basta mag-plug-and-chug ng numbers sa calculator. You must understand where each term comes from, why it appears, and what it measures physically.
+
+### 2.2 Chemical Thermodynamics Perspective
+
+In chemistry, the first law provides the foundation for all chemical energetics:
+- $\Delta U$ tells you how much energy-containing electrons change their distribution during reactions.
+- $\Delta H$ tells you how much thermal energy is exchanged at constant pressure (reaction calorimetry).
+- Combined with statistical mechanics and quantum chemistry, you can calculate $U$ from molecular parameters and predict which chemical transformations are energetically favorable.
+
+### 2.3 Absurd Scenario & Limitations
+
+Imagine you're trying to build an illegally modded, compressed-gas powered Indomie cooker that expands against 1.0 bar of atmospheric pressure while sitting in a shoddy calorimeter. First-law thermodynamics lets you calculate exact heat and work exchanges so your noodles cook perfectly without destroying your desk.
+
+**Limitations:**
+The first law assumes:
+- Energy conservation holds exactly in macroscopic systems.
+- Thermodynamic equilibrium states are well-defined.
+- No energy transfer via radiation, neutrinos, or exotic nuclear mechanisms not included in $q + w$.
+
+In reality, quantum-field or relativistic corrections exist, but for IChO-level problems at standard conditions, they are damn near zero, so ignore them unless the question explicitly involves nuclear decay.
+
+---
+
+## 🕯 Derivation from First Principles 🕯
+
+### 3.1 From Molecular Energy to Internal Energy $U$
+
+**Starting point:** At the microscopic level, every molecule in a system possesses:
+- Translational kinetic energy: $\frac{1}{2}mv^2$
+- Rotational kinetic energy: $\frac{1}{2}I\omega^2$ (for polyatomic molecules)
+- Vibrational energy (harmonic approximation): $\sum_i \left[ \frac{1}{2}m\dot{x}_i^2 + \frac{1}{2}kx_i^2 \right]$
+- Electronic excitation energy (quantized)
+- Nuclear binding energy (constant in chemical reactions)
+
+**Goal:** Define a macroscopic state function that summarizes all these microstates at temperature $T$.
+
+**Derivation:**
+
+1. Consider a system of $N$ identical particles at equilibrium temperature $T$.
+2. Time-averaged energy per molecule can be expressed as a function of temperature and molecular degrees of freedom.
+3. In the classical limit (valid for most IChO problems), average energy per quadratic degree of freedom is $\frac{1}{2}k_B T$ (equipartition theorem).
+4. Total internal energy:
+   $$
+   U(T, V, n) = \sum_{\text{molecule types}} n_i \left( \frac{3}{2}RT + \text{rotation} + \text{vibration} + \text{electronic} \right)
+   $$
+
+   where $R = N_A k_B$ is the universal gas constant.
+
+5. More rigorously, statistical mechanics shows that for any equilibrium state, $U$ is a well-defined state function dependent only on $T$, $V$, and composition.
+
+**Physical meaning here:** $U$ is essentially a "thermodynamic sum" over all microstates at temperature $T$. Pag tinaas mo ang $T$, molecular motion speeds up, and $U$ shifts predictably with temperature.
+
+**Assumptions:**
+- Classical limit, not fully quantum (though quantum vibrational corrections can be added).
+- System remains in thermal equilibrium throughout.
+
+### 3.2 Derivation of the First Law: $dU = \delta q + \delta w$
+
+**Starting point:** Energy conservation for a closed system with no mass exchange ($dn = 0$).
+
+**Derivation:**
+
+1. Consider a closed thermodynamic system undergoing a process from state 1 to state 2.
+2. The total energy change of the system between states is:
+   $$
+   \Delta E_{\text{system}} = E_2 - E_1
+   $$
+3. Energy crossing the system boundary can occur in only two ways:
+   - Heat transfer due to temperature difference ($\delta q$)
+   - Work transfer due to macroscopic boundary displacement or external force ($\delta w$)
+4. Energy conservation demands:
+   $$
+   \Delta E_{\text{system}} = \underbrace{q}_{\text{thermal}} + \underbrace{w}_{\text{mechanical}}
+   $$
+5. For infinitesimal changes:
+   $$
+   dU = \delta q + \delta w
+   $$
+   - $dU$ is exact (depends only on initial/final states).
+   - $\delta q$, $\delta w$ are inexact (path-dependent).
+
+**Physical meaning:** The first law asserts that energy added to a system (via heat or work) must appear as a change in $U$. No energy vanishes or spawns out of thin air—strict thermodynamic accounting lang.
+
+**Assumptions:**
+- System is closed (constant mass).
+- All energy transfers are identifiable as heat or work.
+- Thermodynamic equilibrium at each point along the path.
+
+### 3.3 Work in Expansion/Compression: $\delta w = -P_{\text{ext}} dV$
+
+**Starting point:** Mechanical work of a gas against external pressure $P_{\text{ext}}$.
+
+**Derivation:**
+
+1. Consider an ideal gas in a cylinder with a movable piston under uniform external pressure $P_{\text{ext}}$.
+2. Force on piston area $A$: $F = P_{\text{ext}} A$.
+3. Piston moves distance $dx$ during an infinitesimal process:
+   $$
+   \delta w = -F\,dx = -P_{\text{ext}} A\,dx = -P_{\text{ext}} dV
+   $$
+   Bakit may negative sign? Simple lang: when volume increases ($dV > 0$), work is done **by** the system (energy leaves), so $\delta w < 0$.
+4. For reversible processes where $P_{\text{sys}} = P_{\text{ext}}$ at every instant:
+   $$
+   \delta w_{\text{rev}} = -P\,dV
+   $$
+
+**Physical meaning:** Expansion work costs the system internal energy to push back external pressure; compression work adds energy to the system. Quasi-static reversible work captures the full thermodynamic potential.
+
+**Assumptions:**
+- Quasi-static process (system always infinitesimally close to equilibrium).
+- Only $PV$ work is considered (ignore surface tension, electrical work).
+
+### 3.4 Heat Capacity Definitions: $C_V$ and $C_P$
+
+**Starting point:** How internal energy and enthalpy change with temperature.
+
+**Derivation (For $C_V$ at constant volume):**
+
+1. Define heat capacity at constant volume as energy needed to raise $T$ by $1\,\text{K}$ while keeping $V$ fixed:
+   $$
+   C_V \equiv \left(\frac{\partial U}{\partial T}\right)_V
+   $$
+2. From first law at constant volume, $dV = 0 \implies \delta w = 0$, so:
+   $$
+   dU = \delta q_V
+   $$
+   Thus $C_V$ directly measures heat added at constant volume.
+3. Formally:
+   $$
+   C_V = \lim_{\delta T \to 0} \left(\frac{\delta q}{\delta T}\right)_V = \left(\frac{\partial U}{\partial T}\right)_V
+   $$
+
+**Physical meaning:** $C_V$ quantifies how sensitive $U$ is to temperature. For ideal monatomic gas: $C_V = \frac{3}{2}R$ (3 translational DOF). For diatomic gas: add rotation (2 DOF) to get $C_V = \frac{5}{2}R$.
+
+**Derivation (For $C_P$ at constant pressure):**
+
+1. From enthalpy $H = U + PV$, take the differential:
+   $$
+   dH = dU + P\,dV + V\,dP
+   $$
+2. Substitute the first law $dU = \delta q + \delta w$:
+   $$
+   dH = (\delta q - P\,dV) + P\,dV + V\,dP = \delta q + V\,dP
+   $$
+3. At constant pressure, $dP = 0$, so:
+   $$
+   dH = \delta q_P
+   $$
+4. Define $C_P$:
+   $$
+   C_P \equiv \left(\frac{\partial H}{\partial T}\right)_P
+   $$
+5. For an ideal gas:
+   $$
+   C_P - C_V = nR
+   $$
+   (Monatomic ideal gas: $C_V = \frac{3}{2}R \implies C_P = \frac{5}{2}R$; Diatomic: $C_V = \frac{5}{2}R \implies C_P = \frac{7}{2}R$).
+
+**Physical meaning:** $C_P$ measures heat required at constant pressure. Akala mo ba pareho lang $C_P$ at $C_V$? Nope! $C_P$ is always larger because expanding gas does work against atmospheric pressure, requiring extra energy input per degree Kelvin.
+
+---
+
+## ⚡ Worked Example: Isothermal Expansion ⚡
+
+> **ICHO Grading Tip:** Every IChO thermo problem must include "Step 0" where you explicitly state (a) the path definition, (b) sign conventions, and (c) which functions are state vs path. Graders deduct major points if you jump straight into formulas!
+
+### 4.1 Example: Isothermal Expansion of an Ideal Gas
+
+**Problem:** An ideal gas at $300\,\text{K}$ and $2.0\,\text{bar}$ expands isothermally and reversibly to $1.0\,\text{bar}$ against $P_{\text{ext}}$. Calculate $\Delta U$, $q$, $w$, and total $C_V$ for $2.0\,\text{mol}$ of diatomic gas.
+
+**Step 0: Figure Out the Path Before Computing**
+
+1. **Identify the path:**
+   - **System:** 2.0 mol ideal diatomic gas ($C_V = \frac{5}{2}R$)
+   - **Constraints:** Initial $T_1 = 300\,\text{K}$, final $T_2 = 300\,\text{K}$ (isothermal, $\Delta T = 0$).
+   - **Reversibility:** Reversible expansion from $P_1 = 2.0\,\text{bar}$ to $P_2 = 1.0\,\text{bar}$ ($P_{\text{sys}} = P_{\text{ext}}$ at all intermediate points).
+
+2. **Sign conventions:**
+   - $\delta q > 0$: heat **added** to system
+   - $\delta w > 0$: work **done ON** system ($\delta w < 0$ work done BY system)
+   - First law: $\Delta U = q + w$
+
+3. **State vs path functions used:**
+   - State: $U(T)$ (for ideal gas, $U$ depends ONLY on temperature).
+   - Path: $q, w$ (process-dependent).
+
+4. **Dimensional sanity check in advance:**
+   - Work units: $\text{bar}\cdot\text{L} = 100\,\text{J}$.
+   - Heat ($q$) and internal energy ($\Delta U$) in Joules.
+
+**Step 1: Compute $\Delta U$**
+
+For an ideal gas, internal energy $U$ depends solely on temperature:
+
+$$
+U(T_1) = U(T_2) \quad \implies \quad \Delta U = 0
+$$
+
+**Physical meaning:** Isothermal expansion changes molecular spacing, but average kinetic energy stays constant for ideal gas. Distribution of energy among vibrations, rotations, and translations doesn't shift, so $\Delta U = 0$.
+
+**Step 2: Compute $w$ via reversible work integral**
+
+$$
+w = -\int_{V_1}^{V_2} P\,dV
+$$
+
+Using $P = \frac{nRT}{V}$ for ideal gas at constant $T$:
+
+$$
+w = -nRT \int_{V_1}^{V_2} \frac{dV}{V} = -nRT \ln\left(\frac{V_2}{V_1}\right)
+$$
+
+Since $P_1 V_1 = P_2 V_2 \implies \frac{V_2}{V_1} = \frac{P_1}{P_2} = \frac{2.0}{1.0} = 2$.
+
+Substitute values ($n = 2.0\,\text{mol}$, $R = 8.314\,\text{J}\,\text{mol}^{-1}\,\text{K}^{-1}$, $T = 300\,\text{K}$):
+
+$$
+w = -(2.0)(8.314)(300)\ln(2) = -(2.0)(8.314)(300)(0.69315) = -3452\,\text{J}
+$$
+
+**Sign check:** $w = -3452\,\text{J} < 0$. Negative sign confirms that energy left the system via expansion work done **by** the gas on surroundings. Correct!
+
+**Step 3: Compute $q$ via First Law**
+
+$$
+\Delta U = q + w \quad \implies \quad 0 = q + (-3452\,\text{J}) \quad \implies \quad q = +3452\,\text{J}
+$$
+
+**Physical meaning:** $3452\,\text{J}$ of thermal heat energy flowed **into** the system from the surroundings to compensate for energy lost to expansion work, maintaining constant $T = 300\,\text{K}$.
+
+**Step 4: Compute total $C_V$ for 2.0 mol gas**
+
+For diatomic ideal gas at standard temperatures:
+
+$$
+C_V = \frac{5}{2}R = \frac{5}{2} \times 8.314 = 20.785\,\text{J}\,\text{mol}^{-1}\,\text{K}^{-1}
+$$
+
+For $n = 2.0\,\text{mol}$:
+
+$$
+C_V^{\text{total}} = n C_V = 2.0 \times 20.785 = 41.57\,\text{J}\,\text{K}^{-1}
+$$
+
+**Step 5: Final Sanity Check & Summary**
+
+- $\Delta U = 0$ (isothermal ideal gas)
+- $w = -3452\,\text{J}$ (work done **by** system)
+- $q = +3452\,\text{J}$ (heat added to system)
+- $C_V^{\text{total}} = 41.57\,\text{J}\,\text{K}^{-1}$ (for 2.0 mol)
+
+Energy is strictly conserved ($q + w = 0$), units match ($\text{J}$ and $\text{J/K}$), and signs align with physical intuition.
+
+---
+
+## 🥀 Common IChO Traps 🥀
+
+### 5.1 Sign Convention Traps
+
+**Trap 1: Confusing $d$ vs $\delta$**
+- **Mistake:** Writing $dw$ or $dq$.
+- **IChO Reality Check:** Heat and work are path functions. Use $\delta q$ and $\delta w$. Writing $dq$ or $dw$ will cost you -0.5 to -1 point per occurrence!
+
+**Trap 2: Using $\Delta U = q - w$ incorrectly**
+- Some older physics textbooks define $w$ as work done BY system ($\Delta U = q - w$). **Always check standard conventions!** IChO standard uses $\Delta U = q + w$ where $w$ is work added ($\delta w = -P_{\text{ext}} dV$).
+
+**Trap 3: Mixing up "heat flow" with "heat added"**
+- **Mistake:** Writing $q = 300\,\text{J}$ when heat was released.
+- **IChO Reality Check:** $q = -300\,\text{J}$ explicitly means $300\,\text{J}$ of thermal energy **left** the system.
+
+### 5.2 State vs Path Traps
+
+**Trap 4: Treating $\delta q$ and $\delta w$ as state functions**
+- **Mistake:** Calculating $q$ or $w$ using state-to-state subtraction without specifying path.
+- **IChO Reality Check:** Reversible expansion ($w_{\text{rev}} = -nRT\ln(V_2/V_1)$) gives maximum work, whereas irreversible sudden expansion against constant pressure gives $w_{\text{irrev}} = -P_{\text{ext}}\Delta V$. Path matters!
+
+**Trap 5: Assuming $\Delta U = C_V \Delta T$ universally**
+- **Mistake:** Applying $\Delta U = C_V \Delta T$ without verifying ideal gas or constant volume constraints.
+- **IChO Reality Check:** For real gases, $U$ depends on both $T$ and $V$, so $dU = C_V dT + \left(\frac{\partial U}{\partial V}\right)_T dV$.
+
+### 5.3 Ideal Gas Approximation Traps
+
+**Trap 6: Using ideal gas $C_V$ for real gases at high pressure**
+- **Mistake:** Assuming $C_V = \frac{5}{2}R$ for dense real nitrogen.
+- **IChO Reality Check:** State your assumptions explicitly: "Ideal gas assumption valid at $P < 10\,\text{bar}$."
+
+**Trap 7: Isothermal $\Delta U = 0$ fallacy**
+- **Mistake:** Assuming $\Delta U = 0$ for ANY isothermal process.
+- **IChO Reality Check:** $\Delta U = 0$ holds ONLY for ideal gases. For real gases, expanding changes intermolecular potential energy even if $T$ is constant, so $\Delta U \neq 0$.
+
+### 5.4 Calculus Traps
+
+**Trap 8: Forgetting constant-volume condition for $C_V$**
+- **Mistake:** Writing $C_V = \left(\frac{\partial U}{\partial T}\right)_P$.
+- **IChO Reality Check:** $C_V$ is defined strictly at constant volume ($\partial V = 0$).
+
+**Trap 9: Inverting work sign during expansion**
+- **Mistake:** Writing $w = +\int P\,dV$ for expansion.
+- **IChO Reality Check:** When gas expands ($dV > 0$), work is done **by** gas, so energy leaves ($w < 0$). Always include the negative sign: $w = -\int P_{\text{ext}} dV$.
+
+### 5.5 Numerical Trap
+
+**Trap 10: Unit mismatch with $R$**
+- **Mistake:** Combining $R = 0.08206\,\text{L}\cdot\text{atm}\,\text{mol}^{-1}\,\text{K}^{-1}$ directly with $q, w$ in Joules.
+- **IChO Reality Check:** Use $R = 8.314\,\text{J}\,\text{mol}^{-1}\,\text{K}^{-1}$, or remember $1\,\text{bar}\cdot\text{L} = 100\,\text{J}$.
+
+---
+
+## 💔 What Graders Want to See 💔
+
+> **ICHO Rubric expectations:** Here is how gold- or silver-medal graders grade thermodynamics problems on the official marking scheme.
+
+### 6.1 Structure and Notation
+
+**Must include:**
+1. Explicit "Step 0" stating path, sign conventions, and state vs path function classifications.
+2. Full definitions for every symbol at first mention.
+3. IUPAC-compliant units in every final answer.
+4. Step-by-step derivations with physical meaning explanations between steps.
+
+**Points lost for omission:**
+- Missing "Step 0": -4 points (fundamental setup failure).
+- No state vs path distinction: -3 points.
+- Undefined symbols: -2 points per term.
+
+### 6.2 Physical Meaning Capture
+
+**"Write physically what the equation says:"**
+- For $dU = \delta q + \delta w$: "Energy conservation: net heat added plus net work added equals change in internal energy."
+- For $\delta w = -P_{\text{ext}} dV$: "Expansion work costs system internal energy when volume increases ($dV > 0$)."
+
+**Grading deduction:**
+- Equation presented without physical explanation: -1 to -3 points per instance.
+
+### 6.3 Dimensional and Unit Consistency
+
+**Mandatory:**
+- Every term in an equation must match in units.
+- Final numerical answers must have explicit units (e.g., $-3452\,\text{J}$, not just $-3452$).
+
+**Grading deduction:**
+- Missing units on final answer: -1 or -2 points.
+- Unit mismatch across equation terms: -3 points.
+
+### 6.4 Assumptions and Limitations
+
+**Mandatory after every major derivation:**
+- Explicit list of physical assumptions (ideal gas, quasi-static, constant pressure, no non-$PV$ work).
+
+**Example write-up:**
+> "Assumptions: ideal gas behavior, quasi-static process, constant $P$ for $C_P$, only expansion $PV$ work. Limitations: inaccurate at high pressure ($>10\,\text{bar}$) where intermolecular attractions dominate."
+
+### 6.5 Calculus Rigor
+
+- Use exact differentials $d$ for state functions ($dU, dH, dS, dG$).
+- Use inexact differentials $\delta$ for path functions ($\delta q, \delta w$).
+- Penalty for writing $dq$ or $dw$: -0.5 to -1 point.
+
+### 6.6 Step-by-Step Rubric Breakdown
+
+**Golden standard for maximum marks (20 points total):**
+- Path definition & conventions (Step 0): 3 pts
+- Setup of First Law & definitions: 3 pts
+- Integration & working steps: 4 pts
+- Dimensional checks: 2 pts
+- Unit consistency & final answers: 2 pts
+- Physical interpretation & assumptions: 4 pts
+- **Total:** 18-20/20 pts
+
+---
+
+## 🎇 Recall Cards 🎇
+
+Q: What is the mathematical definition of internal energy $U$ as a state function?
+
+A: $U = U(T, V, n_1, n_2, \ldots)$, where $dU = \left(\frac{\partial U}{\partial T}\right)_V dT + \left(\frac{\partial U}{\partial V}\right)_T dV + \sum_i \left(\frac{\partial U}{\partial n_i}\right) dn_i$. $U$ depends solely on equilibrium state variables, regardless of the path taken.
+
+Q: State the sign convention for heat $q$ and work $w$ in IChO thermodynamics problems.
+
+A: $\delta q > 0$ means heat **added** to system; $\delta q < 0$ means heat **lost** by system. $\delta w > 0$ means work energy **added** to system (work done **on** system); $\delta w < 0$ means work energy **lost** by system (work done **by** system). First law: $dU = \delta q + \delta w$.
+
+Q: Why must we use $\delta$ (inexact) instead of $d$ (exact) for heat and work?
+
+A: Heat and work are path functions—their magnitudes depend on the specific path (reversible vs explosive, quasi-static vs irreversible). Only state functions have exact differentials $d$ that depend solely on initial and final states.
+
+Q: Derive the expression for reversible expansion/compression work.
+
+A: $w = -\int_{V_1}^{V_2} P\,dV$ where $P_{\text{sys}} = P_{\text{ext}}$ at each infinitesimal step. For an ideal gas, $w = -nRT\ln(V_2/V_1) = -nRT\ln(P_1/P_2)$.
+
+Q: What are $C_V$ and $C_P$, and how are they defined in terms of partial derivatives?
+
+A: $C_V = \left(\frac{\partial U}{\partial T}\right)_V$ (heat capacity at constant volume). $C_P = \left(\frac{\partial H}{\partial T}\right)_P$ (heat capacity at constant pressure). For an ideal gas: $C_P - C_V = nR$.
+
+Q: Why is (or isn't) $\Delta U$ zero for an isothermal process?
+
+A: For an ideal gas, $U$ depends solely on $T$, so constant $T$ gives $\Delta U = 0$ regardless of volume change. For real gases, $U$ depends on $V$ due to intermolecular forces, so $\Delta U \neq 0$ even at $\Delta T = 0$.
+
+Q: Derive why $\delta q_P = dH$ at constant pressure.
+
+A: From first law: $dU = \delta q + \delta w = \delta q - P dV$. Enthalpy is $H = U + PV \implies dH = dU + P dV + V dP$. Substituting $dU$: $dH = (\delta q - P dV) + P dV + V dP = \delta q + V dP$. At constant pressure ($dP = 0$), $dH = \delta q_P$.
+
+Q: When should you use $C_V$ vs $C_P$?
+
+A: Use $C_V$ when volume is held constant (or calculating internal energy changes). Use $C_P$ when pressure is held constant (or calculating enthalpy changes in constant-pressure calorimetry).
+
+Q: What four pieces of information must appear in Step 0 of every thermo IChO solution?
+
+A: (1) Explicit path definition (constraints, reversibility). (2) Sign convention declaration for $q$ and $w$. (3) State vs path function classification. (4) Verification of physical assumptions (ideal gas, constant pressure).
+
+Q: What is the physical meaning of $dH = \delta q_P$ at constant pressure?
+
+A: At constant pressure, heat added to a system equals the change in enthalpy $H = U + PV$. Enthalpy accounts for both internal energy change and the $PV$ expansion work done against atmospheric pressure.
+
+### End of Lesson: Energy and the First Law

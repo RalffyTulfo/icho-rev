@@ -1,0 +1,111 @@
+---
+title: "Organometallics, Catalysis, and Solid-State Chemistry"
+author: "Ralf Christian Mendoza"
+proofreader: "Aldrich David Antenor"
+readingTime: 30 min
+unit: "Inorganic Chemistry"
+color: "indigo"
+cleanModeMapping:
+  "lowkey": "honestly"
+  "icl": "I must admit"
+  "hell": "heck"
+  "damn": "very"
+  "basic ass": "simple"
+  "tf": "what on earth"
+  "idfk": "I have no idea"
+  "gng": "everyone"
+  "yk": "you know"
+  "ts": "this material"
+---
+
+# Organometallics, Catalysis, and Solid-State Chemistry
+
+Lowkey, organometallics is just fancy electron counting while solid-state chemistry is basically Minecraft in real life. If you can handle the 18-electron rule and visualize a BCC unit cell without losing your mind, you're halfway to an IChO gold. Let's get it.
+
+---
+
+## 🕯🔥 Terms & Definitions 🔥🕯
+
+> **ICHO Grading Tip:** When counting electrons for organometallic complexes, always state your method (neutral atom vs. ionic). Stick to ONE method throughout your answer to avoid double-counting or missing ligands!
+
+### 4.1 The 18-Electron Rule
+Most stable organometallic complexes with strong-field ligands ($\text{CO}, \text{PR}_3, \text{CN}^-$) have 18 valence electrons (a full $nd, (n+1)s, (n+1)p$ shell).
+
+**Electron Counting (Neutral Method):**
+- Metal: Group number = valence $e^-$ count.
+- Ligands: Count donated electrons (e.g., $\text{CO} = 2e^-, \text{Cl} = 1e^-, \text{Cp} = 5e^-$).
+
+### 4.2 Synergic Back-Bonding
+$\text{CO}$ is a strong $\sigma$-donor and $\pi$-acceptor. 
+- **$\sigma$-donation:** $\text{CO}$ lone pair to empty metal $d$-orbital.
+- **$\pi$-backbonding:** Metal $d$-electrons flow into $\text{CO}$ $\pi^*$ (antibonding) orbitals.
+- **Result:** $M-C$ bond strengthens (shorter $M-C$ length), $\text{C-O}$ bond weakens (lower IR frequency $\nu_{\text{CO}}$).
+
+---
+
+## 🛠 Catalytic Cycles (Simplified)
+
+1. **Oxidative Addition:** Metal oxidation state and coordination number increase by 2.
+2. **Migratory Insertion:** Ligand moves into a metal-ligand bond (e.g. $\text{R}$ migrates to $\text{CO}$).
+3. **Reductive Elimination:** Metal oxidation state and coordination number decrease by 2.
+
+---
+
+## 💡 Worked Example: Solid-State Density
+
+### Problem
+Calculate the density ($d$) of gold (FCC structure, atomic radius $r = 144\text{ pm}$, molar mass $M = 197.0\text{ g/mol}$).
+
+### Step 0: Figure out the path
+- FCC: $Z = 4$ atoms/cell. Edge length $a = \frac{4r}{\sqrt{2}} = 2\sqrt{2}r$.
+- $V = a^3$. Density $d = \frac{ZM}{V N_A}$.
+
+### Step-by-Step Solution
+1. **Edge length ($a$):** $a = 2\sqrt{2} \times 144\text{ pm} = 407.3\text{ pm} = 4.073 \times 10^{-8}\text{ cm}$.
+2. **Volume ($V$):** $V = (4.073 \times 10^{-8})^3 = 6.75 \times 10^{-23}\text{ cm}^3$.
+3. **Density ($d$):**
+   $d = \frac{4 \times 197.0}{(6.75 \times 10^{-23}) \times (6.022 \times 10^{23})} = 19.4\text{ g/cm}^3$.
+
+---
+
+## 🎮 Interactive Modules
+
+```jsx
+// Interactive Placeholder: EighteenElectronCounter
+// Input ligand counts for a complex and see real-time 18-e count calculation.
+import EighteenElectronCounter from '../../../components/interactives/EighteenElectronCounter.jsx';
+```
+
+```jsx
+// Interactive Placeholder: UnitCellVisualizer
+// Toggle between Simple Cubic, BCC, FCC, and HCP lattice visualizations.
+import UnitCellVisualizer from '../../../components/interactives/UnitCellVisualizer.jsx';
+```
+
+---
+
+## 🏋️‍♂️ Problem Set
+
+### Tier 1: Warm-up
+**Problem 1.1** Count electrons for Vaska's complex, $\text{[IrCl(CO)(PPh}_3)_2]$.
+
+<details>
+<summary>Solution</summary>
+$\text{Ir}$ (Group 9) = 9. $\text{Cl}$ = 1. $\text{CO}$ = 2. $2 \times \text{PPh}_3$ = 4. Total = 16. [2 pts]
+</details>
+
+### Tier 2: Level-up
+**Problem 2.1** Explain why $\nu_{\text{CO}}$ decreases as the metal oxidation state decreases.
+
+<details>
+<summary>Solution</summary>
+Lower metal oxidation state $\rightarrow$ metal is more electron-rich $\rightarrow$ stronger $\pi$-backbonding $\rightarrow$ more electron density in $\text{CO}$ $\pi^*$ orbital $\rightarrow$ weaker $\text{C-O}$ bond $\rightarrow$ lower $\nu_{\text{CO}}$. [2 pts]
+</details>
+
+### Tier 3: Boss Fight
+**Problem 3.1** A metal $\text{M}$ forms an FCC lattice. $\lambda_{\text{X-ray}} = 154\text{ pm}$. Diffraction from (111) plane at $\theta = 19.2^\circ$. Calculate density.
+
+<details>
+<summary>Solution</summary>
+Bragg's Law: $2d\sin\theta = \lambda \implies d_{111} = 234\text{ pm}$. $a = d \sqrt{3} = 405\text{ pm}$. Use $Z=4$ and $M$ to find $d$. [4 pts]
+</details>

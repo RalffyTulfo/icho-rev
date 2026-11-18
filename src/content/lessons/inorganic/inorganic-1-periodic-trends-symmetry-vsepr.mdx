@@ -1,0 +1,110 @@
+# Inorganic Chemistry: Periodic Trends, Symmetry, and VSEPR Theory
+
+--- 
+title: "Periodic Trends, Symmetry, and VSEPR Theory"
+author: "Ralf Christian Mendoza"
+proofreader: "[To be assigned]"
+readingTime: "30 min"
+unit: "Inorganic Chemistry"
+color: "purple"
+cleanModeMapping: 
+  "tf": "what on earth", 
+  "idfk": "I have no idea", 
+  "hell": "heck", 
+  "damn": "oh no"
+--- 
+
+## Terms and Definitions
+
+- **Periodic Trends**: Patterns in atomic properties (radius, ionization energy, electronegativity) across the periodic table.
+- **VSEPR Theory**: Valence Shell Electron Pair Repulsion — predicts molecular geometry based on electron pair repulsion.
+- **Symmetry Elements**: Cn (rotation), σ (reflection), i (inversion) — building blocks of molecular symmetry.
+- **Point Groups**: Classification of molecules based on their symmetry operations.
+
+## Why Does This Exist?
+
+Imagine you're in the IChO lab, and you're handed a molecule you've never seen before. How do you predict its shape? Why does it look like it does? This lesson teaches you how to use **VSEPR theory** and **symmetry principles** to predict molecular geometry, bond angles, and symmetry elements. This isn't just about memorizing shapes—it's about understanding why molecules are the way they are, and how that affects their reactivity and properties.
+
+## Motivation
+
+In IChO, you won't just be asked to draw a molecule. You'll be asked to explain why it has a specific shape, or why it reacts in a certain way. Understanding **periodic trends** helps you predict properties like electronegativity, which affects bond polarity and reactivity. Understanding **VSEPR theory** helps you predict molecular geometry, which affects intermolecular forces and physical properties. And understanding **symmetry** helps you predict spectroscopic behavior and reactivity patterns.
+
+## Worked Example: Predicting the Geometry of SO₂
+
+**Step 0: Figure out the path before you compute**
+
+1. **Draw the Lewis Structure**: SO₂ has sulfur (S) in the center with 6 valence electrons and 2 oxygen atoms, each with 6 valence electrons. Total valence electrons = 6 (S) + 6*2 (O) = 18. After forming bonds, we have 4 lone pairs around sulfur.
+
+2. **Count Electron Pairs**: Sulfur has 2 bonding pairs (S=O) and 1 lone pair. Total electron pairs around S = 3.
+
+3. **Apply VSEPR Theory**: 3 electron pairs around the central atom predict a **trigonal planar** electron geometry. However, since there is 1 lone pair, the molecular geometry is **bent** (V-shaped).
+
+4. **Predict Bond Angle**: The bond angle is slightly less than 120° due to lone pair repulsion.
+
+**Sanity Check**: 
+- Does the Lewis structure make sense? Yes, sulfur forms double bonds with oxygen.
+- Does the electron pair count match? Yes, 3 regions of electron density.
+- Does the geometry match known examples? Yes, SO₂ is known to be bent.
+
+**Common IChO Traps**:
+- Forgetting to count lone pairs when predicting geometry.
+- Assuming all bond angles are 109.5° (tetrahedral) without considering lone pairs.
+
+**What Graders Want to See**:
+- A clear Lewis structure with all electrons accounted for.
+- Correct application of VSEPR theory to predict geometry.
+- Explanation of why the bond angle deviates from the ideal.
+
+## Interactive: VSEPR Geometry Predictor
+
+```jsx
+import VSEPRInteractive from '../../../components/interactives/VSEPRInteractive.jsx'
+
+<VSEPRInteractive />
+```
+
+**How it works**: Enter a molecule, and the interactive predicts its geometry based on VSEPR theory.
+
+## Interactive: Symmetry Explorer
+
+```jsx
+import SymmetryExplorer from '../../../components/interactives/SymmetryExplorer.jsx'
+
+<SymmetryExplorer />
+```
+
+**How it works**: Drag and drop molecules to visualize their symmetry elements and point groups.
+
+## Three-Tier Problem Set
+
+### Warm-up
+
+**Problem 1**: Predict the molecular geometry of CO₂.
+- **Solution**: Linear (180° bond angle).
+
+**Problem 2**: Determine the symmetry elements of H₂O.
+- **Solution**: C₂, 2σ (mirror planes), i (inversion center).
+
+### Level-up
+
+**Problem 3**: Calculate the bond angle in NH₃.
+- **Solution**: 107° (slightly less than 109.5° due to lone pair repulsion).
+
+**Problem 4**: Explain why PF₅ has a trigonal bipyramidal geometry.
+- **Solution**: Five electron pairs around phosphorus lead to a trigonal bipyramidal arrangement.
+
+### Boss Fight
+
+**Problem 5**: Predict the geometry and bond angles of SF₄, and explain why it is not perfectly symmetrical.
+- **Solution**: See-saw shape with bond angles of 173° and 101.6° due to lone pair repulsion.
+
+## Go Deeper
+
+- [Periodic Trends in the IChO Syllabus](https://icho.org/syllabus)
+- [VSEPR Theory: A Comprehensive Guide](https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/Supplemental_Modules_(Physical_and_Theoretical_Chemistry)/Molecular_Geometry_and_VSEPR_Theory)
+
+--- 
+
+**Note**: This lesson is a work in progress and will be refined based on QA feedback.
+
+---

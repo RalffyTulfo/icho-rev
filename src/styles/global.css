@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Digital Lab Palette */
+  --color-background: #f8f7f9;
+  --color-foreground: #0f172a;
+  --color-primary: #3b82f6;
+  --color-secondary: #10b981;
+  --color-accent: #ef4444;
+  --color-surface: rgba(255, 255, 255, 0.8);
+  --color-border: rgba(15, 23, 42, 0.1);
+
+  --color-physical: #3b82f6;
+  --color-organic: #10b981;
+  --color-inorganic: #a855f7;
+  --color-analytical: #f59e0b;
+  --color-biochemistry: #ec4899;
+  --color-practical: #6366f1;
+
+  --font-display: "Plus Jakarta Sans", "Inter", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+
+  --duration-ui: 200ms;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:root[data-theme="dark"] {
+  --color-background: #0f172a;
+  --color-foreground: #f8fafc;
+  --color-surface: rgba(255, 255, 255, 0.03);
+  --color-border: rgba(255, 255, 255, 0.1);
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
+    linear-gradient(rgba(15, 23, 42, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.02) 1px, transparent 1px);
+  background-size: 100% 100%, 32px 32px, 32px 32px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.lab-card, .frosted-glass {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all var(--duration-ui) var(--ease-out);
+}
+
+.lab-card:hover {
+  border-color: var(--color-primary);
+  background-color: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.1);
+}
+
+.lab-grid {
+  background-image: radial-gradient(currentColor 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+h1, h2, h3 { font-family: var(--font-display); }
+
+.katex-display {
+  margin: 1.5em 0;
+  padding: 1em;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--color-primary);
+  overflow-x: auto;
+}
+
+@media print {
+  body { background: white !important; color: black !important; background-image: none !important; }
+  .no-print { display: none !important; }
+}

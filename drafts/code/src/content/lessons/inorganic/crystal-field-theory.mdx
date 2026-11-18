@@ -1,0 +1,214 @@
+---
+title: "Crystal Field Theory and Electronic Spectra"
+author: "Ralf Christian Mendoza"
+proofreader: "Aldrich David Antenor"
+readingTime: 25 min
+unit: "Inorganic Chemistry"
+color: "indigo"
+cleanModeMapping:
+  "lowkey": "honestly"
+  "icl": "I must admit"
+  "hell": "heck"
+  "damn": "very"
+  "basic ass": "simple"
+  "tf": "what on earth"
+  "idfk": "I have no idea"
+  "gng": "everyone"
+  "yk": "you know"
+  "ts": "this material"
+---
+
+# Crystal Field Theory and Electronic Spectra
+
+Bakit colorful ang transition metal complexes, habang ang $\text{NaCl}$ solution ay Boring Clear™? Simple: Crystal Field Theory (CFT). Lowkey confusing ang pairing energy at $d$-orbital splitting at first glance, pero logic lang 'yan! Let's master $d$-orbital degeneracy lifting, CFSE, spectrochemical series, and electronic spectra step-by-step.
+
+---
+
+## 🕯🔥 Terms & Definitions 🔥🕯
+
+> **ICHO Grading Tip:** When writing CFSE values for Octahedral fields, explicitly use $t_{2g}$ and $e_g$ labels. Using lower-case or omitting sub-orbital symmetry labels loses points!
+
+### 3.1 Crystal Field Splitting Energy (CFSE) & Barycenter Rule
+
+**Definition:** In an isolated, free gaseous metal ion, all five $d$-orbitals ($d_{xy}, d_{yz}, d_{xz}, d_{x^2-y^2}, d_{z^2}$) are degenerate (equal energy). When point-charge ligands approach the metal center:
+- Electrostatic repulsions lift orbital degeneracy.
+- The average energy of all five $d$-orbitals remains at the hypothetical **Barycenter** (weighted average energy = 0).
+
+1. **Octahedral Field ($O_h$):**
+   - Ligands approach along Cartesian axes ($x, y, z$).
+   - Orbitals pointing directly at ligands ($d_{x^2-y^2}, d_{z^2}$) are destabilized by $+0.6\Delta_o$ ($+3/5 \Delta_o$) $\rightarrow$ **$e_g$ set**.
+   - Orbitals pointing between axes ($d_{xy}, d_{yz}, d_{xz}$) are stabilized by $-0.4\Delta_o$ ($-2/5 \Delta_o$) $\rightarrow$ **$t_{2g}$ set**.
+
+$$\text{CFSE}_{O_h} = (-0.4 n_{t_{2g}} + 0.6 n_{e_g})\Delta_o + P_{\text{extra}}$$
+
+where $P_{\text{extra}}$ is the additional pairing energy relative to the free ion.
+
+2. **Tetrahedral Field ($T_d$):**
+   - Ligands approach between axes.
+   - Splitting is inverted: $e$ set is stabilized ($-0.6\Delta_t$), $t_2$ set is destabilized ($+0.4\Delta_t$).
+   - Because there are only 4 ligands and none point directly at orbitals:
+   $$\Delta_t \approx \frac{4}{9}\Delta_o$$
+   *(All tetrahedral complexes are High-Spin because $\Delta_t < P$ always!)*
+
+---
+
+## 🌈 The Spectrochemical Series & Color
+
+Ligands split $d$-orbitals by different magnitudes ($\Delta_o$). Strong-field ligands cause large $\Delta_o$, while weak-field ligands cause small $\Delta_o$:
+
+$$\text{I}^- < \text{Br}^- < \text{S}^{2-} < \text{SCN}^- < \text{Cl}^- < \text{NO}_3^- < \text{F}^- < \text{OH}^- < \text{ox}^{2-} < \text{H}_2\text{O} < \text{NCS}^- < \text{edta}^{4-} < \text{NH}_3 < \text{en} < \text{bpy} < \text{NO}_2^- < \text{CN}^- < \text{CO}$$
+
+### Predicting Complementary Colors
+When a complex absorbs light of photon energy $E = h\nu = \frac{hc}{\lambda} = \Delta_o$, it transmits the **complementary color**:
+- Absorbs **Yellow** ($\sim 580\text{ nm}$) $\rightarrow$ Appears **Violet/Purple**
+- Absorbs **Red** ($\sim 700\text{ nm}$) $\rightarrow$ Appears **Green**
+- Absorbs **Blue** ($\sim 450\text{ nm}$) $\rightarrow$ Appears **Orange**
+
+> 💡 **Conversion Factor:** $1\text{ cm}^{-1} \approx 0.01196\text{ kJ/mol}$ or $\Delta_o (\text{J}) = \frac{hc}{\lambda}$.
+
+---
+
+## 💡 Worked Example: High-Spin vs. Low-Spin CFSE Calculation
+
+### Problem
+For $\text{Fe}^{2+}$ ($d^6$) in an octahedral field, calculate the CFSE in terms of $\Delta_o$ and pairing energy $P$ for both:
+1. High-spin complex $\text{[Fe(H}_2\text{O)}_6]^{2+}$
+2. Low-spin complex $\text{[Fe(CN)}_6]^{4-}$
+
+Given: Mean pairing energy $P = 17,600\text{ cm}^{-1}$.
+
+### Step 0: Figure out the path before you compute
+- $\text{Fe}^{2+}$ group 8 metal $\implies 8 - 2 = 6$ $d$-electrons ($d^6$).
+- High-spin: Maximize unpaired electrons $\implies t_{2g}^4 e_g^2$.
+- Low-spin: Minimize energy by pairing $\implies t_{2g}^6 e_g^0$.
+
+### Step-by-Step Solution
+
+**1. High-Spin Configuration ($t_{2g}^4 e_g^2$):**
+- $n_{t_{2g}} = 4$, $n_{e_g} = 2$.
+- Electron pairing count in complex = 1 pair (in $t_{2g}$).
+- Free ion $d^6$ high-spin (Hund's rule) also has 1 pair $\implies P_{\text{extra}} = 0$.
+$$\text{CFSE} = [4(-0.4) + 2(+0.6)]\Delta_o = (-1.6 + 1.2)\Delta_o = \mathbf{-0.4\Delta_o}$$
+
+**2. Low-Spin Configuration ($t_{2g}^6 e_g^0$):**
+- $n_{t_{2g}} = 6$, $n_{e_g} = 0$.
+- Electron pairing count in complex = 3 pairs.
+- Free ion ground state has 1 pair $\implies P_{\text{extra}} = (3 - 1)P = 2P$.
+$$\text{CFSE} = [6(-0.4) + 0(+0.6)]\Delta_o + 2P = \mathbf{-2.4\Delta_o + 2P}$$
+
+**Sanity Check:** Low-spin is favored when $\Delta_o > P$. Since $\text{CN}^-$ is at the top of the spectrochemical series, $\Delta_o \gg P$, making $\text{[Fe(CN)}_6]^{4-}$ strongly low-spin!
+
+---
+
+## 💥 Common IChO Traps & Grader Callouts
+
+> ⚠️ **TRAP #1: Why $d^0$ and $d^{10}$ Complexes are Colorless**
+> $\text{Sc}^{3+}$ ($d^0$), $\text{Ti}^{4+}$ ($d^0$), and $\text{Zn}^{2+}$ ($d^{10}$) cannot exhibit $d-d$ electronic transitions because there are either no $d$-electrons to promote ($d^0$) or all $d$-orbitals are completely filled ($d^{10}$). Their solutions are colorless unless Charge Transfer (LMCT/MLCT) occurs (e.g. $\text{MnO}_4^-$ purple due to LMCT)!
+
+> ⚠️ **TRAP #2: Laporte and Spin Selection Rules**
+> - **Laporte Rule:** Transitions between orbitals of the same parity ($g \rightarrow g$, like $d \rightarrow d$) are electric-dipole forbidden in centrosymmetric complexes ($O_h$). They gain weak intensity only through **vibronic coupling** (asymmetric vibrations momentarily destroy the center of inversion), which is why octahedral complexes have pale colors!
+> - **Spin Rule:** Transitions involving a change in spin multiplicity ($\Delta S \neq 0$) are strictly spin-forbidden. Spin-allowed transitions ($\Delta S = 0$) are significantly more intense.
+
+> 💡 **Advanced Tip:** Tetrahedral complexes lack a center of inversion, so the Laporte rule does not apply. This is why $\text{[CoCl}_4]^{2-}$ (deep blue) has much more intense color than $\text{[Co(H}_2\text{O)}_6]^{2+}$ (pale pink).
+
+---
+
+## 🎮 Interactive Modules
+
+```jsx
+// Interactive Placeholder: OrbitalSplittingSim
+// Interactive d-orbital splitting diagram showing energy levels shifting as ligand field strength Δ_o increases.
+import OrbitalSplittingSim from '../../../components/interactives/OrbitalSplittingSim.jsx';
+```
+
+```jsx
+// Interactive Placeholder: ColorSplittingMatcher
+// Pick a transition metal ion and ligand, calculate Δ_o, and match the absorbed vs transmitted color wheel.
+import ColorSplittingMatcher from '../../../components/interactives/ColorSplittingMatcher.jsx';
+```
+
+---
+
+## 🏋️‍♂️ Problem Set
+
+### Tier 1: Warm-up
+
+**Problem 1.1**
+Draw the $d$-orbital splitting diagrams and write the electron configurations ($t_{2g}^a e_g^b$ or $e^a t_2^b$) for:
+a) High-spin Octahedral $\text{[Mn(H}_2\text{O)}_6]^{2+}$
+b) Tetrahedral $\text{[CoCl}_4]^{2-}$
+
+<details>
+<summary>Click for Solution & Mark Scheme</summary>
+
+**Solution:**
+a) $\text{Mn}^{2+}$ is $d^5$. High-spin octahedral field:
+Configuration: $\mathbf{t_{2g}^3 e_g^2}$ (5 unpaired electrons, $n=5$).
+CFSE = $3(-0.4) + 2(+0.6) = 0\Delta_o$. [2 pts]
+
+b) $\text{Co}^{2+}$ is $d^7$. Tetrahedral field (always high-spin):
+Splitting: $e$ (lower) and $t_2$ (upper).
+Configuration: $\mathbf{e^4 t_2^3}$ (3 unpaired electrons, $n=3$).
+CFSE = $4(-0.6) + 3(+0.4) = -1.2\Delta_t$. [2 pts]
+</details>
+
+---
+
+### Tier 2: Level-up
+
+**Problem 2.1**
+The complex $\text{[Co(NH}_3)_6]^{3+}$ is diamagnetic, whereas $\text{[CoF}_6]^{3-}$ is paramagnetic with 4 unpaired electrons.
+1. Calculate the CFSE (in terms of $\Delta_o$ and $P$) for both complexes.
+2. Given that $P = 21,000\text{ cm}^{-1}$ for $\text{Co}^{3+}$, and $\Delta_o$ for $\text{[Co(NH}_3)_6]^{3+}$ is $22,900\text{ cm}^{-1}$, demonstrate quantitatively why $\text{[Co(NH}_3)_6]^{3+}$ is low-spin.
+
+<details>
+<summary>Click for Solution & Mark Scheme</summary>
+
+**Solution:**
+1. $\text{Co}^{3+}$ is $d^6$.
+- $\text{[Co(NH}_3)_6]^{3+}$ (diamagnetic $\implies n=0$ unpaired $e^-\implies$ Low-spin):
+  Configuration: $t_{2g}^6 e_g^0$.
+  $\text{CFSE} = 6(-0.4)\Delta_o + 2P = \mathbf{-2.4\Delta_o + 2P}$. [2 pts]
+- $\text{[CoF}_6]^{3-}$ (paramagnetic with 4 unpaired $e^- \implies$ High-spin):
+  Configuration: $t_{2g}^4 e_g^2$.
+  $\text{CFSE} = [4(-0.4) + 2(0.6)]\Delta_o = \mathbf{-0.4\Delta_o}$. [2 pts]
+
+2. Quantitative check for $\text{[Co(NH}_3)_6]^{3+}$:
+Since $\Delta_o = 22,900\text{ cm}^{-1} > P = 21,000\text{ cm}^{-1}$, the field splitting energy exceeds the pairing energy ($\Delta_o > P$).
+Net energy gain for low-spin over high-spin:
+$$\Delta E = \text{CFSE}_{\text{low}} - \text{CFSE}_{\text{high}} = (-2.4\Delta_o + 2P) - (-0.4\Delta_o) = -2.0\Delta_o + 2P$$
+$$\Delta E = -2.0(22,900) + 2(21,000) = -45,800 + 42,000 = -3,800\text{ cm}^{-1}$$
+Since $\Delta E < 0$, the low-spin state is thermodynamically more stable by $3,800\text{ cm}^{-1}$ ($\sim 45.4\text{ kJ/mol}$). [2 pts]
+</details>
+
+---
+
+### Tier 3: Boss Fight
+
+**Problem 3.1**
+An aqueous solution of $\text{[Ni(H}_2\text{O)}_6]^{2+}$ is green, absorbing light at $\lambda_{\text{max}} = 790\text{ nm}$ ($12,650\text{ cm}^{-1}$) corresponding to the lowest energy $d-d$ transition ($\Delta_o$). When ethylenediamine ($\text{en}$) is added to form $\text{[Ni(en)}_3]^{2+}$, the solution turns deep royal blue, absorbing at $\lambda_{\text{max}} = 540\text{ nm}$ ($18,520\text{ cm}^{-1}$).
+
+1. Calculate the crystal field splitting energy $\Delta_o$ in $\text{kJ/mol}$ for both complexes.
+2. Calculate the shift in splitting energy $\Delta(\Delta_o) = \Delta_{o,\text{en}} - \Delta_{o,\text{H}_2\text{O}}$ in $\text{kJ/mol}$.
+3. Explain why $\text{[Ni(en)}_3]^{2+}$ appears blue using complementary color theory and the spectrochemical series.
+
+<details>
+<summary>Click for Solution & Mark Scheme</summary>
+
+**Solution:**
+1. Energy formula: $E = \frac{hc N_A}{\lambda}$ or using $1\text{ cm}^{-1} = 0.01196\text{ kJ/mol}$:
+
+For $\text{[Ni(H}_2\text{O)}_6]^{2+}$:
+$$\Delta_o = 12,650\text{ cm}^{-1} \times 0.01196\text{ kJ/mol per cm}^{-1} = \mathbf{151.3\text{ kJ/mol}}$$ [2 pts]
+
+For $\text{[Ni(en)}_3]^{2+}$:
+$$\Delta_o = 18,520\text{ cm}^{-1} \times 0.01196\text{ kJ/mol per cm}^{-1} = \mathbf{221.5\text{ kJ/mol}}$$ [2 pts]
+
+2. Shift in splitting energy:
+$$\Delta(\Delta_o) = 221.5 - 151.3 = \mathbf{70.2\text{ kJ/mol}}$$ [1 pt]
+
+3. Explanation:
+- $\text{en}$ is a stronger field ligand than $\text{H}_2\text{O}$ in the spectrochemical series ($\text{H}_2\text{O} < \text{en}$).
+- Substituting $\text{H}_2\text{O}$ with $\text{en}$ increases $\Delta_o$, shifting the absorption maximum to shorter wavelengths ($\lambda_{\text{max}}$ decreases from $790\text{ nm}$ in the NIR/red region to $540\text{ nm}$ in the yellow-green region).
+- When yellow-green light ($\sim 540\text{ nm}$) is absorbed, the transmitted complementary color is **deep blue/royal blue**. [2 pts]
+</details>
