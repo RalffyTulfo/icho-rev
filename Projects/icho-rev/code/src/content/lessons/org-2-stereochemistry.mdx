@@ -1,0 +1,70 @@
+---
+title: "Organic Chemistry: Stereochemistry and Conformational Analysis"
+author: "Ralf Christian Mendoza"
+proofreader: ""
+readingTime: 6
+unit: "Organic Chemistry"
+color: "emerald/teal"
+---
+
+# Organic Chemistry: Stereochemistry and Conformational Analysis
+
+## Terms & Definitions
+
+- **Chirality**: Geometric property of a rigid object (or spatial molecular arrangement) of being non-superimposable on its mirror image.
+- **Diastereomers**: Stereoisomers that are not mirror images of one another; possess different physical and chemical properties.
+- **Meso Compound**: A stereoisomer containing multiple chiral centers that is superimposable on its mirror image due to an internal plane or center of symmetry.
+- **Conformational Analysis**: Study of the energetic consequences of rotation around single carbon-carbon bonds.
+- **Chair Conformation**: The lowest-energy conformation of cyclohexane, minimizing angle and torsional strain.
+- **Equatorial vs. Axial**: Axial bonds point parallel to the ring axis (up/down); equatorial bonds radiate outward along the equator.
+
+## Why Does This Exist?
+
+Biological receptors and chemical reagents discriminate strictly between stereoisomers. Understanding stereochemical outcomes (R/S, meso forms, ring conformations) is essential for predicting enantioselective synthesis and reaction stereospecificity in IChO synthesis problems.
+
+## Derivation from First Principles
+
+### Optical Activity and Specific Rotation
+Chiral molecules rotate plane-polarized light. The specific rotation [alpha] is defined by Biot's law:
+[alpha]_lambda^T = alpha / (l * c)
+where alpha is observed rotation in degrees, l is path length in decimeters, and c is concentration in g/mL. Enantiomers exhibit equal magnitude but opposite signs of rotation.
+
+### Cyclohexane Conformational Energetics
+Cyclohexane avoids angle strain (109.5 degrees tetrahedral angles maintained in chair conformation) and torsional strain (fully staggered bonds in Newman projection). When substituents occupy axial positions, they suffer 1,3-diaxial steric interactions. The bulkier a substituent, the greater its conformational free energy (Delta G standard) favoring the equatorial position.
+
+## Worked Example
+
+**Problem**: Draw cis-1-tert-butyl-4-methylcyclohexane in its two chair conformations and determine which is more stable, calculating the conformational free energy difference given Delta G standard for axial -> equatorial t-butyl is +21.4 kJ/mol and methyl is +7.3 kJ/mol.
+
+**Solution**:
+1. In cis-1-tert-butyl-4-methylcyclohexane, both substituents must be on the same side (both axial or both equatorial in a given chair).
+2. **Conformation A**: t-butyl is axial (C1), methyl is axial (C4).
+   - 1,3-diaxial interactions: t-butyl costs +21.4 kJ/mol; methyl costs +7.3 kJ/mol.
+   - Total strain penalty = +28.7 kJ/mol.
+3. **Conformation B** (after ring flip): t-butyl is equatorial (C1), methyl is equatorial (C4).
+   - Strain penalty = 0 kJ/mol.
+4. **Conclusion**: Conformation B is vastly more stable by 28.7 kJ/mol, existing almost exclusively (>99.9%) at room temperature.
+
+**Sanity Check**: Bulky t-butyl strongly prefers equatorial position to eliminate severe 1,3-diaxial hydrogen clashes.
+
+## Common IChO Traps
+
+1. **Meso Identification**: Check for internal planes or centers of symmetry in symmetrical molecules with an even number of stereocenters.
+2. **Ring Flips**: Remember that a ring flip converts all axial bonds to equatorial bonds and vice-versa, but cis/trans relationships (up/down) remain unchanged.
+
+## What Graders Want to See
+- Clear chair drawings showing parallel offset bonds.
+- Explicit labeling of axial and equatorial bonds.
+- Energetic justification for conformational equilibria.
+
+## Placeholder for Interactives
+- Interactive: Ring Flip Energy Profile and 3D Conformational Visualizer.
+
+## Go Deeper
+- [Reaction Mechanisms and Intermediates](./org-3-mechanisms)
+
+## Recall Cards
+- **Recall Card 1**: What is a meso compound?
+  Answer: A molecule with multiple chiral centers that possesses an internal plane or center of symmetry, rendering it optically inactive.
+- **Recall Card 2**: Why do bulky groups prefer the equatorial position in cyclohexane?
+  Answer: To eliminate 1,3-diaxial steric repulsion with axial hydrogens on C3 and C5.

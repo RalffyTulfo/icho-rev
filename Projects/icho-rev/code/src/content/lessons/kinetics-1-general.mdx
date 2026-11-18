@@ -1,0 +1,237 @@
+# General Chemical Kinetics
+
+---
+title: "General Chemical Kinetics"
+author: "Ralf Christian Mendoza"
+proofreader: ""
+readingTime: 25 min
+unit: "Kinetics"
+color: "amber/orange"
+cleanModeMapping:
+  "lowkey": "honestly"
+  "icl": "I must admit"
+  "hell": "heck"
+  "damn": "very"
+  "basic ass": "simple"
+  "tf": "what on earth"
+  "idfk": "I have no idea"
+  "gng": "everyone"
+  "yk": "you know"
+  "ts": "this material"
+---
+
+# General Chemical Kinetics
+
+Lowkey, this is where chemistry goes from static to dynamic. We're not just looking at what happens—we're watching how fast it happens. Imagine a reaction like a race: some reactions are lightning fast, others take forever. Kinetics tells us why. Para mas madali na buhay natin, let's break down how reactions proceed and what controls their speed.
+
+---
+
+## 🕯🔥 Terms & Definitions 🔥🕯
+
+> **ICHO Grading Tip:** Always specify units for rate constants and concentrations. Never leave out the units for time (usually seconds or minutes). Magagalit graders sayo pag linaktawan mo 'to.
+
+1. **Rate of Reaction**: The change in concentration of a reactant or product per unit time. For a general reaction $aA + bB 
+ightarrow cC + dD$, the rate is defined as:
+  $$	ext{Rate} = -rac{1}{a}rac{\Delta[A]}{\Delta t} = -rac{1}{b}rac{\Delta[B]}{\Delta t} = rac{1}{c}rac{\Delta[C]}{\Delta t} = rac{1}{d}rac{\Delta[D]}{\Delta t}$$ 
+
+1. **Rate Law**: An equation that relates the rate of a reaction to the concentrations of reactants. It is always determined experimentally and cannot be predicted from the stoichiometry alone.
+  $$	ext{Rate} = k[A]^m[B]^n$$
+  where $k$ is the rate constant, and $m$ and $n$ are the reaction orders with respect to $A$ and $B$, respectively.
+
+1. **Reaction Order**: The exponent in the rate law to which the concentration of a reactant is raised. Zero order means the rate is independent of that reactant's concentration.
+
+1. **Rate Constant ($k$)**: A proportionality constant that relates the rate of the reaction to the concentrations of reactants. It is temperature-dependent and specific to each reaction.
+
+1. **Half-Life ($t_{1/2}$)**: The time required for the concentration of a reactant to decrease to half of its initial value. For a first-order reaction, $t_{1/2} = rac{\ln(2)}{k}$.
+
+1. **Pseudo-First-Order Reaction**: A reaction that appears first-order due to one reactant being in large excess, effectively making its concentration constant.
+
+1. **Transition State Theory**: A theory that explains reaction rates in terms of the formation of an activated complex (transition state) that must be overcome for the reaction to proceed.
+
+1. **Arrhenius Equation**: An equation that relates the rate constant to temperature and activation energy:
+  $$k = A e^{-E_a/(RT)}$$ 
+  where $A$ is the pre-exponential factor, $E_a$ is the activation energy, $R$ is the gas constant, and $T$ is the temperature in Kelvin.
+
+---
+
+## 💥 Why Does This Exist? (Physical Meaning) 💥
+
+Thermodynamics tells us if a reaction is possible, but kinetics tells us how fast it happens. Imagine a reaction with a negative Gibbs free energy change—it's thermodynamically favorable, but if it's too slow, it might as well not happen in practice. Kinetics is crucial for:
+
+1. **Industrial Processes**: How fast can we produce ammonia in the Haber process?
+2. **Drug Design**: How quickly does a drug bind to its target?
+3. **Environmental Chemistry**: How fast do pollutants degrade in the atmosphere?
+4. **Food Chemistry**: How long does it take for milk to spoil?
+
+In IChO, kinetics problems often involve determining rate laws, calculating half-lives, or analyzing temperature effects on reaction rates. You'll need to be comfortable with both experimental data interpretation and theoretical models.
+
+---
+
+## 3. Derivation from First Principles
+
+### 3.1 Rate Laws and Reaction Orders
+
+The rate law for a reaction is always determined experimentally. For a general reaction:
+
+$$aA + bB 
+ightarrow cC + dD$$
+
+The rate law is:
+
+$$	ext{Rate} = k[A]^m[B]^n$$
+
+where $m$ and $n$ are the **experimental** orders, which may or may not match the stoichiometric coefficients $a$ and $b$.
+
+**Example**: For the reaction $2NO(g) + O_2(g) 
+ightarrow 2NO_2(g)$, the rate law might be:
+
+$$	ext{Rate} = k[NO]^2[O_2]$$
+
+Here, the order with respect to $NO$ is 2, and the order with respect to $O_2$ is 1, even though the stoichiometric coefficients are both 1.
+
+### 3.2 Determining Reaction Order from Experimental Data
+
+To determine the order of a reaction, we use the method of initial rates. Suppose we have the following data for the reaction $A 
+ightarrow B$:
+
+| Experiment | [A] (M) | Initial Rate (M/s) |
+|------------|--------|---------------------|
+| 1          | 0.1    | 0.015              |
+| 2          | 0.2    | 0.060              |
+| 3          | 0.3    | 0.135             |
+
+To find the order with respect to $A$, we compare the change in rate with the change in concentration:
+
+$$rac{	ext{Rate}_2}{	ext{Rate}_1} = rac{0.060}{0.015} = 4 = rac{[A]_2}{[A]_1}^m = rac{0.2}{0.1}^m = 2^m$$
+
+Solving for $m$: $4 = 2^m 
+ightarrow m = 2$. So, the reaction is second order with respect to $A$.
+
+### 3.3 Half-Life and Integrated Rate Laws
+
+For different reaction orders, the integrated rate laws and half-lives are different:
+
+1. **Zero-Order Reaction**:
+  $$	ext{Rate} = k[A]^0 = k$$
+  $$[A] = [A]_0 - kt$$
+  $$t_{1/2} = rac{[A]_0}{2k}$$
+
+1. **First-Order Reaction**:
+  $$	ext{Rate} = k[A]^1$$
+  $$	ext{ln}[A] = 	ext{ln}[A]_0 - kt$$
+  $$t_{1/2} = rac{	ext{ln}(2)}{k}$$
+
+1. **Second-Order Reaction**:
+  $$	ext{Rate} = k[A]^2$$
+  $$rac{1}{[A]} = rac{1}{[A]_0} + kt$$
+  $$t_{1/2} = rac{1}{k[A]_0}$$
+
+### 3.4 Temperature Dependence: Arrhenius Equation
+
+The Arrhenius equation relates the rate constant $k$ to temperature $T$ and activation energy $E_a$:
+
+$$k = A e^{-E_a/(RT)}$$
+
+Taking the natural logarithm of both sides:
+
+$$	ext{ln}(k) = 	ext{ln}(A) - rac{E_a}{R} rac{1}{T}$$
+
+This equation shows that a plot of $	ext{ln}(k)$ vs. $1/T$ should be linear with a slope of $-E_a/R$.
+
+**Example**: If $k_1$ and $k_2$ are rate constants at temperatures $T_1$ and $T_2$, respectively, then:
+
+$$	ext{ln}igg(rac{k_2}{k_1}igg) = -rac{E_a}{R}igg(rac{1}{T_2} - rac{1}{T_1}igg)$$
+
+This equation can be used to calculate the activation energy if $k_1$, $k_2$, $T_1$, and $T_2$ are known.
+
+---
+
+## 4. Worked Example: Determining Rate Law and Activation Energy
+
+**Problem**: The following data were collected for the reaction $A + B 
+ightarrow C$ at 298 K:
+
+| Experiment | [A] (M) | [B] (M) | Initial Rate (M/s) |
+|------------|--------|--------|---------------------|
+| 1          | 0.1    | 0.1    | 0.0025              |
+| 2          | 0.2    | 0.1    | 0.0100              |
+| 3          | 0.1    | 0.2    | 0.0050              |
+| 4          | 0.2    | 0.2    | 0.0200              |
+
+1. Determine the rate law for the reaction.
+2. Calculate the rate constant $k$ for the reaction.
+3. If the rate constant at 308 K is $1.6 	imes 10^{-2}$ M$^{-1}$s$^{-1}$, calculate the activation energy $E_a$ for the reaction.
+
+**Solution**:
+
+1. **Determine the rate law**:
+   1. Compare experiments 1 and 2: [A] doubles, rate increases by a factor of 4. This suggests the reaction is second order with respect to $A$ ($4 = 2^2$).
+   2. Compare experiments 1 and 3: [B] doubles, rate doubles. This suggests the reaction is first order with respect to $B$.
+   3. Therefore, the rate law is: $$	ext{Rate} = k[A]^2[B]$$
+
+2. **Calculate the rate constant $k$**:
+   Using experiment 1: $$	ext{Rate} = k[A]^2[B] 
+ightarrow 0.0025 = k(0.1)^2(0.1) 
+ightarrow k = rac{0.0025}{(0.1)^3} = 0.25 	ext{ M}^{-2}	ext{s}^{-1}$$
+
+3. **Calculate the activation energy $E_a$**:
+   Using the Arrhenius equation at two temperatures:
+   $$	ext{ln}igg(rac{k_2}{k_1}igg) = -rac{E_a}{R}igg(rac{1}{T_2} - rac{1}{T_1}igg)$$ 
+   Given $k_2 = 1.6 	imes 10^{-2}$ M$^{-1}$s$^{-1}$ at $T_2 = 308$ K, and $k_1 = 0.25$ M$^{-2}$s$^{-1}$ at $T_1 = 298$ K:
+   $$	ext{ln}igg(rac{1.6 	imes 10^{-2}}{0.25}igg) = -rac{E_a}{8.314}igg(rac{1}{308} - rac{1}{298}igg)$$ 
+   $$	ext{ln}(0.064) = -rac{E_a}{8.314} 	imes (-1.16 	imes 10^{-4})$$ 
+   $$-2.75 = rac{E_a}{8.314} 	imes 1.16 	imes 10^{-4}$$ 
+   $$E_a = rac{-2.75 	imes 8.314}{1.16 	imes 10^{-4}} = 1.97 	imes 10^5 	ext{ J/mol} = 197 	ext{ kJ/mol}$$
+
+**Sanity Check**: The activation energy is reasonable for a typical chemical reaction.
+
+---
+
+## 💔 Common IChO Traps 💔
+
+1. **Assuming Reaction Order from Stoichiometry**: The order of a reaction is determined experimentally and may not match the stoichiometric coefficients.
+
+2. **Incorrect Half-Life Calculations**: Remember that the half-life for a first-order reaction is constant, but for zero-order and second-order reactions, it depends on the initial concentration.
+
+3. **Sign Errors in Arrhenius Equation**: Always double-check the signs when rearranging the Arrhenius equation. A negative sign error can lead to incorrect activation energy values.
+
+4. **Units**: Ensure that all units are consistent. For example, if concentration is in mol/L, the rate constant units should reflect that.
+
+5. **Temperature Conversions**: Always convert temperatures to Kelvin when using the Arrhenius equation.
+
+---
+
+## What Graders Want to See
+
+1. **Clear Rate Law Determination**: Show how you determined the reaction order from experimental data.
+2. **Proper Units**: Always include units for rate constants, concentrations, and time.
+3. **Step-by-Step Calculations**: Break down complex calculations into clear, logical steps.
+4. **Sanity Checks**: Verify that your answers make sense in the context of the problem.
+5. **Graphical Analysis**: For Arrhenius plots, show the linear relationship between $	ext{ln}(k)$ and $1/T$.
+
+---
+
+## Placeholder for Interactives
+
+1. Interactive: **Rate Law Explorer** - Adjust concentrations of reactants and observe how the rate changes, determining the reaction order.
+2. Interactive: **Half-Life Calculator** - Simulate different reaction orders and initial concentrations to see how half-life changes.
+3. Interactive: **Arrhenius Plotter** - Plot $	ext{ln}(k)$ vs. $1/T$ and determine activation energy from the slope.
+
+---
+
+## Go Deeper
+
+1. [Polymerization and Polymer Chemistry](link-to-next-lesson)
+
+---
+
+## Recall Cards
+
+1. **Recall Card 1**: What is the difference between a reaction being first-order and second-order?
+  Answer: A first-order reaction's rate depends linearly on the concentration of one reactant, while a second-order reaction's rate depends on the square of the concentration of one reactant or the product of the concentrations of two reactants.
+
+1. **Recall Card 2**: How does increasing temperature affect the rate constant $k$?
+  Answer: Increasing temperature increases the rate constant $k$ because it increases the fraction of molecules with energy greater than the activation energy, as described by the Arrhenius equation.
+
+1. **Recall Card 3**: What is the half-life of a first-order reaction?
+  Answer: The half-life of a first-order reaction is constant and given by $t_{1/2} = rac{	ext{ln}(2)}{k}$.

@@ -1,0 +1,28 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CalorimetrySimulator from '../../components/interactives/CalorimetrySimulator.jsx';
+import HessBuilder from '../../components/interactives/HessBuilder.jsx';
+import FirstLawSimulator from '../../components/interactives/FirstLawSimulator.jsx';
+import EntropySimulator from '../../components/interactives/EntropySimulator.jsx';
+
+export async function getStaticPaths() {
+  const lessons = await Astro.glob('../../content/lessons/*.mdx');
+  return lessons.map(lesson => ({
+    params: { slug: lesson.file.split('/').pop().replace('.mdx', '') },
+    props: { lesson },
+  }));
+}
+
+const { lesson } = Astro.props;
+const { Content } = lesson;
+---
+<Layout>
+  <main class="pt-20 px-4 max-w-6xl mx-auto flex gap-8">
+    <article class="flex-1 frosted-glass p-8">
+      <h1 class="text-3xl font-bold mb-4">{lesson.frontmatter.title}</h1>
+      <div class="prose max-w-none">
+        <Content />
+      </div>
+    </article>
+  </main>
+</Layout>
