@@ -1,0 +1,58 @@
+{
+  "nodes": [
+    {
+      "id": "src_pages_roadmap",
+      "label": "roadmap.astro",
+      "file_type": "code",
+      "source_file": "src/pages/roadmap.astro",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_pages_roadmap_units",
+      "label": "units",
+      "file_type": "code",
+      "source_file": "src/pages/roadmap.astro",
+      "source_location": "L4",
+      "_origin": "ast"
+    }
+  ],
+  "edges": [
+    {
+      "source": "src_pages_roadmap",
+      "target": "src_layouts_layout",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/roadmap.astro",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_pages_roadmap",
+      "target": "src_pages_roadmap_units",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/roadmap.astro",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_pages_roadmap",
+      "target": "src_layouts_layout",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/roadmap.astro",
+      "_origin": "ast"
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "failed_sources": [],
+  "skipped_sources": [],
+  "extracted_sources": [
+    "src\\pages\\roadmap.astro"
+  ]
+}

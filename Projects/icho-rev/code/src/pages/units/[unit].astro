@@ -30,10 +30,11 @@ const unitNameMap = {
 
 const targetUnitName = unitNameMap[unit] || name;
 
-// Filter lessons that belong to this unit
+// Filter lessons that belong to this unit (matching by substring or mapped name)
 const unitLessons = allLessons.filter(lesson => {
-  const lessonUnit = lesson.frontmatter.unit;
-  return lessonUnit && lessonUnit.toLowerCase().includes(unit.toLowerCase());
+  const lessonUnit = lesson.frontmatter.unit || '';
+  return lessonUnit.toLowerCase().includes(unit.toLowerCase()) ||
+         lessonUnit.toLowerCase().includes(targetUnitName.toLowerCase());
 });
 ---
 <Layout>

@@ -1,0 +1,47 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout>
+  <main class="pt-24 px-4 min-h-screen flex items-center justify-center">
+    <div class="frosted-glass hero-ribbon p-12 mx-auto max-w-4xl text-center relative overflow-hidden">
+      <!-- Background glow effects -->
+      <div class="absolute -top-24 -left-24 w-48 h-48 bg-primary/30 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-24 -right-24 w-48 h-48 bg-secondary/30 rounded-full blur-3xl pointer-events-none"></div>
+
+      <h1 class="text-5xl md:text-6xl font-extrabold mb-6 tracking-tight text-foreground">
+        Master the <span class="text-primary bg-clip-text">IChO</span> with Style
+      </h1>
+      <p class="text-xl md:text-2xl text-foreground/80 mb-8 max-w-2xl mx-auto font-light leading-relaxed">
+        The ultimate vibe-coded reviewer. Rigorous chemistry, Taglish banter, zero slop, and interactive simulations.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <a href="/icho-rev/roadmap" class="bg-primary text-white px-8 py-4 rounded-2xl font-bold text-lg hover:shadow-xl hover:shadow-primary/20 transition-all hover:-translate-y-1 w-full sm:w-auto">
+          Start Learning Path →
+        </a>
+        <a href="/icho-rev/units/thermodynamics" class="frosted-glass text-foreground border border-white/20 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-white/10 transition-all w-full sm:w-auto">
+          Try Thermodynamics
+        </a>
+      </div>
+
+      <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 border-t border-foreground/10 pt-8 text-left">
+        <div>
+          <div class="text-2xl font-bold text-primary">6 Domains</div>
+          <div class="text-xs text-foreground/60">Full Syllabus Covered</div>
+        </div>
+        <div>
+          <div class="text-2xl font-bold text-secondary">3-Tier</div>
+          <div class="text-xs text-foreground/60">Problem Sets + Boss Fights</div>
+        </div>
+        <div>
+          <div class="text-2xl font-bold text-success">Clean Mode</div>
+          <div class="text-xs text-foreground/60">Toggle for School/Parents</div>
+        </div>
+        <div>
+          <div class="text-2xl font-bold text-warning">Offline-First</div>
+          <div class="text-xs text-foreground/60">100% Static GitHub Pages</div>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>
