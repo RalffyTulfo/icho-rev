@@ -24,15 +24,15 @@ Madalas 'to mapagpalit, pero critical 'to sa lab.
 - **Systematic Errors (Determinate)**: Consistent bias. Kunwari, hindi naka-calibrate yung balance mo. Madaling i-correct kung alam mo yung source.
 - **Random Errors (Indeterminate)**: Fluctuations na hindi maiiwasan (noise, temperature changes). Dito pumapasok ang statistics.
 
-## 2. Statistical Treatment of Data
+### Statistical Treatment of Data
 
 Sa IChO, we assume random errors follow a **Gaussian Distribution**.
 
-### Mean ($\bar{x}$) and Standard Deviation ($s$)
+#### Mean ($\bar{x}$) and Standard Deviation ($s$)
 Para sa small data sets:
 $$s = \sqrt{\frac{\sum (x_i - \bar{x})^2}{n - 1}}$$
 
-### Propagation of Uncertainty
+#### Propagation of Uncertainty
 If $y = f(a, b, c)$, how does the error in $a, b, c$ affect $y$?
 
 1. **Addition/Subtraction ($y = a + b$ or $y = a - b$)**:
@@ -42,7 +42,7 @@ If $y = f(a, b, c)$, how does the error in $a, b, c$ affect $y$?
 
 *Sample logic: Pag nag-add ka, absolute errors ang gagamitin. Pag nag-multiply, relative errors.*
 
-## 3. Limit of Detection (LOD) and Quantitation (LOQ)
+### Limit of Detection (LOD) and Quantitation (LOQ)
 
 Hindi lahat ng signal ay signal. Minsan, background noise lang yan.
 
@@ -52,7 +52,7 @@ Hindi lahat ng signal ay signal. Minsan, background noise lang yan.
 - **LOQ**: Smallest concentration na pwede na nating i-quantify accurately.
   $$LOQ = \frac{10s_{blank}}{m}$$
 
-## Boss Level Concept: Confidence Intervals
+### Boss Level Concept: Confidence Intervals
 
 Sa real world, we use the $t$-test para malaman kung "real" yung difference ng dalawang measurements.
 $$CI = \bar{x} \pm \frac{ts}{\sqrt{n}}$$
