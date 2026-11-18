@@ -1,0 +1,115 @@
+---
+title: "Organic Chemistry: Functional Groups and Reactivity"
+author: "Ralf Christian Mendoza"
+proofreader: ""
+readingTime: 15
+unit: "Organic Chemistry"
+color: "emerald/teal"
+cleanModeMapping:
+  - path: "Terms and Definitions"
+    clean: true
+  - path: "Why does this exist?"
+    clean: true
+  - path: "Common IChO Traps"
+    clean: false
+---
+
+# Functional Groups and Reactivity
+
+Ano ba talaga ang nagpapatakbo sa isang organic reaction? Hindi lang ito basta pagmemorize ng reagents. Ang sikreto ay nasa **electron density**. Sa lesson na ito, titingnan natin kung paano nag-aaway ang mga atoms para sa electrons at kung paano ito nakakaapekto sa "ugali" ng molekula.
+
+## Terms and Definitions
+
+| Term | Definition |
+| :--- | :--- |
+| **Inductive Effect** | Paghila o pagtulak ng electron density through sigma bonds dahil sa difference sa electronegativity. |
+| **Resonance (Mesomeric) Effect** | Delocalization ng electrons sa pi systems (double bonds, lone pairs). Mas malakas 'to kaysa sa inductive effect usually. |
+| **Nucleophile** | Electron-rich species. "Nucleus-loving" kasi naghahanap siya ng positive charge para mag-donate ng electrons. |
+| **Electrophile** | Electron-poor species. "Electron-loving" kasi kulang siya sa electrons. |
+| **pKa** | Inverse log ng acid dissociation constant ($K_a$). Kapag mas mababa ang pKa, mas matapang ang asido. |
+
+## Why does this exist?
+
+Icl, kung hindi natin alam kung nasaan ang electrons, manghuhula lang tayo sa mechanisms. Ang functional groups ang "business end" ng molekula. Sila ang nagdedetermine kung sasabog ba ang compound mo o magiging gamot. Sa IChO, hindi ka lang tatanungin kung ano ang alcohol; tatanungin ka kung bakit mas acidic ang phenol kaysa sa cyclohexanol. (Spoiler: Resonance is the goat).
+
+## Derivations from First Principles
+
+### 1. Inductive Effect (I-effect)
+Ang electronegativity difference ($\Delta \chi$) ang bida rito.
+- **-I Effect (Electron Withdrawing)**: Groups like $-F, -Cl, -NO_2, -CN$. Hinahila nila ang electrons palayo sa carbon chain.
+- **+I Effect (Electron Donating)**: Alkyl groups ($-CH_3, -CH_2R$). Nagtutulak sila ng electrons via hyperconjugation and polarization.
+
+### 2. Resonance Effect (R or M-effect)
+Eto 'yung "teleportation" ng electrons.
+- Kapag ang lone pair ay conjugated sa pi system, pwede siyang mag-move.
+- **Rule of Thumb**: Resonance stabilization is almost always more significant than inductive effects (except for halogens, yung mga weirdo ng periodic table).
+
+### 3. Acidity and Basicity: The CARDIO Rule
+Para malaman kung sino ang mas acidic, tignan ang stability ng **Conjugate Base**. Mas stable ang base, mas acidic ang parent.
+- **C**harge: Neutral vs Negative.
+- **A**tom: Electronegativity at size (F vs I).
+- **R**esonance: Delocalization of negative charge.
+- **DI**pole (Inductive): Electron withdrawing groups stabilize negative charge.
+- **O**rbital: $sp > sp^2 > sp^3$ in terms of electronegativity.
+
+## Worked Example
+
+**Problem**: Rank the following in order of increasing acidity: Ethanol, Phenol, 4-Nitrophenol, and Acetic Acid.
+
+**Step 0: Figure out the path.**
+Acidic means it loses $H^+$. We check the stability of the anions: $EtO^-$, $PhO^-$, $O_2N-C_6H_4-O^-$, and $CH_3COO^-$.
+
+**Solution**:
+1. **Ethanol ($EtO^-$)**: No resonance, +I effect from ethyl group destabilizes the charge. Least acidic.
+2. **Phenol ($PhO^-$)**: Negative charge is delocalized into the benzene ring. Better.
+3. **4-Nitrophenol**: Resonance *plus* the -I and -M effect of the $-NO_2$ group. The nitro group pulls electron density like crazy.
+4. **Acetic Acid ($CH_3COO^-$)**: The negative charge is shared between two electronegative Oxygens. This resonance is extremely effective.
+
+**Final Rank**: Ethanol < Phenol < 4-Nitrophenol < Acetic Acid.
+
+**Sanity Check**: Does it make sense? Yes. Carboxylic acids are called acids for a reason. Nitro groups are famous for boosting acidity.
+
+## Key Functional Group Transformations
+
+Hindi lang sapat na alam mo ang pangalan; dapat alam mo rin kung paano sila nagbabago. Eto 'yung bread and butter ng synthesis:
+
+1. **Oxidation/Reduction**:
+   - Primary Alcohol $\xrightarrow{[O]}$ Aldehyde $\xrightarrow{[O]}$ Carboxylic Acid.
+   - Ketone $\xrightarrow{[R]}$ Secondary Alcohol.
+2. **Nucleophilic Addition**: Common sa carbonyls ($C=O$). Ang $\delta+$ carbon ay "attackable" ng nucleophiles like Grignard reagents.
+3. **Electrophilic Substitution**: Common sa aromatics. Hinahayaan ng ring na mapalitan ang hydrogen basta't may malakas na electrophile.
+
+## Common IChO Traps
+
+- **The Halogen Paradox**: Halogens are -I (withdraw electrons) but +M (donate via lone pairs). In electrophoresis, -I wins for reactivity, but for orientation in EAS, +M wins. Gulo noh?
+- **pKa vs pH**: pH is a property of the solution; pKa is a property of the molecule. Huwag paghaluin, please.
+- **H-bonding**: Nakakalimutan minsan na ang intramolecular H-bonding (e.g., in o-nitrophenol) can affect acidity and boiling points.
+
+## What Graders Want to See
+
+- Explicit drawing of resonance structures with curved arrows.
+- Comparison of conjugate base stability using terms like "delocalization" and "effective nuclear charge."
+- Correct identification of inductive vs. mesomeric directions.
+
+## Problem Set
+
+### Warm-up
+1. Which is a stronger base: Ammonia ($NH_3$) or Methylamine ($CH_3NH_3$)? Why?
+   <details>
+   <summary>Solution</summary>
+   Methylamine is stronger. The $-CH_3$ group has a +I effect, increasing electron density on the Nitrogen, making the lone pair more available.
+   </details>
+
+### Level-up
+2. Explain why the pKa of p-hydroxybenzoic acid is higher than m-hydroxybenzoic acid.
+   <details>
+   <summary>Solution</summary>
+   In the para position, the $-OH$ group can donate electrons via resonance (+M) directly to the carboxylate group, destabilizing it. In the meta position, resonance doesn't reach the carboxylate, so only the inductive effect (-I) works to stabilize it.
+   </details>
+
+### Boss Fight: The Ortho Effect
+3. Salicylic acid (o-hydroxybenzoic acid) has a pKa of 2.97, while its isomer p-hydroxybenzoic acid has a pKa of 4.58. Account for this massive difference.
+   <details>
+   <summary>Solution</summary>
+   In salicylic acid, the conjugate base (salicylate) is stabilized by a very strong **intramolecular hydrogen bond** between the phenoxide/hydroxyl oxygen and the carboxylate oxygen. This locks the negative charge in a 6-membered ring-like structure, making the loss of $H^+$ extremely favorable.
+   </details>

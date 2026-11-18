@@ -16,6 +16,7 @@ This log records QA checks performed for each lesson prior to approval.
 | Unit 7 | Lesson 2: Nernst Equation and Electrolysis | 2026-11-18 | Agent | Agent | Pass | N/A | N/A | Pass | QA-passed |
 | Unit 8 | Lesson 1: General Chemical Kinetics | 2026-11-18 | Agent | Agent | Pass | N/A | N/A | Pass | QA-passed |
 | Unit 8 | Lesson 2: Polymerization and Polymer Chemistry | 2026-11-18 | Agent | Agent | Pass | N/A | N/A | Pass | QA-passed |
+| Unit 2 | Lesson 2: Functional Groups and Reactivity | 2026-11-18 | Agent | Agent | Pass | Pass | N/A | Pass | QA-passed |
 | Unit 2 | Lesson 3: Stereochemistry and Conformational Analysis | 2026-11-18 | Agent | Agent | Pass | Pass | Pass | Pass | QA-passed |
 | Unit 2 | Lesson 4: Reaction Mechanisms | 2026-11-18 | Agent | Agent | Pass | Pass | N/A | Pass | QA-passed |
 

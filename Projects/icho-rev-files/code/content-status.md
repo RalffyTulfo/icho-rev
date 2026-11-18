@@ -31,7 +31,7 @@
 
 ## Unit 2: Organic Chemistry
 - [x] Lesson 1: Nomenclature and Isomerism (QA-passed)
-- [ ] Lesson 2: Functional Groups and Reactivity
+- [x] Lesson 2: Functional Groups and Reactivity (QA-passed)
 - [x] Lesson 3: Stereochemistry and Conformational Analysis (QA-passed)
 - [x] Lesson 4: Reaction Mechanisms (QA-passed)
 
