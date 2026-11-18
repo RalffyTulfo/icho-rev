@@ -21,16 +21,19 @@ jobs:
         with:
           node-version: 20
           cache: 'npm'
+          cache-dependency-path: Projects/icho-rev/code/package-lock.json
       - name: Install dependencies
         run: npm install
+        working-directory: Projects/icho-rev/code
       - name: Build Astro
         run: npm run build
+        working-directory: Projects/icho-rev/code
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: Projects/icho-rev/code/dist
 
   deploy:
     needs: build
