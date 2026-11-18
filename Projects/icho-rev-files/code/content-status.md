@@ -26,7 +26,7 @@
 
 ## Unit 6: Practical Chemistry
 - [x] Lesson 1: Lab Safety, Glassware, and Titration Techniques (QA-passed)
-- [ ] Lesson 2: Synthesis, Purification, and Recrystallization
+- [x] Lesson 2: Synthesis, Purification, and Recrystallization (QA-passed)
 - [ ] Lesson 3: Qualitative Spot Tests and Instrumental Chromatography
 
 ## Unit 2: Organic Chemistry

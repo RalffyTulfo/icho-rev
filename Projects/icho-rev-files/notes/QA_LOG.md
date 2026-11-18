@@ -11,7 +11,7 @@ This log records QA checks performed for each lesson prior to approval.
 | Unit 3 | Lesson 3: Crystal Field Theory and Electronic Spectra | 2026-11-15 | qwen-claude:latest | qwen3.5:9b | Pass | Pass | Pass | Pass | QA-passed |
 | Unit 5 | Lesson 1: Amino Acids, Proteins, and Enzyme Kinetics | 2026-11-16 | qwen-claude:latest | qwen3.5:9b | Pass | Pass | N/A | Pass | QA-passed |
 | Unit 5 | Lesson 2: Carbohydrates, Lipids, Nucleic Acids, and Metabolism | 2026-11-16 | Agent | Agent | Pass | Pass | Pass | Pass | QA-passed |
-| Unit 6 | Lesson 1: Lab Safety, Glassware, and Titration Techniques | 2026-11-16 | manual | manual | Pass | N/A | N/A | Pass | QA-passed |
+| Unit 6 | Lesson 2: Synthesis, Purification, and Recrystallization | 2026-11-18 | Agent | Agent | Pass | Pass | Pass | Pass | QA-passed |
 | Unit 7 | Lesson 1: Electrochemical Cells and Potentials | 2026-11-18 | Agent | Agent | Pass | N/A | N/A | Pass | QA-passed |
 | Unit 7 | Lesson 2: Nernst Equation and Electrolysis | 2026-11-18 | Agent | Agent | Pass | N/A | N/A | Pass | QA-passed |
 | Unit 8 | Lesson 1: General Chemical Kinetics | 2026-11-18 | Agent | Agent | Pass | N/A | N/A | Pass | QA-passed |
