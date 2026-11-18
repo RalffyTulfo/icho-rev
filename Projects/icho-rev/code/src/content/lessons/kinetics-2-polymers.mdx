@@ -1,0 +1,64 @@
+---
+title: "Polymerization and Polymer Chemistry"
+author: "Ralf Christian Mendoza"
+proofreader: ""
+readingTime: 12
+unit: "Kinetics and Polymers"
+color: "purple"
+---
+
+# Polymerization and Polymer Chemistry
+
+## Terms & Definitions
+
+- **Monomer**: A molecule that can be bonded to other identical molecules to form a polymer.
+- **Polymer**: A substance that has a molecular structure consisting chiefly or entirely of a large number of similar units bonded together.
+- **Addition (Chain-Growth) Polymerization**: Monomers add to the growing chain one at a time, usually involving a radical or ionic mechanism (e.g., polyethylene).
+- **Condensation (Step-Growth) Polymerization**: Bifunctional monomers react to form dimers, then trimers, etc., often with the elimination of a small molecule like water (e.g., nylon).
+- **Degree of Polymerization ($\overline{X}_n$)**: The average number of monomer units in a polymer chain.
+- **Polydispersity Index (PDI)**: A measure of the distribution of molecular mass in a given polymer sample ($M_w/M_n$).
+
+## Why Does This Exist?
+
+Polymers are the basis of both life (proteins, DNA) and modern materials (plastics, fibers). In the IChO, understanding the kinetics of polymerization and the structural relationships in macromolecules is key for solving problems in materials science and biochemistry.
+
+## Derivation from First Principles
+
+### The Carothers Equation
+For step-growth polymerization (condensation), the relationship between the extent of reaction ($p$) and the degree of polymerization ($\overline{X}_n$) is given by:
+$\overline{X}_n = \frac{1}{1-p}$
+
+As the reaction approaches completion ($p \rightarrow 1$), the molecular weight increases exponentially. This is why high-purity monomers and exact stoichiometry are critical for producing high-molecular-weight condensation polymers.
+
+### Kinetics of Addition Polymerization
+1. **Initiation**: $I \rightarrow 2R\cdot$ (Rate = $k_i[I]$)
+2. **Propagation**: $M_n\cdot + M \rightarrow M_{n+1}\cdot$ (Rate = $k_p[M][M\cdot]$)
+3. **Termination**: $M_n\cdot + M_m\cdot \rightarrow P$ (Rate = $k_t[M\cdot]^2$)
+
+Applying the steady-state approximation to $[M\cdot]$:
+Rate of polymerization ($R_p$) $\approx k_p [M] \sqrt{\frac{fk_d[I]}{k_t}}$
+
+## Worked Example
+
+**Problem**: If the extent of reaction $p$ in a condensation polymerization is 0.98, what is the number-average degree of polymerization $\overline{X}_n$?
+
+**Solution**:
+Using the Carothers Equation:
+$\overline{X}_n = \frac{1}{1 - p} = \frac{1}{1 - 0.98} = \frac{1}{0.02} = 50$.
+
+**Sanity Check**: A high extent of reaction (98%) is required to achieve even a modest degree of polymerization (50).
+
+## Common IChO Traps
+
+- **Carothers Limits**: Forgetting that $\overline{X}_n$ only becomes large when $p$ is very close to 1.
+- **Tacticity**: Isotactic, syndiotactic, and atactic arrangements affect polymer crystallinity and properties.
+- **Copolymers**: Random, alternating, block, and graft copolymers have distinct properties.
+
+## Go Deeper
+- [Advanced Thermodynamics](./thermo-4-entropy-free-energy)
+
+## Recall Cards
+- **Recall Card 1**: What is the Carothers equation?
+  Answer: $\overline{X}_n = \frac{1}{1-p}$.
+- **Recall Card 2**: What does a PDI of 1.0 imply?
+  Answer: All polymer chains have exactly the same length (monodisperse).

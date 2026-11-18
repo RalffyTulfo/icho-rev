@@ -22,7 +22,7 @@
 
 ## Unit 5: Biochemistry
 - [x] Lesson 1: Amino Acids, Proteins, and Enzyme Kinetics (QA-passed)
-- [ ] Lesson 2: Carbohydrates, Lipids, Nucleic Acids, and Metabolism
+- [x] Lesson 2: Carbohydrates, Lipids, Nucleic Acids, and Metabolism (QA-passed)
 
 ## Unit 6: Practical Chemistry
 - [x] Lesson 1: Lab Safety, Glassware, and Titration Techniques (QA-passed)
@@ -31,3 +31,14 @@
 
 ## Unit 2: Organic Chemistry
 - [x] Lesson 1: Nomenclature and Isomerism (QA-passed)
+- [ ] Lesson 2: Functional Groups and Reactivity
+- [x] Lesson 3: Stereochemistry and Conformational Analysis (QA-passed)
+- [x] Lesson 4: Reaction Mechanisms (QA-passed)
+
+## Unit 7: Electrochemistry
+- [x] Lesson 1: Electrochemical Cells and Potentials (QA-passed)
+- [x] Lesson 2: Nernst Equation and Electrolysis (QA-passed)
+
+## Unit 8: Kinetics and Polymers
+- [x] Lesson 1: General Chemical Kinetics (QA-passed)
+- [x] Lesson 2: Polymerization and Polymer Chemistry (QA-passed)

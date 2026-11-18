@@ -1,0 +1,78 @@
+---
+title: "Nernst Equation and Electrolysis"
+author: "Ralf Christian Mendoza"
+proofreader: ""
+readingTime: 12
+unit: "Electrochemistry"
+color: "indigo"
+---
+
+# Nernst Equation and Electrolysis
+
+## Terms & Definitions
+
+- **Nernst Equation**: Relates the reduction potential of an electrochemical cell (or a half-cell) to the standard electrode potential, temperature, and activities (often approximated by concentrations) of the chemical species undergoing oxidation and reduction.
+- **Electrolysis**: The use of electric current to stimulate a non-spontaneous chemical reaction.
+- **Faraday's Constant ($F$)**: The magnitude of electric charge per mole of electrons ($\approx 96485$ C/mol).
+- **Overpotential**: The potential difference between the theoretically determined thermodynamic voltage of a half-reaction and the voltage at which the redox event is experimentally observed.
+- **Reaction Quotient ($Q$)**: The ratio of the activities of products to reactants at any point in a reaction.
+
+## Why Does This Exist?
+
+Standard potentials ($E^\circ$) assume 1 M concentrations, which is rarely the case in real-world applications or competitive lab scenarios. The Nernst equation allows us to calculate potentials under any concentration condition. Electrolysis, on the other hand, is the foundation of electroplating, metal refining (like Al via the Hall-Héroult process), and green hydrogen production.
+
+## Derivation from First Principles
+
+### The Nernst Equation
+From thermodynamics:
+$\Delta G = \Delta G^\circ + RT \ln Q$
+
+Substituting $\Delta G = -nFE$ and $\Delta G^\circ = -nFE^\circ$:
+$-nFE = -nFE^\circ + RT \ln Q$
+
+Dividing by $-nF$:
+$E = E^\circ - \frac{RT}{nF} \ln Q$
+
+At 298 K, using base-10 logarithms ($\ln Q = 2.303 \log Q$):
+$E = E^\circ - \frac{0.0592}{n} \log Q$
+
+### Faraday's Law of Electrolysis
+The amount of substance produced at an electrode is proportional to the quantity of electricity ($Q_{charge}$) passed through the cell:
+$Q_{charge} = I \times t = n_{e^-} \times F$
+
+Where:
+- $I$ is current in Amperes (C/s).
+- $t$ is time in seconds.
+- $n_{e^-}$ is moles of electrons.
+
+## Worked Example
+
+**Problem**: A constant current of 2.00 A is passed through an aqueous solution of $CuSO_4$ for 30.0 minutes. Calculate the mass of copper metal deposited at the cathode. (Atomic mass of Cu = 63.55 g/mol).
+
+**Solution**:
+1. **Identify the reduction**: $Cu^{2+}(aq) + 2e^- \rightarrow Cu(s)$ ($n = 2$).
+2. **Calculate total charge**:
+   $Q_{charge} = I \times t = 2.00\text{ A} \times (30.0 \times 60\text{ s}) = 3600\text{ C}$.
+3. **Calculate moles of electrons**:
+   $n_{e^-} = \frac{Q_{charge}}{F} = \frac{3600\text{ C}}{96485\text{ C/mol}} \approx 0.0373\text{ mol } e^-$.
+4. **Calculate moles of Cu**:
+   $n_{Cu} = \frac{n_{e^-}}{2} = \frac{0.0373}{2} \approx 0.01865\text{ mol } Cu$.
+5. **Calculate mass of Cu**:
+   $m = 0.01865\text{ mol} \times 63.55\text{ g/mol} = 1.185\text{ g}$.
+
+**Sanity Check**: 2 Amperes for half an hour is a significant amount of charge, so about a gram of copper is a reasonable result.
+
+## Common IChO Traps
+
+- **Unit mismatch**: $t$ must be in *seconds*, not minutes or hours.
+- **Concentration units**: In the Nernst equation, use molarity for solutes and partial pressure (in bar/atm) for gases. Solids and pure liquids have activity = 1.
+- **$n$ value**: Ensure $n$ is the total moles of electrons for the *balanced* redox equation.
+
+## Go Deeper
+- [Advanced Kinetics and Catalysis](./kinetics-1-general)
+
+## Recall Cards
+- **Recall Card 1**: Write the Nernst equation at 298 K using $\log_{10}$.
+  Answer: $E = E^\circ - \frac{0.0592}{n} \log Q$.
+- **Recall Card 2**: How is charge ($Q$) related to current ($I$) and time ($t$)?
+  Answer: $Q = I \times t$.
