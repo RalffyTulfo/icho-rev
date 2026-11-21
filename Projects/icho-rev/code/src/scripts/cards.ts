@@ -64,12 +64,44 @@ document.addEventListener('DOMContentLoaded', () => {
     const contentDiv = document.createElement('div')
     contentDiv.className = 'card-content'
 
+    // Store references to original nodes for restoration
+    const originalNodes = [];
+
     contentNodes.forEach(node => {
       // Skip heading tags that aren't the originating H3
       if (node.tagName === 'H3' || node.tagName === 'H2') return
+
+      // Store original parent/sibling references
+      originalNodes.push({
+        node,
+        parent: node.parentNode,
+        nextSibling: node.nextSibling
+      });
+
       // Move content nodes into the card
-      contentDiv.appendChild(node.cloneNode(true))
-    })
+      contentDiv.appendChild(node);
+
+      // Dev assertion: warn if heading IDs are duplicated
+      if (node.id && document.querySelectorAll(`[id="${node.id}"]`).length > 1) {
+        console.warn(`Duplicate heading ID: ${node.id}`);
+      }
+    });
+
+    // Add mode switch handler
+    document.addEventListener('viewModeChange', (e) => {
+      if (e.detail.mode === 'scroll') {
+        // Restore original DOM structure when switching to Scroll mode
+        originalNodes.forEach(({ node, parent, nextSibling }) => {
+          if (parent) {
+            if (nextSibling) {
+              parent.insertBefore(node, nextSibling);
+            } else {
+              parent.appendChild(node);
+            }
+          }
+        });
+      }
+    });
 
     cardInner.appendChild(contentDiv)
     card.appendChild(cardInner)
