@@ -1,0 +1,84 @@
+/**
+ * Card Styles – grid layout, borders, radius, clamped height with fade overlay.
+ *
+ * Used with the Cards view mode. Assumes cards have the structure:
+ *   .card > .card-inner > .card-header + .card-content
+ * Cards can have .expanded class for expanded state.
+ */
+
+.card {
+  background-color: var(--card, #fff);
+  border: 1px solid var(--border, #e2e8f0);
+  border-radius: var(--radius, 0.5rem);
+  overflow: hidden;
+  transition: box-shadow 0.2s ease;
+  cursor: pointer;
+  touch-action: none;
+  margin-bottom: 1rem;
+}
+
+.card:hover {
+  box-shadow: var(--hover-shadow, 0 4px 6px -1px rgba(0, 0, 0, 0.1));
+}
+
+.card.expanded {
+  box-shadow: var(--expanded-shadow, 0 10px 15px -3px rgba(0, 0, 0, 0.1));
+  z-index: 10;
+}
+
+.card-inner {
+  padding: 1rem;
+}
+
+.card-header {
+  font-weight: 600;
+  font-size: 0.875rem;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border, #e2e8f0);
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.card-content img,
+.card-content video,
+.card-content iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+.fade-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0) 60%
+  );
+  pointer-events: none;
+}
+
+.grid-cols-1 {
+  grid-template-columns: 1fr;
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* Responsive: stack cards on small screens */
+@media (max-width: 640px) {
+  .grid-cols-1,
+  .grid-cols-2,
+  .grid-cols-3 {
+    grid-template-columns: 1fr !important;
+  }
+}

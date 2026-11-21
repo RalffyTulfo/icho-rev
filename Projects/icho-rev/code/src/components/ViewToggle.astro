@@ -1,0 +1,115 @@
+---
+// View Toggle component for lesson pages
+// Initial SSR states (default to scroll view)
+const view = 'scroll';
+const row = '2';
+---
+
+<div class="flex items-center gap-3 mb-6">
+  <!-- View toggle buttons -->
+  <button
+    id="btn-scroll"
+    class="rounded-md border border-2 px-4 py-2 text-sm font-medium transition-colors hover:bg-primary hover:text-primary-foreground"
+  >
+    Scroll
+  </button>
+
+  <button
+    id="btn-cards"
+    class="rounded-md border border-2 px-4 py-2 text-sm font-medium transition-colors hover:bg-primary hover:text-primary-foreground"
+  >
+    Cards
+  </button>
+
+  <!-- Per-row selector -->
+  <select
+    id="row-selector"
+    class="rounded border border-input px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+  >
+    <option value="1">1 row</option>
+    <option value="2" selected>2 rows</option>
+    <option value="3">3 rows</option>
+  </select>
+</div>
+
+<script>
+  const STORAGE_KEY = 'icho-rev-view-mode'
+  const ROW_KEY = 'icho-rev-rows'
+
+  function setStored(key, value) {
+    try {
+      localStorage.setItem(key, value)
+    } catch (e) {}
+  }
+
+  function getStored(key, defaultValue) {
+    try {
+      const val = localStorage.getItem(key)
+      return val !== null ? val : defaultValue
+    } catch (e) {
+      return defaultValue
+    }
+  }
+
+  const btnScroll = document.getElementById('btn-scroll')
+  const btnCards = document.getElementById('btn-cards')
+  const rowSelector = document.getElementById('row-selector')
+  const wrapper = document.querySelector('.view-wrapper')
+
+  function updateUI() {
+    const view = getStored(STORAGE_KEY, 'scroll')
+    const rows = getStored(ROW_KEY, '2')
+
+    // Update buttons
+    if (btnScroll) {
+      if (view === 'scroll') {
+        btnScroll.classList.add('bg-primary', 'text-primary-foreground')
+      } else {
+        btnScroll.classList.remove('bg-primary', 'text-primary-foreground')
+      }
+    }
+
+    if (btnCards) {
+      if (view === 'cards') {
+        btnCards.classList.add('bg-primary', 'text-primary-foreground')
+      } else {
+        btnCards.classList.remove('bg-primary', 'text-primary-foreground')
+      }
+    }
+
+    // Update select
+    if (rowSelector) {
+      (rowSelector as HTMLSelectElement).value = rows
+    }
+
+    // Update content wrapper
+    if (wrapper) {
+      wrapper.classList.remove('grid-cols-1', 'grid-cols-2', 'grid-cols-3')
+      if (view === 'cards') {
+        wrapper.classList.add(`grid-cols-${rows}`)
+      }
+    }
+  }
+
+  btnScroll?.addEventListener('click', () => {
+    setStored(STORAGE_KEY, 'scroll')
+    updateUI()
+  })
+
+  btnCards?.addEventListener('click', () => {
+    setStored(STORAGE_KEY, 'cards')
+    updateUI()
+  })
+
+  rowSelector?.addEventListener('change', (e) => {
+    const val = (e.target as HTMLSelectElement).value
+    setStored(ROW_KEY, val)
+    updateUI()
+  })
+
+  // Initial update on page load
+  updateUI()
+
+  // Also update when ToC highlights changes (if needed)
+  document.addEventListener('astro:after-swap', updateUI)
+</script>

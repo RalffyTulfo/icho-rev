@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Color variables */
 :root {
   --color-background: #f8f7f9;
   --color-foreground: #1a1a2e;
@@ -47,15 +48,16 @@
   --color-practical: #ff7f50;
 }
 
+/* Base styles */
 body {
   background-color: var(--color-background);
   color: var(--color-foreground);
   font-family: var(--font-body);
-  transition: background-color 0.3s ease, color 0.3s ease;
   margin: 0;
   padding: 0;
 }
 
+/* Frosted glass — translucent blur surface */
 .frosted-glass {
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(16px);
@@ -66,29 +68,152 @@ body {
   position: relative;
 }
 
+/* Dark theme frosted glass */
 :root[data-theme="dark"] .frosted-glass {
   background: rgba(26, 26, 46, 0.45);
   border: 1px solid rgba(147, 112, 219, 0.25);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
-@keyframes hero-drift {
-  0% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-12px) rotate(1deg); }
-  100% { transform: translateY(0px) rotate(0deg); }
+/* Card component */
+.card {
+  background-color: var(--card, #fff);
+  border: 1px solid var(--border, #e2e8f0);
+  border-radius: var(--radius, 0.5rem);
+  overflow: hidden;
+  transition: box-shadow 0.2s ease;
+  margin-bottom: 1rem;
 }
 
-.hero-ribbon {
-  animation: hero-drift var(--duration-hero) ease-in-out infinite;
+.card:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
-/* Reduce motion overrides */
-body.reduce-motion *, body.reduce-motion .hero-ribbon {
+.card.expanded {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.card-inner {
+  padding: 1rem;
+}
+
+.card-header {
+  font-weight: 600;
+  font-size: 0.875rem;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border, #e2e8f0);
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.card-content img,
+.card-content video,
+.card-content iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Grid layout utilities */
+.grid-cols-1 {
+  grid-template-columns: 1fr;
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* Responsive: stack cards on small screens */
+@media (max-width: 640px) {
+  .grid-cols-1,
+  .grid-cols-2,
+  .grid-cols-3 {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Heading styles */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  color: var(--color-foreground);
+  margin-top: 0;
+}
+
+/* Body text */
+p {
+  line-height: 1.6;
+  color: var(--color-foreground);
+}
+
+/* KaTeX math */
+.katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.75rem;
+  margin: 1rem 0;
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 12px;
+}
+
+:root[data-theme="dark"] .katex-display {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* Reduced motion overrides — replace springs/transitions with short cross-fades */
+body.reduce-motion *,
+body.reduce-motion .card,
+body.reduce-motion .katex-display,
+body.reduce-motion .view-wrapper > *,
+body.reduce-motion .frosted-glass,
+body.reduce-motion .hero-ribbon {
   animation: none !important;
   transition: none !important;
+  /* Drop elastic/overshoot — use short cross-fades instead */
+  transition-property: opacity !important;
+  transition-duration: 200ms !important;
+  transition-timing-function: ease !important;
 }
 
-/* Print Stylesheet */
+/* Reduced transparency — make translucent surfaces frostier/solid */
+@media (prefers-reduced-transparency: reduce) {
+  .frosted-glass {
+    background: rgba(255, 255, 255, 0.6) !important;
+    backdrop-filter: none !important;
+    border: 1px solid rgba(255, 255, 255, 0.5) !important;
+  }
+  :root[data-theme="dark"] .frosted-glass {
+    background: rgba(26, 26, 46, 0.7) !important;
+    border: 1px solid rgba(147, 112, 219, 0.35) !important;
+  }
+}
+
+/* Focus styles for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Link styles */
+a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+a:hover {
+  color: var(--color-secondary);
+}
+
+/* Print styles */
 @media print {
   body {
     background: white !important;
