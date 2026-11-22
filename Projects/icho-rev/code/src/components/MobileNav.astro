@@ -1,0 +1,61 @@
+---
+// Mobile Navigation Dropdown for lesson pages
+---
+
+<div class="lg:hidden fixed bottom-6 right-6 z-[60]">
+  <button
+    id="mobile-toc-trigger"
+    class="frosted-glass p-4 shadow-xl border border-white/20 flex items-center gap-2 group active:scale-95 transition-transform"
+    aria-label="Toggle navigation"
+  >
+    <span class="text-xs font-bold uppercase tracking-wider text-primary">On this page</span>
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-primary group-data-[open=true]:rotate-180 transition-transform">
+      <path d="m18 15-6-6-6 6"/>
+    </svg>
+  </button>
+
+  <div
+    id="mobile-toc-panel"
+    class="hidden absolute bottom-16 right-0 w-64 frosted-glass p-4 shadow-2xl border border-white/20 origin-bottom-right"
+  >
+    <nav id="mobile-toc-list" class="flex flex-col space-y-2 text-sm overflow-y-auto max-h-[60vh]">
+      <!-- Content populated by toc.ts -->
+    </nav>
+  </div>
+</div>
+
+<script>
+  const trigger = document.getElementById('mobile-toc-trigger');
+  const panel = document.getElementById('mobile-toc-panel');
+
+  function toggle() {
+    const isOpen = !panel?.classList.contains('hidden');
+    if (isOpen) {
+      panel?.classList.add('hidden');
+      trigger?.removeAttribute('data-open');
+    } else {
+      panel?.classList.remove('hidden');
+      trigger?.setAttribute('data-open', 'true');
+    }
+  }
+
+  trigger?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggle();
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!panel?.classList.contains('hidden') && !panel?.contains(e.target as Node)) {
+      panel?.classList.add('hidden');
+      trigger?.removeAttribute('data-open');
+    }
+  });
+
+  // Close on link click
+  panel?.addEventListener('click', (e) => {
+    if ((e.target as HTMLElement).tagName === 'A') {
+      panel?.classList.add('hidden');
+      trigger?.removeAttribute('data-open');
+    }
+  });
+</script>

@@ -29,7 +29,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const list = toc.querySelector('ul') || document.createElement('ul')
   if (!toc.querySelector('ul')) toc.appendChild(list)
 
+  const mobileList = document.getElementById('mobile-toc-list')
+
   headings.forEach((h, i) => {
+    // Desktop list item
     const li = document.createElement('li')
     const link = document.createElement('a')
     link.href = `#${h.id}`
@@ -38,6 +41,13 @@ document.addEventListener('DOMContentLoaded', () => {
     link.dataset.headingId = h.id
     li.appendChild(link)
     list.appendChild(li)
+
+    // Mobile list item
+    if (mobileList) {
+      const mobileLink = link.cloneNode(true) as HTMLAnchorElement
+      mobileLink.className = 'block py-2 px-3 rounded-lg hover:bg-primary/10 transition-colors'
+      mobileList.appendChild(mobileLink)
+    }
   })
 
   // Sticky container setup
