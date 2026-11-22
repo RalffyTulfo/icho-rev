@@ -51,65 +51,91 @@ const row = '2';
     }
   }
 
-  const btnScroll = document.getElementById('btn-scroll')
-  const btnCards = document.getElementById('btn-cards')
-  const rowSelector = document.getElementById('row-selector')
-  const wrapper = document.querySelector('.view-wrapper')
+  // Delay element lookup until DOM is fully ready
+  function initToggle() {
+    const btnScroll = document.getElementById('btn-scroll')
+    const btnCards = document.getElementById('btn-cards')
+    const rowSelector = document.getElementById('row-selector')
+    const wrapper = document.querySelector('.view-wrapper')
 
-  function updateUI() {
-    const view = getStored(STORAGE_KEY, 'scroll')
-    const rows = getStored(ROW_KEY, '2')
+    function updateUI() {
+      const view = getStored(STORAGE_KEY, 'scroll')
+      const rows = getStored(ROW_KEY, '2')
 
-    // Update buttons
-    if (btnScroll) {
-      if (view === 'scroll') {
-        btnScroll.classList.add('bg-primary', 'text-primary-foreground')
-      } else {
-        btnScroll.classList.remove('bg-primary', 'text-primary-foreground')
+      // Update buttons
+      if (btnScroll) {
+        if (view === 'scroll') {
+          btnScroll.classList.add('bg-primary', 'text-primary-foreground')
+        } else {
+          btnScroll.classList.remove('bg-primary', 'text-primary-foreground')
+        }
       }
+
+      if (btnCards) {
+        if (view === 'cards') {
+          btnCards.classList.add('bg-primary', 'text-primary-foreground')
+        } else {
+          btnCards.classList.remove('bg-primary', 'text-primary-foreground')
+        }
+      }
+
+      // Update select
+      if (rowSelector) {
+        (rowSelector as HTMLSelectElement).value = rows
+      }
+
+      // Update content wrapper - set data-view and data-cols attributes
+      // so CSS can react with [data-view] and [data-cols] selectors
+      if (wrapper) {
+        wrapper.classList.remove('grid-cols-1', 'grid-cols-2', 'grid-cols-3')
+        wrapper.setAttribute('data-view', view)
+        wrapper.setAttribute('data-cols', rows)
+        if (view === 'cards') {
+          wrapper.classList.add(`grid-cols-${rows}`)
+        }
+      }
+    }
+
+    // Attach click handlers - update aria-pressed and data attributes
+    if (btnScroll) {
+      btnScroll.addEventListener('click', () => {
+        setStored(STORAGE_KEY, 'scroll')
+        // Update aria-pressed on the clicked button
+        btnScroll.setAttribute('aria-pressed', 'true')
+        btnCards.removeAttribute('aria-pressed')
+        updateUI()
+      })
     }
 
     if (btnCards) {
-      if (view === 'cards') {
-        btnCards.classList.add('bg-primary', 'text-primary-foreground')
-      } else {
-        btnCards.classList.remove('bg-primary', 'text-primary-foreground')
-      }
+      btnCards.addEventListener('click', () => {
+        setStored(STORAGE_KEY, 'cards')
+        // Update aria-pressed on the clicked button
+        btnCards.setAttribute('aria-pressed', 'true')
+        btnScroll.removeAttribute('aria-pressed')
+        updateUI()
+      })
     }
 
-    // Update select
     if (rowSelector) {
-      (rowSelector as HTMLSelectElement).value = rows
+      rowSelector.addEventListener('change', (e) => {
+        const val = (e.target as HTMLSelectElement).value
+        setStored(ROW_KEY, val)
+        updateUI()
+      })
     }
 
-    // Update content wrapper
-    if (wrapper) {
-      wrapper.classList.remove('grid-cols-1', 'grid-cols-2', 'grid-cols-3')
-      if (view === 'cards') {
-        wrapper.classList.add(`grid-cols-${rows}`)
-      }
-    }
+    // Initial update on page load
+    updateUI()
+
+    // Also update when ToC highlights changes (if needed)
+    document.addEventListener('astro:after-swap', updateUI)
   }
 
-  btnScroll?.addEventListener('click', () => {
-    setStored(STORAGE_KEY, 'scroll')
-    updateUI()
-  })
-
-  btnCards?.addEventListener('click', () => {
-    setStored(STORAGE_KEY, 'cards')
-    updateUI()
-  })
-
-  rowSelector?.addEventListener('change', (e) => {
-    const val = (e.target as HTMLSelectElement).value
-    setStored(ROW_KEY, val)
-    updateUI()
-  })
-
-  // Initial update on page load
-  updateUI()
-
-  // Also update when ToC highlights changes (if needed)
-  document.addEventListener('astro:after-swap', updateUI)
+  // Initialize when DOM is ready
+  if (document.readyState !== 'loading') {
+    initToggle()
+  } else {
+    document.addEventListener('DOMContentLoaded', initToggle)
+  }
 </script>
