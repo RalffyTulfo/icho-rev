@@ -29,13 +29,13 @@ import StudyMode from '../../components/StudyMode.astro';
 <Layout title={title} description={metaDescription}>
   <main class="pt-20 px-4 max-w-7xl mx-auto flex flex-col lg:flex-row gap-8 min-h-screen pb-16">
     <!-- Sticky Table of Contents / Sidebar -->
-    <aside class="w-full lg:w-72 flex-shrink-0">
-      <div class="sticky top-24 frosted-glass p-6 rounded-2xl border border-var(--color-border) space-y-4">
+    <aside class="lesson-aside hidden w-full lg:block lg:w-72 flex-shrink-0">
+      <div class="toc-panel sticky top-24 frosted-glass p-6 rounded-2xl border border-var(--color-border) flex flex-col gap-3 max-h-[calc(100vh-8rem)]">
         <h3 class="text-xs font-bold uppercase tracking-wider text-primary">Lesson Navigation</h3>
-        <nav id="toc" class="flex flex-col space-y-2 text-sm text-foreground/80">
-          <ul></ul>
+        <nav id="toc" class="toc-nav" aria-label="Lesson sections">
+          <ul class="toc-list"></ul>
         </nav>
-        <div class="pt-4 border-t border-var(--color-border)">
+        <div class="pt-3 mt-auto border-t border-var(--color-border)">
           <a href="/icho-rev/roadmap" class="text-xs text-primary font-semibold hover:underline flex items-center gap-1">
             ← Back to Roadmap
           </a>
@@ -133,5 +133,88 @@ import StudyMode from '../../components/StudyMode.astro';
   /* Ensure smooth scrolling when clicking navigation anchors */
   html {
     scroll-behavior: smooth;
+  }
+
+  /* Leave room for the fixed toolbar when jumping to a heading or card */
+  .view-wrapper .lesson-content-cards h2,
+  .view-wrapper .lesson-content-cards h3,
+  .view-wrapper .card {
+    scroll-margin-top: 6.5rem;
+  }
+
+  /* Table of contents */
+  aside.lesson-aside > .toc-panel {
+    position: sticky;
+    top: 6rem;
+    align-self: flex-start;
+  }
+
+  .toc-nav {
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding-right: 0.25rem;
+  }
+
+  .toc-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+    font-size: 0.8125rem;
+  }
+
+  .toc-link {
+    display: block;
+    padding: 0.375rem 0.6rem;
+    border-radius: 0.65rem;
+    border-left: 2px solid transparent;
+    color: var(--color-muted);
+    text-decoration: none;
+    line-height: 1.4;
+    transition: color var(--duration-micro) var(--ease-out),
+      background-color var(--duration-micro) var(--ease-out),
+      border-color var(--duration-micro) var(--ease-out);
+  }
+
+  .toc-link:hover {
+    color: var(--color-text);
+    background: color-mix(in srgb, var(--color-primary) 10%, transparent);
+  }
+
+  .toc-link:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 1px;
+    color: var(--color-text);
+  }
+
+  .toc-link.is-active {
+    color: var(--color-primary);
+    font-weight: 600;
+    background: color-mix(in srgb, var(--color-primary) 14%, transparent);
+    border-left-color: var(--color-primary);
+  }
+
+  .toc-link-2 {
+    font-weight: 600;
+  }
+
+  .toc-link-3 {
+    font-size: 0.78rem;
+    padding-left: 1.15rem;
+  }
+
+  .toc-sublist {
+    list-style: none;
+    margin: 0.1rem 0 0.35rem;
+    padding: 0;
+    display: none;
+  }
+
+  .toc-group.is-active > .toc-sublist,
+  .toc-group.is-open > .toc-sublist {
+    display: block;
   }
 </style>

@@ -40,3 +40,6 @@ reference/
 *.rej
 *.backup
 *.bak
+# Local design notes (not published)
+STUDY_LAYOUT_SPEC.md
+UI_PROMPT.md
