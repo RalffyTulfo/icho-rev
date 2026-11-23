@@ -1,127 +1,140 @@
 /**
  * Cards Script – transforms rendered MDX DOM into card groups.
  *
- * Walks the content area, groups sections under each H3 into a card.
- * H2 headings become row labels. Cards have a fade overlay and can be
- * clicked to expand/collapse long content.
+ * Walks the lesson content area, groups each H3 section into a card, and
+ * moves the original H3 into the card header as the card title. A snapshot
+ * of the pristine children is kept so switching back to Scroll restores the
+ * exact original DOM (Cards -> Scroll -> Cards is repeatable).
  *
- * Usage: <script src="/src/scripts/cards.ts"></script> in the Astro page,
- * and a <main class="view-wrapper">…</main> wrapper in the lesson content.
+ * Usage: imported from the lesson page; requires the article markup
+ * `.view-wrapper > .lesson-content-cards` and `.view-wrapper[data-view]`.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  const main = document.querySelector('main')
-  if (!main) return
+  const wrapper = document.querySelector('.view-wrapper')
+  // The article's content container; exclude the study-mode panel's copy.
+  const contentRoot = document.querySelector('.view-wrapper > .lesson-content-cards')
+  if (!wrapper || !contentRoot) return
 
-  // Collect all H2 headings as row labels
-  const rowLabels = Array.from(main.querySelectorAll('h2')).map(h => ({
-    element: h,
-    text: h.innerText.trim()
-  }))
+  // Pristine server-rendered children, in order. Never mutated.
+  const originalNodes: Node[] = Array.from(contentRoot.childNodes)
+  // H3s we restyled as card headers, with their original class attribute.
+  const cardedHeadings: Array<{ heading: HTMLElement; className: string | null }> = []
 
-  // Group content under each H3 into cards
-  const h3s = Array.from(main.querySelectorAll('h3'))
+  function hasCards(): boolean {
+    return contentRoot!.querySelector(':scope > .card') !== null
+  }
 
-  h3s.forEach((h3, h3Index) => {
-    const card = document.createElement('div')
-    card.className = 'card fade-in'
-    card.setAttribute('role', 'button')
-    card.setAttribute('tabindex', '0')
-    card.setAttribute('aria-label', `Card: ${h3.innerText.trim()}`)
-    card.addEventListener('click', () => toggleCardExpand(card))
-    card.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault()
-        toggleCardExpand(card)
+  function restore() {
+    if (!hasCards()) return
+    // Re-append in original order: moves nodes back out of cards.
+    originalNodes.forEach((node) => contentRoot!.appendChild(node))
+    // Cards are empty now; drop the wrappers.
+    contentRoot!.querySelectorAll(':scope > .card').forEach((card) => card.remove())
+    // Undo the header class so the restored DOM matches the server output.
+    cardedHeadings.forEach(({ heading, className }) => {
+      if (className === null) {
+        heading.removeAttribute('class')
+      } else {
+        heading.setAttribute('class', className)
       }
     })
+    cardedHeadings.length = 0
+  }
 
-    // Find the next H3 or end of main to determine card content boundary
-    const nextH3 = h3Index < h3s.length - 1 ? h3s[h3Index + 1] : null
-    const contentEnd = nextH3 ? nextH3 : main.querySelector('footer') || main
+  function buildCards() {
+    if (hasCards()) return
 
-    // Collect all siblings between this H3 and the next H3 (or end)
-    let sibling = h3.nextElementSibling
-    const contentNodes = []
+    const headingForCard = new Map<Node, HTMLElement>()
+    const consumed = new Set<Node>()
 
-    while (sibling && sibling !== contentEnd) {
-      if (sibling.nodeType === Node.ELEMENT_NODE) {
-        contentNodes.push(sibling)
+    originalNodes.forEach((node, index) => {
+      if (node.nodeType !== Node.ELEMENT_NODE) return
+      const heading = node as HTMLElement
+      if (heading.tagName !== 'H3') return
+
+      const card = document.createElement('div')
+      card.className = 'card fade-in'
+      card.setAttribute('role', 'button')
+      card.setAttribute('tabindex', '0')
+      card.setAttribute('aria-label', `Card: ${(heading.textContent || '').trim()}`)
+      card.addEventListener('click', () => toggleCardExpand(card))
+      card.addEventListener('keydown', (event: KeyboardEvent) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault()
+          toggleCardExpand(card)
+        }
+      })
+
+      const inner = document.createElement('div')
+      inner.className = 'card-inner'
+
+      // The original H3 becomes the card header — moved, not cloned.
+      cardedHeadings.push({ heading, className: heading.getAttribute('class') })
+      heading.classList.add('card-header')
+      inner.appendChild(heading)
+
+      const content = document.createElement('div')
+      content.className = 'card-content'
+
+      // Everything up to the next H2/H3 belongs to this card.
+      let cursor = index + 1
+      while (cursor < originalNodes.length) {
+        const sibling = originalNodes[cursor]
+        if (sibling.nodeType === Node.ELEMENT_NODE) {
+          const tag = (sibling as HTMLElement).tagName
+          if (tag === 'H2' || tag === 'H3') break
+          content.appendChild(sibling)
+          consumed.add(sibling)
+        } else if (sibling.nodeType === Node.TEXT_NODE && (sibling.textContent || '').trim() !== '') {
+          content.appendChild(sibling)
+          consumed.add(sibling)
+        }
+        cursor++
       }
-      sibling = sibling.nextElementSibling
-    }
 
-    // Build card inner
-    const cardInner = document.createElement('div')
-    cardInner.className = 'card-inner'
+      inner.appendChild(content)
+      card.appendChild(inner)
+      headingForCard.set(node, card)
+    })
 
-    // H3 as card header
-    const h3Copy = h3.cloneNode(true)
-    h3Copy.className = 'card-header'
-    cardInner.appendChild(h3Copy)
-
-    // Content div with fade overlay
-    const contentDiv = document.createElement('div')
-    contentDiv.className = 'card-content'
-
-    // Store references to original nodes for restoration
-    const originalNodes = [];
-
-    contentNodes.forEach(node => {
-      // Skip heading tags that aren't the originating H3
-      if (node.tagName === 'H3' || node.tagName === 'H2') return
-
-      // Store original parent/sibling references
-      originalNodes.push({
-        node,
-        parent: node.parentNode,
-        nextSibling: node.nextSibling
-      });
-
-      // Move content nodes into the card
-      contentDiv.appendChild(node);
-
-      // Dev assertion: warn if heading IDs are duplicated
-      if (node.id && document.querySelectorAll(`[id="${node.id}"]`).length > 1) {
-        console.warn(`Duplicate heading ID: ${node.id}`);
+    // Reassemble in original order; each H3 is replaced in place by its card.
+    originalNodes.forEach((node) => {
+      const card = headingForCard.get(node)
+      if (card) {
+        contentRoot!.appendChild(card)
+        return
       }
-    });
+      if (consumed.has(node)) return
+      contentRoot!.appendChild(node)
+    })
+  }
 
-    // Add mode switch handler
-    document.addEventListener('viewModeChange', (e) => {
-      if (e.detail.mode === 'scroll') {
-        // Restore original DOM structure when switching to Scroll mode
-        originalNodes.forEach(({ node, parent, nextSibling }) => {
-          if (parent) {
-            if (nextSibling) {
-              parent.insertBefore(node, nextSibling);
-            } else {
-              parent.appendChild(node);
-            }
-          }
-        });
-      }
-    });
-
-    cardInner.appendChild(contentDiv)
-    card.appendChild(cardInner)
-
-    // Insert card before the H3 (so it appears above in the flow)
-    h3.parentNode.insertBefore(card, h3)
-  })
-
-  // Expand/collapse functionality
-  function toggleCardExpand(card) {
+  function toggleCardExpand(card: HTMLElement) {
     const cardInner = card.querySelector('.card-inner')
     if (!cardInner) return
 
-    // Toggle expanded state
     card.classList.toggle('expanded')
 
-    // If expanding, focus the card content for accessibility
     if (card.classList.contains('expanded')) {
-      const focusable = cardInner.querySelector('a, button, input, textarea')
+      const focusable = cardInner.querySelector('a, button, input, textarea') as HTMLElement | null
       if (focusable) focusable.focus()
     }
   }
+
+  function applyMode() {
+    const mode = wrapper!.getAttribute('data-view')
+    if (mode === 'cards') {
+      buildCards()
+    } else {
+      restore()
+    }
+  }
+
+  applyMode()
+  // ViewToggle sets data-view on the wrapper instead of firing an event.
+  new MutationObserver(applyMode).observe(wrapper, {
+    attributes: true,
+    attributeFilter: ['data-view'],
+  })
 })

@@ -118,12 +118,48 @@ body {
   padding: 1rem;
 }
 
+/* Card headers are the lesson's original H3s, moved in by cards.ts */
+.card {
+  counter-increment: card;
+}
+
+.lesson-content-cards {
+  counter-reset: card;
+}
+
+.lesson-content-cards > h2 {
+  counter-reset: card;
+}
+
 .card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
   font-weight: 600;
-  font-size: 0.875rem;
+  font-size: 1.15rem;
+  line-height: 1.35;
+  color: var(--color-text, var(--color-foreground));
   margin-bottom: 0.75rem;
   padding-bottom: 0.5rem;
-  border-bottom: 1px solid var(--border, #e2e8f0);
+  border-bottom: 1px solid var(--color-border, var(--border, #e2e8f0));
+}
+
+.card-header::before {
+  content: counter(card);
+  flex: none;
+  min-width: 1.5rem;
+  height: 1.5rem;
+  padding: 0 0.35rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1;
+  border-radius: 999px;
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  color: var(--color-muted, var(--color-text));
 }
 
 .card-content {
