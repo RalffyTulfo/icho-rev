@@ -10,6 +10,10 @@
  * `.view-wrapper > .lesson-content-cards` and `.view-wrapper[data-view]`.
  */
 
+// Snapshot at module evaluation: parsed DOM, before any view script has run.
+const snapshotRoot = document.querySelector('.view-wrapper > .lesson-content-cards')
+const initialNodes: Node[] = snapshotRoot ? Array.from(snapshotRoot.childNodes) : []
+
 document.addEventListener('DOMContentLoaded', () => {
   const wrapper = document.querySelector('.view-wrapper')
   // The article's content container; exclude the study-mode panel's copy.
@@ -17,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!wrapper || !contentRoot) return
 
   // Pristine server-rendered children, in order. Never mutated.
-  const originalNodes: Node[] = Array.from(contentRoot.childNodes)
+  const originalNodes: Node[] = initialNodes.length ? initialNodes : Array.from(contentRoot.childNodes)
   // H3s we restyled as card headers, with their original class attribute.
   const cardedHeadings: Array<{ heading: HTMLElement; className: string | null }> = []
 
@@ -41,6 +45,9 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     cardedHeadings.length = 0
   }
+
+  // Study mode calls this before taking the nodes over.
+  ;(window as unknown as { __cardsRelease?: () => void }).__cardsRelease = () => restore()
 
   function buildCards() {
     if (hasCards()) return
@@ -132,9 +139,17 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   applyMode()
-  // ViewToggle sets data-view on the wrapper instead of firing an event.
-  new MutationObserver(applyMode).observe(wrapper, {
-    attributes: true,
-    attributeFilter: ['data-view'],
+
+  // Study mode moves lesson nodes into its own panel; hand them back first.
+  function releaseStudy() {
+    const api = (window as unknown as { __studyRelease?: () => void }).__studyRelease
+    if (typeof api === 'function') api()
+  }
+
+  // ViewToggle announces the new view with one event.
+  document.addEventListener('viewModeChange', (event) => {
+    const view = (event as CustomEvent).detail?.view ?? wrapper!.getAttribute('data-view')
+    if (view === 'cards') releaseStudy()
+    applyMode()
   })
 })

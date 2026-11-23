@@ -21,12 +21,14 @@
   </div>
   <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
     <div class="lg:col-span-8 flex flex-col gap-6 w-full">
+      <div id="study-overview" class="study-overview hidden"></div>
       <div id="active-study-card" class="frosted-glass p-6 md:p-8 rounded-3xl border border-var(--color-border) shadow-2xl relative min-h-[420px] flex flex-col justify-between transition-all duration-300">
         <div class="flex items-center justify-between gap-2 mb-6">
           <span id="study-card-category" class="px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider bg-primary/20 text-primary border border-primary/30">Category</span>
           <span id="study-card-status-pill" class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-[var(--color-surface-3)] text-foreground/60 border border-var(--color-border)">Not Started</span>
         </div>
-        <div id="study-card-content" class="lesson-content-cards flex-1 space-y-4 text-foreground/90 text-sm leading-relaxed"></div>
+        <div id="study-card-title" class="study-card-title"></div>
+        <div id="study-card-content" class="study-card-body flex-1 space-y-4 text-foreground/90 leading-relaxed"></div>
         <div class="mt-8 pt-4 border-t border-var(--color-border) flex items-center justify-between text-xs text-foreground/50">
           <span id="study-card-progress-text">Card 1 of 24</span>
           <div class="w-24 h-1.5 var(--color-surface-2) rounded-full overflow-hidden">
@@ -37,13 +39,18 @@
       <div class="flex flex-col sm:flex-row items-center justify-between gap-4 p-2">
         <div class="flex items-center gap-3 w-full sm:w-auto">
           <button id="study-mark-mastered-btn" class="flex-1 sm:flex-none flex items-center justify-center gap-2 px-5 py-2.5 rounded-2xl bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-semibold text-xs hover:bg-emerald-500/30 transition-all active:scale-95 shadow-lg shadow-emerald-950/20">I Know This</button>
-          <button id="study-reset-card-btn" class="flex-1 sm:flex-none flex items-center justify-center gap-2 px-4 py-2.5 rounded-2xl var(--color-surface-2) hover:var(--color-surface-2) text-foreground/70 border border-var(--color-border) text-xs font-semibold transition-all active:scale-95">Reset</button>
+          <button id="study-reset-card-btn" class="flex-1 sm:flex-none flex items-center justify-center gap-2 px-4 py-2.5 rounded-2xl bg-[var(--color-surface-2)] text-foreground/70 border border-var(--color-border) text-xs font-semibold transition-all active:scale-95">Reset Progress</button>
         </div>
         <div class="flex items-center gap-3 w-full sm:w-auto justify-between sm:justify-end">
-          <button id="study-prev-btn" class="px-4 py-2.5 rounded-2xl var(--color-surface-2) hover:var(--color-surface-2) border border-var(--color-border) text-xs font-bold text-foreground transition-all active:scale-95 disabled:opacity-40">&lt; Previous</button>
-          <button id="study-next-btn" class="px-4 py-2.5 rounded-2xl bg-primary hover:bg-primary/90 text-primary-foreground text-xs font-bold transition-all active:scale-95 disabled:opacity-40 shadow-lg shadow-primary/20">Next &gt;</button>
+          <button id="study-prev-btn" class="px-4 py-2.5 rounded-2xl bg-[var(--color-surface-2)] border border-var(--color-border) text-xs font-bold text-foreground transition-all active:scale-95 disabled:opacity-40">‹ Previous</button>
+          <button id="study-next-btn" class="px-4 py-2.5 rounded-2xl bg-primary text-white text-xs font-bold transition-all active:scale-95 disabled:opacity-40 shadow-lg shadow-primary/20">Next ›</button>
         </div>
       </div>
+      <details id="study-recall" class="study-recall hidden">
+        <summary>Recall Cards</summary>
+        <div id="study-recall-body" class="study-card-body space-y-4"></div>
+      </details>
+      <div id="study-end" class="study-end hidden"></div>
     </div>
     <div class="lg:col-span-4 w-full">
       <div class="frosted-glass p-6 rounded-3xl border border-var(--color-border) space-y-4 shadow-xl">
@@ -66,4 +73,59 @@
     </div>
   </div>
 </div>
+
+<style is:global>
+  .study-overview {
+    padding: 1.25rem 1.5rem;
+    border: 1px solid var(--color-border);
+    border-radius: 1.5rem;
+    background: var(--color-surface-2);
+    color: var(--color-text);
+  }
+
+  .study-card-title h3 {
+    margin: 0 0 1rem;
+    font-size: 1.5rem;
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    color: var(--color-text);
+    border: 0;
+    padding: 0;
+  }
+
+  .study-card-body {
+    max-width: 70ch;
+    font-size: 0.95rem;
+  }
+
+  .study-card-body h2,
+  .study-card-body h3 {
+    scroll-margin-top: 6.5rem;
+  }
+
+  .study-card-body .katex-display,
+  #study-recall-body .katex-display {
+    overflow-x: auto;
+  }
+
+  .study-recall {
+    border: 1px solid var(--color-border);
+    border-radius: 1.25rem;
+    padding: 1rem 1.25rem;
+    background: var(--color-surface-2);
+  }
+
+  .study-recall > summary {
+    cursor: pointer;
+    font-weight: 700;
+    color: var(--color-text);
+  }
+
+  .study-end {
+    padding: 1rem 1.25rem;
+    border-top: 1px dashed var(--color-border);
+    color: var(--color-text);
+  }
+</style>
 
