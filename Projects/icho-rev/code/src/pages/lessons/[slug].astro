@@ -12,6 +12,8 @@ export async function getStaticPaths() {
 const { lesson } = Astro.props;
 const { Content } = lesson;
 import ViewToggle from '../../components/ViewToggle.astro';
+import MobileNav from '../../components/MobileNav.astro';
+import StudyMode from '../../components/StudyMode.astro';
 ---
 <Layout>
   <main class="pt-20 px-4 max-w-7xl mx-auto flex flex-col lg:flex-row gap-8 min-h-screen pb-16">
@@ -33,6 +35,8 @@ import ViewToggle from '../../components/ViewToggle.astro';
     <!-- Main Content Stream -->
     <div class="flex-1 min-w-0">
       <ViewToggle />
+      <MobileNav />
+      <StudyMode />
       <article class="view-wrapper space-y-8">
         <header class="frosted-glass p-8 rounded-2xl border border-white/10">
           <span class="text-xs font-bold uppercase tracking-widest text-primary mb-2 block">{lesson.frontmatter.unit || 'Lesson'}</span>
