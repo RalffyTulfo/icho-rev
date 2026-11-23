@@ -3,47 +3,23 @@
 // Initial SSR states (default to scroll view)
 const view = 'scroll';
 const col = '2';
----
-
-<div class="flex items-center gap-3 mb-6">
+---<div class="view-toggle mb-6" role="group" aria-label="Lesson view">
   <!-- View toggle buttons -->
-  <button
-    id="btn-scroll"
-    class="rounded-md border border-2 px-4 py-2 text-sm font-medium transition-colors hover:bg-primary hover:text-primary-foreground"
-  >
+  <button id="btn-scroll" class="view-toggle-btn" aria-pressed="true">
     Scroll
   </button>
 
-  <button
-    id="btn-study"
-    class="rounded-md border border-2 px-4 py-2 text-sm font-medium transition-colors hover:bg-primary hover:text-primary-foreground"
-  >
+  <button id="btn-study" class="view-toggle-btn" aria-pressed="false">
     Study
   </button>
 
-  <button
-    id="btn-cards"
-    class="rounded-md border border-2 px-4 py-2 text-sm font-medium transition-colors hover:bg-primary hover:text-primary-foreground"
-  >
+  <button id="btn-cards" class="view-toggle-btn" aria-pressed="false">
     All cards
   </button>
-
-  <!-- Per-column selector: All cards only -->
-  <div id="col-control" class="hidden">
-    <select
-      id="col-selector"
-      class="rounded border border-[var(--color-border)] bg-[var(--color-surface)] px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary"
-    >
-      <option value="1">1 column</option>
-      <option value="2" selected>2 columns</option>
-      <option value="3">3 columns</option>
-    </select>
-  </div>
 </div>
 
 <script>
   const STORAGE_KEY = 'icho-rev-view-mode'
-  const COL_KEY = 'icho-rev-cols'
 
   function setStored(key, value) {
     try {
@@ -65,8 +41,6 @@ const col = '2';
     const btnScroll = document.getElementById('btn-scroll')
     const btnStudy = document.getElementById('btn-study')
     const btnCards = document.getElementById('btn-cards')
-    const colSelector = document.getElementById('col-selector')
-    const colControl = document.getElementById('col-control')
     const wrapper = document.querySelector('.view-wrapper')
 
     const setPressed = (button: HTMLElement | null, pressed: boolean) => {
@@ -78,31 +52,14 @@ const col = '2';
 
     function updateUI() {
       const view = getStored(STORAGE_KEY, 'scroll')
-      const cols = getStored(COL_KEY, '2')
 
       // Update buttons
       setPressed(btnScroll, view === 'scroll')
       setPressed(btnStudy, view === 'study')
       setPressed(btnCards, view === 'cards')
 
-      // Columns only apply to All cards
-      if (colControl) colControl.classList.toggle('hidden', view !== 'cards')
-
-      // Update select
-      if (colSelector) {
-        (colSelector as HTMLSelectElement).value = cols
-      }
-
-      // Update content wrapper - set data-view and data-cols attributes
-      // so CSS can react with [data-view] and [data-cols] selectors
-      if (wrapper) {
-        wrapper.classList.remove('grid-cols-1', 'grid-cols-2', 'grid-cols-3')
-        wrapper.setAttribute('data-view', view)
-        wrapper.setAttribute('data-cols', cols)
-        if (view === 'cards') {
-          wrapper.classList.add(`grid-cols-${cols}`)
-        }
-      }
+      // The study engine reads data-view; column count lives in its own control.
+      if (wrapper) wrapper.setAttribute('data-view', view)
 
       // Single source of truth for the three views
       document.dispatchEvent(new CustomEvent('viewModeChange', { detail: { view } }))
@@ -130,13 +87,13 @@ const col = '2';
       })
     }
 
-    if (colSelector) {
-      colSelector.addEventListener('change', (e) => {
-        const val = (e.target as HTMLSelectElement).value
-        setStored(COL_KEY, val)
-        updateUI()
-      })
-    }
+    // A grid card asks to be opened in Study.
+    document.addEventListener('requestView', (event) => {
+      const next = (event as CustomEvent).detail?.view
+      if (!next) return
+      setStored(STORAGE_KEY, next)
+      updateUI()
+    })
 
     // Initial update on page load
     updateUI()

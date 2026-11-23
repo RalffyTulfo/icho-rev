@@ -1,76 +1,113 @@
 ﻿---
-// StudyMode.astro
+// StudyMode.astro — layout per STUDY_LAYOUT_SPEC.md; behaviour lives in study-mode.ts
+import '../styles/study.css';
 ---
-<div id="study-mode-wrapper" class="hidden flex-col gap-8 w-full">
-  <div class="frosted-glass p-4 rounded-2xl border border-var(--color-border) flex flex-wrap items-center justify-between gap-4">
-    <div class="flex items-center gap-3 flex-wrap">
-      <div class="flex items-center gap-2">
-        <label for="study-category-select" class="text-xs font-semibold text-foreground/70">Category:</label>
-        <select id="study-category-select" class="bg-[var(--color-surface-2)] text-foreground border border-var(--color-border) rounded-xl px-3 py-1.5 text-xs focus:outline-none focus:ring-2 focus:ring-primary">
-          <option value="all">All Categories</option>
-        </select>
-      </div>
-      <label class="flex items-center gap-2 text-xs font-semibold text-foreground/80 cursor-pointer select-none">
-        <input type="checkbox" id="study-hide-mastered" class="rounded border-var(--color-border) bg-[var(--color-surface-2)] text-primary focus:ring-primary" />
-        Hide Mastered
-      </label>
-    </div>
-    <button id="study-shuffle-btn" class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-var(--color-border) var(--color-surface-2) hover:var(--color-surface-2) text-xs font-semibold text-foreground transition-all active:scale-95">
-      Shuffle
-    </button>
-  </div>
-  <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-    <div class="lg:col-span-8 flex flex-col gap-6 w-full">
-      <div id="study-overview" class="study-overview hidden"></div>
-      <div id="active-study-card" class="frosted-glass p-6 md:p-8 rounded-3xl border border-var(--color-border) shadow-2xl relative min-h-[420px] flex flex-col justify-between transition-all duration-300">
-        <div class="flex items-center justify-between gap-2 mb-6">
-          <span id="study-card-category" class="px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider bg-primary/20 text-primary border border-primary/30">Category</span>
-          <span id="study-card-status-pill" class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-[var(--color-surface-3)] text-foreground/60 border border-var(--color-border)">Not Started</span>
-        </div>
-        <div id="study-card-title" class="study-card-title"></div>
-        <div id="study-card-content" class="study-card-body flex-1 space-y-4 text-foreground/90 leading-relaxed"></div>
-        <div class="mt-8 pt-4 border-t border-var(--color-border) flex items-center justify-between text-xs text-foreground/50">
-          <span id="study-card-progress-text">Card 1 of 24</span>
-          <div class="w-24 h-1.5 var(--color-surface-2) rounded-full overflow-hidden">
-            <div id="study-card-progress-bar" class="h-full bg-primary transition-all duration-300 w-0"></div>
+<div id="study-mode-wrapper" class="study-shell hidden flex-col w-full">
+  <div class="study-layout">
+    <section class="study-panel" aria-label="Study panel">
+      <!-- toolbar -->
+      <div class="study-toolbar">
+        <div class="study-toolbar-left">
+          <div class="study-field">
+            <label for="study-category-select" class="sr-only">Category</label>
+            <select id="study-category-select" class="study-select">
+              <option value="all">All categories</option>
+            </select>
           </div>
+          <label class="study-check">
+            <input type="checkbox" id="study-hide-mastered" />
+            Hide Mastered
+          </label>
+        </div>
+        <div class="study-toolbar-right">
+          <div id="study-cols-control" class="study-cols hidden" role="group" aria-label="Columns">
+            <span class="study-cols-label" aria-hidden="true">Columns</span>
+            <button type="button" data-cols="1" aria-pressed="false" aria-label="Columns 1">1</button>
+            <button type="button" data-cols="2" aria-pressed="true" aria-label="Columns 2">2</button>
+            <button type="button" data-cols="3" aria-pressed="false" aria-label="Columns 3">3</button>
+          </div>
+          <button id="study-shuffle-btn" class="study-pill study-pill-no-chevron" aria-pressed="false" aria-label="Shuffle cards">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3h5v5"/><path d="M4 20 21 3"/><path d="M21 16v5h-5"/><path d="m15 15 6 6"/><path d="m4 4 5 5"/></svg>
+            <span id="study-shuffle-label">Shuffle</span>
+          </button>
         </div>
       </div>
-      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 p-2">
-        <div class="flex items-center gap-3 w-full sm:w-auto">
-          <button id="study-mark-mastered-btn" class="flex-1 sm:flex-none flex items-center justify-center gap-2 px-5 py-2.5 rounded-2xl bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-semibold text-xs hover:bg-emerald-500/30 transition-all active:scale-95 shadow-lg shadow-emerald-950/20">I Know This</button>
-          <button id="study-reset-card-btn" class="flex-1 sm:flex-none flex items-center justify-center gap-2 px-4 py-2.5 rounded-2xl bg-[var(--color-surface-2)] text-foreground/70 border border-var(--color-border) text-xs font-semibold transition-all active:scale-95">Reset Progress</button>
+
+      <!-- single card (Study view) -->
+      <div id="study-stage" class="study-stage">
+        <div id="study-overview" class="study-overview hidden"></div>
+        <div id="study-empty" class="study-empty hidden" role="status">
+          <h3>All caught up</h3>
+          <p>Every card in this filter is mastered.</p>
+          <button type="button" id="study-show-all-btn" class="study-btn study-btn-ghost">Show all cards</button>
         </div>
-        <div class="flex items-center gap-3 w-full sm:w-auto justify-between sm:justify-end">
-          <button id="study-prev-btn" class="px-4 py-2.5 rounded-2xl bg-[var(--color-surface-2)] border border-var(--color-border) text-xs font-bold text-foreground transition-all active:scale-95 disabled:opacity-40">‹ Previous</button>
-          <button id="study-next-btn" class="px-4 py-2.5 rounded-2xl bg-primary text-white text-xs font-bold transition-all active:scale-95 disabled:opacity-40 shadow-lg shadow-primary/20">Next ›</button>
+        <div id="active-study-card" class="study-card">
+          <div class="study-card-head">
+            <span id="study-card-category" class="study-badge">Category</span>
+            <div id="study-card-title" class="study-title"></div>
+            <svg class="study-sparkle study-sparkle-tr" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l2.2 7.8L22 12l-7.8 2.2L12 22l-2.2-7.8L2 12l7.8-2.2z"/></svg>
+            <svg class="study-sparkle study-sparkle-bl" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l2.2 7.8L22 12l-7.8 2.2L12 22l-2.2-7.8L2 12l7.8-2.2z"/></svg>
+          </div>
+          <div id="study-card-content" class="study-card-body"></div>
+          <div class="study-card-foot">
+            <span class="study-track" aria-hidden="true"><span id="study-card-progress-bar" style="width: 0%"></span></span>
+            <span id="study-card-status-pill" class="font-semibold">Not Started</span>
+          </div>
+        </div>
+        <div class="study-actions">
+          <button type="button" id="study-mark-mastered-btn" class="study-btn study-btn-master" aria-pressed="false">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.4 2.4 4.6-4.8"/></svg>
+            <span id="study-mark-mastered-label">I Know This</span>
+          </button>
+          <button type="button" id="study-reset-card-btn" class="study-btn study-btn-ghost">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg>
+            <span>Reset Progress</span>
+          </button>
+        </div>
+        <div class="study-nav">
+          <button type="button" id="study-prev-btn" class="study-nav-btn">‹ Previous</button>
+          <span id="study-card-progress-text" class="study-nav-count" aria-live="polite">Card 1 of 24</span>
+          <button type="button" id="study-next-btn" class="study-nav-btn">Next ›</button>
+        </div>
+        <details id="study-recall" class="study-recall hidden">
+          <summary>Recall Cards</summary>
+          <div id="study-recall-body" class="study-card-body"></div>
+        </details>
+        <div id="study-end" class="study-end hidden"></div>
+      </div>
+
+      <!-- all cards grid -->
+      <div id="study-grid-wrap" class="study-grid-area hidden">
+        <div id="all-cards-grid" class="study-card-grid" data-columns="2"></div>
+        <div id="study-grid-empty" class="study-empty hidden" role="status">
+          <h3>All caught up</h3>
+          <p>No cards match this filter.</p>
+          <button type="button" id="study-grid-show-all-btn" class="study-btn study-btn-ghost">Show all cards</button>
         </div>
       </div>
-      <details id="study-recall" class="study-recall hidden">
-        <summary>Recall Cards</summary>
-        <div id="study-recall-body" class="study-card-body space-y-4"></div>
-      </details>
-      <div id="study-end" class="study-end hidden"></div>
-    </div>
-    <div class="lg:col-span-4 w-full">
-      <div class="frosted-glass p-6 rounded-3xl border border-var(--color-border) space-y-4 shadow-xl">
-        <h3 class="text-sm font-bold uppercase tracking-wider text-foreground/80 mb-2">Study Statistics</h3>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-3">
-          <div class="p-4 rounded-2xl bg-[var(--color-surface-3)] border border-var(--color-border) flex items-center justify-between">
-            <div><p class="text-[11px] font-semibold text-foreground/60 uppercase tracking-wide">Total Cards</p><p id="stat-total" class="text-2xl font-black text-foreground mt-0.5">0</p></div>
-          </div>
-          <div class="p-4 rounded-2xl bg-[var(--color-surface-3)] border border-emerald-500/20 flex items-center justify-between">
-            <div><p class="text-[11px] font-semibold text-emerald-400/80 uppercase tracking-wide">Mastered</p><p id="stat-mastered" class="text-2xl font-black text-emerald-400 mt-0.5">0</p></div>
-          </div>
-          <div class="p-4 rounded-2xl bg-[var(--color-surface-3)] border border-amber-500/20 flex items-center justify-between">
-            <div><p class="text-[11px] font-semibold text-amber-400/80 uppercase tracking-wide">In Progress</p><p id="stat-in-progress" class="text-2xl font-black text-amber-400 mt-0.5">0</p></div>
-          </div>
-          <div class="p-4 rounded-2xl bg-[var(--color-surface-3)] border border-purple-500/20 flex items-center justify-between">
-            <div><p class="text-[11px] font-semibold text-purple-400/80 uppercase tracking-wide">Not Started</p><p id="stat-not-started" class="text-2xl font-black text-purple-400 mt-0.5">0</p></div>
-          </div>
+    </section>
+
+    <details id="study-stats" class="study-stats" open>
+      <summary>Study Statistics</summary>
+      <div class="study-stat-list" aria-live="polite">
+        <div class="study-stat" data-stat="total">
+          <div><span class="study-stat-label">Total Cards</span><span id="stat-total" class="study-stat-value">0</span></div>
+          <span class="study-stat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="m2 12 10 5 10-5"/><path d="m2 17 10 5 10-5"/></svg></span>
+        </div>
+        <div class="study-stat" data-stat="mastered">
+          <div><span class="study-stat-label">Mastered</span><span id="stat-mastered" class="study-stat-value">0</span></div>
+          <span class="study-stat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.4 2.4 4.6-4.8"/></svg></span>
+        </div>
+        <div class="study-stat" data-stat="progress">
+          <div><span class="study-stat-label">In Progress</span><span id="stat-in-progress" class="study-stat-value">0</span></div>
+          <span class="study-stat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg></span>
+        </div>
+        <div class="study-stat" data-stat="idle">
+          <div><span class="study-stat-label">Not Started</span><span id="stat-not-started" class="study-stat-value">0</span></div>
+          <span class="study-stat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg></span>
         </div>
       </div>
-    </div>
+    </details>
   </div>
 </div>
 
@@ -83,30 +120,10 @@
     color: var(--color-text);
   }
 
-  .study-card-title h3 {
-    margin: 0 0 1rem;
-    font-size: 1.5rem;
-    font-weight: 800;
-    line-height: 1.25;
-    letter-spacing: -0.01em;
-    color: var(--color-text);
-    border: 0;
-    padding: 0;
-  }
-
-  .study-card-body {
+  /* Readable measure for prose only; equations and tables may use the full width. */
+  .study-card-body :is(p, li, h2, h3, h4),
+  .study-overview :is(p, li) {
     max-width: 70ch;
-    font-size: 0.95rem;
-  }
-
-  .study-card-body h2,
-  .study-card-body h3 {
-    scroll-margin-top: 6.5rem;
-  }
-
-  .study-card-body .katex-display,
-  #study-recall-body .katex-display {
-    overflow-x: auto;
   }
 
   .study-recall {

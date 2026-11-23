@@ -15,6 +15,9 @@ const snapshotRoot = document.querySelector('.view-wrapper > .lesson-content-car
 const initialNodes: Node[] = snapshotRoot ? Array.from(snapshotRoot.childNodes) : []
 
 document.addEventListener('DOMContentLoaded', () => {
+  // The study engine now owns All cards: it fills the grid with full subtopic cards.
+  if ((window as unknown as { __studyDeck?: boolean }).__studyDeck) return
+
   const wrapper = document.querySelector('.view-wrapper')
   // The article's content container; exclude the study-mode panel's copy.
   const contentRoot = document.querySelector('.view-wrapper > .lesson-content-cards')
