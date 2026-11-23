@@ -2,12 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Color variables */
+/* Color variables — light is the fallback, dark is applied by the theme script */
 :root {
+  color-scheme: light;
   --color-background: #f8f7f9;
   --color-foreground: #1a1a2e;
-  --color-primary: #6a5acd;
-  --color-secondary: #9370db;
+  --color-primary: #5f51c2;
+  --color-secondary: #714dc5;
   --color-accent: #ff6b6b;
   --color-success: #51cf66;
   --color-warning: #ffd166;
@@ -32,10 +33,11 @@
 }
 
 :root[data-theme="dark"] {
-  --color-background: #1a1a2e;
-  --color-foreground: #f8f7f9;
-  --color-primary: #9370db;
-  --color-secondary: #6a5acd;
+  color-scheme: dark;
+  --color-background: #0f1115;
+  --color-foreground: #e6e8ee;
+  --color-primary: #9e80e3;
+  --color-secondary: #b39aef;
   --color-accent: #ff8a8a;
   --color-success: #76d7c4;
   --color-warning: #ffd700;
@@ -57,18 +59,22 @@ body {
   padding: 0;
 }
 
-/* Light theme tokens */
-* {
+/* Light theme tokens — declared on :root only, never on the universal selector */
+:root,
+:root[data-theme="light"] {
+  color-scheme: light;
   --color-surface: #fafafa;
-  --color-surface-2: #f8f7f9;
+  --color-surface-2: #f1f0f4;
+  --color-surface-3: #e9e8ee;
   --color-text: #1a1a2e;
   --color-muted: #4a4a6a;
-  --color-border: rgba(0, 0, 0, 0.1);
+  --color-border: rgba(0, 0, 0, 0.12);
   --color-card: #ffffff;
 }
 
 /* Dark theme tokens */
 :root[data-theme="dark"] {
+  color-scheme: dark;
   --color-surface: #0f1115;
   --color-surface-2: #1a1d23;
   --color-surface-3: #21252d;
@@ -90,15 +96,48 @@ body {
 
 /* Dark theme frosted glass */
 :root[data-theme="dark"] .frosted-glass {
-  background: rgba(26, 26, 46, 0.45);
-  border: 1px solid rgba(147, 112, 219, 0.25);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  background: rgba(26, 29, 35, 0.65);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45);
+}
+
+/* Form controls and tables — tokens in both themes, no browser-default white */
+select,
+textarea,
+input:not([type="checkbox"]):not([type="radio"]) {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+}
+
+select option {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+}
+
+table {
+  border-color: var(--color-border);
+}
+
+th,
+td {
+  border-color: var(--color-border);
+}
+
+thead th {
+  background-color: var(--color-surface-2);
+  color: var(--color-text);
+}
+
+/* KaTeX inherits the surrounding text color */
+.katex {
+  color: inherit;
 }
 
 /* Card component */
 .card {
-  background-color: var(--card, #fff);
-  border: 1px solid var(--border, #e2e8f0);
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius, 0.5rem);
   overflow: hidden;
   transition: box-shadow 0.2s ease;
@@ -141,7 +180,7 @@ body {
   color: var(--color-text, var(--color-foreground));
   margin-bottom: 0.75rem;
   padding-bottom: 0.5rem;
-  border-bottom: 1px solid var(--color-border, var(--border, #e2e8f0));
+  border-bottom: 1px solid var(--color-border);
 }
 
 .card-header::before {
@@ -210,7 +249,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 { font-size: 2.5rem; }
-h2 { font-size: 1.875rem; border-bottom: 1px solid rgba(0,0,0,0.05); padding-bottom: 0.5rem; }
+h2 { font-size: 1.875rem; border-bottom: 1px solid var(--color-border); padding-bottom: 0.5rem; }
 h3 { font-size: 1.5rem; }
 h4 { font-size: 1.25rem; }
 

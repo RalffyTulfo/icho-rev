@@ -52,6 +52,8 @@
         const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
         const newTheme = currentTheme === 'light' ? 'dark' : 'light';
         document.documentElement.setAttribute('data-theme', newTheme);
+        document.documentElement.classList.toggle('dark', newTheme === 'dark');
+        document.documentElement.style.colorScheme = newTheme;
         localStorage.setItem('theme', newTheme);
       } catch (e) {}
     });
