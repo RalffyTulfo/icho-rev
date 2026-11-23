@@ -41,7 +41,7 @@ const unitLessons = allLessons.filter(lesson => {
          lessonUnit.toLowerCase().includes(targetUnitName.toLowerCase());
 });
 ---
-<Layout>
+<Layout title={targetUnitName} description={`All ${targetUnitName} lessons for IChO revision.`}>
   <main class="pt-24 px-4 min-h-screen">
     <div class="frosted-glass p-8 mx-auto max-w-5xl">
       <div class="mb-8">

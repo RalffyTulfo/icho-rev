@@ -11,20 +11,31 @@ export async function getStaticPaths() {
 
 const { lesson } = Astro.props;
 const { Content } = lesson;
+const { description: frontmatterDescription, unit, readingTime } = lesson.frontmatter;
+const fallbackHeading = lesson.getHeadings().find((h) => h.depth === 1)?.text;
+const title =
+  lesson.frontmatter.title ||
+  fallbackHeading ||
+  lesson.file.split('/').pop().replace('.mdx', '');
+const metaDescription =
+  frontmatterDescription ||
+  (unit && readingTime
+    ? `${title}. ${unit} lesson for IChO revision (${readingTime} read).`
+    : `${title}. IChO revision lesson.`);
 import ViewToggle from '../../components/ViewToggle.astro';
 import MobileNav from '../../components/MobileNav.astro';
 import StudyMode from '../../components/StudyMode.astro';
 ---
-<Layout>
+<Layout title={title} description={metaDescription}>
   <main class="pt-20 px-4 max-w-7xl mx-auto flex flex-col lg:flex-row gap-8 min-h-screen pb-16">
     <!-- Sticky Table of Contents / Sidebar -->
     <aside class="w-full lg:w-72 flex-shrink-0">
-      <div class="sticky top-24 frosted-glass p-6 rounded-2xl border border-white/10 space-y-4">
+      <div class="sticky top-24 frosted-glass p-6 rounded-2xl border border-var(--color-border) space-y-4">
         <h3 class="text-xs font-bold uppercase tracking-wider text-primary">Lesson Navigation</h3>
         <nav id="toc" class="flex flex-col space-y-2 text-sm text-foreground/80">
           <ul></ul>
         </nav>
-        <div class="pt-4 border-t border-foreground/10">
+        <div class="pt-4 border-t border-var(--color-border)">
           <a href="/icho-rev/roadmap" class="text-xs text-primary font-semibold hover:underline flex items-center gap-1">
             ← Back to Roadmap
           </a>
@@ -38,7 +49,7 @@ import StudyMode from '../../components/StudyMode.astro';
       <MobileNav />
       <StudyMode />
       <article class="view-wrapper space-y-8">
-        <header class="frosted-glass p-8 rounded-2xl border border-white/10">
+        <header class="frosted-glass p-8 rounded-2xl border border-var(--color-border)">
           <span class="text-xs font-bold uppercase tracking-widest text-primary mb-2 block">{lesson.frontmatter.unit || 'Lesson'}</span>
           <h1 class="text-3xl md:text-4xl font-black text-foreground tracking-tight">{lesson.frontmatter.title}</h1>
           {lesson.frontmatter.readingTime && (
@@ -63,12 +74,12 @@ import StudyMode from '../../components/StudyMode.astro';
 <style is:global>
   /* Wrap MDX H2 top-level sections into discrete Card Blocks */
   .lesson-content-cards > h2 {
-    background: rgba(255, 255, 255, 0.12);
+    background: var(--color-surface-2);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+    border: 1px solid var(--color-border);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
     padding: 1.75rem 2rem 1.25rem 2rem;
     margin-top: 2rem !important;
     margin-bottom: 0.5rem !important;
@@ -78,8 +89,13 @@ import StudyMode from '../../components/StudyMode.astro';
   }
 
   :root[data-theme="dark"] .lesson-content-cards > h2 {
-    background: rgba(26, 26, 46, 0.5);
-    border: 1px solid rgba(147, 112, 219, 0.25);
+    background: var(--color-surface-2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  :root[data-theme="light"] .lesson-content-cards > h2 {
+    background: var(--color-surface-2);
+    border: 1px solid var(--color-border);
   }
 
   /* Subscripts & Superscripts Styling Fixes */
@@ -102,12 +118,16 @@ import StudyMode from '../../components/StudyMode.astro';
     overflow-y: hidden;
     padding: 0.75rem;
     margin: 1rem 0;
-    background: rgba(0, 0, 0, 0.03);
+    background: var(--color-surface-2);
     border-radius: 12px;
   }
 
   :root[data-theme="dark"] .katex-display {
-    background: rgba(255, 255, 255, 0.03);
+    background: var(--color-surface-2);
+  }
+
+  :root[data-theme="light"] .katex-display {
+    background: var(--color-surface-2);
   }
 
   /* Ensure smooth scrolling when clicking navigation anchors */

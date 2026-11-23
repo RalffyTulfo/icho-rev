@@ -4,13 +4,23 @@ import 'katex/dist/katex.min.css';
 import ToggleTheme from '../components/ToggleTheme.astro';
 import ToggleCleanMode from '../components/ToggleCleanMode.astro';
 import ToggleReduceMotion from '../components/ToggleReduceMotion.astro';
+
+const {
+  title,
+  description = 'Free IChO revision notes and practice, in Taglish.',
+} = Astro.props;
+const pageTitle = title ? `${title} | IChO Rev` : 'IChO Rev';
 ---
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>IChO Rev</title>
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
     <link rel="icon" href={`${import.meta.env.BASE_URL}favicon.svg`} />
   </head>
   <body>
