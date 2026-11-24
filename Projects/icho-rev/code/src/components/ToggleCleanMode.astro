@@ -24,6 +24,13 @@
 
 <script>
   function initCleanModeToggle() {
+    // Ensure clean mode is OFF by default
+    const cleanMode = localStorage.getItem('cleanMode');
+    if (cleanMode === null) {
+      localStorage.setItem('cleanMode', 'false');
+      document.body.classList.remove('clean-mode');
+    }
+
     const button = document.getElementById('clean-mode-toggle');
     if (!button) return;
 
