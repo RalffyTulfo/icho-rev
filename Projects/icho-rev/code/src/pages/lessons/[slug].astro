@@ -1,22 +1,31 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import redirects from '../../data/redirects.json';
 
 export async function getStaticPaths() {
   const lessons = await Astro.glob('../../content/lessons/*.mdx');
-  return lessons.map(lesson => ({
-    params: { slug: lesson.file.split('/').pop().replace('.mdx', '') },
-    props: { lesson },
+  const paths = lessons.map((lesson) => ({
+    params: { slug: lesson.file.split('/').pop()!.replace(/\.mdx?$/, '') },
+    props: { lesson, redirectTo: null as string | null },
   }));
+  for (const [oldSlug, target] of Object.entries(redirects.lessonRedirects)) {
+    paths.push({
+      params: { slug: oldSlug },
+      props: { lesson: null as any, redirectTo: `/icho-rev/lessons/${target}/` },
+    });
+  }
+  return paths;
 }
 
-const { lesson } = Astro.props;
-const { Content } = lesson;
-const { description: frontmatterDescription, unit, readingTime } = lesson.frontmatter;
-const fallbackHeading = lesson.getHeadings().find((h) => h.depth === 1)?.text;
+const { lesson, redirectTo } = Astro.props;
+const { Content } = (lesson ?? {}) as any;
+const { description: frontmatterDescription, unit, readingTime } = (lesson?.frontmatter ?? {}) as any;
+const fallbackHeading = lesson?.getHeadings().find((h: any) => h.depth === 1)?.text;
 const title =
-  lesson.frontmatter.title ||
+  lesson?.frontmatter.title ||
   fallbackHeading ||
-  lesson.file.split('/').pop().replace('.mdx', '');
+  lesson?.file.split('/').pop().replace(/\.mdx?$/, '') ||
+  'Lesson';
 const metaDescription =
   frontmatterDescription ||
   (unit && readingTime
@@ -26,6 +35,20 @@ import ViewToggle from '../../components/ViewToggle.astro';
 import MobileNav from '../../components/MobileNav.astro';
 import StudyMode from '../../components/StudyMode.astro';
 ---
+{redirectTo ? (
+  <html lang="en">
+    <head>
+      <meta charset="utf-8" />
+      <title>This lesson has moved</title>
+      <meta http-equiv="refresh" content={`0; url=${redirectTo}`} />
+      <link rel="canonical" href={redirectTo} />
+      <meta name="robots" content="noindex" />
+    </head>
+    <body>
+      <p>This lesson has moved to <a href={redirectTo}>{redirectTo}</a>.</p>
+    </body>
+  </html>
+) : (
 <Layout title={title} description={metaDescription}>
   <main class="pt-20 px-4 max-w-7xl mx-auto flex flex-col lg:flex-row gap-8 min-h-screen pb-16">
     <!-- Sticky Table of Contents / Sidebar -->
@@ -82,6 +105,7 @@ import StudyMode from '../../components/StudyMode.astro';
     </div>
   </main>
 </Layout>
+)}
 
 <script>
   import "../../scripts/toc.ts";

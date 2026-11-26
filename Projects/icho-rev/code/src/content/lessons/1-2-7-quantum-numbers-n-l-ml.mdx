@@ -2,18 +2,14 @@
 title: "Quantum numbers (n, l, ml)"
 description: "Four integers describe an electron completely, and three of them are not independent: pick n and l and most of the allowed values of m_l are already decided. That nesting is the periodic table in."
 author: "Ralf Christian Mendoza"
-readingTime: "7 min"
+readingTime: "8 min"
 unit: "Inorganic Chemistry"
 color: "indigo/purple"
 syllabusId: "1.2.7"
 level: 3
-version: 2
+version: 6
 cleanModeMapping:
   "lowkey": "frankly"
-unitNumber: 1
-unitTitle: "The Atom"
-legacy: false
-teacherReviewed: false
 ---
 
 # Quantum numbers (n, l, ml)
@@ -54,10 +50,10 @@ to reject it immediately.
 
 **Step 2: counting orbitals.** For each l there are 2l + 1 values of m_l. Summing over l = 0 to n − 1:
 
-Σ(2l + 1) = n². Proof by induction: for n = 1 the sum is 1 = 1²; adding the next term 2(n − 1) + 1 =
-2n − 1 to n² gives n² + 2n − 1, which is not (n + 1)². The correct statement is that the sum of the
-first n odd numbers 1 + 3 + … + (2n − 1) = n², and the terms here are exactly those odd numbers, so
-the identity applies term by term.
+Σ(2l + 1) = n², because the terms are the first n odd numbers, 1 + 3 + … + (2n − 1). Induct on n: for
+n = 1 the sum is 1 = 1²; the step from n to n + 1 adds one more term, 2n + 1, and n² + (2n + 1) =
+(n + 1)². Since l runs 0 to n − 1, the sum has exactly the first n odd numbers as its terms, so the
+identity applies term by term.
 
 With spin, the shell holds 2n². For n = 1, 2, 3, 4 that is 2, 8, 18, 32 — the shell capacities, not the table's row lengths.
 The visible row lengths are 2, 8, 8, 18, 18, 32, because 4s fills before 3d and 5s before 4d; capacity and row length are different lists.
@@ -83,9 +79,18 @@ fastest check that a configuration is not nonsense.
 
 ## 6. Diagram
 
-Draw a table: rows for n = 1 to 4; columns for l = 0 to 3 with the letter labels; each cell lists
-2l + 1 and the number of electrons 2(2l + 1). Shade the cells that do not exist (l ≥ n) to make the
-triangle shape visible, and write the running totals 2, 8, 18, 32 at the row ends.
+<figure class="lesson-figure">
+  <img src="/icho-rev/figures/1.2.7.svg" alt="A table of the allowed quantum-number combinations for n = 1 to 4 and l = 0 to 3. Each existing cell gives the 2l+1 orbitals of that subshell and the 2(2l+1) electrons they hold: l = 0 gives 1 orbital and 2 electrons, l = 1 gives 3 and 6,..." loading="lazy" />
+</figure>
+
+The table is the whole rule set on one page. Read across a row: n = 3 admits l = 0, 1 and 2, but
+not l = 3, so the fourth column is greyed out for that row and the viable cells form a staircase
+rather than a square. Each cell gives 2l + 1 orbitals and 2(2l + 1) electrons, so the columns are
+worth 2, 6, 10 and 14 and the row totals land on 2n² = 2, 8, 18, 32. The running total down the
+right edge reaches 60, the capacity of the first four shells. That total is only reached in period 6,
+when the 4f subshell finally fills — ytterbium is the standard example — even though 4f belongs to
+n = 4 and only begins to fill two periods later, in the sixth period, which is why the 32-wide
+row is the sixth period row and not the fourth.
 
 ## 7. Assumptions and limits
 
@@ -133,7 +138,7 @@ correct maximum for l = 1 is m_l = +1.
 ## 10. Check questions
 
 1. How many orbitals are there in the 4p subshell, and how many electrons can it hold?
-   2l + 1 = 3 orbitals; 6 electrons.
+   2l + 1 = 3 orbitals; 6 electrons.
 2. Is (n = 4, l = 4) allowed? Is (n = 4, l = 3, m_l = −3)?
    (4, 4) is not allowed because l must be at most n − 1 = 3. (4, 3, −3) is allowed: l = 3 gives m_l
    from −3 to +3.

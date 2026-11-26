@@ -7,13 +7,9 @@ unit: "Inorganic Chemistry"
 color: "indigo/purple"
 syllabusId: "1.3.3"
 level: 2
-version: 2
+version: 4
 cleanModeMapping:
   "lowkey": "frankly"
-unitNumber: 1
-unitTitle: "The Atom"
-legacy: false
-teacherReviewed: false
 ---
 
 # Nuclear reactions
@@ -41,12 +37,12 @@ fission and fusion are others, and all obey the same conservation laws.
 
 ## 4. Definition
 
-A **nuclear reaction** is a rearrangement of nucleons, written with A and Z conserved. The **Q
-**Q value** is the energy released, Q = (mass of reactants − mass of products)c²; positive Q means
-exothermic. Some tables define Q with the opposite sign, so state the convention before quoting a
-number.
-free nucleons. **Binding energy per nucleon** is the mass defect of a nucleus divided by A, converted
-to energy.
+A **nuclear reaction** is a rearrangement of nucleons, written with A and Z conserved. The **mass defect**
+is the difference between the mass of a nucleus and the sum of the masses of its free nucleons.
+
+The **Q value** is the energy released, Q = (mass of reactants − mass of products)c², so positive Q means
+exothermic. **Binding energy per nucleon** is the mass defect of a nucleus divided by A, converted to
+energy.
 
 ## 5. How it works
 
@@ -85,10 +81,18 @@ Z: 92 = 56 + 36. The three neutrons are what make a chain reaction possible: if 
 
 ## 6. Diagram
 
-Draw a curve of binding energy per nucleon against mass number, rising steeply from ¹H, peaking near
-⁵⁶Fe at 8.8 MeV, and declining to about 7.6 MeV at ²³⁸U. Mark two arrows: fusion from the left toward
-the peak, fission from the right toward the peak, both labelled "releases energy". Label the peak
-"iron-56: no further energy by either route".
+<figure class="lesson-figure">
+  <img src="/icho-rev/figures/1.3.3.svg" alt="A single humped curve of binding energy per nucleon against mass number, rising steeply from hydrogen through helium and carbon, peaking at A = 60 with 8.84 MeV per nucleon on the semi-empirical curve, close to measured iron-56 (8.83 MeV)..." loading="lazy" />
+</figure>
+
+The curve rises almost vertically through the lightest nuclei, flattens into a broad maximum at
+A ≈ 60 where the value is 8.84 MeV per nucleon, and then declines gently to 7.62 MeV at
+uranium-238; iron-56 sits at 8.83 MeV, essentially on the summit. The two arrows are the two
+industries of nuclear energy: fusing light nuclei climbs toward the peak, splitting heavy ones
+slides down toward it, and both release energy for the same reason, because the products are more
+tightly bound than the reactants. Everything to the right of the maximum is a candidate fuel for
+fission and everything to the left is a candidate fuel for fusion, which is the whole shape in one
+sentence.
 
 ## 7. Assumptions and limits
 
@@ -96,7 +100,8 @@ Atomic masses can be used for beta decay: the difference in electron counts betw
 already accounts for the emitted or absorbed electron, with the neutrino mass neglected. Nuclear masses
 are needed only when the electron is not part of the tabulated atom, as in a bare-nucleus reaction.
 The binding-energy curve is an average trend, not a prediction of every reaction's Q. The treatment
-ignores angular momentum barriers, which is why fusion needs high temperature even though it is
+ignores the Coulomb barrier between the approaching nuclei, which is why fusion needs high temperature
+even though it is
 energetically favourable, and ignores the branching of fission into many product pairs.
 
 ## 8. Worked example

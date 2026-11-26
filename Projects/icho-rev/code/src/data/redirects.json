@@ -9,5 +9,7 @@
     "kinetics": "7-chemical-kinetics",
     "electrochemistry": "6-physical-chemistry"
   },
-  "lessonRedirects": {}
+  "lessonRedirects": {
+    "zz-old-lesson": "zz-dryrun-test"
+  }
 }

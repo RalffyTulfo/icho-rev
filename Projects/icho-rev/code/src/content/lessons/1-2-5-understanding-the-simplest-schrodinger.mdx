@@ -7,13 +7,9 @@ unit: "Inorganic Chemistry"
 color: "indigo/purple"
 syllabusId: "1.2.5"
 level: 3
-version: 3
+version: 4
 cleanModeMapping:
   "lowkey": "frankly"
-unitNumber: 1
-unitTitle: "The Atom"
-legacy: false
-teacherReviewed: false
 ---
 
 # Understanding the simplest Schrodinger equation
@@ -102,8 +98,9 @@ and mixing them up is a standard error:
 - The **angular** equations produce the integer m_l, from the requirement that ψ is single-valued
   in φ (a change of 2π must return the same value), and the bound |m_l| ≤ l, from requiring a
   finite solution in θ. They say nothing about n.
-- The **radial** equation produces n as the number of nodes plus one, and it is the radial
-  equation that imposes l ≤ n − 1: an l larger than n − 1 forces ψ to diverge at the origin.
+- The **radial** equation produces n as one more than the *total* node count: with n_r radial nodes,
+  n = n_r + l + 1, and it is the radial equation that imposes l ≤ n − 1. For l ≥ n the series cannot
+  terminate, so ψ diverges as r → ∞ and no normalised bound state exists.
 - The radial equation also fixes the energies, which come out as E_n = −13.6 Z²/n² eV. This card
   does **not** derive that line — the derivation is a longer exercise in series solutions — but
   it identifies which equation it comes from, and 1.2.1 already showed the empirical ladder it
