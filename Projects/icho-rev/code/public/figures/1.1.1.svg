@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="620" height="250" viewBox="0 0 620 250" font-family="system-ui,sans-serif">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="16" y="28" font-size="12" fill="#111827">Composition of a nucleus: A = Z + N, drawn to scale</text>
+<text x="16" y="71" font-size="12" fill="#111827">12C</text>
+<rect x="96" y="54" width="11.8" height="26" fill="#2563eb"/>
+<rect x="107.8" y="54" width="11.8" height="26" fill="#94a3b8"/>
+<text x="99.0" y="71" font-size="10" fill="#1e3a8a">6 p</text>
+<text x="110.8" y="71" font-size="10" fill="#334155">6 n</text>
+<text x="125.7" y="71" font-size="11" fill="#111827">A = 12</text>
+<text x="16" y="131" font-size="12" fill="#111827">56Fe</text>
+<rect x="96" y="114" width="51.3" height="26" fill="#2563eb"/>
+<rect x="147.3" y="114" width="59.2" height="26" fill="#94a3b8"/>
+<text x="99.0" y="131" font-size="10" fill="#1e3a8a">26 p</text>
+<text x="150.3" y="131" font-size="10" fill="#334155">30 n</text>
+<text x="212.6" y="131" font-size="11" fill="#111827">A = 56</text>
+<text x="16" y="191" font-size="12" fill="#111827">235U</text>
+<rect x="96" y="174" width="181.7" height="26" fill="#2563eb"/>
+<rect x="277.7" y="174" width="282.3" height="26" fill="#94a3b8"/>
+<text x="99.0" y="191" font-size="10" fill="#1e3a8a">92 p</text>
+<text x="280.7" y="191" font-size="10" fill="#334155">143 n</text>
+<text x="566.0" y="191" font-size="11" fill="#111827">A = 235</text>
+<rect x="96" y="224" width="10" height="10" fill="#2563eb"/>
+<text x="111" y="233" font-size="11" fill="#374151">protons (Z)</text>
+<rect x="206" y="224" width="10" height="10" fill="#94a3b8"/>
+<text x="221" y="233" font-size="11" fill="#374151">neutrons (N = A - Z)</text>
+</svg>

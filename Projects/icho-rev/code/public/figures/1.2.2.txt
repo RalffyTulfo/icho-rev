@@ -1,0 +1,1 @@
+Two radial distribution curves against r/a0. The 1s curve is a single peak at a0 (52.9 pm). The 2s curve has a small inner peak near 0.5 a0, touches zero at the node 2a0 (105.8 pm), then rises to a taller outer peak near 5.2 a0.

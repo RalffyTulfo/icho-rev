@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="330" viewBox="0 0 560 330" font-family="system-ui,sans-serif">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="16" y="24" font-size="12" fill="#111827">Hydrogen levels E_n = -13.598/n^2 eV; arrows are computed transitions</text>
+<line x1="150" y1="55.0" x2="330" y2="55.0" stroke="#111827" stroke-width="1.5"/>
+<text x="140" y="59.0" font-size="11" fill="#111827" text-anchor="end">n = 1  (-13.598 eV)</text>
+<line x1="150" y1="220.0" x2="330" y2="220.0" stroke="#111827" stroke-width="1.5"/>
+<text x="140" y="224.0" font-size="11" fill="#111827" text-anchor="end">n = 2  (-3.400 eV)</text>
+<line x1="150" y1="250.6" x2="330" y2="250.6" stroke="#111827" stroke-width="1.5"/>
+<text x="140" y="254.6" font-size="11" fill="#111827" text-anchor="end">n = 3  (-1.511 eV)</text>
+<line x1="150" y1="261.2" x2="330" y2="261.2" stroke="#111827" stroke-width="1.5"/>
+<text x="140" y="265.2" font-size="11" fill="#111827" text-anchor="end">n = 4  (-0.850 eV)</text>
+<line x1="150" y1="266.2" x2="330" y2="266.2" stroke="#111827" stroke-width="1.5"/>
+<text x="140" y="270.2" font-size="11" fill="#111827" text-anchor="end">n = 5  (-0.544 eV)</text>
+<line x1="150" y1="275" x2="330" y2="275" stroke="#6b7280" stroke-width="1" stroke-dasharray="4 4"/>
+<text x="140" y="279" font-size="11" fill="#6b7280" text-anchor="end">E = 0 (free)</text>
+<line x1="210" y1="250.6" x2="210" y2="220.0" stroke="#dc2626" stroke-width="2" marker-end="url(#a)"/>
+<text x="204" y="235.3" font-size="10" fill="#dc2626">H-alpha 656.5 nm</text>
+<line x1="260" y1="220.0" x2="260" y2="55.0" stroke="#2563eb" stroke-width="2" marker-end="url(#a)"/>
+<text x="254" y="137.5" font-size="10" fill="#2563eb">Ly-alpha 121.6 nm</text>
+<defs><marker id="a" markerWidth="7" markerHeight="7" refX="3" refY="3" orient="auto"><path d="M0,0 L0,6 L6,3 z" fill="#374151"/></marker></defs>
+</svg>

@@ -1,0 +1,164 @@
+---
+title: "Counting of nucleons"
+description: "A hospital wristband carries three facts you read in three different ways: a name, a date of birth, and a blood type. A nuclide symbol does the same with one letter and two small integers, and each."
+author: "Ralf Christian Mendoza"
+readingTime: "9 min"
+unit: "Inorganic Chemistry"
+color: "indigo/purple"
+syllabusId: "1.1.1"
+level: 1
+version: 2
+cleanModeMapping:
+  "lowkey": "frankly"
+---
+
+# Counting of nucleons
+## 1. Prerequisites
+
+F.math.1 — unit factors, the mole, powers of ten. You need n = m/M and N = n·N_A in
+working order before nucleon counting means anything.
+
+## 2. Hook
+
+A hospital wristband carries three facts you read in three different ways: a name, a date of
+birth, and a blood type. A nuclide symbol does the same with one letter and two small integers,
+and each of the three says something different about the atom. Read the wrong one as the wrong
+kind of fact and everything downstream — molar mass, charge, decay products — comes out wrong.
+Where this analogy breaks: a wristband can be misprinted, while a nuclide symbol is a
+definition. If the integers contradict the element symbol, the symbol is wrong, not the atom.
+
+## 3. Core idea
+
+Every atom is a nucleus of Z protons and N neutrons, with Z electrons arranged around it when
+the atom is neutral. Z fixes which element it is; N fixes which isotope of that element it is.
+The two counts are not independent: their sum, the mass number A, is what the top-left
+superscript reports, and A − Z = N is where the neutron count comes from.
+
+## 4. Definition
+
+The **atomic number** Z is the number of protons in the nucleus; it is the element's identity.
+The **neutron number** N is the count of neutrons. **Nucleons** are protons and neutrons
+together, so the **mass number** A = Z + N. A **nuclide** is one specific nucleus, written
+^A_Z X, where X is the element symbol, A the superscript at top left and Z the subscript at
+bottom left. An **ion** of charge q is written X^q+ or X^q−; the charge counts missing or extra
+**electrons**, never nucleons.
+
+## 5. How it works
+
+**Step 1: read the symbol position by position.** In ^56_26 Fe the superscript 56 is A and the
+subscript 26 is Z. The letter is only a convenience: Z = 26 is what makes it iron, and the
+symbol Fe must agree with that number, otherwise the datum is inconsistent. Because Z is
+redundant with the symbol, some notation omits it (^56Fe); A is never omitted when the isotope
+matters.
+
+**Step 2: get N by subtraction.** A = Z + N rearranges to N = A − Z. For ^56Fe, N = 56 − 26 = 30.
+The subtraction works because A counts both kinds of nucleon and Z counts one kind; what is left
+must be the other. Adding instead of subtracting gives a plausible-looking number with no
+meaning, which is why this is the most common silent error in the topic.
+
+**Step 3: why Z, not A, is the identity.** A neutral atom has exactly Z electrons, because the
+nucleus carries charge +Ze and the atom must be neutral. Electrons are what bonds, absorbs light
+and reacts, so the chemistry is fixed by Z. Changing Z during a nuclear change produces a
+different element; changing N produces the same element with a different mass — an isotope.
+That is the whole reason isotopes are chemically almost identical and are separated by physical,
+not chemical, methods.
+
+**Step 4: charge is about electrons, not nucleons.** For an ion X^q+, the electron count is
+Z − q, because q electrons have been removed from the neutral atom's Z. For ^56Fe^3+, the count
+is 26 − 3 = 23 electrons, while Z, N and A stay 26, 30 and 56. Writing Fe^3+ does not mean 3
+fewer protons; if it did, the element would have changed.
+
+**Step 5: A is a count, not a mass.** A is an integer number of nucleons; masses are not
+integers because a nucleus weighs slightly less than its separated nucleons (the binding energy)
+and because each nucleon weighs about 1 u rather than exactly 1 u. The approximation that
+matters in calculations is M ≈ A g/mol for a pure nuclide: ^12C is exactly 12 g/mol by
+definition, ^56Fe is 55.9349 g/mol, so the approximation is good to about 0.1 % and must be
+declared when used. Two refinements belong here. Electrons carry only 1/1836 of a nucleon
+mass each, so leaving them out is safe to three figures for light elements. And the deficit
+is not sloppiness: it is the nuclear binding energy, about 8.5 MeV per nucleon against a
+nucleon rest energy of 931.5 MeV, the same 0.9 % scale that makes fusion exothermic.
+
+**Step 6: counting nucleons in a weighed sample.** Convert mass to moles with n = m/M, then to
+particles with N = n·N_A, then to nucleons by multiplying by A: nucleons = (m/M)·N_A·A. Each
+factor is a ratio equal to one; the units cancel to a pure count.
+
+**Step 7: the cancellation that is easy to miss.** If M is replaced by its approximation A
+ g/mol, the A in the numerator and the A hidden in M cancel, leaving
+nucleons ≈ (m / 1 g/mol)·N_A. One gram of any nuclide therefore contains about N_A nucleons,
+whatever the element: 1.00 g of ^56Fe holds 1.00/55.9349 × 6.02214 × 10^23 = 1.0767 × 10^22
+atoms and 56 times that many nucleons, 6.03 × 10^23. The identity is approximate, not exact,
+and the error is the same 0.1 % as the mass approximation.
+
+## 6. Diagram
+
+<figure class="lesson-figure">
+  <img src="/icho-rev/figures/1.1.1.svg" alt="Three horizontal bars to the same scale. Carbon-12 is 6 protons and 6 neutrons, iron-56 is 26 protons and 30 neutrons, uranium-235 is 92 protons and 143 neutrons. Bar length is the mass number A, the blue part is Z and the grey part is N." loading="lazy" />
+</figure>
+
+The bars are drawn to the computed proton and neutron counts, so the length of a bar is A and
+the split is the nucleus's composition: ^12C is half protons, ^235U is mostly neutrons.
+
+## 7. Assumptions and limits
+
+The model treats the nucleus as structureless protons and neutrons, which is enough for
+counting but fails for binding energy, for the neutron–proton mass difference (~0.14 %), and for
+excited nuclear states (isomers, written with an m superscript). M ≈ A g/mol assumes a pure
+nuclide; for an element as found in nature it is the weighted average over isotopes and is not
+an integer. Nuclear notation also hides the electron configuration, so it cannot tell you the
+charge unless the ion charge is written out.
+
+## 8. Worked example
+
+**Given.** The nuclide ^56_26 Fe as the ion Fe^3+, and a 1.00 g sample of pure ^12C.
+
+**Hanapin.** For the iron ion: N, the electron count, and the charge in units of e. For the
+carbon sample: the number of protons and the total number of nucleons.
+
+**Solusyon.** Step 0: decide which quantities are counts (integers) and which are masses, and
+write the nuclide symbol before touching numbers. Iron: Z = 26 from the symbol, A = 56 from the
+superscript, so N = A − Z = 56 − 26 = 30. A 3+ ion has lost three electrons, so electrons
+= 26 − 3 = 23, and the charge is +3e. Nucleons stay at 56, because neither protons nor neutrons
+left the nucleus.
+
+Carbon: M(^12C) = 12.000 g/mol exactly, so n = 1.00 g / 12.000 g/mol = 8.3333 × 10^−2 mol,
+atoms = 8.3333 × 10^−2 × 6.02214 × 10^23 = 5.0184 × 10^22, protons = 6 × 5.0184 × 10^22 =
+3.0111 × 10^23, nucleons = 12 × 5.0184 × 10^22 = 6.0221 × 10^23. The last number equals N_A
+because one mole of ^12C weighs exactly 12 g and each atom contributes 12 nucleons.
+
+**Sagot.** Fe^3+: N = 30, 23 electrons, charge +3e. 1.00 g ^12C: 3.01 × 10^23 protons and
+6.02 × 10^23 nucleons.
+
+## 9. Traps
+
+1. Using A as a molar mass without saying so. For ^56Fe, 56 g/mol is an approximation; the
+   nuclide's actual molar mass is 55.9349 g/mol, and the element's is 55.845 g/mol.
+2. Counting A as the number of protons in an ion of charge q, then subtracting q from it. The
+   charge removes electrons only, so the proton count is Z whatever the charge is.
+3. Computing N = A + Z. The only sensible reading is N = A − Z, and N = 0 for ^1H is the check
+   that confirms it.
+4. Writing a nuclide's charge from its group. Fe^3+ is a chemistry statement about the ion, not
+   about the nucleus; the nucleus is still Z = 26.
+5. Forgetting that a change in Z changes the element. A decay that removes two protons does not
+   give an isotope of the parent; it gives a different element.
+
+## 10. Check questions
+
+1. For ^40_20 Ca^2+, give N and the electron count.
+   Answer: N = 40 − 20 = 20, electrons = 20 − 2 = 18. Two wrong answers tempt: reporting 18
+   for N as well (subtracting the charge twice), and computing N = 40 − 20 − 2, which treats
+   the lost electrons as lost nucleons.
+2. Which pair are isotopes: ^14N and ^15N, or ^14N and ^14C?
+   ^14N and ^15N, same Z = 7. The second pair has different Z, so they are different elements;
+   the shared mass number is a coincidence that the notation makes look meaningful.
+3. How many nucleons are in 0.500 mol of ^235U?
+   Answer: 0.500 × 6.02214 × 10^23 × 235 = 7.08 × 10^25. The tempting answer 0.500 × 235 = 118
+   counts moles of nucleons, not nucleons.
+4. Why is the molar mass of iron 55.845 g/mol rather than exactly 56?
+   Because natural iron is a mixture of isotopes with masses near 54, 56, 57 and 58, and because
+   even ^56Fe weighs 55.9349 u, not 56 u, once binding energy is included.
+
+## 11. Connections
+
+1.1.2 takes the next step: same Z, different N, and how the mixture of isotopes produces a
+non-integer atomic weight. 1.3.1 uses these counts to balance nuclear equations, where A and Z
+are conserved separately — the reason A is worth counting at all. 1.3.2 treats the decay that changes Z or N over time.

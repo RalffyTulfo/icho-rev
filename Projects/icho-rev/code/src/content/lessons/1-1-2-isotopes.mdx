@@ -1,0 +1,178 @@
+---
+title: "Isotopes"
+description: "Chlorine has no mass. Not in the sense of being weightless, but in the sense that no single chlorine atom weighs 35.45 u, and the periodic table still insists on writing 35.45. The number you use in."
+author: "Ralf Christian Mendoza"
+readingTime: "9 min"
+unit: "Inorganic Chemistry"
+color: "indigo/purple"
+syllabusId: "1.1.2"
+level: 1
+version: 4
+cleanModeMapping:
+  "lowkey": "frankly"
+---
+
+# Isotopes
+## 1. Prerequisites
+
+1.1.1 — nuclide notation, A = Z + N, and the difference between A and a molar mass. If those
+are not solid, the weighted mean below will look like arbitrary arithmetic.
+
+## 2. Hook
+
+Chlorine has no mass. Not in the sense of being weightless, but in the sense that no single
+chlorine atom weighs 35.45 u, and the periodic table still insists on writing 35.45. The number
+you use in every stoichiometry calculation is an average over two atoms that differ by two
+neutrons, and the reason it is not a whole number is that nature never agreed to use one isotope
+per element. Where this analogy breaks: an average price of two products assumes you can buy
+either one separately, while isotopes are fixed in the sample you were given and cannot be picked.
+
+## 3. Core idea
+
+Isotopes are nuclides with the same Z and different N: same element, same chemistry to a first
+approximation, different mass. A natural element is a mixture, so any bulk mass you measure is
+the abundance-weighted mean of the isotopic masses. That is why relative atomic masses are not
+integers, why mass spectra show clusters of peaks, and why the molar mass of a bulk sample is not
+the mass of any one of its atoms.
+
+## 4. Definition
+
+**Isotopes** are nuclides with identical Z and different A; equivalently, identical proton count
+and different neutron count. The **isotopic mass** is the mass of one atom of a given nuclide, in
+unified atomic mass units. The **relative atomic mass** A_r of an element is the abundance-weighted
+mean of its isotopic masses, and it is dimensionless; the molar mass of its atoms is A_r g/mol.
+The **monoisotopic mass** is the mass of a molecule built only from the most abundant isotope of
+each element. **Abundance** here means atom fraction unless percent is stated.
+
+## 5. How it works
+
+**Step 1: why the chemistry barely notices.** The nucleus sets the charge +Ze and the mass; the
+electrons do the bonding and are fixed by Z. Two isotopes of carbon have the same electron
+configuration, the same ionisation energy to within a few parts in ten thousand and the same
+reaction chemistry. What differs is the mass, and mass enters vibrations: a C–D bond has a lower
+vibrational frequency than a C–H bond, so breaking it is slower. That kinetic isotope effect is
+large for hydrogen (a factor of several) and small for heavy elements, which is why isotope
+separation of uranium is a physical process and not a chemical one.
+
+**Step 2: the weighted mean, derived.** Let x_i be atom fractions with Σx_i = 1 and m_i the
+isotopic masses. The total mass of N atoms is Σ N x_i m_i, so the mean mass per atom is
+A_r = Σ x_i m_i. Nothing else is involved: no mass numbers, no rounding of x_i to whole numbers,
+no assumption that two isotopes exist. Note the units: A_r is a pure number (a ratio to 1/12 of
+a carbon-12 atom), while the molar mass of the atoms is A_r g/mol. Writing "35.45 g" for a single
+chlorine atom is a category error; 35.45 g/mol is a bulk statement.
+
+**Step 3: two isotopes, one unknown.** For two isotopes, A_r = x m_light + (1 − x) m_heavy, so
+
+x = (m_heavy − A_r) / (m_heavy − m_light).
+
+The fraction you get is the light one's; check by substituting back, and check that x lies between
+0 and 1. A value outside that range means the isotope list is wrong, not the algebra.
+
+**Step 4: how a mass spectrometer produces the numbers.** Molecules are ionised, accelerated
+through an electric field, and separated by m/z in a magnetic or quadrupole analyser. Peak
+position gives m/z, peak area (not height, strictly) gives abundance. Because ionisation
+efficiency depends on the species, raw heights are only proportional to abundance for the same
+kind of ion; for a clean isotopic cluster of one molecular ion, the ratio of heights is close to
+the ratio of abundances. Two practical details: the m/z scale is not a mass scale, and the M+1
+peak is mostly 13C at about 1.1 % per carbon, not an isotope of the molecule's heaviest element.
+
+**Step 5: which mass to use when.** Bulk stoichiometry uses A_r (chlorine 35.45 g/mol). High-
+resolution mass spectrometry, and any statement about a single molecule, uses the monoisotopic
+mass (34.96885 u for 35Cl). Isotope-pattern puzzles in mass spectra use monoisotopic masses and
+integer spacings: Cl gives M : M+2 of 3 : 1, Br gives 1 : 1, two Br give 1 : 2 : 1.
+
+**Step 6: a warning about molar masses of elements with one dominant isotope.** For elements like
+fluorine or sodium the difference between A_r and the monoisotopic mass is tiny, so the distinction
+rarely matters. For chlorine, bromine, copper, boron, lithium and gallium it matters in the first
+decimal place, and an answer that uses 35 instead of 35.45 is wrong by 1.3 %.
+
+## 6. Diagram
+
+<figure class="lesson-figure">
+  <img src="/icho-rev/figures/1.1.2.svg" alt="Chlorine mass spectrum: a tall peak at 34.96885 u with 75.76 %% abundance and a shorter peak at 36.96590 u with 24.24 %%. A dashed line at 35.45 marks the weighted mean, closer to the taller peak." loading="lazy" />
+</figure>
+
+The two peaks sit at the isotopic masses, not at 35 and 37, and their heights are drawn from the
+abundances. The dashed line is the weighted mean, 35.45, which lies between them and much closer
+to the taller peak — a picture of why the average is near 35 rather than halfway.
+
+## 7. Assumptions and limits
+
+The weighted mean assumes the sample's isotopic composition is known and homogeneous; terrestrial
+samples vary slightly, which is why A_r values are quoted as intervals for some elements (and why
+boron's A_r is only good to about four figures). Peak height equals abundance only under the
+assumption of equal ionisation and detection efficiency; real instruments calibrate. The
+near-identical chemistry assumption fails for hydrogen, where a factor of two in mass changes
+rates and even equilibrium constants measurably. And A_r as a single number hides the distribution:
+a sample of 10 atoms has a mass that none of the listed values may match.
+
+## 8. Worked example
+
+**Given.** Natural chlorine: 75.76 % 35Cl with isotopic mass 34.96885 u, 24.24 % 37Cl with
+36.96590 u. Natural copper: A_r = 63.546, isotopes 62.92960 u and 64.92779 u.
+
+**Hanapin.** A_r(Cl), the predicted mass-spectrum intensity ratio, and the abundance of 65Cu.
+
+**Solusyon.** Step 0: convert percentages to fractions and write the weighted mean with the
+fractions, not the mass numbers.
+
+Chlorine:
+
+A_r = 0.7576(34.96885) + 0.2424(36.96590)
+    = 26.4924 + 8.9605 = 35.4529 ≈ 35.45.
+
+Intensity ratio from the same fractions: 75.76 / 24.24 = 3.125, so the m/z 35 peak is 3.13 times
+the m/z 37 peak. The two facts are the same measurement written twice.
+
+Copper: let x be the fraction of 65Cu:
+
+63.546 = 62.92960(1 − x) + 64.92779x
+63.546 − 62.92960 = x(64.92779 − 62.92960)
+x = 0.61640 / 1.99819 = 0.30848.
+
+So 65Cu is 30.85 % and 63Cu is 69.15 %. Check: 0.6915(62.9296) + 0.3085(64.9278) = 63.54, which
+returns A_r to the quoted precision.
+
+**Sagot.** A_r(Cl) = 35.45, intensity ratio 3.13 : 1, and 65Cu is 30.85 % abundant.
+
+Cross-check the chlorine result against the periodic table: 35.45 is what the table prints, and
+the fact that two decimals match from two isotopic masses and two abundances is the strongest
+evidence that the arithmetic is right. If your answer is 35.5 or 35.4, you have rounded an
+intermediate value too early or used one too few figures in an abundance.
+
+## 9. Traps
+
+1. Averaging mass numbers instead of isotopic masses. With 35 and 37 the chlorine answer is 35.48;
+   the correct value is 35.45, and the gap is exactly what the question is testing.
+2. Forgetting to convert percent to fractions, then reporting 3545 as A_r.
+3. Solving for the heavy isotope's fraction and labelling it as the light one. Substitute back.
+4. Using A_r where the monoisotopic mass belongs: a molecular ion's exact mass is not built from
+   35.45.
+5. Reading the M+1 peak as another isotope of chlorine. It is mostly 13C.
+6. Assuming isotope effects are always negligible. For hydrogen they are not.
+7. Forgetting that A_r is an average over the sample, not a property of one atom: 35.45 g/mol
+   does not mean any chlorine atom weighs 35.45 u.
+
+## 10. Check questions
+
+1. Boron is 19.9 % 10B (10.0129 u) and 80.1 % 11B (11.0093 u). Find A_r.
+   Answer: 0.199(10.0129) + 0.801(11.0093) = 1.9926 + 8.8184 = 10.811, so 10.81. Two wrong
+   routes: averaging the mass numbers 10 and 11 gives 10.5, and swapping the fractions gives
+   0.801(10.0129) + 0.199(11.0093) = 10.21, which is not a small error.
+2. A mass spectrum of CH3Cl shows peaks at M and M+2 with heights 3 : 1. How many chlorines does
+   the molecule have, and what would two chlorines give?
+   One chlorine: 3 : 1 comes from 35Cl : 37Cl. Two chlorines give approximately 9 : 6 : 1
+   (9.77 : 6.25 : 1 from natural abundances, M : M+2 : M+4), not 3 : 1 twice.
+3. Why is the molar mass of chlorine atoms 35.45 g/mol rather than 35 or 37?
+   Because a bulk sample is a 75.76 : 24.24 mixture, and the molar mass is the weighted mean of
+   the isotopic molar masses.
+4. A sample of lithium is enriched to 90.0 % 6Li. What is its A_r?
+   0.900(6.0151) + 0.100(7.0160) = 5.4136 + 0.7016 = 6.115, so 6.12. Enrichment changes A_r; the
+   periodic table value assumes natural abundance.
+
+## 11. Connections
+
+1.1.1 supplies the notation and the A = Z + N count. 1.3.1 uses isotopes to explain why some
+nuclides decay and others do not, and 1.3.2 uses the half-life of a specific isotope, which is
+meaningless without knowing which isotope you have. 8.5 (mass spectrometry) turns this card's
+weighted mean into a measurement.

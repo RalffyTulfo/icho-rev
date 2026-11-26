@@ -1,0 +1,1 @@
+Three p orbitals share one origin. The p_x, p_y and p_z axes are mutually perpendicular. Each orbital has two lobes on opposite sides of the nucleus, labelled + and - for opposite phase, with zero amplitude at the nucleus. The dashed horizontal line marks the p_z nodal plane. The orientations differ; the two-lobed shape does not.

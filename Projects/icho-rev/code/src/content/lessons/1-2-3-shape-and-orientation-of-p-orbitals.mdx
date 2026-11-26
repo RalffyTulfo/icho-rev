@@ -1,0 +1,152 @@
+---
+title: "Shape and orientation of p-orbitals"
+description: "Hold a pen along the x-axis, one along y, one along z. That is a p subshell: three orbitals of identical shape, each pointing along a different axis, each with a plane through the nucleus where its."
+author: "Ralf Christian Mendoza"
+readingTime: "8 min"
+unit: "Inorganic Chemistry"
+color: "indigo/purple"
+syllabusId: "1.2.3"
+level: 1
+version: 3
+cleanModeMapping:
+  "lowkey": "frankly"
+---
+
+# Shape and orientation of p-orbitals
+## 1. Prerequisites
+
+1.2.2 — orbitals as wavefunctions, radial nodes, and the habit of asking "what does the curve look
+like" rather than "where does the electron go".
+
+## 2. Hook
+
+Hold a pen along the x-axis, one along y, one along z. That is a p subshell: three orbitals of
+identical shape, each pointing along a different axis, each with a plane through the nucleus where
+its wavefunction is zero. Rotate the atom 90° and you relabel which is which, which is why the three
+are degenerate in an isolated atom and split in a field. Where this analogy breaks: the pens are
+solid objects occupying space, while the lobes are regions of high probability amplitude and the
+"plane" is a surface of exactly zero amplitude, not a wall.
+
+## 3. Core idea
+
+A p orbital has l = 1, so one angular node — a plane through the nucleus — and n − l − 1 radial
+nodes. It is two-lobed, with opposite signs of ψ in the two lobes, and comes in three orientations
+that are degenerate in the isolated central field. The density is zero at the nucleus, which is why
+p orbitals penetrate a core much less than s orbitals and why their energy order differs in
+multi-electron atoms.
+
+## 4. Definition
+
+A **p orbital** is a one-electron state with l = 1; its density is zero at the nucleus, unlike an s
+orbital's. The **angular node** is the nodal plane
+containing the nucleus; it contributes l = 1 to the total node count. **Phase** is the sign of ψ in
+each lobe: the two lobes have opposite phase. A **degenerate** set means equal energy, true for the
+three p orbitals only in the isolated central field.
+
+## 5. How it works
+
+**Step 1: the shape follows from l = 1.** The angular part of the wavefunction is proportional to
+sin θ times a function of φ, which vanishes on a plane through the nucleus and is largest
+perpendicular to it. Squaring gives two lobes; the sign of the unsquared function is opposite in the
+two lobes. Each lobe is not a separate electron and not a separate orbital.
+
+**Step 2: three orientations from m_l.** The quantum number m_l takes −1, 0, +1. Those three
+solutions are complex (they carry e^(±iφ)), which is awkward for chemistry, so we take real linear
+combinations: p_z = the m_l = 0 function, and p_x and p_y from combinations of m_l = ±1. The
+combinations are still exact solutions of the same equation with the same energy; only their
+orientation differs. A consequence worth knowing: p_x and p_y are not eigenfunctions of the
+z-component of angular momentum, because they are mixtures of m_l = ±1. They are still eigenfunctions
+of L² with eigenvalue l(l + 1)ħ² = 2ħ², so they are legitimate orbitals, not defective ones; the
+real basis is chosen because it points along bonds. That is a level-3 detail
+usually met in spectroscopy, not a contradiction.
+
+**Step 3: node bookkeeping.** 2p: n = 2, l = 1, so radial nodes = 0 and angular = 1; total 1 = n − 1.
+3p: radial = 1, angular = 1; total 2. The 3p radial node is a sphere at r = 6a₀/Z, which for
+hydrogen is 317 pm. The radial function changes sign there, so the inner and outer lobes have
+opposite phase; that phase reversal, not a literal second dumbbell, is why 3p looks like a small
+dumbbell sitting inside a larger one.
+
+**Step 4: why "zero at the nucleus" matters.** Every p orbital has ψ(0) = 0, so an electron in a p
+orbital is never found at the nucleus, while an s electron is. In a multi-electron atom the s
+electron therefore feels the full nuclear charge part of the time and the p electron does not; this
+penetration difference is what pushes E(2s) below E(2p) in lithium and beyond. It is one factor
+behind the s/p energy split; across-period size and electronegativity trends also depend on the
+rising effective nuclear charge, so do not read them from penetration alone.
+
+**Step 5: the subshell, not the orbital, holds six electrons.** Three orbitals times two spins is
+6. Confusing orbitals with subshells produces answers that are wrong by a factor of three, and it is
+the most common slip in electron-configuration questions.
+
+## 6. Diagram
+
+<figure class="lesson-figure">
+  <img src="/icho-rev/figures/1.2.3.svg" alt="Three p orbitals share one origin. The p_x, p_y and p_z axes are mutually perpendicular. Each orbital has two lobes on opposite sides of the nucleus, labelled + and - for opposite phase, with zero amplitude at the nucleus. The dashed..." loading="lazy" />
+</figure>
+
+The three p orbitals share one origin and three mutually perpendicular axes. Each dumbbell has
+opposite phase labels on its two lobes and a gap at the nucleus; the dashed horizontal line is the
+p_z nodal plane. The orientation is a label, not a change of shape. The drawing is schematic: the
+lobes are regions of probability amplitude, not solid objects.
+
+## 7. Assumptions and limits
+
+The three orbitals are degenerate only in an isolated atom. A ligand field, a crystal field or a
+magnetic field splits them, and the split is what crystal field theory quantifies. The real
+functions are a choice of basis, not the only possible one. And a p orbital is not a "dumbbell
+shaped cloud of charge": it is a probability amplitude whose square gives density, and a single
+measurement finds one electron at one point.
+
+## 8. Worked example
+
+**Given.** Hydrogen 3p, with the radial function R_3p ∝ σ(6 − σ)e^(−σ/3), σ = Zr/a₀, a₀ = 52.9 pm.
+
+**Hanapin.** The radial node radius, the total node count, and the number of electrons a 3p subshell
+can hold.
+
+**Solusyon.** Step 0: identify n and l first — n = 3, l = 1 — then use the node formulas rather
+than solving anything.
+
+Radial nodes = n − l − 1 = 3 − 1 − 1 = 1. The radial function vanishes where σ(6 − σ) = 0, so σ = 0
+(at the nucleus, not counted as a radial node) or σ = 6. Hence r = 6a₀/Z = 6 × 52.9 = 317.4 pm for
+hydrogen.
+
+Angular nodes = l = 1, the nodal plane. Total = 1 + 1 = 2 = n − 1.
+
+Electrons in 3p: 2(2l + 1) = 2(3) = 6.
+
+**Sagot.** One radial node at 317 pm, one angular node, two nodes in total, and six electrons per
+3p subshell.
+
+## 9. Traps
+
+1. "A p orbital holds 6 electrons." A p subshell holds 6; one orbital holds 2.
+2. Drawing the lobes joined at the nucleus. ψ = 0 at the nucleus, so there is a gap, not a waist.
+3. Counting the node at r = 0 as a radial node. The σ = 0 root of the radial function is the
+   nucleus, not a node.
+4. Forgetting that p orbitals have no density at the nucleus, then explaining penetration with s and
+   p on equal footing.
+5. Calling p_x and p_y eigenfunctions of L_z. They are real combinations of the m_l = ±1
+   eigenfunctions.
+6. Assuming the three p orbitals split in every atom. In an isolated atom they are degenerate; a
+   field is needed to split them.
+
+## 10. Check questions
+
+1. Give the radial and angular node counts for 2p, 3p and 4p.
+   2p: 0 radial, 1 angular. 3p: 1 radial, 1 angular. 4p: 2 radial, 1 angular. The angular count
+   never changes for p; the radial count rises with n.
+2. How many electrons can the n = 3, l = 1 level hold, and why is that not the same as "the 3p
+   orbital"?
+   Six, from 2(2l + 1); the subshell contains three orbitals, each holding two.
+3. Why does the 3p radial node sit at 317 pm while the 2p has none?
+   n − l − 1 = 1 for 3p and 0 for 2p; the extra radial node is the spherical surface where the
+   3p radial function changes sign.
+4. A p orbital points at a neighbouring atom. Is the resulting bond σ or π?
+   σ: the lobes point along the internuclear axis and overlap head-on. A p orbital perpendicular to
+   that axis would give π overlap.
+
+## 11. Connections
+
+1.2.2 established the spherical s orbitals and penetration. 1.2.4 adds the five d orbitals and their
+two angular nodes. 2.1 (VSEPR) and 2.3 (hybrid orbitals) use p directions to explain molecular
+geometry, and 2.4 (MO theory) uses p–p overlap to build σ and π molecular orbitals.

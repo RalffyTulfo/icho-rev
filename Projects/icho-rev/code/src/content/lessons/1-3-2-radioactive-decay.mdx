@@ -1,0 +1,131 @@
+---
+title: "Radioactive decay"
+description: "A sample of iodine-131 loses half its activity every eight days. After six weeks it is still measurably radioactive, not gone; after a year its activity is below a millionth of the start, but not."
+author: "Ralf Christian Mendoza"
+readingTime: "6 min"
+unit: "Inorganic Chemistry"
+color: "indigo/purple"
+syllabusId: "1.3.2"
+level: 2
+version: 2
+cleanModeMapping:
+  "lowkey": "frankly"
+---
+
+# Radioactive decay
+## 1. Prerequisites
+
+1.3.1 for the decay types and F.math.2 for exponentials and logarithms. The integration used here is
+the simplest separable one in the course.
+
+## 2. Hook
+
+A sample of iodine-131 loses half its activity every eight days. After six weeks it is still
+measurably radioactive, not gone; after a year its activity is below a millionth of the start, but
+not zero. Radioactive decay is the cleanest first-order process in chemistry: the nuclei do not
+consult each other, so the rate depends only on how many are left. Where this analogy breaks:
+first-order chemical kinetics is a bulk average over collisions, while this exponential is exact for
+each nucleus's probability of decaying in a time interval, with no memory of age.
+
+## 3. Core idea
+
+Each nucleus has a fixed probability λ per unit time of decaying, so dN/dt = −λN and N = N₀e^(−λt).
+Activity is proportional to N, so it decays with the same exponential. Half-life is t₁/₂ = ln2/λ, and
+after n half-lives the fraction remaining is 2^(−n). Measuring activity therefore measures N, which
+is what makes dating and tracer work possible.
+
+## 4. Definition
+
+The **decay constant** λ is the probability of decay per nucleus per unit time, in s⁻¹. The
+**activity** A = λN is the number of decays per second, measured in becquerels (1 Bq = 1 s⁻¹). The
+**half-life** t₁/₂ is the time for N (or A) to fall to half, t₁/₂ = ln2/λ = 0.6931/λ. **Specific
+activity** is activity per unit mass, Bq g⁻¹. The older unit, 1 curie = 3.7 × 10¹⁰ Bq, still appears in sources.
+
+## 5. How it works
+
+**Step 1: set up the differential equation.** In a short time dt, the number decaying is proportional
+to the number present and to dt: dN = −λN dt, so dN/dt = −λN. The negative sign says N decreases;
+λ carries the units s⁻¹ so that λdt is a probability.
+
+**Step 2: separate and integrate.** dN/N = −λdt, and integrating from N₀ at t = 0 to N at t:
+
+ln(N/N₀) = −λt, hence N = N₀e^(−λt).
+
+**Step 3: activity follows the same law.** A = λN, and λ is constant, so A = A₀e^(−λt). This is why
+you can measure a count rate instead of counting atoms: the detector sees a constant fraction of the
+decays, so the ratio A/A₀ equals N/N₀.
+
+**Step 4: half-life.** Set N/N₀ = ½: ½ = e^(−λt₁/₂), so λt₁/₂ = ln2 and t₁/₂ = ln2/λ. After n
+half-lives, N/N₀ = 2^(−n); the fraction decayed is 1 − 2^(−n), which approaches but never reaches 1: after ten half-lives, 2⁻¹⁰ = 0.098 % remains.
+
+**Step 5: the arithmetic of dating.** A measured activity ratio gives n = log₂(A₀/A), and the age is
+n·t₁/₂. Equivalently t = ln(A₀/A)/λ. Both routes must agree; if they do not, the half-life and the
+ratio were mixed up.
+
+**Step 6: conventions.** Carbon-14 is quoted as 5568 a (Libby radiocarbon convention), 5700 a
+(evaluated) and 5730 a (modern measurement). A problem must state which; use that value and say so.
+The same caution applies to any isotope whose half-life has been revised.
+
+## 6. Diagram
+
+Plot activity against time in units of half-lives, from 1.0 at t = 0 through 0.5, 0.25, 0.125 and
+0.0625 at n = 1, 2, 3, 4. Draw the curve as a smooth exponential and mark each halving with a
+horizontal dashed step, showing that equal time intervals give equal multiplicative factors, not
+equal absolute drops.
+
+## 7. Assumptions and limits
+
+The law assumes a single decay mode with a constant λ, no parent–daughter ingrowth and no change in
+the sample's composition. In a chain, the daughter's own decay complicates the curve (secular
+equilibrium is a separate topic). Detector efficiency, geometry and self-absorption mean measured
+counts are not activities. And for very small numbers of atoms the exponential is a probability
+statement, so fluctuations matter.
+
+## 8. Worked example
+
+**Given.** 1.00 g of ¹³¹I (t₁/₂ = 8.02 d, M = 130.906 g mol⁻¹, N_A = 6.022 × 10²³ mol⁻¹).
+
+**Hanapin.** λ in s⁻¹, the number of atoms, the activity in Bq, and the activity after 24.1 d.
+
+**Solusyon.** Step 0: convert the half-life to seconds before computing λ.
+
+t₁/₂ = 8.02 × 86 400 = 6.929 × 10⁵ s.
+λ = 0.6931/6.929 × 10⁵ = 1.000 × 10⁻⁶ s⁻¹.
+
+Atoms: n = 1.00/130.906 = 7.639 × 10⁻³ mol, N = 7.639 × 10⁻³ × 6.022 × 10²³ = 4.600 × 10²¹.
+
+Activity: A = λN = 1.000 × 10⁻⁶ × 4.600 × 10²¹ = 4.60 × 10¹⁵ Bq.
+
+After 24.1 d: 24.1/8.02 = 3.00 half-lives, so A = 4.60 × 10¹⁵ × 2⁻³ = 5.75 × 10¹⁴ Bq.
+
+**Sagot.** λ = 1.00 × 10⁻⁶ s⁻¹; N = 4.60 × 10²¹; A = 4.60 × 10¹⁵ Bq, falling to 5.75 × 10¹⁴ Bq
+after 24.1 d.
+
+## 9. Traps
+
+1. Using t₁/₂ in days with λ in s⁻¹. Convert first; the unit mismatch is the most common failure.
+2. Reporting the fraction decayed as 2^(−n). That is the fraction remaining; decayed is 1 − 2^(−n).
+3. Believing ten half-lives means complete decay. 2^(−10) = 0.098 % remains.
+4. Confusing activity with count rate. A detector records a fraction of decays.
+5. Using 5730 a for a problem that specifies the Libby convention of 5568 a.
+6. Forgetting that A = λN needs N, not the mass. Convert mass to moles to atoms first.
+7. Applying the exponential to a chain without accounting for the daughter's decay.
+8. Confusing activity with amount. One gram of ¹³¹I is 4.6 × 10¹⁵ Bq while one gram of ²²⁶Ra is about
+   3.7 × 10¹⁰ Bq; the same mass can differ by five orders of magnitude.
+
+## 10. Check questions
+
+1. A sample's activity falls to 12.5 % in 30 days. What is its half-life?
+   12.5 % = 1/8 = 2⁻³, so three half-lives in 30 days: t₁/₂ = 10 days.
+2. What fraction of a sample remains after 4.5 half-lives?
+   2^(−4.5) = 0.0442, about 4.4 %.
+3. Why does the activity curve have the same shape as the atom-count curve?
+   Because A = λN with λ constant, so A is proportional to N at every instant.
+4. 1.0 g of ²²⁶Ra (t₁/₂ = 1600 a) — is its activity larger or smaller than 1.0 g of ¹³¹I?
+   Smaller: λ(Ra) = 0.6931/(1600 × 3.156 × 10⁷) = 1.37 × 10⁻¹¹ s⁻¹, so A = 1.37 × 10⁻¹¹ × 2.66 ×
+   10²¹ = 3.7 × 10¹⁰ Bq, far below 4.6 × 10¹⁵ Bq for iodine.
+
+## 11. Connections
+
+1.3.1 supplies the decay modes; 1.3.3 uses the same exponentials for chains and Q values. 7.1
+(first-order kinetics) is the chemical analogue, and the mathematics is identical.

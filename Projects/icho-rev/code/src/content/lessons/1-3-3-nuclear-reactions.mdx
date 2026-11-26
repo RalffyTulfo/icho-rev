@@ -1,0 +1,144 @@
+---
+title: "Nuclear reactions"
+description: "Rutherford fired alpha particles at nitrogen and got oxygen and a proton out. Nobody had done that before, and the equation that describes it looks exactly like the decay equations of the previous."
+author: "Ralf Christian Mendoza"
+readingTime: "7 min"
+unit: "Inorganic Chemistry"
+color: "indigo/purple"
+syllabusId: "1.3.3"
+level: 2
+version: 2
+cleanModeMapping:
+  "lowkey": "frankly"
+---
+
+# Nuclear reactions
+## 1. Prerequisites
+
+1.3.1 for decay bookkeeping and 1.1.1 for A and Z. This card extends the same conservation laws to
+reactions that are induced rather than spontaneous, and adds the energy calculation.
+
+## 2. Hook
+
+Rutherford fired alpha particles at nitrogen and got oxygen and a proton out. Nobody had done that
+before, and the equation that describes it looks exactly like the decay equations of the previous
+card: A and Z balance, and the rest is bookkeeping. The new ingredient is energy: a reaction runs by
+itself only if the products weigh less than the reactants, and the missing mass appears as kinetic
+energy. Where this analogy breaks: a chemical equation balances atoms exactly, while a nuclear
+equation can convert mass into energy, so the mass balance is only approximate and the deficit is the
+point.
+
+## 3. Core idea
+
+A nuclear reaction is balanced when A and Z each match on both sides. Whether it releases energy is a
+separate question answered by the mass defect: Q = Δm c², with 1 u ≡ 931.494 MeV, and Q > 0 for a
+spontaneous reaction. Alpha and beta decays are one class of nuclear reaction; bombardment,
+fission and fusion are others, and all obey the same conservation laws.
+
+## 4. Definition
+
+A **nuclear reaction** is a rearrangement of nucleons, written with A and Z conserved. The **Q
+**Q value** is the energy released, Q = (mass of reactants − mass of products)c²; positive Q means
+exothermic. Some tables define Q with the opposite sign, so state the convention before quoting a
+number.
+free nucleons. **Binding energy per nucleon** is the mass defect of a nucleus divided by A, converted
+to energy.
+
+## 5. How it works
+
+**Step 1: balance A and Z.** Write every species with its A as superscript and Z as subscript,
+including the projectile and the emitted particle. Solve A first, then Z, because only some particles
+carry A.
+
+**Step 2: the projectile changes the accounting.** For bombardment, add the projectile's A and Z to
+the target's. Example: ¹⁴₇N + ⁴₂He → ¹⁷₈O + ¹₁H. A: 14 + 4 = 18 and 17 + 1 = 18. Z: 7 + 2 = 9 and
+8 + 1 = 9.
+
+**Step 3: chains are solved in a fixed order.** In a decay chain ending at a stable nuclide, the
+number of alphas is fixed by the A difference: n_α = (A_parent − A_daughter)/4. Then Z fixes the
+number of beta-minus decays: n_β = Z_daughter − (Z_parent − 2n_α). For ²³⁸U → ²⁰⁶Pb: n_α = 32/4 = 8,
+n_β = 82 − (92 − 16) = 6. Check both totals before moving on.
+
+**Step 4: Q from masses.** Q = (Σm_reactants − Σm_products)c². With masses in u, multiply the mass
+difference by 931.494 MeV/u. For ²³⁸U → ²³⁴Th + α:
+
+Δm = 238.050788 − 234.043601 − 4.002603 = 0.004584 u,
+Q = 0.004584 × 931.494 = 4.270 MeV.
+
+**Step 5: where the energy goes.** Momentum conservation forces the products to share Q inversely as
+their masses, so the light alpha carries almost all of it: 234/238 × 4.270 = 4.198 MeV. That is the
+sharp alpha line seen in a detector.
+
+**Step 6: why fusion and fission both work.** Binding energy per nucleon rises from hydrogen to a
+peak near ⁵⁶Fe at about 8.8 MeV per nucleon, then falls slowly to about 7.6 MeV for ²³⁸U. Any process
+that moves nucleons up this curve releases energy: fusion of light nuclei and fission of heavy ones
+both do, and iron-56 is the end point for both.
+
+**Step 7: fission and fusion still balance.** ²³⁵U + n → ¹⁴¹Ba + ⁹²Kr + 3n: A: 236 = 141 + 92 + 3;
+Z: 92 = 56 + 36. The three neutrons are what make a chain reaction possible: if at least one is captured by another
+²³⁵U nucleus, the process repeats. The Sun's net fusion,
+4¹H → ⁴He + 2e⁺ + 2ν, balances A (4 = 4) and Z (4 = 2 + 2).
+
+## 6. Diagram
+
+Draw a curve of binding energy per nucleon against mass number, rising steeply from ¹H, peaking near
+⁵⁶Fe at 8.8 MeV, and declining to about 7.6 MeV at ²³⁸U. Mark two arrows: fusion from the left toward
+the peak, fission from the right toward the peak, both labelled "releases energy". Label the peak
+"iron-56: no further energy by either route".
+
+## 7. Assumptions and limits
+
+Atomic masses can be used for beta decay: the difference in electron counts between parent and daughter
+already accounts for the emitted or absorbed electron, with the neutrino mass neglected. Nuclear masses
+are needed only when the electron is not part of the tabulated atom, as in a bare-nucleus reaction.
+The binding-energy curve is an average trend, not a prediction of every reaction's Q. The treatment
+ignores angular momentum barriers, which is why fusion needs high temperature even though it is
+energetically favourable, and ignores the branching of fission into many product pairs.
+
+## 8. Worked example
+
+**Given.** ²³²Th decays to ²⁰⁸Pb by a chain of alphas and beta-minuses. Masses: ²³⁸U 238.050788 u,
+²³⁴Th 234.043601 u, ⁴He 4.002603 u, 1 u = 931.494 MeV.
+
+**Hanapin.** The alpha and beta counts for the thorium chain, and Q for the uranium alpha decay.
+
+**Solusyon.** Step 0: for the chain, do A first; a beta changes nothing there.
+
+n_α = (232 − 208)/4 = 24/4 = 6.
+After six alphas, Z = 90 − 12 = 78; lead is 82, so n_β = 82 − 78 = 4.
+Check: A: −24 + 0 = −24 → 208. Z: −12 + 4 = −8 → 82.
+
+For Q: Δm = 238.050788 − 234.043601 − 4.002603 = 0.004584 u.
+Q = 0.004584 × 931.494 = 4.270 MeV; the alpha carries 234/238 of it, 4.198 MeV.
+
+**Sagot.** Six alphas and four beta-minuses; Q = 4.270 MeV for the uranium decay.
+
+## 9. Traps
+
+1. Counting betas from A. Betas change Z only; alphas change both.
+2. Getting the beta count sign wrong: the chain's Z must rise from 76 to 82 in the uranium case, so
+   betas are beta-minus, not beta-plus.
+3. Forgetting the projectile's A and Z in a bombardment reaction.
+4. Using atomic masses for beta decay without accounting for the electron.
+5. Reporting Q as negative for a spontaneous decay. Mass lost means Q > 0.
+6. Assuming a balanced equation is spontaneous. Balance is necessary, not sufficient.
+7. Claiming fission releases energy because "heavy nuclei are unstable". The reason is the position
+   on the binding-energy curve, not instability in general.
+
+## 10. Check questions
+
+1. ²³⁵U absorbs a neutron and fissions to ¹⁴¹Ba and ⁹²Kr. How many neutrons are released?
+   A: 235 + 1 = 236; products 141 + 92 = 233; so 3 neutrons.
+2. Why does fusion of hydrogen release energy if the product is lighter than the reactants?
+   The helium-4 nucleus has a larger binding energy per nucleon, so its mass is lower by Δm, and
+   Δm c² appears as kinetic energy.
+3. In the ²³⁸U chain, why are there 8 alphas and 6 betas rather than 6 alphas and 8 betas?
+   A fixes the alpha count (32/4 = 8); the remaining Z deficit of 6 must come from beta-minus decays.
+4. Why is iron-56 the endpoint of both fusion and fission energy release?
+   It sits at the maximum of binding energy per nucleon, so moving either direction away from it
+   costs energy rather than releasing it.
+
+## 11. Connections
+
+1.3.1 and 1.3.2 give spontaneous decay and its rate; this card generalises to induced reactions and
+energy. 6.2 (thermodynamics) uses the same energy-conservation logic in chemical form.

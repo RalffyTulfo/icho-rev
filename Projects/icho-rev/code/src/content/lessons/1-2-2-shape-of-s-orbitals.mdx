@@ -1,0 +1,163 @@
+---
+title: "Shape of s-orbitals"
+description: "Every picture of an atom in a textbook is a lie in one specific way: it draws electrons as dots on rings. The honest picture for an s electron is a sphere with no preferred direction at all — rotate."
+author: "Ralf Christian Mendoza"
+readingTime: "8 min"
+unit: "Inorganic Chemistry"
+color: "indigo/purple"
+syllabusId: "1.2.2"
+level: 1
+version: 2
+cleanModeMapping:
+  "lowkey": "frankly"
+---
+
+# Shape of s-orbitals
+## 1. Prerequisites
+
+1.2.1 for energy levels and the meaning of n, plus 1.2.1's warning that an orbital is a
+wavefunction and not a path.
+
+## 2. Hook
+
+Every picture of an atom in a textbook is a lie in one specific way: it draws electrons as dots on
+rings. The honest picture for an s electron is a sphere with no preferred direction at all — rotate
+the atom and nothing changes — and for the 2s orbital that sphere has a hollow shell inside it
+where the electron is never found. Where this analogy breaks: an onion's layers are physical
+surfaces you could peel, while the "shell" here is a surface where a mathematical function passes
+through zero, with electron density on both sides of it.
+
+## 3. Core idea
+
+An s orbital has zero orbital angular momentum (l = 0), so its wavefunction depends only on r and
+its shape is a sphere. Its radial part has n − 1 nodes, which is why 1s has none, 2s has one and
+3s has two. The density |ψ|² is largest at the nucleus, but the radial distribution 4πr²|ψ|² — the
+curve you actually plot — peaks away from it, because the volume of a thin shell shrinks to zero
+at the centre.
+
+## 4. Definition
+
+An **s orbital** is a one-electron state with l = 0 and m_l = 0. It has no angular node and n − 1
+radial nodes; the angular part is a constant, so the shape is spherically symmetric. A **radial
+node** is a spherical surface at radius r_node where the radial function R(r) = 0. The **radial
+distribution function** is P(r) = 4πr²|R(r)|², normalised so that ∫P dr = 1. **Penetration** is the
+extent to which an orbital's density lies close to the nucleus, inside the core electrons; it is why
+2s lies below 2p in multi-electron atoms.
+
+## 5. How it works
+
+**Step 1: why the shape is a sphere.** With l = 0 the angular equation has a constant solution, so
+ψ(r, θ, φ) = R(r) · constant. Nothing depends on direction, so every rotation leaves the orbital
+unchanged. That is the entire content of "s orbitals are spherical"; it is a symmetry statement,
+not a drawing convention.
+
+**Step 2: the radial functions.** For hydrogen, with σ = Zr/a₀,
+
+R_1s ∝ e^(−σ), R_2s ∝ (2 − σ)e^(−σ/2), R_3s ∝ (27 − 18σ + 2σ²)e^(−σ/3).
+
+Count the sign changes in the bracket: 1s has none, 2s has one, 3s has two, matching n − 1. Each
+zero of the bracket is a radial node, at σ = 2 for 2s, so r_node = 2a₀/Z. For hydrogen that is
+105.8 pm; for He⁺ it is 52.9 pm, because the larger nuclear charge pulls the whole orbital inward.
+
+**Step 3: density versus distribution.** |ψ|² is largest at r = 0 for every s orbital: the
+exponential is at its maximum there. But the probability of finding the electron in a thin shell
+between r and r + dr is 4πr²|ψ|² dr, and the r² factor beats the exponential near the origin. For
+1s the product peaks at r = a₀ = 52.9 pm. For 2s it has two maxima, at about 0.76a₀ and
+5.24a₀, one inside the node and one outside, with the outer one taller; the node is a zero between them.
+
+**Step 4: mean radii.** The expectation value for a hydrogen-like atom is
+
+⟨r⟩ = (a₀/2Z)(3n² − l(l + 1)).
+
+Substituting Z = 1: 1s gives (a₀/2)(3) = 1.5a₀; 2s gives (a₀/2)(12) = 6a₀; 2p gives (a₀/2)(10) =
+5a₀. In picometres those are 79.4, 317 and 264 pm, so the 2s electron is on average further out than
+the 2p electron despite the same n. Note 2s is larger than 2p on average even though both have n = 2: the 2s has a radial
+node and an inner lobe that reaches close to the nucleus, and reaching close costs average distance.
+That inner lobe is the penetration that matters in multi-electron atoms.
+
+**Step 5: why penetration changes the energy order.** In hydrogen all orbitals with the same n are
+degenerate. In lithium the 2s electron spends part of its time inside the 1s core, so it feels more
+of the full nuclear charge and less shielding; 2p has a node at the nucleus and almost no core
+penetration, so it is screened more. Result: E(2s) &lt; E(2p), which is why the aufbau order fills 2s
+before 2p and why the periodic table's structure exists at all. The ordering is not a postulate; it
+is a consequence of the radial shapes on this card.
+
+## 6. Diagram
+
+<figure class="lesson-figure">
+  <img src="/icho-rev/figures/1.2.2.svg" alt="Two radial distribution curves against r/a0. The 1s curve is a single peak at a0 (52.9 pm). The 2s curve has a small inner peak near 0.5 a0, touches zero at the node 2a0 (105.8 pm), then rises to a taller outer peak near 5.2 a0." loading="lazy" />
+</figure>
+
+Both curves are computed from the hydrogen radial functions and normalised, so their areas are
+equal even though their heights are not: each curve shows where one electron is likely to be found.
+The dashed vertical line marks a₀ and the dotted one marks the 2s node at 2a₀, where the 2s curve
+touches zero.
+
+## 7. Assumptions and limits
+
+The functions are hydrogenic: one electron, point nucleus, no electron–electron repulsion. For
+many-electron atoms the shapes are close but the energies are not, and the radial functions are only
+approximations from self-consistent field methods. The picture also hides spin entirely, and it
+treats the electron as a wave with no internal structure. Finally, "the electron is in the sphere"
+is loose language: the orbital is a probability amplitude, and one measurement finds the electron at
+one point, not smeared over the shell.
+
+## 8. Worked example
+
+**Given.** The hydrogen 2s radial function R_2s ∝ (2 − Zr/a₀)e^(−Zr/2a₀), with a₀ = 52.9 pm.
+
+**Hanapin.** The radius of the radial node for H and for He⁺, the number of radial nodes in 3s, and
+the most probable radius for the 1s electron.
+
+**Solusyon.** Step 0: nodes come from zeros of the radial function, not from zeros of the density.
+Here they coincide, because squaring a zero gives zero, but the distinction matters when you are
+asked for a sign change.
+
+Set the bracket to zero: 2 − Zr/a₀ = 0, so r = 2a₀/Z.
+
+For H, Z = 1: r_node = 2 × 52.9 = 105.8 pm.
+For He⁺, Z = 2: r_node = 105.8/2 = 52.9 pm.
+
+3s: n − 1 = 2 radial nodes. Its bracket 27 − 18σ + 2σ² has two positive roots, consistent with the
+count without solving it.
+
+1s most probable radius: maximise 4πr²e^(−2Zr/a₀); the derivative gives r = a₀/Z, so 52.9 pm for H.
+The mean is 1.5a₀ = 79.4 pm, which is a different question with a different answer.
+
+**Sagot.** 105.8 pm for H, 52.9 pm for He⁺, two radial nodes in 3s, and 52.9 pm for the most
+probable 1s radius.
+
+## 9. Traps
+
+1. Saying the 2s node is at a₀. It is at 2a₀ = 105.8 pm; a₀ is where the 1s radial distribution
+   peaks.
+2. Confusing |ψ|² with the radial distribution. The density is largest at the nucleus; the
+   distribution is zero there and peaks at a₀.
+3. Drawing an s orbital as a ring or a circle in one plane. It is a sphere; any planar drawing is a
+   cross-section.
+4. Claiming 2s is higher in energy than 2p in every atom. In hydrogen they are degenerate; in
+   multi-electron atoms 2s is lower because of penetration.
+5. Treating the node as a place the electron "cannot pass through". The electron is not travelling;
+   the node is a surface where the probability density is zero, with density on both sides.
+6. Reporting ⟨r⟩ = a₀ for 1s. a₀ is the most probable radius; the mean is 1.5a₀.
+
+## 10. Check questions
+
+1. How many radial and angular nodes does 3s have?
+   Two radial (n − 1 = 2), zero angular (l = 0). Total two, which equals n − 1.
+2. For hydrogen, is the electron more likely to be found at r = 0 or at r = a₀?
+   The density is highest at r = 0, but the probability of a shell is highest at a₀. The rule: for a
+   point, quote the density; for a distance from the nucleus, quote the radial distribution, which is
+   what "most probable radius" means in every exam question. So the answer here is a₀ = 52.9 pm, and
+   the r = 0 statement is a different, less useful fact.
+3. Why is E(2s) below E(2p) in lithium?
+   The 2s electron penetrates the 1s core, feels a larger effective nuclear charge and is stabilised;
+   2p has a node at the nucleus, penetrates less and is screened more.
+4. What is the mean radius of a 2s electron in hydrogen, and how does it compare with 2p?
+   6a₀ for 2s versus 5a₀ for 2p; the 2s is larger on average despite the same n.
+
+## 11. Connections
+
+1.2.3 gives the p orbitals their shapes and their angular node. 1.2.7 explains why 2s and 2p share n
+but differ in l. 4.1 uses penetration and shielding to justify the aufbau order across the periodic
+table.

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="300" viewBox="0 0 560 300" font-family="system-ui,sans-serif">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="16" y="24" font-size="12" fill="#111827">Mass spectrum of chlorine: peaks at isotopic masses, heights from abundances</text>
+<line x1="184.4" y1="250" x2="184.4" y2="40" stroke="#2563eb" stroke-width="10"/>
+<text x="184.4" y="32" font-size="11" fill="#1e3a8a" text-anchor="middle">34.96885 u</text>
+<text x="184.4" y="266" font-size="10" fill="#374151" text-anchor="middle">75.76 %</text>
+<line x1="379.0" y1="250" x2="379.0" y2="182" stroke="#2563eb" stroke-width="10"/>
+<text x="379.0" y="174" font-size="11" fill="#1e3a8a" text-anchor="middle">36.96590 u</text>
+<text x="379.0" y="266" font-size="10" fill="#374151" text-anchor="middle">24.24 %</text>
+<line x1="80" y1="250" x2="470" y2="250" stroke="#111827" stroke-width="1"/>
+<line x1="231.6" y1="40" x2="231.6" y2="250" stroke="#dc2626" stroke-width="2" stroke-dasharray="5 4"/>
+<text x="231.6" y="32" font-size="11" fill="#b91c1c" text-anchor="middle">A_r = 35.45</text>
+<text x="476" y="254" font-size="10" fill="#374151">m/z</text>
+</svg>

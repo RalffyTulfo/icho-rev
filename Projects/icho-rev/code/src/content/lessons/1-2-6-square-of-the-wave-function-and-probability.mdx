@@ -1,0 +1,205 @@
+---
+title: "Square of the wave function and probability"
+description: "Ask where the 1s electron of a hydrogen atom is and the honest answer is \"everywhere, with different odds\". The density is highest exactly at the nucleus, yet the most likely distance from the."
+author: "Ralf Christian Mendoza"
+readingTime: "10 min"
+unit: "Inorganic Chemistry"
+color: "indigo/purple"
+syllabusId: "1.2.6"
+level: 3
+version: 3
+cleanModeMapping:
+  "lowkey": "frankly"
+---
+
+# Square of the wave function and probability
+## 1. Prerequisites
+
+1.2.5 supplies ψ_1s and its energy; 1.2.2 and 1.2.3 give the orbital pictures this card turns
+into numbers. F.math.2 supplies the exponential, the limit idea and the unit algebra. It does
+**not** cover integration by parts, so Step 3 derives that rule from the product rule and
+evaluates both integrals on the page; nothing is imported silently.
+
+## 2. Hook
+
+Ask where the 1s electron of a hydrogen atom is and the honest answer is "everywhere, with
+different odds". The density is highest exactly at the nucleus, yet the most likely distance
+from the nucleus is 52.9 pm. Both statements are true, and the reason is that a shell of radius
+r has more room in it than a shell of radius r − dr. Where this analogy breaks: a probability
+distribution is not ignorance about a definite position that the electron secretly has. Quantum
+mechanics gives the electron no definite position before a measurement, so "it is somewhere, we
+just do not know where" is not what the distribution means.
+
+## 3. Core idea
+
+|ψ|² is a probability per unit volume, so a probability needs a volume: P = |ψ|²dV. For a
+spherical atom the natural volume is a thin shell, dV = 4πr²dr, which gives the radial
+distribution P(r) = 4πr²|ψ|². The density peaks at the nucleus; the radial distribution peaks
+at a₀ for 1s. Every probability question on this card is one integral of one of those two
+functions over the right region.
+
+## 4. Definition
+
+**Probability density** ρ(r) = |ψ(r)|²: probability per unit volume, units m^−3. **Radial
+distribution function** P(r) = 4πr²|ψ(r)|², normalised so that ∫₀^∞ P(r)dr = 1.
+**Expectation value** of an observable A is ⟨A⟩ = ∫ψ*Âψ dV, where ψ* is the complex conjugate
+and Â is the operator for A — multiplication by x for position, a derivative for momentum — so
+the order of ψ*, Â and ψ matters when two operators do not commute. **Most probable radius**
+r_mp is the radius where P(r) is largest, that is dP/dr = 0. **Mean radius** is ⟨r⟩ =
+∫rP(r)dr. The two are different numbers: 52.9 pm and 79.35 pm for hydrogen 1s.
+
+## 5. How it works
+
+**Step 1: why a density is not a probability.** A point has zero volume, and a continuous
+density multiplied by zero volume is zero, so the probability of finding the electron at one
+exact point is zero. Only regions have non-zero probability. "The electron is at r = a₀" is
+shorthand for "in a thin shell around a₀".
+
+**Step 2: the shell volume.** A sphere of radius r has volume 4πr³/3, so the shell between r and
+r + dr holds
+
+V_shell = (4π/3)[(r + dr)³ − r³] = (4π/3)[3r²dr + 3r(dr)² + (dr)³].
+
+Dividing by dr and letting dr → 0 leaves only the first-order term, so dV = 4πr²dr. That r² is
+the whole story: near the nucleus the shell volume vanishes, so even a large density gives a
+small probability.
+
+**Step 3: from ψ to P(r ≤ R), every step.** With ψ_1s = (1/√π)(Z/a₀)^(3/2)e^(−Zr/a₀), the
+density is |ψ|² = (1/π)(Z/a₀)³e^(−2Zr/a₀), and
+
+4πr²|ψ|²dr = 4π r² (1/π)(Z/a₀)³ e^(−2Zr/a₀) dr = 4 (Z/a₀)³ r² e^(−2Zr/a₀) dr.
+
+Substitute x = Zr/a₀, so r = a₀x/Z and dr = (a₀/Z)dx. The three powers of length cancel exactly,
+(Z/a₀)³ · (a₀/Z)² · (a₀/Z) = 1, leaving
+
+P(r ≤ R) = 4∫₀^X x²e^(−2x)dx, with X = ZR/a₀.
+
+That cancellation is the reason P(r ≤ R) depends only on the ratio R/a₀.
+
+Two integrals remain. First the substitution u = 2x, with x = u/2, dx = du/2 and upper limit
+2X:
+
+4∫x²e^(−2x)dx = 4∫(u²/4)e^(−u)(du/2) = (1/2)∫u²e^(−u)du.
+
+Second, the by-parts rule itself, derived rather than quoted. The product rule is
+d(fg)/du = f′g + fg′; integrating both sides and rearranging gives ∫f′g du = fg − ∫fg′du. Apply
+it with f′ = e^(−u) (so f = −e^(−u)) and g = u² (so g′ = 2u):
+
+∫u²e^(−u)du = −u²e^(−u) + 2∫ue^(−u)du.
+
+Apply it again with f′ = e^(−u) and g = u:
+
+∫ue^(−u)du = −ue^(−u) + ∫e^(−u)du = −ue^(−u) − e^(−u).
+
+Substituting the second result into the first:
+
+<br />∫u²e^(−u)du = −e^(−u)(u² + 2u + 2) + C.<br />
+
+Evaluate between u = 0 and u = U = 2X; the bracket at u = 0 equals 2, so the definite integral
+is 2 − e^(−U)(U² + 2U + 2). Multiply by the 1/2 from the substitution and put U = 2X:
+
+<br />P(r ≤ R) = 1 − e^(−2x)(1 + 2x + 2x²), x = R/a₀.<br />
+
+Limits check it: x = 0 gives 1 − 1 = 0, and x → ∞ gives 1 − 0 = 1, as a probability must.
+**Step 4: three numbers, each derived.** (a) Most probable radius. With P(x) = 4x²e^(−2x),
+
+dP/dx = 8x e^(−2x) − 8x²e^(−2x) = 8x(1 − x)e^(−2x),
+
+which vanishes at x = 0, where P = 0, and at x = 1, where P = 4e^−2 = 0.5413 is largest. So
+r_mp = a₀ = 52.9 pm for hydrogen.
+
+(b) Mean radius. ⟨r⟩ = ∫₀^∞ rP(r)dr = 4(a₀/Z)∫₀^∞ x³e^(−2x)dx. With u = 2x,
+x³dx = u³du/16, so ⟨r⟩ = (a₀/4Z)∫₀^∞ u³e^(−u)du. The same by-parts passes give
+∫u³e^(−u)du = −e^(−u)(u³ + 3u² + 6u + 6) + C, so the integral from 0 to ∞ is 6, since every
+term of the boundary value carries e^(−u). Hence ⟨r⟩ = 6a₀/4Z = 1.5a₀/Z = 79.35 pm for
+hydrogen: the peak sits at a₀ and the average at 1.5a₀, pulled outward by the long tail.
+
+(c) Two fractions. P(r ≤ a₀) = 1 − e^−2(1 + 2 + 2) = 1 − 0.13534 × 5 = 0.3233, and
+P(r ≤ 2a₀) = 1 − e^−4(1 + 4 + 8) = 1 − 0.018316 × 13 = 0.7619.
+
+**Step 5: nodes and probability.** At a node ψ = 0, so the density is zero there. For 2s the
+radial factor is (2 − r/a₀)e^(−r/2a₀), which vanishes at r = 2a₀ = 105.8 pm: no electron is
+found exactly on that sphere, and the density is non-zero on both sides of it. "The electron
+cannot cross the node" is not a statement quantum mechanics makes; there is no trajectory to
+cross anything.
+
+**Step 6: what a measurement gives.** Each measurement finds the electron at one point; the
+distribution is the statistics of many identical preparations. The "cloud" is a summary of
+those statistics, not a physical object with a soft edge.
+
+## 6. Diagram
+
+<figure class="lesson-figure">
+  <img src="/icho-rev/figures/1.2.6.svg" alt="A single humped curve of the 1s radial distribution P(r) against r/a0, rising from zero at the nucleus to a peak of 0.54134 at r = a0 = 52.9 pm and falling away with a long tail. A solid blue line marks the peak at x = 1; a dashed brown..." loading="lazy" />
+</figure>
+
+The single asymmetric hump is P(r) for 1s against r/a₀. The area under the curve to the left of
+the solid line at a₀ = 52.9 pm is 32.3 % of the probability; the area right of 2a₀ is 23.8 %.
+The dashed line at 1.5a₀ = 79.35 pm is the mean radius, visibly to the right of the peak. Note
+what the picture shows that a density plot would hide: P is zero at the nucleus, not maximal.
+
+## 7. Assumptions and limits
+
+The formulas assume a hydrogenic 1s orbital, a point nucleus and no electron correlation. For
+multi-electron atoms the radial function changes and the numbers above no longer apply exactly,
+though the density-versus-distribution distinction does. Relativistic effects contract s
+orbitals near heavy nuclei, raising the density at the nucleus and changing hyperfine couplings.
+P(r)dr is a probability only for a shell thin enough that P is nearly constant across it, which
+is why dV was expanded to first order in Step 2. Probability statements are about ensembles: a
+single atom gives one outcome, not a fraction of one.
+
+## 8. Worked example
+
+**Given.** A hydrogen atom in its 1s state, a₀ = 52.9 pm, and
+P(r ≤ R) = 1 − e^(−2x)(1 + 2x + 2x²) with x = R/a₀.
+
+**Hanapin.** (a) the probability of finding the electron within a₀; (b) within 2a₀; (c) beyond
+2a₀; (d) the most probable and the mean radius, and which is larger.
+
+**Solusyon.** Step 0: the only variable is x = R/a₀, so convert each radius to x before touching
+the exponential. For (a) x = 1: P = 1 − e^−2(1 + 2 + 2) = 1 − 0.13534 × 5 = 1 − 0.67668 =
+0.3233. For (b) x = 2: P = 1 − e^−4(1 + 4 + 8) = 1 − 0.018316 × 13 = 1 − 0.23810 = 0.7619. For
+(c) the complement: 1 − 0.7619 = 0.2381. Sanity check: inside a₀, a₀ to 2a₀, and beyond 2a₀ give
+0.3233 + 0.4386 + 0.2381 = 1.0000. For (d) r_mp comes from dP/dx = 8x(1 − x)e^(−2x) = 0, so
+x = 1 and r_mp = 52.9 pm; ⟨r⟩ = 1.5a₀ = 1.5 × 52.9 pm = 79.35 pm. The mean is larger, because
+the long tail at large r counts fully in the average but contributes little area near the peak.
+
+**Sagot.** (a) 32.3 % within a₀; (b) 76.2 % within 2a₀; (c) 23.8 % beyond 2a₀; (d) r_mp =
+52.9 pm, ⟨r⟩ = 79.35 pm, so the mean exceeds the most probable radius.
+
+## 9. Traps
+
+1. Reporting |ψ|² as a probability. It is a density: it needs a volume, and its units are m^−3.
+2. Using dV = dr instead of 4πr²dr for a spherical atom. That removes the r², makes the density
+   largest at the nucleus the "most probable radius", and lowkey destroys the whole card.
+3. Confusing the most probable radius with the mean: 52.9 pm versus 79.35 pm for 1s.
+4. Forgetting to square ψ before integrating, or squaring the normalisation constant twice.
+5. Thinking a node is a barrier. The density is zero there, and the electron has no trajectory.
+6. Expecting P(r ≤ a₀) = 0.5 because a₀ is the peak. The distribution is asymmetric with a long
+   tail, so the point that splits the probability in half is not the peak.
+7. Writing ⟨p⟩ as ∫ψ*pψ dV with a number instead of an operator. For momentum the operator is
+   −iħ d/dx, and the hat is not decoration.
+
+## 10. Check questions
+
+1. Why is the probability of finding a 1s electron exactly at the nucleus zero even though the
+   density there is maximal?
+   A point has zero volume, and density times zero volume is zero. Only finite regions have
+   non-zero probability.
+2. What fraction of 1s probability lies outside 2a₀?
+   1 − 0.7619 = 0.2381, about 23.8 %.
+3. For a 1s electron, which is larger, the most probable radius or the mean radius, and why?
+   The mean, 1.5a₀ = 79.35 pm against a₀ = 52.9 pm, because the long tail at large r pulls the
+   average outward.
+4. Where is the 2s radial distribution zero, and what does that mean physically?
+   At the node r = 2a₀ = 105.8 pm; the density is zero on that sphere, with non-zero density on
+   both sides of it.
+5. Why does the definition of ⟨A⟩ put the operator between ψ* and ψ rather than after ψ?
+   Because for non-commuting operators such as x and p the order changes the integral; Â must
+   act on ψ before the product is integrated, which is what ⟨A⟩ = ∫ψ*Âψ dV encodes.
+
+## 11. Connections
+
+1.2.5 supplies ψ and turns it into predictions here. 1.2.2 and 1.2.3 used the radial
+distribution qualitatively; 1.2.4 used angular nodes. 1.2.7 counts how many such distributions a
+shell contains, and 4.4 (ionisation energy) uses the same expectation-value machinery.

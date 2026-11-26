@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="460" viewBox="0 0 640 460" font-family="system-ui,sans-serif">
+<rect width="100%%" height="100%%" fill="#ffffff"/>
+<text x="16" y="24" font-size="13" fill="#111827">Three p orbitals: one node at the nucleus, three mutually perpendicular orientations</text>
+<line x1="170.0" y1="235.0" x2="470.0" y2="235.0" stroke="#6b7280" stroke-width="1" stroke-dasharray="5 4"/>
+<text x="492.5" y="235.0" font-size="11" fill="#374151">x</text>
+<line x1="410.0" y1="182.5" x2="230.0" y2="287.5" stroke="#6b7280" stroke-width="1" stroke-dasharray="5 4"/>
+<text x="216.5" y="295.4" font-size="11" fill="#374151">y</text>
+<line x1="320.0" y1="385.0" x2="320.0" y2="85.0" stroke="#6b7280" stroke-width="1" stroke-dasharray="5 4"/>
+<text x="320.0" y="62.5" font-size="11" fill="#374151">z</text>
+<ellipse cx="402.5" cy="235.0" rx="34" ry="19" fill="#93c5fd" fill-opacity="0.55" stroke="#2563eb" stroke-width="1.5" transform="rotate(0.0 402.5 235.0)"/>
+<text x="402.5" y="240.0" font-size="13" font-weight="bold" fill="#111827" text-anchor="middle">+</text>
+<ellipse cx="237.5" cy="235.0" rx="34" ry="19" fill="#2563eb" fill-opacity="0.55" stroke="#2563eb" stroke-width="1.5" transform="rotate(0.0 237.5 235.0)"/>
+<text x="237.5" y="240.0" font-size="13" font-weight="bold" fill="#111827" text-anchor="middle">-</text>
+<ellipse cx="270.5" cy="263.9" rx="34" ry="19" fill="#6ee7b7" fill-opacity="0.55" stroke="#059669" stroke-width="1.5" transform="rotate(149.7 270.5 263.9)"/>
+<text x="270.5" y="268.9" font-size="13" font-weight="bold" fill="#111827" text-anchor="middle">+</text>
+<ellipse cx="369.5" cy="206.1" rx="34" ry="19" fill="#059669" fill-opacity="0.55" stroke="#059669" stroke-width="1.5" transform="rotate(149.7 369.5 206.1)"/>
+<text x="369.5" y="211.1" font-size="13" font-weight="bold" fill="#111827" text-anchor="middle">-</text>
+<ellipse cx="320.0" cy="152.5" rx="34" ry="19" fill="#fca5a5" fill-opacity="0.55" stroke="#dc2626" stroke-width="1.5" transform="rotate(-90.0 320.0 152.5)"/>
+<text x="320.0" y="157.5" font-size="13" font-weight="bold" fill="#111827" text-anchor="middle">+</text>
+<ellipse cx="320.0" cy="317.5" rx="34" ry="19" fill="#dc2626" fill-opacity="0.55" stroke="#dc2626" stroke-width="1.5" transform="rotate(-90.0 320.0 317.5)"/>
+<text x="320.0" y="322.5" font-size="13" font-weight="bold" fill="#111827" text-anchor="middle">-</text>
+<line x1="160.0" y1="235.0" x2="480.0" y2="235.0" stroke="#b91c1c" stroke-width="1.5" stroke-dasharray="2 3"/>
+<text x="415" y="227" font-size="10" fill="#b91c1c">p_z nodal plane</text>
+<text x="16" y="444" font-size="10" fill="#4b5563">Schematic: lobes are regions of probability amplitude, not solid objects; the gap at the origin is the node.</text>
+</svg>

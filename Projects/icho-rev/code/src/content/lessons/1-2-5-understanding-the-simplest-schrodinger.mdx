@@ -1,0 +1,197 @@
+---
+title: "Understanding the simplest Schrodinger equation"
+description: "Every textbook writes down Ĥψ = Eψ as if it were obvious, then jumps to the answer. The jump hides the whole idea: an equation is being solved subject to the condition that the electron stays inside."
+author: "Ralf Christian Mendoza"
+readingTime: "10 min"
+unit: "Inorganic Chemistry"
+color: "indigo/purple"
+syllabusId: "1.2.5"
+level: 3
+version: 3
+cleanModeMapping:
+  "lowkey": "frankly"
+---
+
+# Understanding the simplest Schrodinger equation
+## 1. Prerequisites
+
+1.2.1 for the empirical level ladder and for the idea that spectra come in lines. **No calculus
+prerequisite:** this card states the two derivatives it uses, and it says what a boundary value
+problem is, before using either.
+
+## 2. Hook
+
+Every textbook writes down Ĥψ = Eψ as if it were obvious, then jumps to the answer. The jump hides
+the whole idea: an equation is being solved subject to the condition that the electron stays inside
+the atom, and the condition — not the equation — is what makes the energies discrete. A guitar
+string obeys one wave equation for every pitch; what picks out the notes is that its ends are
+clamped. Where this analogy breaks: a string's allowed frequencies are evenly spaced (harmonics),
+while a Coulomb well's are not, and the well's spacing depends on n² in the denominator.
+
+## 3. Core idea
+
+The time-independent Schrödinger equation is an eigenvalue problem: the Hamiltonian operator applied
+to a wavefunction returns a number times the same wavefunction, and that number is the allowed
+energy. Imposing the boundary conditions that ψ is finite, single-valued and vanishes at infinity
+admits only a discrete set of solutions. This card derives the box result E_n = n²h²/8mL² in
+full. The hydrogen result E_n = −13.6 Z²/n² eV is **quoted**, not derived here: it comes from the
+same eigenvalue problem with the Coulomb potential, and its solution needs mathematics beyond
+this card. What this card does show is exactly which part of that solution produces which
+quantum number, so the quoted formula is not a magic spell.
+
+## 4. Definition
+
+The **Hamiltonian** Ĥ is the operator for total energy: kinetic plus potential. In one dimension
+Ĥ = −(ħ²/2m)d²/dx² + V(x). An **eigenfunction** ψ satisfies Ĥψ = Eψ, and E is its **eigenvalue**.
+**Normalisation** fixes the constant in ψ so that ∫|ψ|²dV = 1; for the box, A = √(2/L) because
+∫₀^L sin²(nπx/L)dx = L/2. A **boundary condition** is a
+requirement on ψ at the edges of the region; for a bound state it is ψ → 0 as r → ∞.
+**ħ is the reduced Planck constant**, ħ = h/(2π); the 2π is there because one full turn is 2π
+radians, so angular frequencies and wave numbers are quoted per radian rather than per cycle.
+The Coulomb constant is written k_e = 1/(4πε₀) = 8.988 × 10^9 N m² C^−2 throughout, to keep it
+distinct from the wave number.
+
+## 5. How it works
+
+**The calculus used, stated here so no prerequisite is assumed.** The derivative of sin(u) is
+cos(u) times du/dx, and the derivative of cos(u) is −sin(u) times du/dx. Applying the rule twice
+gives
+
+d/dx sin(κx) = κ cos(κx),   d²/dx² sin(κx) = −κ² sin(κx),
+
+and the same with cos. That single fact is all this card needs. A **boundary value problem** is a
+differential equation plus conditions at the edges of the region; the equation has solutions for
+many constants, and the edge conditions pick out which ones are physically allowed.
+
+**Step 1: write the equation for the simplest case.** A particle of mass m in a one-dimensional box
+of length L has V = 0 inside and infinite walls. The walls are imposed as boundary conditions, not as a term in the potential: V = 0 inside and ψ must
+vanish at both walls. Inside,
+
+−(ħ²/2m) d²ψ/dx² = Eψ.
+
+**Step 2: guess the form and let the boundary conditions choose the constants.** For E > 0 the
+solutions are sines and cosines: ψ = A sin(κx) + B cos(κx), with κ² = 2mE/ħ². (κ is the wave
+number of the state; it is not the Coulomb constant.) Substituting into the equation and using the
+derivative above: −(ħ²/2m)(−κ²) sin(κx) = E sin(κx), so κ² = 2mE/ħ², as claimed. The wall at
+x = 0 forces ψ(0) = 0, so B = 0. The wall at x = L forces ψ(L) = 0, so sin(κL) = 0 and
+
+κL = nπ, n = 1, 2, 3, …
+
+**Step 3: convert the condition into energies.** With κ = nπ/L and κ² = 2mE/ħ²,
+
+E_n = n²π²ħ²/(2mL²) = n²h²/(8mL²).
+
+The energies are discrete not because energy is intrinsically lumpy but because only certain
+wavelengths fit between the walls. Every quantisation result in this unit has the same logical shape:
+a boundary condition selects a discrete set of solutions. The mechanism differs from case to case —
+walls here, single-valuedness in φ and finiteness in θ for the hydrogen angular part — so do not
+assume one derivation transfers.
+
+**Step 4: go to three dimensions, then quote hydrogen honestly.** In 3D the kinetic operator has
+three second derivatives, so separating variables produces three integers. In a cubic box they are
+independent, and E = (h²/8mL²)(n_x² + n_y² + n_z²).
+
+For the hydrogen atom the potential is V = −Z k_e e²/r, which is spherically symmetric, so
+separation gives a radial equation and an angular equation. The two equations do different jobs,
+and mixing them up is a standard error:
+
+- The **angular** equations produce the integer m_l, from the requirement that ψ is single-valued
+  in φ (a change of 2π must return the same value), and the bound |m_l| ≤ l, from requiring a
+  finite solution in θ. They say nothing about n.
+- The **radial** equation produces n as the number of nodes plus one, and it is the radial
+  equation that imposes l ≤ n − 1: an l larger than n − 1 forces ψ to diverge at the origin.
+- The radial equation also fixes the energies, which come out as E_n = −13.6 Z²/n² eV. This card
+  does **not** derive that line — the derivation is a longer exercise in series solutions — but
+  it identifies which equation it comes from, and 1.2.1 already showed the empirical ladder it
+  reproduces.
+
+**Step 5: what the equation does and does not say.** It says the electron has a wavefunction and
+that only certain energies satisfy the boundary conditions. It does not say the electron orbits; the
+"orbit" language is a classical import. It also does not include spin: spin is added by hand as a
+fourth quantum number m_s, and its existence is evidence that the Schrödinger equation is not the
+final theory.
+
+**Step 6: degeneracy as a bookkeeping consequence.** For hydrogen the energy depends only on n, so
+all orbitals with the same n are degenerate: n² orbitals, 2n² electrons including spin. Any
+additional term in the Hamiltonian that depends on l (repulsion, relativity, external fields) splits
+them, which is why the degeneracy is a property of this particular Hamiltonian.
+
+## 6. Diagram
+
+<figure class="lesson-figure">
+  <img src="/icho-rev/figures/1.2.5.svg" alt="Three stacked sine curves for n = 1, 2, 3 in a box from x = 0 to x = L, each touching zero at both walls, with 0, 1 and 2 interior nodes marked as red dots. To the right, two energy ladders. The box ladder rises as n squared: the n = 1, 2,..." loading="lazy" />
+</figure>
+
+The figure is computed by `figures/1.2.5.py`, which draws ψ_n for n = 1, 2, 3 inside the box,
+asserts the node count n − 1 and the zero at both walls, plots E_n on the left, and plots the
+quoted hydrogen ladder E_n = −13.6/n² eV on the right so that the two spacing behaviours sit side
+by side.
+
+## 7. Assumptions and limits
+
+The treatment is non-relativistic and assumes a fixed potential; for multi-electron atoms the
+potential includes the other electrons and must be solved self-consistently. It ignores spin, and
+therefore cannot explain the fine structure of hydrogen or the periodic table's exact ordering
+without extra rules. The particle-in-a-box model treats walls as infinitely high, which is an
+idealisation; real confining potentials are finite and the wavefunction leaks out. Finally, ψ is not
+directly observable: only |ψ|² and energy differences are.
+
+## 8. Worked example
+
+**Given.** An electron in a one-dimensional box of length L = 1.00 nm, with h = 6.626 × 10^−34 J s and
+m = 9.109 × 10^−31 kg.
+
+**Hanapin.** E_1 in joules and eV, E_2, and the number of nodes in the n = 3 wavefunction.
+
+**Solusyon.** Step 0: write the formula with units before substituting; the box length must be in
+metres.
+
+E_1 = h²/(8mL²) = (6.626 × 10^−34)²/(8 × 9.109 × 10^−31 × (1.00 × 10^−9)²).
+
+Numerator: (6.626 × 10^−34)² = 4.390 × 10^−67. Denominator: 8 × 9.109 × 10^−31 × 10^−18 =
+7.287 × 10^−48.
+E_1 = 4.390 × 10^−67/7.287 × 10^−48 = 6.024 × 10^−20 J, reported as **6.02 × 10^−20 J**.
+
+In eV: 6.024 × 10^−20/1.602 × 10^−19 = 0.376 eV.
+
+E_2 = 4E_1 = 2.410 × 10^−19 J = 1.50 eV.
+
+Nodes in n = 3: n − 1 = 2 interior nodes, where the sine crosses zero.
+
+**Sagot.** E_1 = 6.02 × 10^−20 J = 0.376 eV; E_2 = 1.50 eV; the n = 3 state has 2 nodes.
+
+## 9. Traps
+
+1. Treating the Schrödinger equation as a force law. It is an energy eigenvalue problem; forces do
+   not appear.
+2. Thinking quantisation is an extra assumption. It follows from the boundary conditions.
+3. Using L as the distance between nodes rather than the box length. The n-th state has n half-waves
+   in L.
+4. Forgetting the square in n². E_2 is 4E_1, not 2E_1.
+5. Confusing ψ with |ψ|². The equation solves for ψ; the measurement predicts |ψ|².
+6. Expecting the same level spacing for every potential. Box: gaps grow. Hydrogen: gaps shrink.
+7. Writing E_n = n²h²/8mL² for hydrogen. The formula is for a box; hydrogen needs the Coulomb
+   potential and gives −13.6/n² eV.
+
+## 10. Check questions
+
+1. Why does the box's ground state have E > 0?
+   Because ψ must vanish at both walls, so it must curve; a non-zero second derivative means non-zero
+   kinetic energy. E = 0 would need ψ constant, which cannot vanish at the walls.
+2. How do the spacings behave as n grows in a box, and in hydrogen?
+   Box: E_n ∝ n², so gaps grow. Hydrogen: E_n ∝ −1/n², so gaps shrink toward the ionisation limit.
+3. Where do n, l and m_l come from in the hydrogen solution?
+   m_l and the bound |m_l| ≤ l come from the angular equations: single-valuedness in φ makes m_l an
+   integer, and finiteness in θ bounds it by l. n, the bound l ≤ n − 1 and the energies come from
+   the radial equation. A wrong answer often gives the radial results to the angular equation
+   because both are "the angular part" in a careless reading; the radial equation is the one whose
+   l ≤ n − 1 condition fails at the origin.
+4. An electron in a 0.50 nm box: what is E_1 relative to the 1.00 nm case?
+   E ∝ 1/L², so halving L quarters L² and makes E_1 four times larger: 2.41 × 10^−19 J = 1.50 eV.
+
+## 11. Connections
+
+1.2.1 gave the hydrogen ladder empirically; this card derives the box ladder in full and says
+honestly which part of the hydrogen solution produces n, l and m_l without claiming to solve the
+Coulomb problem. 1.2.6 turns ψ into measurable probability. 1.2.7 lists the quantum numbers this
+equation produces. 2.4 (MO theory) applies the same eigenvalue idea to molecules.

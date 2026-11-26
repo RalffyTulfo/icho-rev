@@ -1,0 +1,1 @@
+Chlorine mass spectrum: a tall peak at 34.96885 u with 75.76 %% abundance and a shorter peak at 36.96590 u with 24.24 %%. A dashed line at 35.45 marks the weighted mean, closer to the taller peak.

@@ -1,0 +1,159 @@
+---
+title: "Shape and orientation of d-orbitals"
+description: "Four of the five d orbitals look like a four-leaf clover with the leaves between or along the axes. The fifth looks wrong: two lobes on the z-axis and a doughnut around the middle. Students draw that."
+author: "Ralf Christian Mendoza"
+readingTime: "8 min"
+unit: "Inorganic Chemistry"
+color: "indigo/purple"
+syllabusId: "1.2.4"
+level: 3
+version: 3
+cleanModeMapping:
+  "lowkey": "frankly"
+---
+
+# Shape and orientation of d-orbitals
+## 1. Prerequisites
+
+1.2.2 and 1.2.3 — the s and p shapes, the node formulas, and the distinction between an orbital and
+a subshell. This card assumes you can already count nodes from n and l.
+
+## 2. Hook
+
+Four of the five d orbitals look like a four-leaf clover with the leaves between or along the axes.
+The fifth looks wrong: two lobes on the z-axis and a doughnut around the middle. Students draw that
+one as four lobes and lose the mark, not because the drawing is untidy but because the shape is the
+information. Where this analogy breaks: a clover has physical leaves, while these are isosurfaces of
+equal probability chosen at an arbitrary cutoff, and the sign of the wavefunction alternates between
+lobes.
+
+## 3. Core idea
+
+A d orbital has l = 2: two angular nodes and n − 3 radial nodes, so 3d has none, 4d has one and 5d
+has two. There are five of them, 2(2l + 1) = 10 electrons per subshell, and they are degenerate only
+in the isolated-atom central field. Four have two nodal planes; d_z² has two nodal cones, which is
+why its picture is different rather than badly drawn.
+
+## 4. Definition
+
+A **d orbital** is a one-electron state with l = 2, m_l = −2 … +2. The five real functions are d_xy,
+d_xz, d_yz, d_x²−y² and d_z². A **nodal cone** is the angular surface of d_z² where the angular
+function vanishes. **Crystal-field splitting** is the lifting of the fivefold degeneracy by an
+environment of ligands, parametrised by Δ, with Δ = 10 Dq, so the two symbols name the same splitting.
+
+## 5. How it works
+
+**Step 1: the angular functions.** In Cartesian form the five are proportional to xy, xz, yz,
+x² − y², and 2z² − x² − y². Each vanishes where its expression is zero: xy = 0 on the two planes
+x = 0 and y = 0, and similarly for the other cross terms. That is where the two nodal planes of
+d_xy, d_xz, d_yz and d_x²−y² come from. One bookkeeping point that trips people up: the
+normalised angular functions Y_2,m carry a factor 1/r², so it is r²Y_2,m — not Y_2,m — that
+equals those polynomials. Writing "the angular function is xy" is shorthand for "the angular
+part is proportional to xy/r²"; the r² is restored when the radial factor comes back in.
+
+**Step 2: why d_z² is different.** Set 2z² − x² − y² = 0. In spherical coordinates
+z = r cos θ and x² + y² = r² sin²θ, so
+
+2z² − x² − y² = r²(2cos²θ − sin²θ).
+
+Replace sin²θ by 1 − cos²θ:
+
+2cos²θ − (1 − cos²θ) = 3cos²θ − 1.
+
+So the angular zero condition is 3cos²θ − 1 = 0, i.e. cos θ = ±1/√3 and θ = 54.7° or 125.3°.
+(Dropping the r² and stopping at 2cos²θ − 1 = 0 is the common slip: that equation has no root at
+cos θ = ±1/√3, and it would put the zeros in the wrong place.) The zeros are two cones opening
+along ±z, not planes. The function keeps one sign inside the cones (the lobes) and the opposite
+sign in the equatorial torus, which is why the torus is drawn with the opposite shading.
+
+**Step 3: radial nodes.** Radial nodes = n − l − 1 = n − 3. 3d: 0. 4d: 1, a spherical surface where
+the whole four-lobed pattern changes sign. 5d: 2. Total nodes = n − 1: 2, 3, 4 respectively, and the
+angular contribution is always 2.
+
+**Step 4: why five, and why 10 electrons.** m_l takes five values, −2 to +2, so five orbitals; each
+takes two spins, so ten electrons. The d block of the periodic table is ten columns wide for the same
+reason the p block is six and the f block fourteen.
+
+**Step 5: degeneracy is conditional.** In hydrogen all five have the same energy, because the only
+thing the energy depends on is n. In an octahedral complex, measured from the barycentre (weighted mean of the five, set to zero), the two axial-pointing orbitals (d_z² and
+d_x²−y²) rise by +0.6Δ and the three between-axis orbitals (d_xy, d_xz, d_yz) fall by −0.4Δ, keeping
+the barycentre fixed: 2(0.6Δ) + 3(−0.4Δ) = 0. That splitting, not the shapes alone, is what makes
+transition-metal chemistry colourful and magnetic.
+
+**Step 6: why 4s fills before 3d without contradicting this.** The filling order is a bookkeeping
+heuristic, not an energy-level diagram, and it is easy to garble. The honest statement has two
+parts. (a) For neutral potassium and calcium (Z = 19, 20) the 4s orbital is lower in energy than
+3d, because a 4s function penetrates the argon core and samples more nuclear charge than a 3d
+function does; hence [Ar]4s¹ and [Ar]4s². (b) From scandium (Z = 21) onward the 3d orbital lies
+below 4s in the neutral atom, yet the 4s electrons remain, because the total energy of the atom
+includes electron–electron repulsion and the d⁰s² to d^n s² arrangement is the lower one. What
+changed between (a) and (b) is Z, not a rule about ions of the previous row: K and Ca are neutral
+period-4 atoms, not an ion of period 3. Quote configurations, not slogans.
+
+## 6. Diagram
+
+<figure class="lesson-figure">
+  <img src="/icho-rev/figures/1.2.4.svg" alt="Five panels. d_xy, d_xz and d_yz each show four lobes between the axes with two dashed nodal planes labelled x = 0, y = 0, x = 0, z = 0 and y = 0, z = 0; d_x2-y2 shows four lobes along x and y with the two diagonal planes x = y and x = -y...." loading="lazy" />
+</figure>
+
+The figure is computed, not sketched: `figures/1.2.4.py` draws the four-lobed cross-term orbitals
+with their two nodal planes, the d_z² orbital with its two nodal cones at ±54.7°, and asserts the
+cone angle, the node counts and the subshell capacity before writing the SVG.
+
+## 7. Assumptions and limits
+
+The shapes are isosurfaces at a chosen probability; a different cutoff gives a different picture of
+the same orbital. The real functions are one basis among infinitely many, and the complex m_l
+functions are equally valid. The fivefold degeneracy holds only in a central field, so any statement
+about d-orbital energies outside an isolated atom needs the environment specified. Finally, the
+shapes say nothing about spin or about electron–electron repulsion, which is why multi-electron d
+configurations need Hund's rules on top.
+
+## 8. Worked example
+
+**Given.** The five 3d orbitals, and an octahedral complex with splitting Δ = 20 000 cm⁻¹.
+
+**Hanapin.** The radial and angular node counts for 3d and 4d, the number of electrons a d subshell
+holds, and the energy of each set in the complex relative to the barycentre.
+
+**Solusyon.** Step 0: n and l first. 3d has n = 3, l = 2, so radial = 3 − 2 − 1 = 0 and angular = 2;
+total 2 = n − 1. 4d has n = 4, l = 2, so radial = 1 and angular = 2; total 3.
+
+Electrons: 2(2l + 1) = 2(5) = 10, five orbitals times two spins.
+
+Octahedral energies relative to the barycentre: the e_g set (d_z², d_x²−y²) at +0.6Δ = +12 000 cm⁻¹,
+the t_2g set (d_xy, d_xz, d_yz) at −0.4Δ = −8000 cm⁻¹. Check the weighted mean:
+[2(12 000) + 3(−8000)]/5 = (24 000 − 24 000)/5 = 0, so the barycentre is unmoved.
+
+**Sagot.** 3d: 0 radial, 2 angular. 4d: 1 radial, 2 angular. Ten electrons per d subshell. In the
+complex, e_g at +12 000 cm⁻¹ and t_2g at −8000 cm⁻¹.
+
+## 9. Traps
+
+1. Drawing d_z² as four lobes. It is two lobes plus a torus; the torus is the part with the opposite
+   sign.
+2. Saying d orbitals have two nodal planes. Four do; d_z² has two nodal cones.
+3. "A d orbital holds 10 electrons." The subshell holds 10; one orbital holds 2.
+4. Asserting the five are degenerate in every atom. Only in the isolated central field.
+5. Forgetting the radial node in 4d. It is a sphere cutting the whole shape, not an extra plane.
+6. Using the shape to explain why 4s fills before 3d. The explanation is total energy, not shape.
+
+## 10. Check questions
+
+1. How many radial nodes does 5d have, and how many angular nodes?
+   Radial = 5 − 2 − 1 = 2; angular = 2; total 4 = n − 1.
+2. Why does d_z² have cones rather than planes as its angular nodes?
+   Because its angular function is proportional to 3cos²θ − 1, whose zeros are at fixed θ (54.7°
+   and 125.3°), which traces cones; a plane would require a zero at fixed φ or at a fixed
+   Cartesian coordinate. Using 2cos²θ − 1 here is the classic slip: it is not the angular part of
+   2z² − x² − y².
+3. An octahedral complex has Δ = 18 000 cm⁻¹. Where are the two sets?
+   e_g at +0.6Δ = +10 800 cm⁻¹; t_2g at −0.4Δ = −7200 cm⁻¹; check 2(10 800) = 3(7200).
+4. How many electrons fit in the 4f subshell, and how many orbitals is that?
+   14 electrons in 7 orbitals, from 2(2l + 1) with l = 3.
+
+## 11. Connections
+
+1.2.7 formalises l and m_l. 2.4 uses d orbitals in molecular orbital diagrams. 5.4 (crystal field
+theory) is this card's splitting applied to real complexes, and 4.1 needs the d counts for electron
+configurations.

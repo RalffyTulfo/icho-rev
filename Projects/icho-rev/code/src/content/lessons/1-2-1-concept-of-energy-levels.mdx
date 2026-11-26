@@ -1,0 +1,196 @@
+---
+title: "Concept of energy levels"
+description: "A neon sign glows orange-red. A sodium street lamp glows yellow. A hydrogen discharge tube glows pinkish and, through a prism, splits into four visible lines at 656.3, 486.1, 434.0 and 410.2 nm with."
+author: "Ralf Christian Mendoza"
+readingTime: "9 min"
+unit: "Inorganic Chemistry"
+color: "indigo/purple"
+syllabusId: "1.2.1"
+level: 1
+version: 3
+cleanModeMapping:
+  "lowkey": "frankly"
+---
+
+# Concept of energy levels
+## 1. Prerequisites
+
+1.1.2 for what a nuclide is and F.phys.1 for the photon relation E = hc/λ. The one new idea here
+is that a bound particle can have only certain energies; the arithmetic is multiplication.
+
+## 2. Hook
+
+A neon sign glows orange-red. A sodium street lamp glows yellow. A hydrogen discharge tube glows
+pinkish and, through a prism, splits into four visible lines at 656.3, 486.1, 434.0 and 410.2 nm
+with dark gaps between them. A hot filament, by contrast, gives a smooth rainbow. Same physics,
+different answer: the filament's electrons are free to take any energy, while the atoms' electrons
+are locked into a fixed ladder and can only emit the gaps between rungs. Where this analogy
+breaks: a real ladder's rungs are evenly spaced, while the atomic rungs crowd together as the
+energy approaches zero.
+
+## 3. Core idea
+
+A bound electron has discrete allowed energies because it behaves as a standing wave, and a
+standing wave must fit its boundary conditions. Hydrogen's levels are E_n = −13.6 Z²/n² eV, with
+zero at the ionisation limit. A transition between two levels emits or absorbs one photon whose
+energy equals the level difference, which is why atomic spectra are lines rather than bands and
+why the lines of each element are a fingerprint.
+
+## 4. Definition
+
+An **energy level** is an allowed total energy of a bound electron, labelled by the principal
+quantum number n = 1, 2, 3, …. The **ground state** is n = 1; an **excited state** is any level
+above it. The **ionisation energy** is the energy needed to take an electron from its level to
+E = 0, the continuum where it is free and at rest at infinity. The **Rydberg constant** for
+hydrogen is R_H = 1.0967758 × 10^7 m^−1; the **Rydberg energy** is 13.598 eV, the magnitude of
+the n = 1 level.
+
+## 5. How it works
+
+**Step 1: why the energies are discrete.** A bound electron is described by a wavefunction that
+must vanish at infinity and stay finite at the nucleus. Those boundary conditions admit only a
+discrete set of wavelengths, exactly as a string clamped at both ends admits only its fundamental
+and harmonics. Each allowed wavelength corresponds to an allowed energy. An electron with E > 0 is
+not bound, so no boundary condition applies and its energy can be anything: a continuum.
+
+**Step 2: the energies of hydrogen.** Solving the Coulomb problem gives
+
+E_n = −13.6 Z²/n² eV, with Z = 1 for hydrogen:
+
+E_1 = −13.598 eV, E_2 = −3.400 eV, E_3 = −1.511 eV, E_4 = −0.850 eV.
+
+The spacing shrinks: 10.20 eV from n = 1 to 2, 1.889 eV from 2 to 3, 0.661 eV from 3 to 4. That
+crowding is why spectral lines converge to a series limit instead of running to infinity.
+
+**Step 3: where the formula comes from.** In SI the Coulomb force is e²/(4πε₀r²); write
+k = 1/(4πε₀) so the algebra stays readable, and remember that every k carries that factor. Take a
+circular orbit with Coulomb force providing the centripetal force, m v²/r = k e²/r², and impose the
+wave condition m v r = n ħ:
+
+v = nħ/(m r) ⇒ m n²ħ²/(m² r³) = k e²/r² ⇒ r_n = n² ħ²/(m k e²) = n² a_0.
+
+The total energy is kinetic plus potential, E = ½ m v² − k e²/r, and the force balance makes
+½ m v² = ½ k e²/r, so E = −k e²/(2r). Substituting r_n:
+
+E_n = −(m k² e⁴)/(2 ħ²) · 1/n² = −13.6 eV/n².
+
+Evaluating the constant with m = 9.109 × 10^−31 kg, e = 1.602 × 10^−19 C, ħ = 1.055 × 10^−34 J s
+and k = 8.988 × 10^9 N m² C^−2 gives 2.18 × 10^−18 J, which is 13.6 eV. That evaluation is worth
+doing once by hand so the number stops looking arbitrary.
+
+For a hydrogen-like ion the nuclear charge is Ze, so every e² becomes Z e² and the energy gains a
+factor Z². The Bohr model is not the modern picture — it cannot handle helium, fine structure or
+orbital shapes — but for one-electron systems its energies are exactly right, which is why the
+formula survives.
+
+**Step 4: transitions.** A photon carries energy hν = hc/λ, and an electron changing levels must
+absorb or emit exactly the difference:
+
+hc/λ = E_upper − E_lower = 13.6 Z² (1/n_lower² − 1/n_upper²) eV.
+
+Dividing by hc and evaluating the constant gives the Rydberg formula
+
+1/λ = R (1/n_1² − 1/n_2²), with n_2 > n_1.
+
+Emission happens when the electron falls (photon out); absorption when it climbs (photon in, at the
+same wavelength). The spectrum is therefore the same set of wavelengths seen in emission and in
+absorption, which is a strong test of the model.
+
+**Step 5: the series.** n_1 fixes the series. Lyman (n_1 = 1) is ultraviolet, Balmer (n_1 = 2)
+visible, Paschen (n_1 = 3) infrared. Each series converges to a limit at n_2 → ∞, the energy needed
+to ionise from that lower level: for Balmer the limit is 13.6/4 = 3.40 eV, λ = 364.7 nm.
+
+**Step 6: using the constant correctly.** hc = 1239.842 eV nm converts an energy difference in eV
+directly to a wavelength in nm; hc = 1.986 × 10^−25 J m does the same in SI. Both are exact
+consequences of h and c, so mixing them up shows as a wavelength off by 10^9, not a subtle error.
+For accuracy better than 0.1 %, use R_H = 1.0967758 × 10^7 m^−1 for hydrogen: the infinite-mass
+Rydberg constant 1.097373 × 10^7 m^−1 differs because the nucleus recoils slightly.
+
+## 6. Diagram
+
+<figure class="lesson-figure">
+  <img src="/icho-rev/figures/1.2.1.svg" alt="Hydrogen energy ladder, n = 1 to 5, with levels at -13.598, -3.400, -1.511, -0.850 and -0.544 eV and the ionisation limit at zero. The rung spacing shrinks upward. Two arrows: 3 to 2 labelled 656.5 nm and 2 to 1 labelled 121.6 nm." loading="lazy" />
+</figure>
+
+The ladder is drawn at the computed energies, not to an artist's spacing, and each arrow's label is
+computed from the same two levels it connects. The shrinking gaps between rungs and the convergence
+toward zero are the visual content: the higher the level, the closer the next one.
+
+## 7. Assumptions and limits
+
+The formula assumes one electron and a fixed nucleus: it ignores electron–electron repulsion,
+relativistic corrections (important for inner electrons of heavy atoms), spin–orbit coupling (which
+splits lines into fine structure) and the finite nuclear mass (a 0.05 % effect for hydrogen). It
+also assumes the electron is non-relativistic and that the photon carries all the transition
+energy; in reality the atom recoils slightly. For multi-electron atoms the same ladder picture is
+an approximation: energy depends on both n and l, which is why 2s and 2p differ in lithium.
+
+## 8. Worked example
+
+**Given.** Hydrogen, transitions 3 → 2, 2 → 1 and the ionisation from n = 2. Use R_H =
+1.0967758 × 10^7 m^−1 and hc = 1239.842 eV nm.
+
+**Hanapin.** The wavelength of each transition, the series each belongs to, and whether each is
+visible.
+
+**Solusyon.** Step 0: identify n_1 (the lower level, which names the series) before substituting.
+
+3 → 2 (Balmer, Hα):
+
+1/λ = 1.0967758 × 10^7 (1/4 − 1/9) = 1.0967758 × 10^7 × 0.138889
+    = 1.52330 × 10^6 m^−1
+λ = 6.5647 × 10^−7 m = 656.5 nm in vacuum, 656.3 nm in air.
+
+2 → 1 (Lyman, Lyα):
+
+1/λ = 1.0967758 × 10^7 (1 − 1/4) = 8.22582 × 10^6 m^−1
+λ = 1.2157 × 10^−7 m = 121.6 nm, ultraviolet.
+
+Ionisation from n = 2: the electron goes to E = 0, so ΔE = 3.400 eV and
+
+λ = 1239.842/3.400 = 364.7 nm,
+
+the Balmer limit. Check with the constants: 13.598/4 = 3.3995 eV, giving 364.7 nm.
+
+**Sagot.** Hα 656.3 nm (visible), Lyα 121.6 nm (ultraviolet), Balmer limit 364.7 nm. Every Balmer
+line lies between 364.7 and 656.3 nm.
+
+## 9. Traps
+
+1. Writing E_n = +13.6/n² eV. The negative sign encodes binding: E = 0 is free and at rest, so
+   bound states must be below zero. A positive E_1 would mean the electron is unbound.
+2. Using n = 1 for both levels, giving division by zero. The two levels in a transition are
+   different; the lower one names the series.
+3. Mixing up n_1 and n_2 in the Rydberg formula, which gives a negative 1/λ. Order them so the
+   bracket is positive.
+4. Treating the series limit as a line. It is the convergence point at n → ∞, where the photon has
+   exactly the ionisation energy of that lower level.
+5. Comparing 656.3 nm with 656.1 nm and calling the 0.2 nm gap the reduced-mass correction:
+   those are different scales. In vacuum, R_H gives 656.47 nm and R∞ gives 656.11 nm, a
+   0.36 nm gap from the reduced mass; the 656.3 nm line is the air wavelength, and the
+   air-vacuum shift (~0.19 nm) is a separate correction. The reduced-mass shift is why the
+   same transition has a slightly different wavelength in deuterium.
+6. Confusing excitation with ionisation. Excitation moves an electron between bound levels;
+   ionisation removes it to E = 0 and beyond.
+
+## 10. Check questions
+
+1. Find the wavelength of the 4 → 2 transition and name the series.
+   1/λ = R(1/4 − 1/16) = R(0.1875) = 2.0565 × 10^6 m^−1, λ = 486.3 nm (vacuum), 486.1 nm in air;
+   Balmer, Hβ, blue-green.
+2. What energy is needed to ionise hydrogen from n = 1, and from n = 3?
+   13.598 eV from n = 1; 13.598/9 = 1.511 eV from n = 3. The higher the starting level, the less
+   energy is needed.
+3. Why does the Balmer series have both a shortest and a longest wavelength?
+   The longest comes from the smallest gap, 3 → 2, at 656.3 nm; the shortest comes from the largest
+   gap, n = ∞ → 2, at 364.7 nm. Both ends exist because the lower level is fixed at n = 2 while the
+   upper level runs over 3, 4, 5, …, ∞.
+4. A hydrogen atom absorbs a 121.6 nm photon. What happens?
+   121.6 nm is Lyα, 10.20 eV, exactly the 1 → 2 gap. The electron is excited to n = 2 and the
+   photon is gone; the atom will re-emit at 121.6 nm or cascade through 656.3 nm.
+
+## 11. Connections
+
+1.2.2 and 1.2.3 replace Bohr's orbits with orbitals: the levels survive, the paths do not. 1.2.5
+derives the same energies from the Schrödinger equation, and 1.2.7 explains why n alone is not
+enough for multi-electron atoms. 8.1 (UV/visible) uses the same ΔE = hc/λ relation on molecules.

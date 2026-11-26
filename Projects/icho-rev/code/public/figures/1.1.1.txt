@@ -1,0 +1,1 @@
+Three horizontal bars to the same scale. Carbon-12 is 6 protons and 6 neutrons, iron-56 is 26 protons and 30 neutrons, uranium-235 is 92 protons and 143 neutrons. Bar length is the mass number A, the blue part is Z and the grey part is N.
