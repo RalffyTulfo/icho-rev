@@ -1,0 +1,4 @@
+    this.view = next
+    this.active = next !== 'scroll'
+
+    // Always start from the flat lesson: both the card and the grid are filled by moving nodes.
