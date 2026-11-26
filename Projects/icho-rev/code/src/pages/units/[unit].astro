@@ -1,77 +1,110 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { UNITS, unitBySlug, unitForLesson } from '../../data/units';
+import redirects from '../../data/redirects.json';
 
 export function getStaticPaths() {
-  return [
-    { params: { unit: 'thermodynamics' }, props: { name: 'Thermodynamics' } },
-    { params: { unit: 'organic' }, props: { name: 'Organic Chemistry' } },
-    { params: { unit: 'inorganic' }, props: { name: 'Inorganic Chemistry' } },
-    { params: { unit: 'analytical' }, props: { name: 'Analytical Chemistry' } },
-    { params: { unit: 'biochemistry' }, props: { name: 'Biochemistry' } },
-    { params: { unit: 'practical' }, props: { name: 'Practical Lab Skills' } },
-    { params: { unit: 'kinetics' }, props: { name: 'Kinetics and Polymers' } },
-    { params: { unit: 'electrochemistry' }, props: { name: 'Electrochemistry' } },
-  ];
+  const paths = UNITS.map((unit) => ({
+    params: { unit: unit.slug },
+    props: { slug: unit.slug, redirectTo: null as string | null },
+  }));
+  for (const [oldSlug, target] of Object.entries(redirects.unitRedirects)) {
+    if (UNITS.some((unit) => unit.slug === oldSlug)) continue; // practical keeps its page
+    paths.push({
+      params: { unit: oldSlug },
+      props: { slug: oldSlug, redirectTo: `/icho-rev/units/${target}/` },
+    });
+  }
+  return paths;
 }
 
-const { unit } = Astro.params;
-const { name } = Astro.props;
+const { slug, redirectTo } = Astro.props;
+const unit = unitBySlug(slug);
 
-// Fetch all lessons from the content directory
 const allLessons = await Astro.glob('../../content/lessons/*.mdx');
+const slugOf = (lesson: { file: string }) => lesson.file.split('/').pop()!.replace(/\.mdx?$/, '');
 
-// Map URL unit names to frontmatter unit names
-const unitNameMap = {
-  thermodynamics: 'Thermodynamics',
-  organic: 'Organic Chemistry',
-  inorganic: 'Inorganic Chemistry',
-  analytical: 'Analytical Chemistry',
-  biochemistry: 'Biochemistry',
-  practical: 'Practical Lab Skills',
-  kinetics: 'Kinetics and Polymers',
-  electrochemistry: 'Electrochemistry',
-};
+const lessons = unit
+  ? allLessons
+      .filter((lesson) => unitForLesson(lesson.frontmatter)?.slug === unit.slug)
+      .map((lesson) => ({
+        slug: slugOf(lesson),
+        title: lesson.frontmatter.title || slugOf(lesson),
+        lessonId: lesson.frontmatter.lessonId || lesson.frontmatter.syllabusId || '',
+        legacy: lesson.frontmatter.legacy === true,
+        teacherReviewed: lesson.frontmatter.teacherReviewed === true,
+        readingTime: lesson.frontmatter.readingTime,
+      }))
+      .sort((a, b) => Number(a.legacy) - Number(b.legacy) ||
+        a.lessonId.localeCompare(b.lessonId, undefined, { numeric: true }) ||
+        a.title.localeCompare(b.title))
+  : [];
 
-const targetUnitName = unitNameMap[unit] || name;
-
-// Filter lessons that belong to this unit (matching by substring or mapped name)
-const unitLessons = allLessons.filter(lesson => {
-  const lessonUnit = lesson.frontmatter.unit || '';
-  return lessonUnit.toLowerCase().includes(unit.toLowerCase()) ||
-         lessonUnit.toLowerCase().includes(targetUnitName.toLowerCase());
-});
+const live = lessons.filter((lesson) => !lesson.legacy);
+const legacy = lessons.filter((lesson) => lesson.legacy);
+const inProgress = live.length === 0;
 ---
-<Layout title={targetUnitName} description={`All ${targetUnitName} lessons for IChO revision.`}>
-  <main class="pt-24 px-4 min-h-screen">
-    <div class="frosted-glass p-8 mx-auto max-w-5xl">
-      <div class="mb-8">
-        <a href="/icho-rev/roadmap" class="text-sm text-primary hover:underline">← Back to Roadmap</a>
-        <h1 class="text-3xl font-bold mt-2 text-foreground">{targetUnitName} Lessons</h1>
-        <p class="text-sm text-foreground/70">Master key concepts and IChO level problems for this unit.</p>
-      </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {unitLessons.length > 0 ? (
-          unitLessons.map((lesson) => {
-            const slug = lesson.file.split('/').pop().replace('.mdx', '');
-            return (
-              <a href={`/icho-rev/lessons/${slug}`} class="group">
+{redirectTo ? (
+  <html lang="en">
+    <head>
+      <meta charset="utf-8" />
+      <title>This page has moved</title>
+      <meta http-equiv="refresh" content={`0; url=${redirectTo}`} />
+      <link rel="canonical" href={redirectTo} />
+      <meta name="robots" content="noindex" />
+    </head>
+    <body>
+      <p>This page has moved to <a href={redirectTo}>{redirectTo}</a>.</p>
+    </body>
+  </html>
+) : (
+  <Layout title={unit!.title} description={`All ${unit!.title} lessons for IChO revision.`}>
+    <main class="pt-24 px-4 min-h-screen">
+      <div class="frosted-glass p-8 mx-auto max-w-5xl">
+        <div class="mb-8">
+          <a href="/icho-rev/roadmap" class="text-sm text-primary hover:underline">← Back to Roadmap</a>
+          <h1 class="text-3xl font-bold mt-2 text-foreground">{unit!.title}</h1>
+          <p class="text-sm text-foreground/70">
+            {inProgress
+              ? 'In progress — lessons for this unit are still being written.'
+              : `${live.length} lesson${live.length === 1 ? '' : 's'}${legacy.length ? ` and ${legacy.length} older draft${legacy.length === 1 ? '' : 's'}` : ''}.`}
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {lessons.length > 0 ? (
+            lessons.map((lesson) => (
+              <a href={`/icho-rev/lessons/${lesson.slug}`} class="group">
                 <div class="frosted-glass p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer h-full border border-primary/10 rounded-2xl">
+                  <div class="flex flex-wrap items-center gap-2 mb-2">
+                    {lesson.lessonId && (
+                      <span class="text-[0.65rem] font-bold uppercase tracking-wider text-primary">{lesson.lessonId}</span>
+                    )}
+                    {lesson.legacy && (
+                      <span class="text-[0.65rem] font-semibold rounded-full border border-var(--color-border) px-2 py-0.5 text-foreground/60">
+                        Older draft, being rewritten
+                      </span>
+                    )}
+                  </div>
                   <h2 class="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
-                    {lesson.frontmatter.title}
+                    {lesson.title}
                   </h2>
-                  <p class="text-xs text-foreground/60 mb-4">Reading time: {lesson.frontmatter.readingTime || '5-10'} mins</p>
+                  <p class="text-xs text-foreground/60 mb-4">
+                    Reading time: {lesson.readingTime || '5-10'} mins
+                    {lesson.teacherReviewed ? ' · Teacher-reviewed' : ' · Not yet teacher-reviewed'}
+                  </p>
                   <div class="flex items-center text-xs font-semibold text-primary uppercase tracking-wider">
                     Read Lesson →
                   </div>
                 </div>
               </a>
-            );
-          })
-        ) : (
-          <p class="text-foreground/60">No lessons available for this unit yet.</p>
-        )}
+            ))
+          ) : (
+            <p class="text-foreground/60">No lessons available for this unit yet.</p>
+          )}
+        </div>
       </div>
-    </div>
-  </main>
-</Layout>
+    </main>
+  </Layout>
+)}

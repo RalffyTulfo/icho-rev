@@ -55,7 +55,24 @@ import StudyMode from '../../components/StudyMode.astro';
           {lesson.frontmatter.readingTime && (
             <p class="text-xs text-foreground/60 mt-2">⏱️ Reading time: {lesson.frontmatter.readingTime}</p>
           )}
+          <p class="mt-3 flex flex-wrap gap-2">
+            <span class="text-[0.65rem] font-semibold rounded-full border border-var(--color-border) px-2 py-0.5 text-foreground/60">
+              {lesson.frontmatter.teacherReviewed === true ? 'Teacher-reviewed' : 'Not yet teacher-reviewed'}
+            </span>
+            {lesson.frontmatter.legacy === true && (
+              <span class="text-[0.65rem] font-semibold rounded-full border border-var(--color-border) px-2 py-0.5 text-foreground/60">
+                Older draft, being rewritten
+              </span>
+            )}
+          </p>
         </header>
+
+        {lesson.frontmatter.legacy === true && (
+          <p class="frosted-glass p-4 rounded-xl border border-var(--color-border) text-xs text-foreground/70">
+            This lesson is an older draft that is being rewritten to the current standard. It stays
+            live until its replacement ships, then this URL redirects to the replacement.
+          </p>
+        )}
 
         <!-- MDX Content Container -->
         <div class="lesson-content-cards space-y-8">

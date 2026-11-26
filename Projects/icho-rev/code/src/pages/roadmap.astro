@@ -1,33 +1,51 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { UNITS, unitForLesson } from '../data/units';
 
-const units = [
-  { name: 'Thermodynamics', slug: 'thermodynamics', color: 'bg-primary' },
-  { name: 'Organic Chemistry', slug: 'organic', color: 'bg-organic' },
-  { name: 'Inorganic Chemistry', slug: 'inorganic', color: 'bg-inorganic' },
-  { name: 'Analytical Chemistry', slug: 'analytical', color: 'bg-analytical' },
-  { name: 'Biochemistry', slug: 'biochemistry', color: 'bg-biochemistry' },
-  { name: 'Practical', slug: 'practical', color: 'bg-practical' },
-  { name: 'Kinetics & Polymers', slug: 'kinetics', color: 'bg-amber-500' },
-  { name: 'Electrochemistry', slug: 'electrochemistry', color: 'bg-indigo-500' },
-];
+const allLessons = await Astro.glob('../content/lessons/*.mdx');
+
+const cards = UNITS.slice()
+  .sort((a, b) => a.order - b.order)
+  .map((unit) => {
+    const mine = allLessons.filter((lesson) => unitForLesson(lesson.frontmatter)?.slug === unit.slug);
+    const live = mine.filter((lesson) => lesson.frontmatter.legacy !== true);
+    const legacy = mine.length - live.length;
+    return { unit, live: live.length, legacy, inProgress: live.length === 0 };
+  });
 ---
+
 <Layout title="Roadmap">
   <main class="pt-24 px-4 min-h-screen">
     <div class="frosted-glass p-8 mx-auto max-w-5xl">
-      <h1 class="text-3xl font-bold mb-8 text-foreground">IChO Learning Roadmap</h1>
+      <h1 class="text-3xl font-bold mb-2 text-foreground">IChO Learning Roadmap</h1>
+      <p class="text-sm text-foreground/70 mb-8">
+        One unit per syllabus section. A unit shows "In progress" until its first rewritten lesson
+        is live; older drafts are marked as such on the unit page.
+      </p>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {units.map((unit) => (
+        {cards.map(({ unit, live, legacy, inProgress }) => (
           <a href={`/icho-rev/units/${unit.slug}`} class="group">
-            <div class="frosted-glass p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer h-full border-t-4" style={`border-top-color: var(--color-${unit.slug})`}>
-              <div class={`w-12 h-12 ${unit.color} rounded-full mb-4 flex items-center justify-center text-white font-bold`}>
-                {unit.name.charAt(0)}
+            <div
+              class="frosted-glass p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer h-full border-t-4"
+              style={`border-top-color: var(--color-${unit.color})`}
+            >
+              <div
+                class="w-12 h-12 rounded-full mb-4 flex items-center justify-center text-white font-bold"
+                style={`background-color: var(--color-${unit.color})`}
+              >
+                {unit.number ?? unit.title.charAt(0)}
               </div>
-              <h2 class="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">{unit.name}</h2>
-              <p class="text-sm text-foreground/70">Master the fundamental principles and advanced applications of {unit.name.toLowerCase()} for IChO.</p>
+              <h2 class="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+                {unit.title}
+              </h2>
+              <p class="text-sm text-foreground/70">
+                {inProgress
+                  ? 'In progress'
+                  : `${live} lesson${live === 1 ? '' : 's'}${legacy ? ` + ${legacy} older draft${legacy === 1 ? '' : 's'}` : ''}`}
+              </p>
               <div class="mt-4 flex items-center text-xs font-semibold text-primary uppercase tracking-wider">
-                Start Learning
+                {live > 0 ? 'Start Learning' : 'Preview unit'}
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                 </svg>
@@ -39,15 +57,3 @@ const units = [
     </div>
   </main>
 </Layout>
-
-<style>
-  /* Local color overrides since Tailwind vars are dynamic */
-  :root {
-    --color-thermodynamics: var(--color-physical);
-    --color-organic: var(--color-organic);
-    --color-inorganic: var(--color-inorganic);
-    --color-analytical: var(--color-analytical);
-    --color-biochemistry: var(--color-biochemistry);
-    --color-practical: var(--color-practical);
-  }
-</style>

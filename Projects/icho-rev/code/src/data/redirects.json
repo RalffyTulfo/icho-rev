@@ -1,0 +1,13 @@
+{
+  "_comment": "Old URLs -> new URLs. values are unit slugs or lesson slugs; everything is emitted under the /icho-rev/ base. unitRedirects come from owner decision 10.4; kinetics and electrochemistry are added because those pages exist today and would otherwise 404.",
+  "unitRedirects": {
+    "thermodynamics": "6-physical-chemistry",
+    "organic": "9-organic-chemistry",
+    "inorganic": "5-inorganic-chemistry",
+    "analytical": "12-analytical-chemistry",
+    "biochemistry": "11-biochemistry",
+    "kinetics": "7-chemical-kinetics",
+    "electrochemistry": "6-physical-chemistry"
+  },
+  "lessonRedirects": {}
+}
