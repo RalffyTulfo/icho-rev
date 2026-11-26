@@ -1,0 +1,111 @@
+---
+title: "Standing waves and boundary conditions"
+description: "A rope held at both ends only admits certain shapes — one loop, two loops, three loops — because the endpoints throw away every wave that does not fit. The electron's energy levels are discrete for exactly the same reason: confinement turns a continuous set of wavelengths into a ladder."
+author: "Ralf Christian Mendoza"
+readingTime: "10 min"
+unit: "Foundations"
+unitTitle: "Foundations"
+syllabusId: "F.phys.2"
+level: 1
+version: 2
+cleanModeMapping:
+  "lowkey": "frankly"
+  "gng": "honestly"
+---
+
+## Prerequisites
+
+F.phys.1 — frequency, wavelength and the photon relation E = hν. F.chem.2 — the Bohr quantization postulate L = nħ, which this card explains rather than merely quoting.
+
+## Hook
+
+Hold a rope at both ends and flick it. Only certain shapes survive: one big loop, two loops, three loops. Try to make a shape with a kink at an arbitrary position and it dies immediately. The rope is not choosing favourites; the endpoints are throwing away every wave that does not fit. Where this analogy breaks: a rope's allowed shapes come from tension and a frequency-independent wave speed, while an electron's allowed states come from a potential and the dispersive relation E = p²/2m. The shared idea is the boundary condition, not the mechanics.
+
+Frankly, this is the moment quantization stops looking like a rule someone invented and starts looking like geometry.
+
+## Core idea
+
+A standing wave is the superposition of two travelling waves moving in opposite directions. Where they cancel there is a node; where they reinforce there is an antinode. If the wave must be zero at two boundaries separated by L, then a whole number of half-wavelengths must fit into L, and the continuous set of possible wavelengths collapses to λ_n = 2L/n. Quantization is what happens when a wave is confined.
+
+Matter waves obey the same geometry. The de Broglie relation λ = h/p turns an allowed wavelength into an allowed momentum, and momentum into energy. That is the origin of discrete energy levels: not an arbitrary decree, but the requirement that a wave fit its box.
+
+## Definition
+
+**Superposition** means displacements add: if y₁ and y₂ are solutions, y₁ + y₂ is a solution. Two waves of equal amplitude travelling in opposite directions give
+
+A sin(kx − ωt) + A sin(kx + ωt) = 2A sin(kx) cos(ωt).
+
+This is a **standing wave**: every point oscillates in phase, with position-dependent amplitude 2A sin(kx).
+
+A **node** is a point where the amplitude is always zero; an **antinode** is a point of maximum amplitude. For a string fixed at x = 0 and x = L, nodes at both ends require kL = nπ with n = 1, 2, 3, ..., so λ_n = 2L/n and f_n = n v/(2L). The n = 1 mode is the **fundamental**; higher n are **harmonics**, integer multiples of the fundamental frequency.
+
+For a pipe closed at one end and open at the other, the closed end is a node and the open end an antinode, giving L = (2n − 1)λ/4 and only odd harmonics.
+
+The normalised wavefunction for a particle of mass m in a one-dimensional infinite square well of width L is ψ_n(x) = √(2/L) sin(nπx/L), with n = 1, 2, 3, ...; |ψ_n|² is the probability density. The wavefunction must vanish at both walls, so the same λ_n = 2L/n applies, giving p_n = h/λ_n = n h/(2L) and
+
+E_n = p_n²/(2m) = n² h²/(8 m L²).
+
+For a three-dimensional box with sides L_x, L_y, L_z the components quantize separately: k_x = n_x π/L_x, and so on, with E = ħ²(k_x² + k_y² + k_z²)/(2m).
+
+## How it works
+
+**Step 1: build the standing wave.** Add the two travelling waves using the identity sin a + sin b = 2 sin((a+b)/2) cos((a−b)/2). With a = kx − ωt and b = kx + ωt, the time part is cos(−ωt) = cos(ωt) and the space part is sin(kx). The factor sin(kx) fixes where the motion is zero.
+
+**Step 2: impose the boundary.** At x = 0, sin(0) = 0 automatically. At x = L we need sin(kL) = 0, so kL must be an integer multiple of π. Since k = 2π/λ, this gives 2πL/λ = nπ, hence λ = 2L/n. Every mode with a non-integer number of half-wavelengths is destroyed by the boundary.
+
+**Step 3: get frequencies.** For a nondispersive string with wave speed v, f = v/λ, so f_n = n v/(2L). The spacing between adjacent modes is constant at v/(2L). For an electron in free space, E = p²/2m means the frequency spacing is not constant; E_n ∝ n².
+
+**Step 4: turn wavelength into energy.** Substitute the de Broglie relation: p = h/λ = n h/(2L). Then E = p²/2m gives E_n = n²h²/(8mL²). The ground state has nonzero energy because confining a wave forces a finite minimum momentum; the particle cannot sit still at the bottom of the box.
+
+**Step 5: connect back to the atom.** In the Coulomb potential the same boundary idea applies to a wavefunction that must be normalizable and single-valued. The allowed states are labelled by quantum numbers and give E_n ∝ −1/n² for hydrogen, matching the Bohr result of F.chem.2. The box gives E_n ∝ +n² because its potential is different; the common ingredient is confinement, not the particular potential.
+
+## Diagram
+
+<figure class="lesson-figure">
+  <img src="/icho-rev/figures/F.phys.2.svg" alt="Three sine standing waves sin(πx/L), sin(2πx/L) and sin(3πx/L) on the same horizontal axis from 0 to L, with nodes marked at the endpoints and at interior positions, and the amplitude envelope of each labelled as the n = 1, 2 and 3 modes." loading="lazy" />
+</figure>
+
+The figure plots sin(nπx/L) for n = 1, 2 and 3, with nodes marked at x = jL/n. The wavefunction is ψ_n = √(2/L) sin(nπx/L); node counts are n + 1 including both endpoints and n − 1 interior.
+
+## Assumptions, limits and when it fails
+
+The infinite square well assumes the wavefunction is exactly zero at the walls and that the potential is zero inside. Real wells are finite, so the wave leaks into the barrier (tunnelling) and the energies shift slightly downward. The string picture assumes a nondispersive medium with v = √(T/μ); electron waves in free space are dispersive, so the harmonic frequencies are not integer multiples even though the wavelengths are quantized as 2L/n. A one-dimensional box ignores transverse motion, spin and electron–electron interaction. The card uses the de Broglie relation as a given; a full treatment derives it from the wave nature of matter.
+
+## Worked example
+
+**Given.** An electron is confined to a one-dimensional infinite well of width L = 1.00 nm. Separately, a string of length 0.80 m carries waves at v = 200 m/s. Use h = 6.62607015 × 10^−34 J s, mₑ = 9.10938 × 10^−31 kg and hc = 1239.84 eV nm.
+
+**Hanapin.** The ground and first excited energies of the electron, the photon wavelength for the 2 → 1 transition, and the fundamental and third harmonic of the string.
+
+**Solusyon.** First compute h² and the denominator explicitly:
+
+h² = (6.62607015 × 10^−34)² = 4.39048 × 10^−67 J² s²,
+
+8 mₑ L² = 8 × (9.10938 × 10^−31) × (1.00 × 10^−9)² = 7.28750 × 10^−48 kg m²,
+
+E₁ = h²/(8 mₑ L²) = 4.39048 × 10^−67 / 7.28750 × 10^−48 = 6.0247 × 10^−20 J.
+
+In eV: E₁ = 6.0247 × 10^−20 J / 1.602176634 × 10^−19 J/eV = 0.376 eV.
+
+Since E_n ∝ n², E₂ = 4 E₁ = 1.504 eV and ΔE = 3 E₁ = 1.128 eV. Therefore λ = hc/ΔE = 1239.84 / 1.128 = 1099 nm, in the infrared. For the string, f₁ = v/(2L) = 200/(1.60) = 125 Hz and f₃ = 3f₁ = 375 Hz.
+
+**Sagot.** E₁ = 0.376 eV, E₂ = 1.504 eV, λ₂→₁ = 1099 nm; f₁ = 125 Hz and f₃ = 375 Hz.
+
+## Traps
+
+- Using λ = 4L/n for a closed–open pipe for all n. Only odd harmonics fit: λ = 4L/(2n − 1).
+- Assuming the electron's energy levels in a box are equally spaced. They scale as n², so the gaps grow.
+- Writing p = ħ/λ. The correct relation is p = h/λ; ħ appears when using k = 2π/λ.
+- Treating the ground-state energy as zero. Confinement forces a nonzero minimum momentum.
+- A closed end of a pipe is a displacement node but a pressure antinode; the two descriptions swap node and antinode at each end but give the same allowed set, L = (2n − 1)λ/4 and odd harmonics only. The error to avoid is treating the open end as closed, which would wrongly admit λ = 2L/n.
+
+## Check questions
+
+1. How many interior nodes does the n = 4 mode of a fixed–fixed string have? **Answer:** three. The tempting answer is four, counting the endpoints as interior.
+2. Why does a closed–open pipe lack even harmonics? **Answer:** the node-to-antinode distance must be an odd number of quarter wavelengths. Students often guess that even modes are simply weaker.
+3. If the well width doubles, what happens to E₁? **Answer:** it falls by a factor of four, since E ∝ 1/L². The linear guess is the common wrong turn.
+4. Does quantization require a physical wall? **Answer:** no; any confinement or normalizable bound state does it. The rope picture invites the false belief that something must literally clamp the electron.
+
+## Connections
+
+F.phys.1 — waves, frequency and E = hν. F.chem.2 — Bohr's quantization postulate explained. 1.2.1 — hydrogen spectral series. 1.2.2 — radial nodes in hydrogen. 1.2.5 — energy levels in eV. 2.4.3 — bond order and vibrational force constants.

@@ -1,0 +1,94 @@
+---
+title: "Nuclear notation, nuclides and the strong force"
+description: "A nucleus is two opposing forces at once: a short-range attraction that glues nucleons together and a long-range repulsion between protons that tries to rip it apart. Reading nuclide notation and computing mass defect from tabulated masses is the skill that every nuclear-equation question quietly depends on."
+author: "Ralf Christian Mendoza"
+readingTime: "9 min"
+unit: "Foundations"
+unitTitle: "Foundations"
+syllabusId: "F.phys.3"
+level: 1
+version: 1
+cleanModeMapping:
+  "lowkey": "frankly"
+  "gng": "honestly"
+---
+
+## Prerequisites
+
+F.chem.1 — elements, atomic number and counting entities. F.chem.3 — precision of quoted masses, so the tabulated atomic masses used below are treated as measured inputs rather than exact integers.
+
+## Hook
+
+Imagine Velcro holding two surfaces together. Press them together and the grip is strong; pull them a centimetre apart and there is nothing. At the same time, two like poles of magnets push each other apart even when you can feel the force from across the table. A nucleus is held together by a force that behaves like the first and torn at by a force that behaves like the second. Where this analogy breaks: Velcro depends on surface contact and hook orientation, whereas the nuclear force acts between nucleons throughout the nucleus and is almost independent of whether they are protons or neutrons; it also has a hard repulsive core at very short range that Velcro has no equivalent for.
+
+## Core idea
+
+A nuclide is identified by its proton number Z and mass number A = Z + N, where N is the neutron number. Nuclei stay together because the strong nuclear force is powerfully attractive over roughly one to two femtometres and nearly indifferent to charge, while the electrical repulsion between protons is weaker but long-ranged. Neutrons add attractive strong-force binding without adding repulsion, which is why heavy stable nuclei contain more neutrons than protons.
+
+## Definition
+
+A **nuclide** is a nucleus with a specified proton number Z and neutron number N. The **atomic number** Z counts protons, the **neutron number** N counts neutrons, and the **mass number** A = Z + N counts nucleons. The notation ^A_Z X puts A as a superscript and Z as a subscript before the element symbol X; nuclides with the same Z but different N are **isotopes** of that element.
+
+The **unified atomic mass unit** u is defined as one twelfth of the mass of a neutral carbon-12 atom, u = 1.66053906660 × 10^−27 kg, and the equivalent energy is 1 u c² = 931.494 MeV. A **femtometre** is 10^−15 m.
+
+The **strong nuclear force** is the short-range attractive interaction between nucleons that binds the nucleus. It is charge-independent to a good approximation, acts between proton–proton, proton–neutron and neutron–neutron pairs, saturates because each nucleon interacts only with nearby neighbours, and becomes repulsive below about 0.5 fm. It is a residual effect of the fundamental strong interaction in which gluons bind quarks; that distinction matters, but the nuclear-scale description is enough for the calculations here.
+
+The **mass defect** is Δm = Z m(^1H) + N m_n − m_atom, using the mass of a neutral hydrogen atom so that electron masses cancel. The **binding energy** is E_b = Δm c², the energy needed to separate the nucleus into free nucleons.
+
+## How it works
+
+**Step 1: reading the notation.** For ^56_26 Fe, Z = 26 protons, A = 56 nucleons, so N = A − Z = 30 neutrons. A neutral iron atom also has 26 electrons. The superscript is a count of nucleons, not the atomic mass in u.
+
+**Step 2: why A is an integer but atomic mass is not.** Protons and neutrons do not weigh exactly 1 u, and energy is released when they bind, so the mass of a nucleus is always less than the mass of its separated nucleons. The integer A counts objects; the atomic mass is a measured quantity with decimals.
+
+**Step 3: nuclear size from constant density.** Nuclear densities are roughly the same for all nuclides, so the volume is proportional to the number of nucleons: (4/3)πR³ ∝ A. Taking cube roots gives R = r0 A^(1/3), with the empirical constant r0 ≈ 1.2 fm. The exponent one third is therefore a prediction of constant density, not an arbitrary fit.
+
+**Step 4: why the force must saturate.** If every nucleon attracted every other one, binding energy would grow roughly as A², and doubling a nucleus would more than double its binding energy. Observed binding energy per nucleon is roughly constant for medium and heavy nuclei, so each nucleon must interact only with a limited number of neighbours. That is saturation, and it follows directly from the force being short-ranged.
+
+**Step 5: why neutrons stabilise heavy nuclei.** Electrical repulsion between Z protons is long-ranged and grows roughly as Z²/R, while the attractive strong force is short-ranged and grows only in proportion to A. Adding neutrons raises the attraction without adding repulsion. Light stable nuclides have N ≈ Z, but beyond lead, Z = 82, no nuclide is stable at all.
+
+**Step 6: mass defect and binding energy.** Using neutral-atom masses, Δm = Z m(^1H) + N m_n − m_atom; the Z electron masses in the hydrogen atoms cancel the Z electrons in the atom to the precision used here, since electron binding energies are only electronvolts while nuclear energies are megaelectronvolts. The missing mass has been released as energy according to E_b = Δm c², so a positive mass defect means energy was released when the nucleus formed, and the same energy is required to pull it apart. Tabulated masses are measured inputs; Δm, R, E_b and E_b/A are derived.
+
+## Diagram
+
+<figure class="lesson-figure">
+  <img src="/icho-rev/figures/F.phys.3.svg" alt="Two nucleons drawn as small circles within a nucleus, with a short-range attractive well drawn between them at distances of about 1 fm and a long-range repulsive 1/r curve from the protons overlaid, showing the strong force dominating at short range and the Coulomb repulsion dominating beyond a few femtometres." loading="lazy" />
+</figure>
+
+## Assumptions and limits
+
+R = r0 A^(1/3) is an empirical approximation that works best for medium and heavy nuclei; light nuclei and shell closures show deviations, and the nuclear surface is diffuse rather than sharp. The charge-independent, saturating force is an effective nuclear-scale picture: the fundamental interaction is mediated by gluons between quarks, and three-body and tensor contributions are not captured by a simple pair potential. Atomic masses include electrons, so the cancellation is approximate at the electronvolt level, negligible against megaelectronvolt binding energies. The rule N ≈ Z applies only to light nuclides; it is not a law for heavy ones. Shell effects and the odd–even staggering of masses are also ignored here.
+
+## Worked example
+
+**Given.** The nuclide ^56_26 Fe. Tabulated masses m(^1H) = 1.00782503223 u, m_n = 1.00866491595 u and m_atom(^56Fe) = 55.93493633 u. Take r0 = 1.2 fm and 1 u c² = 931.494 MeV.
+
+**Hanapin.** Neutron number, nuclear radius, mass defect, total binding energy and binding energy per nucleon.
+
+**Solusyon.** Step 0: identify which numbers are measured inputs and which are derived. N = A − Z = 56 − 26 = 30. The radius is R = r0 A^(1/3) = 1.2 × 56^(1/3) fm = 1.2 × 3.8259 fm = 4.59 fm, quoted as 4.6 fm because r0 has two significant figures. For the mass defect, Z m(^1H) + N m_n = 26(1.00782503223) + 30(1.00866491595) = 56.46339832 u, so Δm = 56.46339832 − 55.93493633 = 0.52846199 u. Then E_b = Δm c² = 0.52846199 × 931.494 MeV = 492.26 MeV. Dividing by the nucleon count gives E_b/A = 492.26/56 = 8.79 MeV per nucleon. The mass defect is positive, so formation released energy; the same 492.26 MeV must be supplied to separate the nucleus completely.
+
+**Sagot.** N = 30; R ≈ 4.6 fm; Δm ≈ 0.52846 u; E_b ≈ 492.3 MeV; E_b/A ≈ 8.79 MeV per nucleon.
+
+## Traps
+
+1. Using A = 56 as the atomic mass of iron. A counts nucleons; the tabulated atomic mass is 55.93493633 u and differs from 56 because of binding.
+2. Subtracting electron masses by hand when neutral hydrogen atom masses are used. The electrons already cancel in that form of the mass defect.
+3. Reversing the sign: energy is released when a nucleus forms, and the same amount is required to break it apart. Both statements are true and describe opposite directions.
+4. Putting Z where A belongs in R = r0 A^(1/3). The radius scales with the total nucleon count, not the proton count.
+5. Saying the strong force binds only protons to neutrons, lowkey a classic mix-up; it also binds proton–proton and neutron–neutron pairs.
+6. Multiplying a mass in u directly by c² = 9 × 10^16 m² s^−2 without converting units. Use the tabulated 1 u c² = 931.494 MeV instead.
+
+## Check questions
+
+1. For ^238_92 U, give Z, N and the number of electrons in a neutral atom.
+   Z = 92, N = 238 − 92 = 146, electrons = 92. The tempting error is to call 238 the proton count.
+2. Why do heavy nuclei need N > Z?
+   Extra neutrons add short-range strong-force attraction without adding long-range electrical repulsion between protons.
+3. If m_atom is smaller than Z m(^1H) + N m_n, was energy released or absorbed when the nucleus formed?
+   Released, equal to the positive mass defect times c².
+4. Roughly what is the radius of ^4He?
+   R = 1.2 × 4^(1/3) = 1.9 fm, since the cube root of 4 is about 1.59.
+
+## Connections
+
+F.chem.1 supplies the atomic number and isotope idea; F.chem.3 supplies the precision of quoted masses. 1.1.1 counts nucleons directly, 1.1.2 introduces isotopes, and 1.3.1 to 1.3.3 use nuclear notation in decay and reaction equations. F.chem.2 builds the electron model that explains why Z also fixes chemical identity.

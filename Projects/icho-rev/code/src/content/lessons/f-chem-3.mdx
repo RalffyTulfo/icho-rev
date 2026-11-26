@@ -1,0 +1,93 @@
+---
+title: "Measurement, significant figures and uncertainty"
+description: "One student reports 153.2 cm every time; another gets 150.1, 156.4 and 152.0 and averages them. The first is consistent but wrong, the second scattered but centred. A single number cannot tell you which problem you have — you need both spread and comparison with the truth, and significant figures are the shorthand that carries that information."
+author: "Ralf Christian Mendoza"
+readingTime: "8 min"
+unit: "Foundations"
+unitTitle: "Foundations"
+syllabusId: "F.chem.3"
+level: 1
+version: 1
+cleanModeMapping:
+  "lowkey": "frankly"
+  "noh": "right"
+---
+
+## Prerequisites
+
+F.math.1 — significant figures, rounding and unit cancellation. F.chem.1 — mass and amount of substance, which supply the measured quantities whose precision is being tracked here.
+
+## Hook
+
+Two students measure the same bench. One reports 153.2 cm every time; the other gets 150.1, 156.4 and 152.0 cm and averages them. The first student is consistent but wrong, because the tape started at the hook instead of the zero mark. The second is scattered but centred near the truth. A single number cannot tell you which problem you have: you need both a spread and a comparison with a reference. Where this analogy breaks: the bench has a fixed length you can check with a better tape, while a measured atomic mass or equilibrium constant has only an accepted value with its own uncertainty, so "accuracy" is always a comparison against something less certain than itself.
+
+## Core idea
+
+Every measurement is a number with a unit and a finite uncertainty. Significant figures are a compact way of showing that uncertainty without writing it explicitly. Precision describes agreement among repeated readings, while accuracy describes agreement with the accepted value; they are independent, so improving one does not improve the other.
+
+## Definition
+
+**Accuracy** is closeness to the true or accepted value; **precision** is closeness among repeated measurements of the same quantity. A **systematic error** shifts every reading in the same direction, for example an uncorrected zero offset, and repeat measurements do not remove it. A **random error** varies from reading to reading and is reduced by averaging.
+
+The **absolute uncertainty** Δx is quoted in the same unit as the measurement x; the **relative uncertainty** is Δx/|x| and the **percentage uncertainty** is 100 Δx/|x|. A **significant figure** is a digit that carries information about precision: all non-zero digits count, zeros between non-zero digits count, leading zeros never count, and trailing zeros after a decimal point count. Trailing zeros in a whole number without a decimal point are ambiguous, so scientific notation should be used.
+
+**Instrument resolution** is the smallest change the device can display. An analogue reading is normally quoted to ± half a division, and a digital reading to ± one in the last digit.
+
+## How it works
+
+**Step 1: why the last digit matters.** When you read an instrument, the last written digit is the one you estimate. Writing one more digit claims information you do not have; writing one fewer throws away information you do have. Significant figures are therefore a statement about the reading process, not a decoration added at the end.
+
+**Step 2: multiplying and dividing.** For a product or quotient, the result carries the smallest number of significant figures among the inputs. The reason is relative uncertainty: if one factor is known to about one part in a hundred, the product cannot be known to one part in a thousand however precise the other factors are.
+
+**Step 3: adding and subtracting.** For a sum or difference, the result carries the smallest number of decimal places among the inputs. Here it is absolute uncertainty that dominates: adding 18.0 cm, known only to a tenth, to 12.11 cm cannot produce a sum known to a hundredth.
+
+**Step 4: rounding once.** Keep full precision through every intermediate step and round only the final answer. Rounding early compounds errors; the last digit can move by more than one place over a long chain. When the digit to discard is exactly 5, state the convention you use rather than silently switching between round-half-up and round-to-even.
+
+**Step 5: propagating an explicit uncertainty.** When uncertainties are written rather than implied, use worst-case addition: for x + y or x − y, Δ(x ± y) = Δx + Δy; for xy or x/y, Δ(xy)/(xy) = Δx/x + Δy/y. Absolute uncertainties add for sums; relative uncertainties add for products. If the errors are independent and random, adding in quadrature with square roots is a better estimate, but it must be declared, because it gives a smaller result.
+
+**Step 6: reporting.** Round the uncertainty first, normally to one significant figure, or two if the leading digit is 1. Then round the value to the same decimal place as the uncertainty. Writing 60.03 ± 1.1 cm is inconsistent because the value claims a precision the uncertainty does not support.
+
+**Step 7: exact numbers do not count.** Defined constants such as N_A and exact counts such as "three molecules per formula unit" carry no uncertainty and never limit significant figures. This is why a mole conversion inherits the precision of the measured mass alone.
+
+## Diagram
+
+<figure class="lesson-figure">
+  <img src="/icho-rev/figures/F.chem.3.svg" alt="Two target boards: one shows shots clustered tightly but off-centre (precise but inaccurate), the other shows shots scattered around the bullseye (accurate on average but imprecise), with labels for systematic error and random error." loading="lazy" />
+</figure>
+
+## Assumptions and limits
+
+Significant-figure rules are a shorthand for uncertainty, not a replacement for it. They assume uncertainties are dominated by reading precision and that the inputs are independent; they cannot repair a systematic error, and they hide the difference between a one-sided and a symmetric uncertainty. The worst-case rule can overestimate the true spread, and quadrature assumes independence that repeated readings from one instrument may not have. For logarithms, exponentials and strongly nonlinear functions the simple rules break down and full propagation is required. Ambiguous trailing zeros remain ambiguous unless scientific notation is used.
+
+## Worked example
+
+**Given.** The sums 12.11 + 18.0 + 1.013 and the product 2.3 × 4.56. A rectangle has sides 12.0 ± 0.1 cm and 5.00 ± 0.05 cm, with independent uncertainties; use worst-case propagation.
+
+**Hanapin.** Correctly rounded sum and product, the area, and its absolute uncertainty.
+
+**Solusyon.** Step 0: decide which rule applies before touching the numbers. The sum is 31.123; the least precise input, 18.0, has one decimal place, so the answer is 31.1. The product is 10.488; the least precise input, 2.3, has two significant figures, so write 1.0 × 10^1 rather than the ambiguous "10". For the area, A = 12.0 × 5.00 = 60.0 cm². The relative uncertainties are 0.1/12.0 = 0.00833 and 0.05/5.00 = 0.0100. Worst-case addition gives 0.0183, so ΔA = 60.0 × 0.0183 = 1.10 cm², reported as 1.1 cm²; hence A = 60.0 ± 1.1 cm². If the errors were instead treated as independent and combined in quadrature, the result would be 60.0 ± 0.8 cm², which is why the convention must be stated.
+
+**Sagot.** 31.1; 1.0 × 10^1; A = 60.0 ± 1.1 cm² by worst-case propagation.
+
+## Traps
+
+1. Reporting the sum as 31.123 because a calculator printed three decimals. The decimal-place rule, not the display, sets the answer.
+2. Writing the product as 10 and assuming the reader knows it has two significant figures. Scientific notation removes the doubt.
+3. Adding absolute uncertainties for a product. Products and quotients require relative uncertainties; only sums and differences add absolute ones.
+4. Quoting the value to more decimal places than the uncertainty, such as 60.03 ± 1.1 cm. Align the two before writing them down.
+5. Letting N_A or a counted integer limit the figures. They are exact, lowkey the most common way to lose a digit for no reason, noh?
+
+## Check questions
+
+1. How many significant figures does 0.00450 m have?
+   Three. The leading zeros only locate the point; the trailing zero after the 5 is measured.
+2. What is 2.0 + 0.001 rounded correctly?
+   2.0, because the first input has one decimal place. The tempting 2.001 claims precision that does not exist.
+3. Which set is more precise: 9.50 ± 0.02 cm or 10.0 ± 0.5 cm?
+   The first, since a smaller absolute spread means better repeatability; its accuracy is a separate question.
+4. Why does averaging ten readings not remove a zero error?
+   A zero error shifts every reading equally, so the mean carries the same shift as each reading.
+
+## Connections
+
+F.math.1 introduces the same significant-figure rules; this card adds explicit uncertainty and the distinction between accuracy and precision. F.chem.1 applies them to molar masses and mole conversions. 3.1.3 uses density and volume readings, 6.2.2 propagates calorimetry errors, and 12.1.1 interprets titration precision.

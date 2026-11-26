@@ -1,0 +1,93 @@
+---
+title: "Waves, frequency, wavelength and photon energy"
+description: "The same patch of beach looks equally bright at four and six but burns you only at four. Brightness counts photons; the photon's energy is fixed by its colour. Those two things are not the same, and the relation between wavelength and energy is what every spectroscopy question quietly tests."
+author: "Ralf Christian Mendoza"
+readingTime: "12 min"
+unit: "Foundations"
+unitTitle: "Foundations"
+syllabusId: "F.phys.1"
+level: 1
+version: 4
+cleanModeMapping:
+  "lowkey": "frankly"
+---
+
+## Prerequisites
+
+F.math.1 — powers of ten, unit cancellation and significant figures. Every conversion in this card is a chain of factors equal to one.
+
+## Hook
+
+Two afternoons at the same beach. At four o'clock the sand is painfully bright and your arms burn in twenty minutes. At six o'clock it looks just as bright to the eye, yet nothing burns. Part of the reason is that the sun sits lower and its light crosses more atmosphere, which removes the short wavelengths; part is that you left the beach. The lesson is that the eye measures brightness, while damage depends on how many photons of *high enough energy* arrive and for how long. Where this analogy breaks: the damage is a dose, not a threshold, so one high-energy photon changes nothing measurable and a long exposure to weaker ultraviolet light still burns.
+
+## Core idea
+
+Light travels as a wave whose speed in vacuum is fixed, so wavelength and frequency are locked together: one goes up only if the other goes down. Light also arrives in indivisible packets, and each packet carries an energy proportional to the frequency. A beam's brightness counts packets; the colour of the beam fixes the energy of each one.
+
+## Definition
+
+**Wavelength** λ is the distance between consecutive crests, in metres. **Frequency** ν is the number of crests passing a point per second, in hertz (Hz = s^−1). In vacuum they satisfy c = λν with c = 299 792 458 m s^−1. The **wavenumber** is ν̃ = 1/λ, usually in cm^−1. A **photon** is the smallest packet of electromagnetic energy, of energy E = hν, with the Planck constant h = 6.62607015 × 10^−34 J s. One **electronvolt** is the energy gained by an electron crossing one volt: 1 eV = 1.602176634 × 10^−19 J. **Intensity** is power per unit area, and power is energy per second, so intensity counts photons per second per area.
+
+## How it works
+
+**Step 1: where c = λν comes from.** Take one crest as a marker. In one full period T the whole pattern advances by exactly one wavelength, so the crest travels λ in time T. Speed is distance over time, c = λ/T. Frequency is crests per second, ν = 1/T, so substituting gives c = λ/T = λν. Check the units: m × s^−1 = m s^−1, a speed. Nothing quantum has been assumed yet; this is pure kinematics.
+
+**Step 2: why frequency is the invariant.** When light enters glass, its speed drops to v = c/n, with n the refractive index. The electric field at the surface has to oscillate at whatever rate the arriving wave drives it, so ν is fixed by the source, not by the medium. Since c = λν becomes v = λ_medium ν, the wavelength must shrink: λ_medium = λ_vacuum / n. The photon's energy is unchanged, because E = hν and ν never changed.
+
+**Step 3: the energy of one photon.** Planck's relation E = hν turns the frequency into energy. It is a postulate, not a derivation: classical electromagnetism gives the wave a continuous energy density and predicts no minimum packet, so the quantum of energy is an input confirmed by experiment (blackbody spectra, the photoelectric threshold, line spectra). h itself is measured, in joule seconds, and hc is therefore measured as well. Combining with c = λν gives ν = c/λ, hence E = hc/λ: energy is inversely proportional to wavelength. The product hc is a constant, and in convenient units hc = 1239.84 eV nm, obtained from the exact constants as
+
+(6.62607015 × 10^−34 J s)(299 792 458 m s^−1)/(1.602176634 × 10^−19 J eV^−1) = 1.23984 × 10^−6 eV m = 1239.84 eV nm,
+
+carried to 1239.84 eV nm for four-figure work. Do not round it to 1239.8 inside a chain: that subtraction of 0.04 eV nm is enough to shift a 532 nm energy from 2.330 to 2.331 eV. That single number answers most visible-light questions without touching ten-powers twice.
+
+**Step 4: from a beam to a photon count.** Intensity is power per area, I = P/A, so a beam of power P crossing area A carries N = P t / E photons in time t; combining, I = N hν / (A t). A source of power P delivers energy P·t in time t. If every photon carries E, the number of photons is N = P t / E. Because E = hc/λ, a red beam of the same power as a violet beam contains more photons: same joules per second, smaller packets.
+
+**Step 5: why brightness cannot always eject an electron.** In the photoelectric effect an electron escapes only if the photon energy exceeds the work function φ, so the fastest electron leaves with KEmax = hν − φ. Below the threshold frequency ν0 = φ/h there is no emission at all, no matter how bright the beam, because two photons cannot pool their energy into one electron in a single event. The longest wavelength that still works is λmax = hc/φ: set KEmax = 0 in hc/λ − φ, so hc/λmax = φ and λmax = hc/φ.
+
+**Step 6: units in one habit.** Convert nanometres to metres before dividing by c, convert electronvolts to joules before mixing with h in SI, and remember that cm^−1 is a wavenumber, not a frequency: ν = c ν̃ with ν̃ in m^−1. A THz value must be multiplied by 10^12 before use.
+
+## Diagram
+
+<figure class="lesson-figure">
+  <img src="/icho-rev/figures/F.phys.1.svg" alt="A spectrum bar from 200 to 700 nm with the photon energy hc/λ printed at several wavelengths: 200 nm is 6.20 eV, 400 nm is 3.10 eV, 532 nm is 2.33 eV and 700 nm is 1.77 eV, with ultraviolet, visible and infrared regions labelled." loading="lazy" />
+</figure>
+
+The bar is a wavelength axis from ultraviolet to infrared, and at each labelled wavelength the figure prints the photon energy E = hc/λ in eV. The visual content is the inverse relationship: short wavelengths carry high-energy photons, long wavelengths carry low-energy ones, and the visible range sits in the middle where chemistry happens.
+
+## Assumptions and limits
+
+The relations assume plane waves in a vacuum or a uniform medium, a single frequency (a pure colour), and a photon picture that ignores coherence and field strength. c = λν fails inside a medium if you keep using the vacuum wavelength, which is why the same light has two wavelengths and one frequency. E = hν holds for every photon, but a real beam has a spread of wavelengths, so its "energy" is a distribution and needs an average or a spectrum. The photoelectric model is a single-electron, single-photon picture; it breaks down for intense fields, for surfaces with adsorbed layers, and for thermal emission.
+
+## Worked example
+
+**Given.** The hydrogen line at 486.1 nm, a 1.0 mW green laser at 532 nm, and a metal surface with work function 2.28 eV.
+
+**Hanapin.** The frequency and photon energy of the hydrogen line; the number of photons the laser emits per second; the longest wavelength that still ejects electrons from the metal.
+
+**Solusyon.** Step 0: convert every length to metres first, and decide at the end whether the answer is better in joules or electronvolts. For the line, ν = c/λ = (299 792 458 m s^−1)/(486.1 × 10^−9 m) = 6.16730 × 10^14 Hz, and E = hν = (6.62607015 × 10^−34 J s)(6.16730 × 10^14 s^−1) = 4.08650 × 10^−19 J, which is 4.08650 × 10^−19 / 1.602176634 × 10^−19 = 2.55059 eV, reported as 2.551 eV. The same value comes from hc/λ = 1239.84 eV nm / 486.1 nm, which is the cross-check that catches a mistyped ten-power. For the laser, E = hc/λ = 1239.84 eV nm / 532 nm = 2.33053 eV, reported as 2.331 eV; in joules that is E = hc/λ = 3.73392 × 10^−19 J, so N = P/E = (1.0 × 10^−3 J s^−1)/(3.73392 × 10^−19 J) = 2.67815 × 10^15 photons per second. The power 1.0 mW carries only two significant figures, so report 2.7 × 10^15. For the threshold, λmax = hc/φ = 1239.84 eV nm / 2.28 eV = 543.79 nm, reported as 544 nm.
+
+**Sagot.** ν = 6.17 × 10^14 Hz; E = 4.0865 × 10^−19 J = 2.551 eV; 2.7 × 10^15 photons s^−1 (2.678 × 10^15 intermediate); λmax = 544 nm.
+
+## Traps
+
+1. Dividing by a wavelength in nanometres. The error is a factor of 10^9, and the answer still looks like a frequency, which is why it survives to the mark scheme.
+2. Mixing electronvolts with h in J s. Convert one of them, always, and write the unit next to the number until it becomes automatic.
+3. Treating cm^−1 as a frequency. It is a wavenumber: multiply by 100 to get m^−1 and then by c.
+4. Believing a brighter beam gives faster electrons. Intensity raises the *number* of electrons, never their maximum kinetic energy; only frequency does that.
+5. Thinking the photon's energy changes in glass. It does not: lowkey the frequency is set at the source and survives every medium, while the speed and wavelength adapt.
+6. Treating 'a 532 nm laser' as a single wavelength to five digits. A real laser has a finite bandwidth, so the photon count is an average over a small spread unless the line is specified.
+
+## Check questions
+
+1. A photon has wavelength 250 nm. What is its energy in electronvolts?
+   Answer: 1239.84/250 = 4.9594, so 4.96 eV. The tempting wrong answer, 1239.84/2.5 = 496 eV, comes from forgetting that nanometres and eV nm were designed to match.
+2. Red light and blue light have the same intensity. Which carries more photons per second?
+   Red, because each red photon has less energy, so more of them are needed for the same power.
+3. Why does the photoelectric current increase with intensity but the stopping potential not?
+   More photons mean more electrons per second, which is a current; the maximum kinetic energy of each electron is set by hν − φ and is independent of how many photons arrive, so the potential that just stops them does not move.
+4. Light of 600 nm enters water (n = 1.33). What changes and what stays the same?
+   Speed falls to c/1.33, wavelength falls by the same factor to 451 nm, frequency and photon energy are unchanged.
+
+## Connections
+
+F.math.1 supplies the unit chains. 1.2.1 to 1.2.6 use photon energy to explain why atomic energy levels are discrete. 8.1.4 (Beer's law) and 8.2.1 (IR interpretation) both read a spectrum as a set of photon energies, and 8.2.1 in particular reports wavenumbers in cm^−1.

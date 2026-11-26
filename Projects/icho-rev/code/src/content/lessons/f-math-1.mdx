@@ -1,0 +1,89 @@
+---
+title: "Algebra, units and orders of magnitude"
+description: "A hardware-store receipt is the right analogy for a quantity: 3 metres, 45 pesos is a number times a unit, and the units are symbols you are allowed to cross out. Get that habit and half of every Olympiad calculation becomes bookkeeping instead of guesswork."
+author: "Ralf Christian Mendoza"
+readingTime: "10 min"
+unit: "Foundations"
+unitTitle: "Foundations"
+syllabusId: "F.math.1"
+level: 1
+version: 3
+cleanModeMapping:
+  "lowkey": "frankly"
+  "tf": "on earth"
+---
+
+## Prerequisites
+
+None. This is the entry point for the whole guide.
+
+## Hook
+
+You are at a hardware store with a receipt that says "3 metres, 45 pesos". A friend insists the length can also be written as 300 centimetres and that the price must therefore triple. It does not: the same length in a smaller unit is a bigger number, and the price of the timber does not care how you write it. The only skill this card teaches is the habit behind that: a measurement is a number **multiplied** by a unit, and units are symbols you are allowed to cross out. Get that habit right and half of every Olympiad calculation becomes bookkeeping instead of guesswork. Where this analogy breaks: a price is exact and rises in proportion to the amount bought, while a chemical amount rises in proportion only to the *moles*, and every number carries the precision of a measurement rather than the exactness of money.
+
+## Core idea
+
+Every physical quantity is written as a number times a unit. An equation that describes nature must agree in its units on both sides, and that agreement lets you move between quantities by multiplying by ratios that equal one. Units therefore behave like algebraic symbols: they can be cancelled, squared, and multiplied, and doing so tells you in advance whether a formula can possibly be right.
+
+## Definition
+
+A **unit** is a defined reference amount of a quantity. A **dimension** is the kind of quantity being measured (length, mass, time, amount of substance, electric charge). An equation is **dimensionally homogeneous** when both sides have the same dimensions. A **conversion factor** is a ratio of two equal quantities expressed in different units, so the ratio equals exactly one: 1000 mL / 1 L = 1. A **derived unit** is assembled from base units by multiplication and division, such as J = kg m^2 s^-2. A quantity whose dimensions cancel completely has no units and is called **dimensionless**; mole fractions and pH values are examples, and dimensionless does not mean unitless in the sense of meaningless. The **significant figures** of a result are the digits justified by the precision of the inputs.
+
+## How it works
+
+**Step 1: why a conversion factor may be multiplied in.** If 1000 mL and 1 L measure the same volume, then 1000 mL / 1 L = 1 exactly, because a quantity divided by an equal quantity is one. Multiplying an expression by 1 never changes its value, only its appearance. Writing the factor as a fraction is what makes the cancellation visible, so you always choose the orientation that puts the unwanted unit on the opposite side: 25.0 mL × (1 L / 1000 mL) leaves litres, and 25.0 mL × (1000 mL / 1 L) leaves mL^2/L, which is nonsense and announces itself.
+
+**Step 2: why rearranging works.** An equation is a statement that two expressions are the same number. Applying the same operation to both sides keeps them the same number, which is why dividing both sides by the same symbol is safe. Start from c = n / V. Multiply both sides by V: c V = n (V / V) = n. Divide both sides by c: V = n / c. Each line is an equality, so nothing was moved by magic; V only appears alone at the end. The rule to internalise: to free a symbol, apply its inverse operation to both sides, then put the units back in to check.
+
+**Step 3: why units catch algebraic errors.** Take the ideal-gas form P V = n R T with R in J mol^-1 K^-1. Solving for T gives T = P V / (n R). Check dimensions: (Pa)(m^3) / ((mol)(J mol^-1 K^-1)) = J / (J K^-1) = K. A wrong rearrangement, say T = P V n / R, would give mol^2 K, which is not a temperature, and the check costs ten seconds.
+
+**Step 4: orders of magnitude.** In scientific notation each number is a coefficient between 1 and 10 times a power of ten, so multiplication adds exponents and division subtracts them: (3.0 × 10^8)(2.0 × 10^-7) = 6.0 × 10^1. Add the exponents first and adjust the coefficient afterwards if it leaves the 1 to 10 range. An order-of-magnitude estimate keeps one significant figure and exists to test a final answer, not to replace it.
+
+**Step 5: significant figures.** For multiplication and division the result carries the smallest number of significant figures among the inputs; for addition and subtraction it carries the smallest number of decimal places. Exact counts (12 eggs, 3 equations) and defined constants do not limit precision: 1 L = 1000 mL is a definition, and 1 mol = 6.02214076 × 10^23 particles is the exact Avogadro number that defines the mole, so neither adds uncertainty. Round once, at the end, because rounding intermediate results can shift the last digit of the answer.
+
+**Step 6: two unknowns by substitution.** When two conditions hold at once, write both as equations in the same symbols and eliminate one. For x + y = 5 and 2x − y = 1: from the first, y = 5 − x; substitute into the second, 2x − (5 − x) = 1, so 3x = 6, x = 2, y = 3. Check by substituting back into both equations. This is the whole method behind every later simultaneous-equilibrium problem.
+
+## Diagram
+
+<figure class="lesson-figure">
+  <img src="/icho-rev/figures/F.math.1.svg" alt="Unit-cancellation chain: 25.0 mL of a 0.200 mol L^-1 solution converted to moles by multiplying by 1 L / 1000 mL, showing the mL cancelling and leaving 0.00500 mol." loading="lazy" />
+</figure>
+
+The chain is written in the orientation that cancels the unit you do not want: millilitres go on the bottom so they cancel the mL you started with, leaving litres, and then the litre cancels the L in the concentration to leave moles.
+
+## Assumptions and limits
+
+The method assumes every conversion factor is known exactly or with more precision than the data, that the quantity is a scalar (a single number, not a vector or a function), and that the physical model is already chosen. It cannot tell you whether a model is right, only whether an equation is self-consistent. It also fails when a ratio is dimensionless but not interchangeable: grams of one substance per gram of another is dimensionless, yet it is not a mole ratio and cannot cancel a mole. Rounding rules are conventions, not laws of nature, so state them when a mark depends on the last digit.
+
+## Worked example
+
+**Given.** 50.0 mL of a 0.200 mol L^-1 HCl solution, and a coffee-cup calorimeter in which it is mixed with 75.0 mL of 0.150 mol L^-1 NaOH. The mixture warms from 23.50 °C to 24.60 °C, the density is 1.00 g mL^-1 and c = 4.18 J g^-1 K^-1.
+
+**Hanapin.** The moles of the limiting reactant, the heat absorbed by the solution, and the enthalpy change per mole.
+
+**Solusyon.** Step 0: the units I want are mol, then J, then J mol^-1, and each step will be a ratio whose denominator repeats the previous numerator. Two formulas are used as given: c = n/V for the amount of solute, and q = mcΔT for the heat gained by the solution, where m is the solution mass and c its specific heat capacity. n(HCl) = 0.200 mol L^-1 × 0.0500 L = 0.0100 mol; n(NaOH) = 0.150 × 0.0750 = 0.01125 mol, so HCl limits. The temperature change is 24.60 − 23.50 = 1.10 K, identical in kelvin because a difference is the same in both scales. The mass is (50.0 + 75.0) mL × 1.00 g mL^-1 = 125 g. Then q = 125 g × 4.18 J g^-1 K^-1 × 1.10 K = 574.75 J, reported as 575 J: 1.10 K has three significant figures and 125 g has three, so three is the limit and writing 5.7 × 10^2 J would throw one away. The reaction released that heat, so q_rxn = −575 J. A real calorimeter also has its own heat capacity C_cal, and then q = mcΔT + C_calΔT; here C_cal is assumed negligible. Then ΔH = −0.57475 kJ / 0.0100 mol = −57.5 kJ mol^-1.
+
+**Sagot.** Limiting reactant HCl; q_solution = 575 J; ΔH = -57.5 kJ mol^-1.
+
+## Traps
+
+1. Adding 273 to a *difference*. A change of 1.10 °C is a change of 1.10 K; only absolute temperatures need the conversion.
+2. Using c = 4.18 J g^-1 K^-1 with kilograms, which silently changes the energy by a factor of 1000.
+3. Cancelling "mol" of one substance against "mol" of another. Units cancel; stoichiometry does not. The mole ratio is a separate factor, and lowkey it is the one students forget.
+4. Writing a percentage as the number of grams instead of grams per 100 g. A 37 % HCl solution is 37 g HCl per 100 g solution, not 37 g of HCl in total.
+5. Rounding in the middle. Keep full precision until the last line, then decide the figures.
+
+## Check questions
+
+1. What is 25.0 g of water in moles, to the correct precision?
+   Answer: 25.0 / 18.015 = 1.39 mol. Three significant figures, set by 25.0. The tempting wrong answer is 1.4 mol, which uses the precision of the molar mass instead.
+2. A student computes V = P n / (R T). What is wrong, without reading any number?
+   The units: Pa·mol / (J mol^-1 K^-1 · K) leaves mol^2 m^-3, not a volume. The error is visible before any arithmetic, which is the point of the habit.
+3. Why can 1 L / 1000 mL be multiplied into an expression freely?
+   Because numerator and denominator are the same volume, so the ratio is 1.
+4. How many significant figures does 0.00450 m have?
+   Three: the leading zeros are placeholders, the trailing zero after the 5 is significant.
+
+## Connections
+
+F.math.2 (exponents, logarithms and exponential change) uses these rules on powers and logs. F.chem.1 applies them to the mole and to Avogadro's number. 3.1.2 to 3.1.6 turn them into stoichiometry, concentration and density calculations, and 6.2.2 uses the same algebra for calorimetry.

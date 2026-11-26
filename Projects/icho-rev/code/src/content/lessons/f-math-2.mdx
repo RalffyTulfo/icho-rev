@@ -1,0 +1,92 @@
+---
+title: "Exponents, logarithms and exponential change"
+description: "A phone dropping from 100% to 99% in twenty minutes but 1% to dead in four is the signature of an exponential: the quantity loses a fixed fraction per interval, not a fixed amount. The logarithm is the tool that turns that curve into a straight line."
+author: "Ralf Christian Mendoza"
+readingTime: "11 min"
+unit: "Foundations"
+unitTitle: "Foundations"
+syllabusId: "F.math.2"
+level: 1
+version: 3
+cleanModeMapping:
+  "lowkey": "frankly"
+---
+
+## Prerequisites
+
+F.math.1 — the algebra of units, powers of ten and significant figures. Every step here is written with units attached, exactly as that card teaches. No calculus is assumed: the derivative and the one integral needed are introduced in Step 3, with the reason for each.
+
+## Hook
+
+Your phone announces 1 %. Four minutes later it is dead, yet the drop from 100 % to 99 % took twenty minutes. Nothing about the battery is linear, and neither is radioactivity, first-order kinetics or acidity. The tool that turns those curves into straight lines is the logarithm, and the tool that turns "it dies by a fixed fraction each interval" into an equation is the exponential. Where this analogy breaks: a battery drains at roughly constant power, so what is left falls nearly linearly with time rather than by a fixed fraction per interval.
+
+## Core idea
+
+When a quantity changes by a fixed **fraction** in every equal interval, the amount left is a power of that fraction, and the number of intervals is the exponent. A logarithm asks the reverse question: which exponent produces this number? Because exponents add when powers multiply, a logarithm turns multiplication into addition, and a curve whose growth rate is proportional to its own size into a straight line.
+
+## Definition
+
+For a base b > 0 and b ≠ 1, b^x = y and log_b y = x are the same statement. The base **e** = 2.718281828… is the number that makes the exponential's own slope equal its value, defined as the limit of (1 + 1/n)^n as n grows without bound, and it is the base of the **natural logarithm** ln; the **common logarithm** log10 uses b = 10. A quantity obeys **first-order decay** when the rate of loss is proportional to the amount present, dN/dt = −λN, where the **decay constant** λ has units of inverse time. The **half-life** t½ is the time for the amount to fall to one half of its value at the start of the interval. A quantity measured on a **logarithmic scale** reports the logarithm of the ratio to a reference instead of the ratio itself; pH is one, pKa and pKsp are others.
+
+## How it works
+
+**Step 1: where the exponent laws come from.** For a counting number n, a^n means n factors of a, so a^3 · a^4 = (a·a·a)(a·a·a·a) = a^7: multiplying powers of the same base adds the exponents. Dividing cancels factors and subtracts them, a^7/a^4 = a^3. Setting n = m in a^n/a^m gives a^0 = 1, which forces the rule a^−n = 1/a^n rather than inventing a new symbol. Requiring (a^1/2)^2 = a^1 forces a^1/2 = √a. Every exponent law is therefore a consequence of counting factors plus the demand that the rules stay consistent.
+
+**Step 2: why a logarithm turns products into sums.** Write a = b^x and c = b^y, so x = log_b a and y = log_b c. Then ac = b^x · b^y = b^(x+y), and reading that last equality as a logarithm gives log_b(ac) = x + y = log_b a + log_b c. The same move with a^y = (b^x)^y = b^(xy) gives log_b(a^y) = y log_b a, which is the rule that lets an unknown exponent be pulled down and solved like a number. There is no rule for log(a + b): addition inside a logarithm is not a sum of logarithms, and no amount of algebra makes it one.
+
+**Step 3: why "loses a fixed fraction per interval" is an exponential.** Two calculus facts are needed, and both are stated here so nothing is imported silently. (i) dN/dt is the instantaneous rate of change of N: the tiny change dN in a tiny time dt, divided by dt. (ii) ln is defined so that its derivative is d(ln N)/dN = 1/N; read backwards, that says ∫(1/N)dN = ln N. Now the physics: a fixed fraction lost per unit time means the rate of loss is proportional to the amount present, dN/dt = −λN. Divide both sides by N and multiply by dt: dN/N = −λ dt. Integrate both sides, using fact (ii) on the left: ∫dN/N = −λ∫dt, so ln N = −λt + C, where C is the constant of integration. The boundary condition fixes it: at t = 0 the amount is N0, so C = ln N0. Substituting, ln N − ln N0 = −λt, that is ln(N/N0) = −λt, and exponentiating both sides gives N = N0 e^(−λt). Nothing was assumed about halving; halving is what this law produces, because the same fraction disappears in every equal interval.
+
+**Step 4: the half-life.** Put N/N0 = 1/2: ln(1/2) = −λt½, so t½ = ln 2 / λ = 0.6931/λ. The half-life contains no N0, which is why a sample of eleven atoms and a sample of a tonne of the same nuclide have the same half-life, though the second decays far more often per second.
+
+**Step 5: counting intervals without a curve.** If 12.5 % remains, then N/N0 = 1/8 = (1/2)^3, so three half-lives have passed. In general the number of half-lives is n = ln(N0/N)/ln 2, and the elapsed time is n t½. The same algebra converts any percentage into an exponent, which is the whole trick behind dating, shelf-life and kinetics problems.
+
+**Step 6: measuring λ from data.** Taking ln of both sides of N = N0 e^(−λt) gives ln N = ln N0 − λt. A plot of ln N against t is therefore a straight line with slope −λ and intercept ln N0. This is how a rate constant is extracted from a table of counts: linearise, then fit, never eyeball a curve.
+
+**Step 7: logs as scales.** For pH, pH = −log10[H+], so a change of one pH unit is a factor of ten in concentration and a change of 0.30 is a factor of two, since log10 2 = 0.3010. To convert between bases, log10 x = ln x / ln 10 = ln x / 2.3026.
+
+## Diagram
+
+<figure class="lesson-figure">
+  <img src="/icho-rev/figures/F.math.2.svg" alt="Two curves on the same axes: a solid decaying exponential N/N0 dropping from 1 to near 0, and a dashed straight line of ln(N/N0) falling linearly from 0 to negative values, both plotted against the same time axis, showing the same data become a straight line on the log scale." loading="lazy" />
+</figure>
+
+The solid curve is the amount left on a linear scale. The dashed curve is ln N against t on its own vertical scale, drawn on the same axes only to show that the same data become a straight line; the height of the dashed curve is not an amount.
+
+## Assumptions and limits
+
+The model assumes λ is constant in time, that every particle of the sample has the same probability of decaying per unit time, and that the sample is large enough for a smooth fraction to make sense. It fails when the decay chain feeds the sample from a parent nuclide, when the temperature changes a rate constant mid-experiment, and when the amount is so small that the count is dominated by statistics. Logarithms require positive arguments, so any expression that could reach zero needs a limit argument instead. Finally, pH as −log10[H+] is an approximation that ignores activity coefficients, and it degrades in concentrated solutions.
+
+## Worked example
+
+**Given.** A charcoal sample from a hearth has a carbon-14 activity that is 12.5 % of the activity of living wood. The half-life of carbon-14 is 5730 years.
+
+**Hanapin.** The age of the sample, and separately the time for 90 % of a carbon-14 sample to decay.
+
+**Solusyon.** Step 0: percentages are ratios, and the desired unit is years, so every step will carry a ratio of amounts. Since 12.5 % = 0.125 = 1/8 = (1/2)^3, three half-lives have passed: t = 3 × 5730 = 17 190 years, reported as 1.72 × 10^4 years. For the second question, first find λ = ln 2 / t½ = 0.693147 / (5730 y) = 1.20968 × 10^−4 y^−1. Then 90 % decayed means N/N0 = 0.10, so t = −ln(0.10)/λ = 2.302585 / (1.20968 × 10^−4 y^−1) = 1.9035 × 10^4 y, about 1.90 × 10^4 years. Notice that 90 % takes only about 2.3 half-lives longer than 50 %, because the tail is long.
+
+**Sagot.** Age ≈ 1.72 × 10^4 years; time for 90 % decay ≈ 1.90 × 10^4 years.
+
+## Traps
+
+1. Using log10 where ln belongs in t½ = ln 2/λ. The factor 2.303 is exactly the error you get by mixing bases, and it is lowkey the most common one in kinetics work.
+2. Believing that the *amount* lost per interval is constant. The amount lost per interval shrinks; the *fraction* lost is what stays constant.
+3. Forgetting that λ carries a unit. A λ in s^−1 used with a time in years produces a number that looks plausible and is wrong by a factor of 3 × 10^7.
+4. Splitting the logarithm of a sum. ln(a + b) is not ln a + ln b, and no rearrangement exists.
+5. Reading the slope of a curve instead of a linearised plot. On an exponential graph the slope changes at every point, so a single "slope" is meaningless without specifying the tangent.
+
+## Check questions
+
+1. A first-order reaction is 75 % complete after 60 minutes. What is its half-life?
+   Answer: 75 % complete leaves 25 %, which is two half-lives, so t½ = 30 minutes. The tempting wrong answer is 15 minutes, from treating 75 % as three half-lives.
+2. Why does a one-unit drop in pH correspond to a tenfold change?
+   Because pH = −log10[H+]: decreasing pH by 1 increases [H+] by 10^1. It is the definition of a base-10 logarithm, not a chemical fact about acids.
+3. What is the slope of a plot of ln(activity) against time for a first-order decay?
+   −λ, with units of inverse time. It is negative because the activity falls with time.
+4. Is the half-life of a 1 g sample different from that of a 1 mg sample of the same nuclide?
+   No. t½ = ln 2/λ contains no amount. The 1 g sample decays more *often* per second, but takes the same time to lose half of itself.
+5. On a plot of ln N against t, what is the intercept and what does it let you measure?
+   The intercept is ln N0, so exponentiating it recovers the starting amount even though N0 was never measured directly. The tempting answer is N0 itself, which forgets that the axis is a logarithm.
+
+## Connections
+
+F.math.1 supplies the unit algebra used in every line. 1.3.2 radioactive decay is this card's first application; 7.2.4 uses the same law for concentration against time; 6.3.1.4 defines pH with the base-10 logarithm introduced in Step 7.

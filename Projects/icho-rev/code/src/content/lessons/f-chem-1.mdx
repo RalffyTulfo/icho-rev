@@ -1,0 +1,91 @@
+---
+title: "Matter, elements and the mole"
+description: "A hardware seller never counts ten thousand nails; they weigh them. Chemistry does the same thing, except the objects are atoms and the counting unit is the mole — a fixed number of entities, exactly 6.02214076 × 10^23 of them, defined so that mass on a balance becomes a count of particles."
+author: "Ralf Christian Mendoza"
+readingTime: "9 min"
+unit: "Foundations"
+unitTitle: "Foundations"
+syllabusId: "F.chem.1"
+level: 1
+version: 1
+cleanModeMapping:
+  "lowkey": "frankly"
+  "muna": "first"
+---
+
+## Prerequisites
+
+F.math.1 — units as cancelling symbols, significant figures and orders of magnitude. F.math.2 — powers of ten, which is what makes a count of 10^23 manageable to write and compare.
+
+## Hook
+
+A hardware seller never counts out ten thousand nails. They weigh them, because a nail is small and a scale is fast, and the price depends on how many nails there are, not on how heavy the pile looks. Chemistry does the same thing, except the objects are atoms and the pile is a laboratory sample. You cannot put one atom on a balance, so you define a fixed count and then weigh out that count. Where this analogy breaks: nails from two batches are essentially identical in mass, while atoms of one element come in isotopes with different masses, so the "weight per nail" is an average over a mixture rather than a single exact value.
+
+## Core idea
+
+Matter is anything with mass and volume. An element is a pure substance whose atoms all have the same proton number, and a compound is a pure substance in which two or more elements are combined in a fixed ratio. The mole is the counting unit that connects the atomic scale to the balance pan: it is a fixed number of elementary entities, and dividing a sample's mass by its molar mass gives that count in moles.
+
+## Definition
+
+**Matter** is anything that has mass and occupies space. An **element** is a pure substance that cannot be decomposed into simpler substances by chemical means; every atom of that element has the same atomic number Z. A **compound** is a pure substance containing two or more elements chemically combined in a fixed proportion, and a **mixture** is a physical combination whose composition can vary.
+
+**Amount of substance**, symbol n, is the SI base quantity that counts elementary entities; its unit is the **mole** (mol). Since the 2019 revision of the SI the mole is defined by fixing the **Avogadro constant** at exactly N_A = 6.02214076 × 10^23 mol^−1. One mole therefore contains exactly that many specified entities, where an entity may be an atom, a molecule, an ion, an electron, or a stated group.
+
+**Molar mass** M is mass per amount of substance, M = m/n, in g mol^−1. The **relative atomic mass** A_r of an element is the weighted mean of the masses of its isotopes on a scale where a neutral carbon-12 atom has mass exactly 12 u; the **relative molecular mass** M_r of a molecule is the sum of the A_r values of its atoms. Both are dimensionless numbers, whereas a molar mass carries units.
+
+## How it works
+
+**Step 1: why Z identifies an element.** The atomic number Z counts protons. Change Z and the nuclear charge changes, so the atom becomes a different element; change only the neutron count and it stays the same element in a different isotope. Isotopes are why the tabulated atomic mass of an element is a weighted average and usually not an integer.
+
+**Step 2: why counting must be replaced by weighing.** A mole is about 6 × 10^23 entities, a count far beyond anything that can be counted directly. What a balance measures is mass. If each entity has a known mass per mole, M, then one measurement gives the count: this is the entire strategy, and it is why the mole is a base unit rather than a convenience.
+
+**Step 3: the exact conversion factors.** From the definition of amount of substance, n = N/N_A and therefore N = n N_A, where N is the number of specified entities. From the definition of molar mass, n = m/M and m = n M. Both factors have units that cancel explicitly: g ÷ (g mol^−1) leaves mol, and mol × mol^−1 leaves a pure count. Because N_A is defined, it is exact and never limits the significant figures of an answer.
+
+**Step 4: the path-first habit.** Before calculating, write down the unit you want and choose the factors that get you there. To go from grams to molecules: grams ÷ (g mol^−1) → moles → multiply by N_A → molecules. To go from molecules to grams, reverse both steps. A factor is oriented by putting the unit you want to remove in the denominator, which is the same cancellation habit from F.math.1.
+
+**Step 5: entities inside a formula.** One mole of H2O contains one mole of oxygen atoms and two moles of hydrogen atoms, because the subscript is a count per molecule. In a balanced equation the coefficients are mole ratios: 2 H2 + O2 → 2 H2O says two moles of hydrogen react with one mole of oxygen to give two moles of water. The coefficients do not compare masses directly, and that distinction is the start of stoichiometry.
+
+**Step 6: what the historical definition was.** Before 2019 one mole was defined as the amount in exactly 12 g of carbon-12, which made the molar mass of carbon-12 exactly 12 g mol^−1. Now N_A is fixed instead, so that statement is an extremely close approximation rather than a definition. The difference is far below school-level precision, but calling it exact is wrong.
+
+## Diagram
+
+<figure class="lesson-figure">
+  <img src="/icho-rev/figures/F.chem.1.svg" alt="A conversion ladder from grams to moles to molecules to atoms, with the path 25.0 g H2O → 1.39 mol H2O → 8.36 × 10^23 molecules → 1.67 × 10^24 H atoms, each arrow labelled with the factor used." loading="lazy" />
+</figure>
+
+## Assumptions and limits
+
+The mole requires you to name the elementary entity: one mole of hydrogen atoms and one mole of hydrogen molecules differ by a factor of two in mass and in particle count. Molar mass for an element assumes a specified isotopic composition; natural variation means the tabulated A_r is an average, so a single sample can differ slightly. Mixtures have no single molar mass, only average properties computed from composition. A real sample may contain impurities, so mass alone never proves purity. Finally, 12 g of carbon-12 is only approximately one mole under the current SI.
+
+## Worked example
+
+**Given.** A 25.0 g sample of water, with relative atomic masses H = 1.008 and O = 15.999. A second sample contains 0.250 mol of CO2, whose molar mass is 44.009 g mol^−1. Use N_A = 6.02214076 × 10^23 mol^−1.
+
+**Hanapin.** Moles of water, number of water molecules, number of hydrogen atoms, and mass of the CO2 sample.
+
+**Solusyon.** Step 0: the path is grams → moles → molecules → atoms, and each arrow is one ratio. M(H2O) = 2(1.008) + 15.999 = 18.015 g mol^−1. Then n = m/M = 25.0 / 18.015 = 1.38773 mol, reported as 1.39 mol because the input mass has three significant figures. Multiplying by the exact Avogadro constant gives N = 1.38773 × 6.02214076 × 10^23 = 8.35712 × 10^23 molecules, reported as 8.36 × 10^23. Each molecule holds two hydrogen atoms, so N(H) = 2 × 8.35712 × 10^23 = 1.67142 × 10^24, reported as 1.67 × 10^24 atoms. For the second sample the path is moles → grams: m = nM = 0.250 × 44.009 = 11.002 g, reported as 11.0 g.
+
+**Sagot.** 1.39 mol H2O; 8.36 × 10^23 molecules; 1.67 × 10^24 H atoms; 11.0 g CO2.
+
+## Traps
+
+1. Saying "one mole of hydrogen" without saying whether it means H atoms or H2 molecules. The count changes by two, and so does the mass.
+2. Treating N_A = 6.02214076 × 10^23 as a measured value with seven significant figures. It is a defined exact number and cannot limit an answer.
+3. Writing the molar mass of water as 18.015 with no unit. That is M_r, a pure number; molar mass is 18.015 g mol^−1.
+4. Assuming the atomic mass printed on the periodic table is the mass of every atom of that element. It is an isotope-weighted average, lowkey the reason chlorine sits near 35.45.
+5. Quoting "12 g of carbon-12 is one mole" as the current definition. It was the old one; muna define N_A, then derive the approximation.
+
+## Check questions
+
+1. How many oxygen atoms are in 0.500 mol of O2?
+   Answer: 0.500 × 6.02214076 × 10^23 × 2 = 6.02 × 10^23 atoms. The tempting answer 3.01 × 10^23 counts molecules and forgets the subscript.
+2. Why does 25.0 g / 18.015 g mol^−1 deserve three significant figures, not four?
+   The divisor has five, the mass has three, and N_A is exact, so the mass sets the precision.
+3. Is one mole of NaCl one mole of molecules?
+   No. NaCl is an ionic solid, so the entity must be named as a formula unit; calling it a molecule misstates the structure.
+4. Which has the larger mass: one mole of carbon or one mole of iron?
+   Iron, because molar mass scales with the mass per entity while the number of entities is the same.
+
+## Connections
+
+F.math.1 supplies the unit cancellation and significant-figure rules; F.math.2 supplies powers of ten. 1.1.1 and 1.1.2 apply these counts to nucleons and isotopes. 3.1.5 introduces Avogadro's number as a named leaf, and 3.1.2 to 3.1.6 build stoichiometry and concentration on the same chain.

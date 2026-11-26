@@ -1,0 +1,109 @@
+---
+title: "Atomic models from Dalton to Bohr"
+description: "Treat each atomic model like a suspect in a lineup: you do not ask whether it is beautiful, you ask which witness it can face. Dalton faces the law of multiple proportions; Thomson faces the cathode ray; Rutherford faces the gold foil; Bohr faces the hydrogen spectrum. None of them is "the atom" — each is a tool with a domain of validity."
+author: "Ralf Christian Mendoza"
+readingTime: "10 min"
+unit: "Foundations"
+unitTitle: "Foundations"
+syllabusId: "F.chem.2"
+level: 1
+version: 2
+cleanModeMapping:
+  "lowkey": "frankly"
+  "gng": "honestly"
+---
+
+## Prerequisites
+
+F.chem.1 — elements, atomic number and counting entities. F.chem.3 — constants are measured inputs with limited precision, so the digits in the Bohr results below are meaningful but not sacred. F.phys.3 — nuclide notation, used when isotopes appear in the Dalton discussion.
+
+## Hook
+
+Treat each atomic model like a suspect in a lineup: you do not ask whether it is beautiful, you ask which witness it can face. Dalton faces the law of multiple proportions. Thomson faces the cathode ray. Rutherford faces the gold foil. Bohr faces the hydrogen spectrum. A model that cannot face the next witness is replaced, not patched with an excuse. Where this analogy breaks: a suspect is innocent until proven guilty, but a scientific model is useful until proven wrong, and a model can survive one dataset while being subtly false in ways that dataset cannot see.
+
+Frankly, the most striking thing about the Bohr model is that it gets hydrogen right for reasons that are not the reasons it gives.
+
+## Core idea
+
+Atomic structure is a sequence of models, each defined by the observations it explains and the experiment that breaks it. Dalton made atoms indivisible and gave each element a characteristic atomic mass; Thomson made them divisible by discovering the electron; Rutherford made the positive charge and most of the mass a tiny central nucleus; Bohr made the electron's energy discrete so that atoms could emit line spectra instead of a continuous smear. None of these is "the atom". Each is a tool with a domain of validity, and knowing the domain is the point.
+
+The pivot from Rutherford to Bohr is a specific contradiction: an electron in a circular orbit is an accelerating charge, and an accelerating charge radiates. Radiating means losing energy, spiralling inward, and collapsing the atom in roughly 10^−11 s. The estimate comes from the Larmor power radiated by an accelerating charge, P = (e²a²)/(6πε₀c³), applied to a classical electron on a Bohr-orbit radius a₀ ≈ 5.3 × 10^−11 m; the stored orbital energy is on the order of 10 eV, and dividing the two gives a collapse time τ ∼ 10^−11 s. Real atoms are stable and emit sharp lines. Bohr's response was to postulate that certain orbits do not radiate at all.
+
+## Definition
+
+**Dalton's atomic model** (1803): matter consists of indivisible atoms; atoms of the same element are identical in mass; compounds form by whole-number combinations of atoms. It explains fixed and multiple proportions but has no place for charge, isotopes or spectra.
+
+**Thomson's model** (1904, after the 1897 electron): the atom is a diffuse sphere of positive charge with electrons embedded in it, like plums in a pudding. It accounts for the electron and for neutrality, but predicts only small deflections of fast charged particles passing through matter.
+
+**Rutherford's model** (1911): almost all mass and all positive charge sit in a nucleus of radius below about 10^−14 m, with electrons outside and mostly empty space between. It predicts the gold-foil result — most alpha particles pass straight through, a few bounce back — but cannot explain stability or discrete spectra.
+
+**Bohr's model** (1913): the electron occupies stationary circular orbits in which its orbital angular momentum is quantized, L = mₑvr = nħ with n = 1, 2, 3, ... . In a stationary state it emits no radiation. Light is emitted or absorbed only when the electron changes orbits, with hν = |Eᵢ − E_f|. The relation E = hν is quoted here and developed properly in F.phys.1.
+
+In the derivation that follows, **k = 1/(4πε₀)** is the Coulomb constant (≈ 8.99 × 10⁹ N m² C⁻²), **e = 1.602 × 10^−19 C** is the elementary charge, and **mₑ = 9.109 × 10^−31 kg** is the electron mass. The Rydberg formula for hydrogen is 1/λ = R_H (1/n_f² − 1/n_i²), with R_H = 1.096776 × 10⁷ m⁻¹ for real hydrogen. It is an empirical summary of the lines that Bohr's model derives.
+
+## How it works
+
+**Step 1: Dalton from combining masses.** Carbon and oxygen form CO and CO₂. With C fixed at 12 g, the oxygen masses are 16 g and 32 g, a 1 : 2 ratio of small integers. Atoms combining in whole-number ratios predict exactly that, so the model earns its keep.
+
+**Step 2: Thomson from cathode rays.** Cathode rays deflect in electric and magnetic fields in a way that gives a charge-to-mass ratio far larger than for any ion, and the value is independent of the gas used. The carrier is a universal subatomic particle: the electron. Atoms are therefore divisible.
+
+**Step 3: Rutherford from the gold foil.** A positive alpha particle passing through a diffuse positive sphere feels only a weak distributed force. Observing rare large-angle scatters means the positive charge is concentrated: Coulomb repulsion can only be strong if the alpha particle comes close to a compact charge. The atom is mostly empty space.
+
+**Step 4: Bohr's quantization, derived.** Take the nucleus as fixed and the orbit as circular. Coulomb attraction supplies the centripetal force:
+
+k e² / r² = mₑ v² / r, so mₑ v² = k e² / r.
+
+Impose L = mₑ v r = nħ, so v = nħ / (mₑ r). Substitute:
+
+mₑ (n²ħ² / (mₑ² r²)) = k e² / r, giving r_n = n²ħ² / (mₑ k e²) = n² a₀, with a₀ = 5.29177 × 10^−11 m.
+
+Total energy is kinetic plus potential: E = ½ mₑ v² − k e² / r. Using mₑ v² = k e² / r gives E = k e² / (2r) − k e² / r = − k e² / (2r). Substituting r_n:
+
+E_n = − mₑ k² e⁴ / (2 n² ħ²) = −13.6057 eV / n².
+
+The minus sign means zero energy is the free electron at rest at infinity; bound states are negative.
+
+**Step 5: lines from level differences.** For a transition n_i → n_f with n_i > n_f, hν = |E_i − E_f|, so hc/λ = 13.6057 eV (1/n_f² − 1/n_i²). Dividing by hc reproduces the Rydberg form. The spectral series are just groupings by the final level n_f.
+
+## Diagram
+
+<figure class="lesson-figure">
+  <img src="/icho-rev/figures/F.chem.2.svg" alt="A hydrogen energy ladder with levels E_n = −13.6057 eV / n² for n = 1, 2, 3, 4, each labeled with its energy, and arrows for the 3→2, 4→2 and 2→1 transitions labelled with their wavelengths 656 nm, 486 nm and 121 nm." loading="lazy" />
+</figure>
+
+The figure plots the four levels E_n = −13.6057 eV / n² for n = 1, 2, 3, 4 and the three transitions 3 → 2, 4 → 2 and 2 → 1. Spacing shrinks as n grows because E_n ∝ −1/n², which is why the series converge to a limit at 0 eV (the ionisation threshold).
+
+## Assumptions, limits and when it fails
+
+The derivation fixes the nucleus, using the electron mass mₑ rather than the electron–proton reduced mass. That makes the predicted wavelengths about 0.05 % short of real hydrogen lines; using R_H instead corrects it. Orbits are circular and nonrelativistic; Sommerfeld extended them to ellipses, and relativity adds fine structure. The model handles one-electron species (H, He⁺, Li²⁺) and fails for helium and beyond because it ignores electron–electron repulsion. It has no spin, no orbitals, and no explanation of why L = nħ beyond the fact that it works. That last point is the honest weakness: the quantization rule is an axiom here, and F.phys.2 shows where it actually comes from.
+
+## Worked example
+
+**Given.** A hydrogen atom decays from n = 3 to n = 2. Use E_n = −13.6057 eV/n² and hc = 1239.84 eV nm. Find the photon energy, the wavelength, and the radius of the n = 2 orbit in units of a₀.
+
+**Hanapin.** ΔE in eV, λ in nm, and r₂/a₀.
+
+**Solusyon.** E₃ = −13.6057/9 = −1.51174 eV; E₂ = −13.6057/4 = −3.40142 eV. The photon carries ΔE = |E₃ − E₂| = 1.88968 eV. Then λ = hc/ΔE = 1239.84 / 1.88968 = 656.1 nm. The radius scales as n², so r₂ = 4a₀ = 2.1167 × 10^−10 m.
+
+The reduced-mass correction uses mₑ/mᵤ = 1 + mₑ/m_p ≈ 1.0005446, so the corrected line is 656.1 nm × 1.0005446 ≈ 656.47 nm, matching the measured vacuum line at about 656.5 nm within rounding.
+
+**Sagot.** ΔE = 1.8897 eV, λ = 656.1 nm from the ideal fixed-nucleus model (656.47 nm after the reduced-mass correction), and r₂ = 4a₀.
+
+## Traps
+
+- "Electrons travel along the Bohr orbits." The orbits are allowed states with definite radius and energy; the model does not describe a path, and the modern description replaces them with orbitals.
+- Using +13.6 eV/n² for bound levels. The energy is negative; the positive number is the ionization energy from that level.
+- Assuming Bohr works for neutral helium. It works for one-electron ions only.
+- Quoting R_H and E₁ = −13.6057 eV in the same calculation without acknowledging the 0.05 % mismatch. Pick one convention and say which.
+- Confusing mass number A with atomic mass when discussing isotopes in Dalton's model.
+
+## Check questions
+
+1. Which observation kills Thomson's model and which kills Rutherford's? **Answer:** large-angle alpha scattering kills Thomson; atomic stability and line spectra kill Rutherford. The trap is swapping them because both models involve electrons.
+2. Why does r_n ∝ n² while E_n ∝ −1/n²? **Answer:** quantization gives r ∝ n² from L ∝ n and the force balance; energy is −ke²/(2r), hence inverse square. Students often quote r ∝ n without deriving it.
+3. Is the 2 → 1 photon more or less energetic than 3 → 2? **Answer:** more: 10.20 eV versus 1.89 eV. The visible temptation is to assume bigger n means bigger jumps, but levels crowd together at high n.
+4. What does hν = |ΔE| actually assert? **Answer:** light is exchanged only in quanta matching the gap between stationary states. It does not say the electron emits while orbiting.
+
+## Connections
+
+F.chem.1 — atomic number and counting. F.chem.3 — precision of constants. F.phys.3 — nuclide notation and mass defect. F.phys.1 — photon energy and spectra from E = hν. F.phys.2 — standing waves explain the quantization postulate. 1.1.2 — isotopes and mass spectra. 1.2.1 — hydrogen series. 1.2.5 — energy levels in eV.
