@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="210" viewBox="0 0 700 210" font-family="system-ui,sans-serif">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<defs><linearGradient id="vis" x1="0" x2="1"><stop offset="0" stop-color="#8b5cf6"/><stop offset="0.35" stop-color="#3b82f6"/><stop offset="0.6" stop-color="#22c55e"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs>
+<rect x="122.0" y="86" width="456.0" height="26" fill="url(#vis)" rx="4"/>
+<text x="126.0" y="80" font-size="11" fill="#6b7280">visible band 400-700 nm</text>
+<line x1="578.0" y1="112" x2="578.0" y2="132" stroke="#374151"/>
+<text x="578.0" y="148" text-anchor="middle" font-size="11" fill="#111827">700 nm</text>
+<text x="578.0" y="163" text-anchor="middle" font-size="10" fill="#4b5563">red 1.77 eV</text>
+<line x1="343.9" y1="112" x2="343.9" y2="132" stroke="#374151"/>
+<text x="343.9" y="148" text-anchor="middle" font-size="11" fill="#111827">546 nm</text>
+<text x="343.9" y="163" text-anchor="middle" font-size="10" fill="#4b5563">green 2.27 eV</text>
+<line x1="252.9" y1="112" x2="252.9" y2="132" stroke="#374151"/>
+<text x="252.9" y="148" text-anchor="middle" font-size="11" fill="#111827">486.1 nm</text>
+<text x="252.9" y="163" text-anchor="middle" font-size="10" fill="#4b5563">H-beta 2.55 eV</text>
+<line x1="122.0" y1="112" x2="122.0" y2="132" stroke="#374151"/>
+<text x="122.0" y="148" text-anchor="middle" font-size="11" fill="#111827">400 nm</text>
+<text x="122.0" y="163" text-anchor="middle" font-size="10" fill="#4b5563">violet 3.10 eV</text>
+<text x="46" y="30" font-size="12" fill="#111827">Photon energy E = hc/lambda, with hc = 1239.8420 eV nm, exact by definition since 2019</text>
+<text x="46" y="196" font-size="11" fill="#6b7280">Energy rises to the left: shorter wavelength, higher frequency, more energy per photon.</text>
+</svg>
