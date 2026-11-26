@@ -84,7 +84,8 @@ export class StudyDeckEngine {
     this.renderStats()
 
     // A view switch may have arrived before the deck was ready; honour it now.
-    const view = this.pendingView || this.wrapper?.getAttribute('data-view') || 'scroll'
+    const requestedView = this.pendingView || this.wrapper?.getAttribute('data-view') || 'scroll'
+    const view = this.deck.length === 0 ? 'scroll' : requestedView
     this.pendingView = null
     this.setMode(view)
   }
