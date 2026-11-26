@@ -16,6 +16,8 @@ interface Subtopic {
   category: string
 }
 
+import { parseCardId } from './card-id.mjs';
+
 const STORAGE_PREFIX = 'icho-rev:study:v1:'
 
 function slugOf(): string {
@@ -125,9 +127,9 @@ export class StudyDeckEngine {
           this.recall.push(node)
           continue
         }
-        const match = text.match(/^(\d+(?:\.\d+)+)\b/)
-        if (match) {
-          current = { id: match[1], heading: el as HTMLElement, nodes: [node], category }
+        const cardId = parseCardId(text)
+        if (cardId) {
+          current = { id: cardId, heading: el as HTMLElement, nodes: [node], category }
           if (pending.length > 0) {
             // Lead-in text under the H2 belongs at the top of its first card.
             current.nodes.push(...pending)

@@ -4,6 +4,8 @@ import tailwind from '@astrojs/tailwind';
 import react from '@astrojs/react';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
+import rehypeDropFirstH1 from './rehype-drop-first-h1.mjs';
+import cardAnchor from './src/plugins/card-anchor.mjs';
 
 // https://astro.build/config
 export default defineConfig({
@@ -18,6 +20,6 @@ export default defineConfig({
   ],
   markdown: {
     remarkPlugins: [remarkMath],
-    rehypePlugins: [rehypeKatex],
+    rehypePlugins: [rehypeKatex, rehypeDropFirstH1, cardAnchor],
   },
 });
